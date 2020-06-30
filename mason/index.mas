@@ -1,0 +1,139 @@
+<%args>
+    $schema
+    $static_content_path => undef
+    $show_accept_dialog => undef
+</%args>
+
+
+<style>
+    .page-container {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .reference {
+        font-size: 95%;
+        color: #aaa;
+    }
+    a.btn-primary {
+        color: #fff;
+    }
+    a.btn-primary:hover {
+        background-color: #286090 !important;
+        color: #fff !important;
+    }
+    .btn-home {
+        float: right;
+        margin: 5px 10px;
+        width: 220px;
+    }
+    .btn-search {
+        margin: 5px 0;
+        background-color: #d9edf7;
+        color: #31708f !important;
+    }
+    .btn-search:hover, .btn-search:active, .btn-search:focus {
+        background-color: #C0D4DE !important;
+    }
+    #account-prompts {
+        display: none;
+        background-color: #eee;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px 10px 5px 10px;
+        margin: 10px 0 25px 0;
+    }
+    #account-prompts p {
+        margin-top: 10px;
+    }
+    #upload-instructions li {
+        margin-bottom: 15px;
+    }
+</style>
+
+
+<br />
+
+<div class="page-container">
+
+
+    <!-- INTRO -->
+    <& /instance/intro.mas &>
+
+
+    <!-- FEEDBACK -->
+    <& /homepage/feedback.mas &>
+
+
+    <br /><br /><br />
+
+
+    <!-- MAIN CONTENT -->
+    <div class="row">
+
+
+        <!-- LEFT COLUMN -->
+        <div class="col-md-4">
+
+            <!-- NEWS -->
+            <& /homepage/news.mas &>
+            <br /><br />
+
+        </div>
+
+
+        <!-- RIGHT COLUMN -->
+        <div class="col-md-8">
+            
+
+            <!-- SEARCH -->
+            <& /homepage/search.mas &>
+
+
+            <br /><br /><br />
+            
+            
+            <!-- SUBMISSIONS -->
+            <& /toggle_display.mas, production => "/homepage/submissions_production.mas", sandbox => "/homepage/submissions_sandbox.mas" &>
+            
+
+            <br /><br /><br />
+
+
+            <!-- DOCUMENTATION -->
+            <& /homepage/documentation.mas &>
+
+
+            <br /><br /><br />
+
+
+        </div>
+
+    </div>
+
+
+    <!-- CITATION -->
+    <& /homepage/citation.mas &>
+
+
+    <!-- USAGE AGREEMENT POPUP -->
+    <& /homepage/usage_popup.mas &>
+
+</div>
+
+
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        if ( !$.cookie("sgn_session_id") || $.cookie("sgn_session_id") == "" ) {
+            $("#account-prompts").css("display", "block");
+        }
+        else {
+            $("#account-prompts").css("display", "none");
+        }
+
+        $("#account-prompts-login").on("click", function() {
+            $('#site_login_dialog').modal("show");
+        });
+    });
+</script>

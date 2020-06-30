@@ -1,0 +1,48 @@
+<h2>Explore <& /instance/name.mas &></h2>
+
+<div id="account-prompts">
+    <a href="/user/new" class="btn btn-primary btn-large btn-home">
+        <span class="glyphicon glyphicon-user"></span>&nbsp;Create Account
+    </a>
+    <p>
+        To view most of the data on <& /instance/name.mas &>, you'll first need to create a free account.
+    </p>
+
+    <br />
+
+    <a id="account-prompts-login" href="#" class="btn btn-primary btn-large btn-home">
+        <span class="glyphicon glyphicon-user"></span>&nbsp;Login
+    </a>
+    <p>If you already have an account, login to get full access.</p>
+</div>
+
+
+<a href="/breeders/search" class="btn btn-primary btn-large btn-home">
+    <span class="glyphicon glyphicon-search"></span>&nbsp;
+    Open Search Wizard
+</a>
+
+<p>Use the <strong>Search Wizard</strong> to explore the database using various types of metadata.</p>
+<br />
+<p>
+    Alternatively, you can search specifically for <strong>Accessions</strong>, <strong>Trials</strong>, 
+    <strong>Traits</strong>, <strong>Genoptyping Projects</strong>, or <strong>Markers</strong>
+</p>
+
+<div class="row">
+    <div class="col-sm-4">
+        <a href="/search/phenotypes/stock" class="btn btn-primary btn-large btn-search">Search Accessions</a>
+    </div>
+    <div class="col-sm-3">
+        <a href="/search/trials" class="btn btn-primary btn-large btn-search">Search Trials</a>
+    </div>
+    <div class="col-sm-3">
+        <a href="/search/traits" class="btn btn-primary btn-large btn-search">Search Traits</a>
+    </div>
+    <div class="col-sm-5">
+        <a href="/search/genotyping_data_projects" class="btn btn-primary btn-large btn-search">Search Genotyping Projects</a>
+    </div>
+    <div class="col-sm-3">
+        <a href="/search/markers" class="btn btn-primary btn-large btn-search">Search Markers</a>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<h2>Submit Phenotype Data</h2>
+
+<p>Phenotype data can be submitted to <& /instance/name.mas &> in two ways:</p>
+
+<h3>Using the Sandbox</h3>
+<p>
+    When using the sandbox, you create upload templates that contain the trial information.  Then, 
+    you upload those templates to the Sandbox to check for any errors.  When the trial has been  
+    successfully added you can use the <em>Submit Trial</em> function to submit the trial directly 
+    to us for inclusion in the production site.  Visit the <strong><& /instance/name.mas &> Sandbox</strong> for 
+    more information.
+</p>
+<a class="btn btn-primary btn-block" href="<& /instance/urls/sandbox.mas &>">
+    <span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;
+    Visit the <& /instance/name.mas &> Sandbox
+</a>
+
+<br />
+
+<h3>Submitting files directly to us</h3>
+<p>
+    If you have upload templates that you think are properly formatted or data files that 
+    are not formatted as upload templates, you can submit the files directly to use for 
+    inclusion in the production site by submitting them to us through the 
+    <strong>Phenotype Submission Form</strong>.
+</p>
+<a class="btn btn-primary btn-block" href="/submit/pheno">
+    <span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;&nbsp;
+    Phenotype Submission Form
+</a>

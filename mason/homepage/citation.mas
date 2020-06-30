@@ -1,0 +1,8 @@
+<hr />
+
+<p class="reference">
+    <& /instance/citation.mas &>
+</p>
+<p class="reference">
+    <& /instance/name.mas &> is open source software and available under the <a href="<& /instance/urls/github.mas &>/blob/master/LICENSE">MIT License</a> and may be downloaded from <a href="<& /instance/urls/github.mas &>">GitHub</a>.
+</p>

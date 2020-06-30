@@ -1,0 +1,9 @@
+<h2>User Guides</h2>
+
+<a href="https://solgenomics.github.io/sgn/" class="btn btn-primary btn-large btn-home">
+    <span class="glyphicon glyphicon-question-sign"></span>&nbsp;
+    Read Documentation
+</a>
+
+<p>New to <& /instance/name.mas &>?</p>
+<p>View the <strong>Documentation</strong> to learn about available features.</p>

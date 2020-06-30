@@ -1,0 +1,13 @@
+<%args>
+    $production => undef
+    $sandbox => undef
+</%args>
+
+<& /instance/type.mas &>
+
+<% our $INSTANCE_TYPE %>
+% if ( $INSTANCE_TYPE eq "PRODUCTION" ) {
+<& $production &>
+% } elsif ( $INSTANCE_TYPE eq "SANDBOX" ) {
+<& $sandbox &>
+% }

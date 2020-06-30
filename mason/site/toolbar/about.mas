@@ -1,0 +1,16 @@
+<li class="dropdown"><a class="menu_click_dropdown dropdown-toggle" data-toggle="dropdown">About</a>
+  <ul class="dropdown-menu">
+    <li><a href="/about">About</a></li>
+    <li><a href="/status">Content Status</a></li>
+    <li><a href="/contact/form">Contact</a></li>
+    
+    <li role="separator" class="divider"></li>
+
+    <li><a href="https://solgenomics.github.io/sgn/">Manual</a></li>
+    
+    <li role="separator" class="divider"></li>
+    
+    <li><a href="https://twitter.com/solgenomics">Twitter</a></li>
+    <li><a href="https://www.facebook.com/solgenomics">Facebook</a></li>
+  </ul>
+</li>
