@@ -1,11 +1,11 @@
-<h2>Explore <& /instance/name.mas &></h2>
+<h2>Explore <% our $T3_INSTANCE_NAME %></h2>
 
 <div id="account-prompts">
     <a href="/user/new" class="btn btn-primary btn-large btn-home">
         <span class="glyphicon glyphicon-user"></span>&nbsp;Create Account
     </a>
     <p>
-        To view most of the data on <& /instance/name.mas &>, you'll first need to create a free account.
+        To view most of the data on <% $T3_INSTANCE_NAME %>, you'll first need to create a free account.
     </p>
 
     <br />

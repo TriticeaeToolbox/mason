@@ -3,11 +3,8 @@
     $sandbox => undef
 </%args>
 
-<& /instance/type.mas &>
-
-<% our $INSTANCE_TYPE %>
-% if ( $INSTANCE_TYPE eq "PRODUCTION" ) {
+% if ( our $T3_INSTANCE_TYPE eq "PRODUCTION" ) {
 <& $production &>
-% } elsif ( $INSTANCE_TYPE eq "SANDBOX" ) {
+% } elsif ( $T3_INSTANCE_TYPE eq "SANDBOX" ) {
 <& $sandbox &>
 % }

@@ -1,8 +1,8 @@
 <div id="usage_policy" style="display: none">
-  <h3><& /instance/name.mas &> Data Usage Policy</h3>
+  <h3><% our $T3_INSTANCE_NAME %> Data Usage Policy</h3>
   <p>
     In 2009 the Toronto International Data Release Workshop agreed on a policy statement about prepublication data sharing. 
-    Accordingly, the data producers are making many of the datasets in <& /instance/name.mas &> available prior to publication 
+    Accordingly, the data producers are making many of the datasets in <% $T3_INSTANCE_NAME %> available prior to publication 
     of a global analysis. Guidelines for appropriate sharing of these data are given in the excerpt from the Toronto Statement.
   </p>
   <p>

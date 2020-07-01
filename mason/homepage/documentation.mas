@@ -5,5 +5,5 @@
     Read Documentation
 </a>
 
-<p>New to <& /instance/name.mas &>?</p>
+<p>New to <% our $T3_INSTANCE_NAME %>?</p>
 <p>View the <strong>Documentation</strong> to learn about available features.</p>

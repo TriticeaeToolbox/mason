@@ -15,7 +15,7 @@
 
 
 <a class="navbar-brand" href="/" style="padding:10px 0px">
-    <img id="sgnlogo" src="/static_content/img/t3.png" alt="New T3 Home" title="T3 Home">
+    <img id="sgnlogo" src="/static_content/img/t3.png" alt="<% our $T3_INSTANCE_NAME %> Home" title="<% $T3_INSTANCE_NAME %> Home">
 </a>
 
-<a class="navbar-brand sgn_brand_name" href="/"><span class="new-t3">New</span> <& /instance/name.mas &></a>
+<a class="navbar-brand sgn_brand_name" href="/"><span class="new-t3">New</span> <% $T3_INSTANCE_NAME %></a>

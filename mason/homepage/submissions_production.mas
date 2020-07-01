@@ -1,18 +1,18 @@
 <h2>Submit Phenotype Data</h2>
 
-<p>Phenotype data can be submitted to <& /instance/name.mas &> in two ways:</p>
+<p>Phenotype data can be submitted to <% our $T3_INSTANCE_NAME %> in two ways:</p>
 
 <h3>Using the Sandbox</h3>
 <p>
     When using the sandbox, you create upload templates that contain the trial information.  Then, 
     you upload those templates to the Sandbox to check for any errors.  When the trial has been  
     successfully added you can use the <em>Submit Trial</em> function to submit the trial directly 
-    to us for inclusion in the production site.  Visit the <strong><& /instance/name.mas &> Sandbox</strong> for 
+    to us for inclusion in the production site.  Visit the <strong><% $T3_INSTANCE_NAME %> Sandbox</strong> for 
     more information.
 </p>
-<a class="btn btn-primary btn-block" href="<& /instance/urls/sandbox.mas &>">
+<a class="btn btn-primary btn-block" href="<% our $T3_SANDBOX_URL %>">
     <span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;
-    Visit the <& /instance/name.mas &> Sandbox
+    Visit the <% $T3_INSTANCE_NAME %> Sandbox
 </a>
 
 <br />
