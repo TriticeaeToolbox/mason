@@ -1,18 +1,3 @@
-<%perl>
-use strict;
-
-my $file = $c->get_conf('homepage_files_dir') . '/news.txt';
-my $contents = "<p>No recent updates.</p>";
-if (-e $file) {
-    $contents = do {
-        local $/ = undef;
-        open my $fh, "<", $file or die "could not open $file: $!";
-        <$fh>;
-    };
-}
-</%perl>
-
-
 <style>
     .news-panel-body {
         padding: 8px;
@@ -48,7 +33,7 @@ if (-e $file) {
 <div class="panel panel-info">
     <div class="panel-heading">News</div>
     <div class="panel-body news-panel-body">
-        <% $contents %>
+        <& /instance/news.mas &>
     </div>
 </div>
 
