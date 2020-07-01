@@ -18,4 +18,7 @@
     <img id="sgnlogo" src="/static_content/img/t3.png" alt="<% our $T3_INSTANCE_NAME %> Home" title="<% $T3_INSTANCE_NAME %> Home">
 </a>
 
-<a class="navbar-brand sgn_brand_name" href="/"><span class="new-t3">New</span> <% $T3_INSTANCE_NAME %></a>
+<a class="navbar-brand sgn_brand_name" href="/">
+    <span class="new-t3">New</span> <% $T3_INSTANCE_NAME %>
+    <& /toggle_display.mas, sandbox => "/site/toolbar/logo_and_name_sandbox.mas" &>
+</a>
