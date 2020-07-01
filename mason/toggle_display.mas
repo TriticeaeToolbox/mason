@@ -3,8 +3,8 @@
     $sandbox => undef
 </%args>
 
-% if ( our $T3_INSTANCE_TYPE eq "PRODUCTION" ) {
+% if ( our $T3_INSTANCE_TYPE eq "PRODUCTION" && defined $production  ) {
 <& $production &>
-% } elsif ( $T3_INSTANCE_TYPE eq "SANDBOX" ) {
+% } elsif ( $T3_INSTANCE_TYPE eq "SANDBOX" && defined $sandbox ) {
 <& $sandbox &>
 % }

@@ -1,0 +1,19 @@
+<style>
+    .sandbox-banner {
+        background-color: #e8cbc5;
+        border: 2px solid #c84c30;
+        border-radius: 5px;
+        padding: 10px;
+    }
+</style>
+
+<div class="sandbox-banner">
+    <p>
+        <strong>This is the <em>SANDBOX</em> site for <% our $T3_INSTANCE_NAME %></strong>.  The Sandbox can be used to test the 
+        addition of new data to <% $T3_INSTANCE_NAME %>.  Data added to this site <u>will be periodically cleared</u> and 
+        reset to match the main production version of <% $T3_INSTANCE_NAME %>.  For more information on adding data to the 
+        Sandbox and submitting it to the production site, see the submitting data sections below.
+    </p>
+</div>
+
+<hr />

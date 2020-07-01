@@ -56,6 +56,13 @@
 
 <div class="page-container">
 
+    <h1>Welcome to the New <% our $T3_INSTANCE_NAME %></h1>
+
+    <br />
+
+    <!-- SANDBOX BANNER -->
+    <& /toggle_display.mas, sandbox => "/homepage/sandbox_banner.mas" &>
+
 
     <!-- INTRO -->
     <& /instance/intro.mas &>
