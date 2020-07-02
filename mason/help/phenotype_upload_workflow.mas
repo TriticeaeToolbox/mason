@@ -68,9 +68,21 @@ $user_roles => 'unknown'
 <& /page/page_title.mas, title=>"Phenotype Upload Instructions" &>
 
 <p class="intro">
-    These instructions will guide you through the process of creating a phenotype trial, uploading the 
-    data to the sandbox, and submitting the trial to <% our $T3_INSTANCE_NAME %>.
+    These instructions will guide you through the process of creating a phenotype trial and uploading 
+    all of its associated data to the database.
 </p>
+% if ( defined(our $T3_INSTANCE_PRIVATE) ) {
+<p class="intro">
+    Once your data has been submitted to this database, the last section will guide you through 
+    the process of submitting your trial(s) to the public version of <% our $T3_INSTANCE_NAME %>.
+</p>
+% } elsif ( our $T3_INSTANCE_TYPE eq "SANDBOX" ) {
+<p class="intro">
+    Once your data has been submitted to this sandbox database, the last section will guide you through 
+    the process of submitting your trial(s) to the production version of <% our $T3_INSTANCE_NAME %>.
+</p>
+% }
+
 <p class="intro">
     If you have any questions about the process, please feel free to <a href="/contact/form">Contact Us</a>.
 </p>
@@ -78,7 +90,8 @@ $user_roles => 'unknown'
 <div class="section">
     <h2>User Account</h2>
     <p>In order to submit data to the database, you must have an account with at least submitter privileges.  All 
-        new accounts created on the sandbox are automatically given submitter status.</p>
+        new accounts created on <a href='<% our $T3_SANDBOX_URL %>'>the sandbox database</a> are automatically given 
+        submitter status.</p>
 
     <div id="account-prompts">
         <div class="row">
@@ -348,46 +361,11 @@ $user_roles => 'unknown'
 </div>
 
 
-<div class="section section-submit">
-    <h2>Submission</h2>
-
-    <p>There are two options for submitting your trial data to the production site:</p>
-
-    <ul>
-        <li>
-            <p><strong>Option A - Using the Sandbox:</strong> If your trial has been successully added to the Sandbox, 
-            then you can directly submit the trial to the production site by using the <em>Submit Trial</em> function</p>
-            <ol>
-                <li>Go to the Trial detail page for your trial
-                    <ul>
-                        <li>Go to the <a href="/search/trials">Search &gt; Field Trials</a> page or the <a href="breeders/trials">Manage &gt; Field Trials</a> page</li>
-                        <li>Find your trial</li>
-                        <li>Click the name of your trial to open the Trial detail page</li>
-                    </ul>
-                </li>
-                <li>Click the <strong>Submit Trial</strong> button in the <strong>Trial Details</strong> section at the top of the page</li>
-            </ol>
-        </li>
-
-        <br />
-
-        <li>
-            <p><strong>Option B - Using the Phenotype Submission Form:</strong> If your trial has <em>not</em> been 
-            successfully added to the Sandbox, you can still submit your upload templates or other data files 
-            to us directly</p>
-            <ol>
-                <li>Go to the <a href='<% our $T3_PRODUCTION_URL %>/submit/pheno'>Phenotype Submission Form</a></li>
-                <li>Select the data type of the file(s) you are uploading</li>
-                <li>Select your files to submit</li>
-                <li>Add additional comments / information about the data you are submitting</li>
-            </ol>
-        </li>
-    </ul>
-
-    <p>At this point your trial data have been submitted to us for curation.  After we have approved the trial submission 
-    your trial will become visible on the production website.</p>
-    <p>Please feel free to <a href='/contact/form'>Contact Us</a> if you have any questions about data submission.</p>
-</div>
+<!-- SUBMISSION INFO -->
+<& /toggle_display.mas, 
+    sandbox => "/help/phenotype_upload_workflow_submit_sandbox.mas",
+    private => "/help/phenotype_upload_workflow_submit_private.mas"
+&>
 
 <br /><br />
 
