@@ -3,7 +3,7 @@
         height: 44px;
         padding-left: 4px;
     }
-    .new-t3 {
+    .name-badge {
         background-color: #AC813D;
         border-radius: 7px;
         color: #fff;
@@ -19,6 +19,14 @@
 </a>
 
 <a class="navbar-brand sgn_brand_name" href="/">
-    <span class="new-t3">New</span> <% $T3_INSTANCE_NAME %>
+% if ( defined(our $T3_INSTANCE_PRIVATE) ) {
+    <span>&nbsp;</span>
+% } else {
+    <span class="name-badge">New</span>
+% }
+    <span><% $T3_INSTANCE_NAME %></span>
+% if ( defined(our $T3_INSTANCE_PRIVATE) ) {
+    <span class="name-badge"><% $T3_INSTANCE_PRIVATE %></span>
+% }
     <& /toggle_display.mas, sandbox => "/site/toolbar/logo_and_name_sandbox.mas" &>
 </a>
