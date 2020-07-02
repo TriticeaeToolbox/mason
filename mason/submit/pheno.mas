@@ -38,7 +38,7 @@
 <p>
     Submit your upload templates here when you are ready to have your data published on <% our $T3_INSTANCE_NAME %>.  
     For more information on generating the upload templates for each data type, visit the 
-    <a href='<% our $T3_SANDBOX_URL %>/help/phenotype_upload_workflow'>
+    <a href='/help/phenotype_upload_workflow'>
         Phenotype Upload Workflow
     </a>
     instructions.
