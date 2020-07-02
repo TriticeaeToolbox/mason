@@ -1,10 +1,13 @@
 <%args>
     $production => undef
     $sandbox => undef
+    $private => undef
 </%args>
 
-% if ( our $T3_INSTANCE_TYPE eq "PRODUCTION" && defined $production  ) {
-<& $production &>
+% if ( defined(our $T3_INSTANCE_PRIVATE) && defined $private ) {
+    <& $private &>
+% } elsif ( our $T3_INSTANCE_TYPE eq "PRODUCTION" && defined $production  ) {
+    <& $production &>
 % } elsif ( $T3_INSTANCE_TYPE eq "SANDBOX" && defined $sandbox ) {
-<& $sandbox &>
+    <& $sandbox &>
 % }
