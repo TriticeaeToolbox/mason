@@ -1,6 +1,7 @@
 <%once>
    our $T3_INSTANCE_NAME = "T3/Barley";
    our $T3_INSTANCE_TYPE = "SANDBOX";
+   our $T3_INSTANCE_PRIVATE = undef;
    our $T3_PRODUCTION_URL = "https://barley.triticeaetoolbox.org";
    our $T3_SANDBOX_URL = "https://barley-sandbox.triticeaetoolbox.org";
    our $T3_GITHUB_URL = "https://github.com/TriticeaeToolbox/sgn";
