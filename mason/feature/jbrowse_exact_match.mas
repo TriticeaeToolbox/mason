@@ -23,9 +23,9 @@ if ( $feature && $src_feature ) {
 </%perl>
 
 % if ( $jbrowse_url ) {
-
-  <iframe style="border: 1px solid rgb(80, 80, 80);" src="<% $iframe_url %>" height="250" width="700"  name="jbrowse_iframe">
-  <p>Your browser does not support iframes.</p> </iframe>
+  <div>
+  <a href="<% $jbrowse_url %>" target="_new">JBrowse Genome Browser</a>
+  </div>
 
 % }
 
