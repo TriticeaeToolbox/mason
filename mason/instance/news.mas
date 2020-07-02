@@ -9,6 +9,16 @@
 </div>
 -->
 
+<div class="news-item">
+    <p class="news-item-title">PepsiCo Oat Genome</p>
+    <p class="news-item-data">June 23, 2020</p>
+    <div class="news-item-content">
+      <a href="/tools/blast">Analyze BLAST</a><br>
+      <a href="https://wheat.pw.usda.gov/jb?data=/ggds/oat-ot3098-pepsico" target=_new>JBrowse</a><br>
+      <a href="https://oat.triticeaetoolbox.org/breeders_toolbox/protocol/8">Public Oat Genotyping Initiative (POGI) Trials</a>
+    </div>
+</div>
+
 
 <div class="news-item">
     <p class="news-item-title">Scab Forum Presentation</p>
