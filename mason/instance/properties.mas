@@ -3,6 +3,6 @@
    our $T3_INSTANCE_TYPE = "PRODUCTION";
    our $T3_INSTANCE_PRIVATE = "UIUC";
    our $T3_PRODUCTION_URL = "https://wheat-uiuc.triticeaetoolbox.org";
-   our $T3_SANDBOX_URL = "https://wheat-uiuc.triticeaetoolbox.org";
+   our $T3_SANDBOX_URL = "https://wheat-sandbox.triticeaetoolbox.org";
    our $T3_GITHUB_URL = "https://github.com/TriticeaeToolbox/sgn";
 </%once>
