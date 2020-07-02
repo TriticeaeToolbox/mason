@@ -104,7 +104,11 @@
             
             
             <!-- SUBMISSIONS -->
-            <& /toggle_display.mas, production => "/homepage/submissions_production.mas", sandbox => "/homepage/submissions_sandbox.mas" &>
+            <& /toggle_display.mas, 
+                production => "/homepage/submissions_production.mas", 
+                sandbox => "/homepage/submissions_sandbox.mas",
+                private => "/homepage/submissions_private.mas"
+            &>
             
 
             <br /><br /><br />

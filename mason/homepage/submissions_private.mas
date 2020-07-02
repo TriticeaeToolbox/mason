@@ -1,0 +1,24 @@
+<h2>Upload Data</h2>
+
+<p>Contributing data to <% our $T3_INSTANCE_NAME %></p>
+
+<a href="/help/phenotype_upload_workflow" class="btn btn-primary btn-large btn-home">
+    <span class="glyphicon glyphicon-pushpin"></span>&nbsp;
+    Upload Instructions
+</a>
+
+<p><strong>Phenotype Upload Instructions:</strong> Instructions and general steps for adding phenotype trial data to <% $T3_INSTANCE_NAME %>.</p>
+
+<a href="/breeders/phenotyping" class="btn btn-primary btn-large btn-home">
+    <span class="glyphicon glyphicon-leaf"></span>&nbsp;
+    Manage Phenotypic Data
+</a>
+
+<p><strong>Manage your Phenotypic Data</strong> to create spreadsheets for new uploads, add new data, and/or manage your existing uploads.</p>
+
+<a href="/breeders/upload" class="btn btn-primary btn-large btn-home">
+    <span class="glyphicon glyphicon-open-file"></span>&nbsp;
+    Upload Files
+</a>
+
+<p>Or <strong>Upload Files</strong> for various other types of data.</p>
