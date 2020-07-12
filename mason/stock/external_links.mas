@@ -1,0 +1,80 @@
+<%args>
+$stock_id
+</%args>
+
+
+<style>
+    #external-links-list {
+        list-style-type: none;
+    }
+</style>
+
+
+<div id="external-links">
+    <li id="external-links-list"></li>
+</div>
+
+
+<& /instance/external_link_sources.mas &>
+<script defer>
+
+    /**
+     * on ready: get the stock props
+     */
+    jQuery(document).ready(function() {
+        if ( T3_EXTERNAL_LINKS && T3_EXTERNAL_LINKS.length > 0 ) {
+          getProps();
+        }
+    });
+
+
+    /**
+     * Get the stock props for the current stock id
+     */
+    function getProps() {
+      jQuery.ajax( {
+        type: 'GET',
+        url: '/stock/prop/get',
+        data: { stock_id: <% $stock_id %> },
+        success: function(response) { 
+            let props = [];
+            if ( response ) {
+                for ( let i = 0; i < response.length; i++ ) {
+                    if ( response[i].type_name === 'accession number' ) {
+                        props.push(response[i]);
+                    }
+                }
+            }
+            renderLinks(props);
+        },
+        error: function(response) { 
+            console.log("Could not load stock props");
+            console.log(response); 
+        }
+      });
+    }
+
+    /**
+     * Generate the external links HTML
+     * @param  {Object[]} props A list of accession number stock props
+     */
+    function renderLinks(props) {
+        let html = "";
+        for ( let i = 0; i < props.length; i++ ) {
+            let prop = props[i];
+            let accession_number = prop.value;
+            let prefix = accession_number.split(' ')[0];
+            for ( let j = 0; j < T3_EXTERNAL_LINKS.length; j++ ) {
+                let link = T3_EXTERNAL_LINKS[j];
+                if ( link.prefixes.includes(prefix) ) {
+                    html += "<ul>";
+                    html += "<a href='" + link.url(accession_number) + "'>"
+                    html += link.name + ': ' + accession_number;
+                    html += "</a>";
+                    html += "</ul>";
+                }
+            }
+        }
+        jQuery("#external-links-list").html(html);
+    }
+</script>
