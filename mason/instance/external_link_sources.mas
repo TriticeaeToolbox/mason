@@ -22,7 +22,15 @@
             name: "GRIN-CA",
             prefixes: ["CIav", "CN", "PGR"],
             url: function(term) {
-                return "https://pgrc3.agr.gc.ca/cgi-bin/npgs/html/acc_search.pl?accid=" + term
+                return "https://pgrc3.agr.gc.ca/cgi-bin/npgs/html/acc_search.pl?accid=" + term;
+            }
+        },
+        {
+            name: "Pedigrees of Oat Lines",
+            prefixes: ["POOL"],
+            url: function(term) {
+                let id = term.replace(/pool ?/gi, "");
+                return "https://triticeaetoolbox.org/POOL/EntryShow.php?GID=" + id;
             }
         }
     ]
