@@ -10,5 +10,9 @@
     <li role="separator" class="divider"></li>
     <li class="dropdown-header">Sequence Analysis</li>
     <li><a href="/tools/blast/">BLAST</a></li>
+    <li role="separator" class="divider"></xls>
+    <li class="dropdown-header">Primer Design</li>
+    <li><a href="https://galaxy.triticeaetoolbox.org" target="_new">SNP, Galaxy Project</a></li>
+    <li><a href="http://tcapg.ag.cornell.edu/primer_filter" target="_new">KASP, R Shiny</a></li>
   </ul>
 </li>
