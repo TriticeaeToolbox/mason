@@ -1,0 +1,8 @@
+
+<%args>
+$locus => undef
+</%args>
+
+<a href="https://www.uniprot.org/uniprot/<% $locus %>" target="_new">Universal Protein Resource (UniProt)</a> 
+
+

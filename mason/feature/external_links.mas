@@ -1,0 +1,9 @@
+<%args>
+$gene => undef
+</%args>
+
+<a href="https://plants.ensembl.org/Triticum_aestivum/Search/Results?species=Triticum aestivum;idx=;q=<% $gene %>" target="_new">Genome Annotation - EnsemblPlants</a>
+<br>
+<a href="https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=<% $gene %>" target="_new">Knowledge Graph - KnetMiner</a>
+<br>
+<a href="https://wheat.pw.usda.gov/jb/?data=/ggds/whe-iwgsc2018&loc=<% $gene %>" target="_new">Genome Viewer - JBrowse</a>
