@@ -7,3 +7,7 @@ $gene => undef
 <a href="https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=<% $gene %>" target="_new">Knowledge Graph - KnetMiner</a>
 <br>
 <a href="https://wheat.pw.usda.gov/jb/?data=/ggds/whe-iwgsc2018&loc=<% $gene %>" target="_new">Genome Viewer - JBrowse</a>
+<br>
+<a href="https://www.ebi.ac.uk/gxa/genes/<% $gene %>" target="_new">EBI Expression Atlas</a>
+<br>
+<a href="http://www.wheat-expression.com/genes/show?gene_set=RefSeq1.1&name=<% $gene %>&search_by=gene" target="_new">Wheat Expression Browser</a>
