@@ -23,7 +23,23 @@
 </a>
 
 <p>Use the <strong>Search Wizard</strong> to explore the database using various types of metadata.</p>
-<br />
+<br /><br />
+
+
+<div id="explore-experiments">
+    <p>Explore <strong>Experiments</strong> (collections of trials) in the Search Wizard:</p>
+
+    <div id="explore-experiments-login">
+        <p><em>You must first log in to view the lists of experiments...</em></p>
+    </div>
+
+    <div id="explore-experiments-loggedin">
+        <select class="form-control" id="explore-experiments-select"></select>
+    </div>
+</div>
+<br /><br />
+
+
 <p>
     Alternatively, you can search specifically for <strong>Accessions</strong>, <strong>Trials</strong>, 
     <strong>Traits</strong>, <strong>Genoptyping Projects</strong>, or <strong>Markers</strong>
@@ -46,3 +62,73 @@
         <a href="/search/markers" class="btn btn-primary btn-large btn-search">Search Markers</a>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        toggleLoginDisplay();
+        populateExperiments();
+        $("#account-prompts-login").on("click", function() {
+            $('#site_login_dialog').modal("show");
+        });
+    });
+
+
+    /**
+     * Toggle the display of some elements based on the user's logged in status
+     */
+    function toggleLoginDisplay() {
+        // Not logged in...
+        if ( !$.cookie("sgn_session_id") || $.cookie("sgn_session_id") == "" ) {
+            $("#account-prompts").css("display", "block");
+            $("#explore-experiments-login").css("display", "block");
+            $("#explore-experiments-loggedin").css("display", "none");
+        }
+
+        // Logged in...
+        else {
+            $("#account-prompts").css("display", "none");
+            $("#explore-experiments-login").css("display", "none");
+            $("#explore-experiments-loggedin").css("display", "block");
+        }
+    }
+
+
+    /**
+     * Load the options in the Experiments selection box with Experiment lists
+     */
+    function populateExperiments() {
+        jQuery.ajax({
+          url: '/list/available',
+          method: "GET",
+          error: function(response) {
+            console.log("ERROR: Could not get available lists!");
+            console.log(response);
+          },
+          success: function(lists) {
+            if ( lists && Array.isArray(lists) ) {
+                let options = ["<option value=''>---- Select an Experiment to Explore ----</option>"];
+                for ( let i = 0; i < lists.length; i++ ) {
+                    let id = lists[i][0];
+                    let name = lists[i][1];
+                    let type = lists[i][5];
+
+                    if ( type === "trials" && name.startsWith("Experiment:") ) {
+                        name_cleaned = name.replace("Experiment: ", "").replace("Experiment:", "");
+                        let html = "<option value='" + id + "'>" + name_cleaned + "</option>";
+                        options.push(html);
+                    }
+                }
+                jQuery("#explore-experiments-select").html(options.join(''));
+            }
+          }
+        });
+
+        jQuery("#explore-experiments-select").change(function() {
+            let listId = jQuery(this).find('option:selected').val();
+            if ( listId && listId !== "" ) {
+                window.location = "/breeders/search?list=" + listId;
+            }
+        });
+    }
+</script>
