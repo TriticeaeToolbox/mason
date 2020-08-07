@@ -140,15 +140,17 @@
      */
     function displayLists(lists) {
         let options = ["<option value=''>---- Select an Experiment to Explore ----</option>"];
+        let added_trial_ids = [];
         for ( let i = 0; i < lists.length; i++ ) {
             let id = lists[i][0];
             let name = lists[i][1];
             let type = lists[i][5];
 
-            if ( type === "trials" && name.startsWith("Experiment:") ) {
+            if ( type === "trials" && name.startsWith("Experiment:") && !added_trial_ids.includes(id) ) {
                 name_cleaned = name.replace("Experiment: ", "").replace("Experiment:", "");
                 let html = "<option value='" + id + "'>" + name_cleaned + "</option>";
                 options.push(html);
+                added_trial_ids.push(id);
             }
         }
         jQuery("#explore-experiments-select").html(options.join(''));
