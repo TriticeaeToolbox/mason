@@ -2,12 +2,14 @@
 $gene => undef
 </%args>
 
-<a href="https://plants.ensembl.org/Triticum_aestivum/Search/Results?species=Triticum aestivum;idx=;q=<% $gene %>" target="_new">Genome Annotation - EnsemblPlants</a>
+<a href="https://plants.ensembl.org/Triticum_aestivum/Search/Results?species=Triticum aestivum;idx=;q=<% $gene %>" target="_new">Genome Annotation</a> - EnsemblPlants (EMBL-EBI)
 <br>
-<a href="https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=<% $gene %>" target="_new">Knowledge Graph - KnetMiner</a>
+<a href="https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=<% $gene %>" target="_new">Knowledge Graph</a> - KnetMiner (Rothamsted Research)
 <br>
-<a href="https://wheat.pw.usda.gov/jb/?data=/ggds/whe-iwgsc2018&loc=<% $gene %>" target="_new">Genome Viewer - JBrowse</a>
+<a href="https://wheat.pw.usda.gov/jb/?data=/ggds/whe-iwgsc2018&loc=<% $gene %>" target="_new">Genome Viewer</a> - JBrowse (GrainGenes)
 <br>
-<a href="https://www.ebi.ac.uk/gxa/genes/<% $gene %>" target="_new">EBI Expression Atlas</a>
+<a href="https://www.ebi.ac.uk/gxa/genes/<% $gene %>" target="_new">Expression Atlas</a> - (EMBL-EBI)
 <br>
-<a href="http://www.wheat-expression.com/genes/show?gene_set=RefSeq1.1&name=<% $gene %>&search_by=gene" target="_new">Wheat Expression Browser</a>
+<a href="http://www.wheat-expression.com/genes/show?gene_set=RefSeq1.1&name=<% $gene %>&search_by=gene" target="_new">Expression Browser</a> - expVIP (John Innes Centre)
+<br>
+<a href="https://plants.ensembl.org/Triticum_aestivum/Gene/Variation_Gene/Table?db=core;g=<% $gene %>" target="_new">Variant Effect</a> - EnsemblPlants (EMBL-EBI)
