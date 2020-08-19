@@ -10,13 +10,25 @@
 -->
 
 <div class="news-item">
+    <p class="news-item-title">T3 Phenotype Data Loaded</p>
+    <p class="news-item-date">July 29, 2020</p>
+    <div class="news-item-content">
+        <p>1149 Phenotype trials and mean data loaded from T3.</p>
+        <p>Go to the <a href='/search/trials'>Search &gt; Trials</a></p>
+    </div>
+    <p class="news-item-title">Maps and JBrowse added</p>
+    <p class="news-item-date">July 22, 2020</p>
+    <div class="news-item-content">
+        <p>Physical maps for Morex 2016 and Barley 50K added</p>
+        <p>Go to the <a href='/cview'>Maps</a></p>
+    </div>
+    
     <p class="news-item-title">Accessions Added</p>
     <p class="news-item-date">June 26, 2020</p>
     <div class="news-item-content">
         <p>All Accessions (about 60,000 in total) from the T3/Classic barley 
         database have been transferred over to T3/Breedbase barley database.</p>
-        <p>Go to the <a href='/search/stocks'>Search &gt; Accessions and Plots</a> 
-        page to search barley accessions.</p>
+        <p>Go to the <a href='/search/stocks'>Search &gt; Accessions and Plots</a></p>
     </div>
 </div>
 
