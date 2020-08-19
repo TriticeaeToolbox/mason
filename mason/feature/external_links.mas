@@ -2,7 +2,7 @@
 $gene => undef
 </%args>
 
-<a href="https://plants.ensembl.org/Triticum_aestivum/Search/Results?species=Triticum aestivum;idx=;q=<% $gene %>" target="_new">Genome Annotation</a> - EnsemblPlants (EMBL-EBI)
+<a href="https://plants.ensembl.org/Triticum_aestivum/Gene/Summary?g=<% $gene %>" target="_new">Genome Annotation</a> - EnsemblPlants (EMBL-EBI)
 <br>
 <a href="https://knetminer.rothamsted.ac.uk/wheatknet/genepage?list=<% $gene %>" target="_new">Knowledge Graph</a> - KnetMiner (Rothamsted Research)
 <br>
