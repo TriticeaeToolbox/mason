@@ -23,7 +23,23 @@
 </a>
 
 <p>Use the <strong>Search Wizard</strong> to explore the database using various types of metadata.</p>
-<br />
+<br /><br />
+
+
+<div id="explore-experiments">
+    <p>Explore <strong>Experiments</strong> (collections of trials) in the Search Wizard:</p>
+
+    <div id="explore-experiments-login">
+        <p><em>You must first log in to view the lists of experiments...</em></p>
+    </div>
+
+    <div id="explore-experiments-loggedin">
+        <select class="form-control" id="explore-experiments-select"></select>
+    </div>
+</div>
+<br /><br />
+
+
 <p>
     Alternatively, you can search specifically for <strong>Accessions</strong>, <strong>Trials</strong>, 
     <strong>Traits</strong>, <strong>Genoptyping Projects</strong>, or <strong>Markers</strong>
@@ -46,3 +62,104 @@
         <a href="/search/markers" class="btn btn-primary btn-large btn-search">Search Markers</a>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        toggleLoginDisplay();
+        populateExperiments();
+        $("#account-prompts-login").on("click", function() {
+            $('#site_login_dialog').modal("show");
+        });
+    });
+
+
+    /**
+     * Toggle the display of some elements based on the user's logged in status
+     */
+    function toggleLoginDisplay() {
+        // Not logged in...
+        if ( !$.cookie("sgn_session_id") || $.cookie("sgn_session_id") == "" ) {
+            $("#account-prompts").css("display", "block");
+            $("#explore-experiments-login").css("display", "block");
+            $("#explore-experiments-loggedin").css("display", "none");
+        }
+
+        // Logged in...
+        else {
+            $("#account-prompts").css("display", "none");
+            $("#explore-experiments-login").css("display", "none");
+            $("#explore-experiments-loggedin").css("display", "block");
+        }
+    }
+
+
+    /**
+     * Get private and public lists and populate the experiments
+     * select options with Experiment lists
+     */
+    function populateExperiments() {
+        let EXPERIMENT_LISTS = [];
+        getLists(false, function(lists) {
+            EXPERIMENT_LISTS = EXPERIMENT_LISTS.concat(lists);
+            getLists(true, function(lists) {
+                EXPERIMENT_LISTS = EXPERIMENT_LISTS.concat(lists);
+                displayLists(EXPERIMENT_LISTS);
+            });
+        });
+    }
+
+    /**
+     * Get Available Lists
+     * @param {boolean} public True for public lists, false for private
+     * @param {Function} callback Callback function(lists)
+     */
+    function getLists(public, callback) {
+        let url = public ? '/list/available_public' : '/list/available';
+        jQuery.ajax({
+            url: url,
+            data: {type: 'trials'},
+            method: 'GET',
+            error: function(response) {
+                console.log("ERROR: Could not get lists [" + url + "]");
+                console.log(response);
+                return callback([]);
+            },
+            success: function(lists) {
+                if ( lists && Array.isArray(lists) ) {
+                    return callback(lists);
+                }
+                return callback([]);
+            }
+        })
+    }
+
+    /**
+     * Update the select options for the experiment lists
+     * @param {Array[]} lists List of lists
+     */
+    function displayLists(lists) {
+        let options = ["<option value=''>---- Select an Experiment to Explore ----</option>"];
+        let added_trial_ids = [];
+        for ( let i = 0; i < lists.length; i++ ) {
+            let id = lists[i][0];
+            let name = lists[i][1];
+            let type = lists[i][5];
+
+            if ( type === "trials" && name.startsWith("Experiment:") && !added_trial_ids.includes(id) ) {
+                name_cleaned = name.replace("Experiment: ", "").replace("Experiment:", "");
+                let html = "<option value='" + id + "'>" + name_cleaned + "</option>";
+                options.push(html);
+                added_trial_ids.push(id);
+            }
+        }
+        jQuery("#explore-experiments-select").html(options.join(''));
+
+        jQuery("#explore-experiments-select").change(function() {
+            let listId = jQuery(this).find('option:selected').val();
+            if ( listId && listId !== "" ) {
+                window.location = "/breeders/search?list=" + listId;
+            }
+        });
+    }
+</script>
