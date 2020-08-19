@@ -134,20 +134,3 @@
     <& /homepage/usage_popup.mas &>
 
 </div>
-
-
-
-<script type="text/javascript">
-    $( document ).ready(function() {
-        if ( !$.cookie("sgn_session_id") || $.cookie("sgn_session_id") == "" ) {
-            $("#account-prompts").css("display", "block");
-        }
-        else {
-            $("#account-prompts").css("display", "none");
-        }
-
-        $("#account-prompts-login").on("click", function() {
-            $('#site_login_dialog').modal("show");
-        });
-    });
-</script>
