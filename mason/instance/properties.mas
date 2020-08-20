@@ -5,4 +5,6 @@
    our $T3_PRODUCTION_URL = "https://barley.triticeaetoolbox.org";
    our $T3_SANDBOX_URL = "https://barley-sandbox.triticeaetoolbox.org";
    our $T3_GITHUB_URL = "https://github.com/TriticeaeToolbox/sgn";
+   our $T3_ALERT_TITLE = "Scheduled Downtime on Wednesday, August 26";
+   our $T3_ALERT_DESCRIPTION = "Due to upcoming building construction, we will be moving the T3 servers to a new location.  It is estimated T3 will be offline and unavailable on Wednesday, August 26 from approximately 10AM to 2PM EDT.";
 </%once>

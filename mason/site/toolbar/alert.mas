@@ -1,0 +1,65 @@
+<div id="toolbar-alert">
+    <p id="toolbar-alert-title">
+        <span class="glyphicon glyphicon-exclamation-sign"></span>
+        &nbsp;
+        <% our $T3_ALERT_TITLE %>
+        <span id="toolbar-alert-more" class="glyphicon glyphicon-chevron-down"></span>
+    </p>
+    <p id="toolbar-alert-description">
+        <% our $T3_ALERT_DESCRIPTION %>
+    </p>
+</div>
+
+
+<style>
+    #toolbar-alert {
+        display: none;
+        position: fixed;
+        top: 51px;
+        width: 100%;
+        z-index: 1020;
+        background-color: #ffc107;
+        cursor: pointer;
+    }
+
+    #toolbar-alert-title {
+        margin: 5px;
+        font-weight: bold;
+    }
+    #toolbar-alert-more {
+        float: right;
+    }
+    #toolbar-alert-description {
+        display: none;
+        margin: 5px;
+    }
+</style>
+
+
+<script>
+jQuery(document).ready(function() {
+
+    // SET TOOLBAR POSITION BASED ON PRODUCTION TYPE
+% if ( our $T3_INSTANCE_TYPE eq "SANDBOX" ) {
+    jQuery("#toolbar-alert").css("top", "81px");
+% } else {
+    jQuery("#toolbar-alert").css("top", "51px");
+% }
+
+    // DISPLAY THE ALERT IF TITLE AND DESCRIPTION ARE SET
+% if ( defined $T3_ALERT_TITLE && defined $T3_ALERT_DESCRIPTION ) {
+    jQuery("#toolbar-alert").css("display", "block");
+% }
+
+    // TOGGLE THE DETAILS
+    jQuery("#toolbar-alert").click(function() {
+        jQuery("#toolbar-alert-description").toggle();
+        if ( jQuery("#toolbar-alert-more").hasClass("glyphicon-chevron-down") ) {
+            jQuery("#toolbar-alert-more").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+        }
+        else {
+            jQuery("#toolbar-alert-more").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+        }
+    });
+});
+</script>
