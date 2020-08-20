@@ -23,10 +23,7 @@ if ( $feature && $src_feature ) {
 </%perl>
 
 % if ( $jbrowse_url ) {
-
-  <iframe style="border: 1px solid rgb(80, 80, 80);" src="<% $iframe_url %>" height="250" width="700"  name="jbrowse_iframe">
-  <p>Your browser does not support iframes.</p> </iframe>
-
+    <a href="<% $jbrowse_url %>">Genome Browser - JBrowse</a>
 % }
 
 <script language="javascript" type="text/javascript">

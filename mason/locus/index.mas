@@ -236,6 +236,9 @@ my $ontology_subtitle = $curator || $submitter || $sequencer  ?
   <br />
 % }
 
+<&| /page/info_section.mas, title=>"UniProt link" &>
+  <& /locus/uniprot_browser_links.mas, locus => $locus_name &>
+</&>
 
 <&| /page/info_section.mas, title=>"Alleles (" .  scalar(@alleles)  . ")", subtitle => "$allele_subtitle", collapsible=>1, collapsed=>1 &>
    <& /phenome/allele.mas, alleles=>\@alleles, user_id=>$person_id, curator=>$curator &>

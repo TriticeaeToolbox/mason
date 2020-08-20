@@ -10,6 +10,33 @@
 -->
 
 <div class="news-item">
+    <p class="news-item-title">Breedbase Workshop</p>
+    <p class="news-item-date">August 20, 2020</p>
+    <div class="news-item-content">
+        <p>We will be hosting a remote workshop introducing the breedbase version of T3 and showing the 
+            process of uploading field trial data to the database.  Participants will have the time to test-load 
+            their own data to the database to familiarize themselves with the new workflow.
+        <p>
+            The workshop is scheduled for <strong>September 8th and 9th</strong>.  If you would like more information, 
+            you can email the T3 data curator, David Waring, at <a href='mailto:djw64@cornell.edu'>djw64@cornell.edu</a>.
+        </p>
+    </div>
+</div>     
+
+<div class="news-item">
+    <p class="news-item-title">Loci and Genes</p>
+    <p class="news-item-date">August 2020</p>
+    <div class="news-item-content">
+        <p>UniProt release April 2020 loaded in
+        <a href="search/locus"> Loci & Genes</a></p>
+    </div>
+    <div class="news-item-content">
+        <p>EnsemblPlant release August 2020  loaded in
+        <a href="search/features"> Genome Features</a></p>
+    </div>
+</div>      
+
+<div class="news-item">
     <p class="news-item-title">Scab Forum Presentation</p>
     <p class="news-item-date">Dec 9, 2019</p>
     <div class="news-item-content">
