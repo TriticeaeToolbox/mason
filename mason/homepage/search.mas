@@ -1,8 +1,8 @@
 <h2>Explore <% our $T3_INSTANCE_NAME %></h2>
 
 <div id="account-prompts">
-    <a href="/user/new" class="btn btn-primary btn-large btn-home">
-        <span class="glyphicon glyphicon-user"></span>&nbsp;Create Account
+    <a href="/user/new" class="btn btn-info btn-large btn-home">
+        <span class="glyphicon glyphicon-user"></span>&nbsp;New User
     </a>
     <p>
         To view most of the data on <% $T3_INSTANCE_NAME %>, you'll first need to create a free account.
@@ -163,3 +163,13 @@
         });
     }
 </script>
+
+
+<style>
+    .btn-info {
+        color: #fff !important;
+    }
+    .btn-info:hover {
+        background-color: #31b0d5 !important;
+    }
+</style>
