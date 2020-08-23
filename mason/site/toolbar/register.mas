@@ -1,0 +1,43 @@
+<span id="register_button_html_div">
+    <a href="/user/new" class="btn btn-info" type="button">New User</a>
+</span>
+
+
+<style>
+    #register_button_html_div {
+        display: none;
+    }
+
+    #register_button_html_div a.btn {
+        color: #fff; 
+        margin: 8px 7px 0px 0px;
+    }
+
+    #register_button_html_div a.btn:hover {
+        background-color: #31b0d5;
+    }
+</style>
+
+
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        toggleRegisterDisplay();
+    });
+
+
+    /**
+     * Toggle the display of the register button based on the user's login status
+     */
+    function toggleRegisterDisplay() {
+        // Not logged in...
+        if ( !$.cookie("sgn_session_id") || $.cookie("sgn_session_id") == "" ) {
+            $("#register_button_html_div").css("display", "inline");
+        }
+
+        // Logged in...
+        else {
+            $("#register_button_html_div").css("display", "none");
+        }
+    }
+</script>
