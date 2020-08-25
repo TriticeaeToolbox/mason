@@ -3,12 +3,11 @@
     <li><a href="/breeders/manage_programs/">Breeding Programs</a></li>
     <li><a href="/breeders/locations">Locations</a></li>
     <li><a href="/breeders/accessions/">Accessions</a></li>
-    <li><a href="/breeders/crosses/">Crosses</a></li>
+    <!-- <li><a href="/breeders/crosses/">Crosses</a></li> -->
     <li><a href="/fieldbook">Field Book Tools</a></li>
     <li><a href="/breeders/trials/">Field Trials</a></li>
     <li><a href="/breeders/phenotyping/">Phenotyping Results</a></li>
-    <li><a href="/breeders/genotyping/">Genotyping Plates</a></li>
-    <li><a href="/breeders/nirs/">NIRS Data</a></li>
+    <!-- <li><a href="/breeders/genotyping/">Genotyping Plates</a></li> -->
     
     <li role="separator" class="divider"></li>
     
@@ -21,8 +20,8 @@
     <li><a href="/breeders/upload">Upload</a></li>
     <li><a href="/barcode">Barcodes</a></li>
     
-    <li role="separator" class="divider"></li>
+    <!-- <li role="separator" class="divider"></li> -->
     
-    <li><a href="/breeders/manage_roles/">User Roles</a></li>
+    <!-- <li><a href="/breeders/manage_roles/">User Roles</a></li> -->
   </ul>
 </li>
