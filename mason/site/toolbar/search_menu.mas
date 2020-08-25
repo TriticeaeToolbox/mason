@@ -4,7 +4,7 @@
     <li role="separator" class="divider"></li>
     <li><a href="/search/phenotypes/stock">Accessions and Plots</a></li>
 	  <li><a href="https://synonyms.triticeaetoolbox.org/?db=<% our $T3_INSTANCE_NAME %>">Bulk Accession Search</a></li>
-    <li><a href="/search/cross">Progenies and Crosses</a></li>
+    <!-- <li><a href="/search/cross">Progenies and Crosses</a></li> -->
     
     <li role="separator" class="divider"></li>
     
@@ -17,12 +17,12 @@
     <li><a href="/search/genotyping_protocols">Genotyping Protocols</a></li>
     <li><a href="/search/genotyping_data_projects">Genotyping Projects</a></li>
     <li><a href="/search/markers">Markers</a></li>
-    <li><a href="/search/locus">Loci & Genes</a></li>
-    <li><a href="/search/features">Genome features</a></li>
+    <li><a href="/search/locus">Genetic Chars &amp; UniProt Genes</a></li>
+    <li><a href="/search/features">Ensembl Genes</a></li>
     
     <li role="separator" class="divider"></li>
     
-    <li><a href="/search/images">Images</a></li>
+    <!-- <li><a href="/search/images">Images</a></li> -->
     <li><a href="/search/people">People</a></li>
   </ul>
 </li>
