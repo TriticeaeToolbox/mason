@@ -27,6 +27,11 @@
         margin: 5px 10px;
         width: 220px;
     }
+    .btn-group-home {
+        float: right;
+        margin: 20px 10px;
+        width: 220px;
+    }
     #account-prompts {
         display: none;
         background-color: #eee;
