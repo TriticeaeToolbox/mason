@@ -17,8 +17,8 @@
 </div>
 
 
-<p>Use the <strong>Search Wizard</strong> to explore the database or search 
-individual data types:</p>
+<p>Use the <strong>Search Wizard</strong> to explore the database or 
+search <strong>individual data types</strong>:</p>
 
 <div class="btn-group search-group" role="group">
   <a href="/breeders/search" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>&nbsp;Search Wizard</a>
