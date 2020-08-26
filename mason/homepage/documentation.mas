@@ -1,9 +1,18 @@
 <h2>User Guides</h2>
 
-<a href="https://solgenomics.github.io/sgn/" class="btn btn-primary btn-large btn-home">
-    <span class="glyphicon glyphicon-question-sign"></span>&nbsp;
-    Read Documentation
-</a>
+
+<div class="btn-group-vertical btn-group-home">
+    <a href="https://solgenomics.github.io/sgn/" type="button" class="btn btn-primary">
+        <span class="glyphicon glyphicon-question-sign"></span>&nbsp;&nbsp;
+        Read Documentation
+    </a>
+    <a href="https://www.youtube.com/channel/UC3jrvvzGKKEHzOriDBgnj0A" type="button" class="btn btn-primary">
+        <span class="glyphicon glyphicon-facetime-video"></span>&nbsp;&nbsp;
+        Watch Tutorials</a>
+</div>
 
 <p>New to <% our $T3_INSTANCE_NAME %>?</p>
-<p>View the <strong>Documentation</strong> to learn about available features.</p>
+<p>
+    View the comprehensive <strong>Documentation</strong> from the Breedbase team to learn about 
+    available features or watch the detailed <strong>Video Tutorials</strong>.
+</p>
