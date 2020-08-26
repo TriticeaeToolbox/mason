@@ -17,17 +17,23 @@
 </div>
 
 
-<a href="/breeders/search" class="btn btn-primary btn-large btn-home">
-    <span class="glyphicon glyphicon-search"></span>&nbsp;
-    Open Search Wizard
-</a>
+<p>Use the <strong>Search Wizard</strong> to explore the database or search 
+individual data types:</p>
 
-<p>Use the <strong>Search Wizard</strong> to explore the database using various types of metadata.</p>
+<div class="btn-group search-group" role="group">
+  <a href="/breeders/search" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>&nbsp;Search Wizard</a>
+  <a href="/search/phenotypes/stock" type="button" class="btn btn-info">Accessions</a>
+  <a href="/search/trials" type="button" class="btn btn-info">Trials</a>
+  <a href="/search/traits" type="button" class="btn btn-info">Traits</a>
+  <a href="/search/genotyping_data_projects" type="button" class="btn btn-info">Genotyping Projects</a>
+  <a href="/search/markers" type="button" class="btn btn-info">Markers</a>
+</div>
+
+
 <br /><br />
 
-
 <div id="explore-experiments">
-    <p>Explore <strong>Experiments</strong> (collections of trials) in the Search Wizard:</p>
+    <p>Explore <strong>Experiments</strong> in the Search Wizard:</p>
 
     <div id="explore-experiments-login">
         <p><em>You must first log in to view the lists of experiments...</em></p>
@@ -35,31 +41,6 @@
 
     <div id="explore-experiments-loggedin">
         <select class="form-control" id="explore-experiments-select"></select>
-    </div>
-</div>
-<br /><br />
-
-
-<p>
-    Alternatively, you can search specifically for <strong>Accessions</strong>, <strong>Trials</strong>, 
-    <strong>Traits</strong>, <strong>Genoptyping Projects</strong>, or <strong>Markers</strong>
-</p>
-
-<div class="row">
-    <div class="col-sm-4">
-        <a href="/search/phenotypes/stock" class="btn btn-primary btn-large btn-search">Search Accessions</a>
-    </div>
-    <div class="col-sm-3">
-        <a href="/search/trials" class="btn btn-primary btn-large btn-search">Search Trials</a>
-    </div>
-    <div class="col-sm-3">
-        <a href="/search/traits" class="btn btn-primary btn-large btn-search">Search Traits</a>
-    </div>
-    <div class="col-sm-5">
-        <a href="/search/genotyping_data_projects" class="btn btn-primary btn-large btn-search">Search Genotyping Projects</a>
-    </div>
-    <div class="col-sm-3">
-        <a href="/search/markers" class="btn btn-primary btn-large btn-search">Search Markers</a>
     </div>
 </div>
 
@@ -171,5 +152,18 @@
     }
     .btn-info:hover {
         background-color: #31b0d5 !important;
+    }
+
+    .search-group {
+        display: inline-flex;
+        flex-direction: row;
+    }
+    .search-group .btn {
+        flex: 1;
+    }
+    @media (max-width: 600px) {
+        .search-group {
+            flex-direction: column;
+        }
     }
 </style>
