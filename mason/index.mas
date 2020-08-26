@@ -27,14 +27,6 @@
         margin: 5px 10px;
         width: 220px;
     }
-    .btn-search {
-        margin: 5px 0;
-        background-color: #d9edf7;
-        color: #31708f !important;
-    }
-    .btn-search:hover, .btn-search:active, .btn-search:focus {
-        background-color: #C0D4DE !important;
-    }
     #account-prompts {
         display: none;
         background-color: #eee;
@@ -110,6 +102,13 @@
                 private => "/homepage/submissions_private.mas"
             &>
             
+
+            <br /><br /><br />
+
+
+            <!-- GENOTYPE SUBMISSIONS -->
+            <& /homepage/submissions_genotype.mas &>
+
 
             <br /><br /><br />
 
