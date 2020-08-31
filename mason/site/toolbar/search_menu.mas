@@ -18,7 +18,7 @@
     <li><a href="/search/genotyping_data_projects">Genotyping Projects</a></li>
     <li><a href="/search/markers">Markers</a></li>
     <li><a href="/search/locus">Genetic Chars &amp; UniProt Proteins</a></li>
-    <li><a href="/search/features">Ensembl Genes</a></li>
+    <!-- <li><a href="/search/features">Ensembl Genes</a></li> -->
     
     <li role="separator" class="divider"></li>
     
