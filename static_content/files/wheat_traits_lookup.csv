@@ -1,0 +1,223 @@
+﻿old_trait_name,breedbase_id,breedbase_name,breedbase_column_header
+15-ADON level,CO_321:0501038,FHB DON content - 15-ADON - ppm,FHB DON content - 15-ADON - ppm|CO_321:0501038
+3-ADON level,CO_321:0501039,FHB DON content - 3-ADON - ppm,FHB DON content - 3-ADON - ppm|CO_321:0501039
+30 spike seed weight,CO_321:0501083,Grain weight - 30 spikes - g,Grain weight - 30 spikes - g|CO_321:0501083
+aboveground biomass,CO_321:0501158,Aboveground biomass - g,Aboveground biomass - g|CO_321:0501158
+agronomic score,CO_321:0001043,Agronomic score - 1-5 scoring scale,Agronomic score - 1-5 scoring scale|CO_321:0001043
+As,CO_321:0501063,Grain Arsenic content - ppm,Grain Arsenic content - ppm|CO_321:0501063
+bacterial leaf streak,CO_321:0501004,Bacterial leaf streak severity - 0-9 percentage scale,Bacterial leaf streak severity - 0-9 percentage scale|CO_321:0501004
+baking quality rating,CO_321:0501005,Baking quality rating - 1-6 Grade Rating,Baking quality rating - 1-6 Grade Rating|CO_321:0501005
+baking quality score,CO_321:0501006,Baking quality score - %,Baking quality score - %|CO_321:0501006
+basal aborted spikelets per head,CO_321:0501095,Infertile spike number - 0-10 Rating,Infertile spike number - 0-10 Rating|CO_321:0501095
+biomass at maturity,CO_321:0501159,Aboveground biomass at maturity - g,Aboveground biomass at maturity - g|CO_321:0501159
+BYDV incidence 0-9,CO_321:0001069,Barley yellow dwarf incidence - 0-9 percentage scale,Barley yellow dwarf incidence - 0-9 percentage scale|CO_321:0001069
+BYDV incidence season average,CO_321:0501007,Barley yellow dwarf incidence - Season Average - %,Barley yellow dwarf incidence - Season Average - %|CO_321:0501007
+BYDV incidence T1,COMP:0000002,Barley yellow dwarf incidence - %|timepoint 1,Barley yellow dwarf incidence - %|timepoint 1|COMP:0000002
+BYDV incidence T2,COMP:0000003,Barley yellow dwarf incidence - %|timepoint 2,Barley yellow dwarf incidence - %|timepoint 2|COMP:0000003
+BYDV incidence T3,COMP:0000004,Barley yellow dwarf incidence - %|timepoint 3,Barley yellow dwarf incidence - %|timepoint 3|COMP:0000004
+BYDV reaction type,CO_321:0501011,Barley yellow dwarf plant response - 1-9 response scale,Barley yellow dwarf plant response - 1-9 response scale|CO_321:0501011
+Ca,CO_321:0501065,Grain Calcium content - ppm,Grain Calcium content - ppm|CO_321:0501065
+canopy senescence score,CO_321:0501156,Canopy senescence - %,Canopy senescence - %|CO_321:0501156
+canopy senescence score T1,COMP:0000005,Canopy senescence - %|timepoint 1,Canopy senescence - %|timepoint 1|COMP:0000005
+canopy senescence score T2,COMP:0000006,Canopy senescence - %|timepoint 2,Canopy senescence - %|timepoint 2|COMP:0000006
+canopy senescence score T3,COMP:0000007,Canopy senescence - %|timepoint 3,Canopy senescence - %|timepoint 3|COMP:0000007
+canopy senescence score T4,COMP:0000008,Canopy senescence - %|timepoint 4,Canopy senescence - %|timepoint 4|COMP:0000008
+canopy senescence score T5,COMP:0000009,Canopy senescence - %|timepoint 5,Canopy senescence - %|timepoint 5|COMP:0000009
+canopy senescence score T6,COMP:0000010,Canopy senescence - %|timepoint 6,Canopy senescence - %|timepoint 6|COMP:0000010
+canopy senescence score T7,COMP:0000011,Canopy senescence - %|timepoint 7,Canopy senescence - %|timepoint 7|COMP:0000011
+canopy temperature (flowering),CO_321:0501019,Canopy temperature - Anthesis - degrees C,Canopy temperature - Anthesis - degrees C|CO_321:0501019
+canopy temperature (grain fill),CO_321:0501020,Canopy temperature - Grain Fill - degrees C,Canopy temperature - Grain Fill - degrees C|CO_321:0501020
+canopy temperature depression (flowering),CO_321:0501021,Canopy temperature depression - Anthesis - degrees C,Canopy temperature depression - Anthesis - degrees C|CO_321:0501021
+canopy temperature depression (grain fill),CO_321:0501022,Canopy temperature depression - Grain Fill - degrees C,Canopy temperature depression - Grain Fill - degrees C|CO_321:0501022
+Cd,CO_321:0501064,Grain Cadmium content - ppm,Grain Cadmium content - ppm|CO_321:0501064
+chaff color,CO_321:0001168,Glume color - 1-3 GLMCOL scale,Glume color - 1-3 GLMCOL scale|CO_321:0001168
+Co,CO_321:0501066,Grain Cobalt content - ppm,Grain Cobalt content - ppm|CO_321:0501066
+common bunt,CO_321:0001100,Common bunt spike incidence - %,Common bunt spike incidence - %|CO_321:0001100
+common root rot resistance,CO_321:0001101,Common root rot incidence - 0-9 percentage scale,Common root rot incidence - 0-9 percentage scale|CO_321:0001101
+cookie diameter,CO_321:0501023,Cookie diameter - cm,Cookie diameter - cm|CO_321:0501023
+cookie diameter rating,CO_321:0501024,Cookie diameter rating - -1 to 1 standard deviations,Cookie diameter rating - -1 to 1 standard deviations|CO_321:0501024
+Cu,CO_321:0501067,Grain Copper content - ppm,Grain Copper content - ppm|CO_321:0501067
+days to flag leaf senescence,CO_321:0501053,Flag leaf senescence time - day,Flag leaf senescence time - day|CO_321:0501053
+days to heading,CO_321:0001235,Heading time - day,Heading time - day|CO_321:0001235
+days to heading (fall planting),CO_321:0001235,Heading time - day,Heading time - day|CO_321:0001235
+days to heading (spring planting),CO_321:0001235,Heading time - day,Heading time - day|CO_321:0001235
+DON level,CO_321:0001154,FHB DON content - ppm,FHB DON content - ppm|CO_321:0001154
+dwarf bunt,CO_321:0001121,Dwarf bunt incidence - %,Dwarf bunt incidence - %|CO_321:0001121
+Fe,CO_321:0001196,Grain Iron content - ppm,Grain Iron content - ppm|CO_321:0001196
+fertile spikelets per head,CO_321:0501027,Fertile spikelet number - spikelet/spike,Fertile spikelet number - spikelet/spike|CO_321:0501027
+FHB AUDPC,CO_321:0001153,FHB AUDPC - %,FHB AUDPC - %|CO_321:0001153
+FHB disease index,CO_321:0501030,FHB disease index - %,FHB disease index - %|CO_321:0501030
+FHB disease index T1,COMP:0000012,FHB disease index - %|timepoint 1,FHB disease index - %|timepoint 1|COMP:0000012
+FHB disease index T2,COMP:0000013,FHB disease index - %|timepoint 2,FHB disease index - %|timepoint 2|COMP:0000013
+FHB disease index T3,COMP:0000014,FHB disease index - %|timepoint 3,FHB disease index - %|timepoint 3|COMP:0000014
+FHB disease index T4,COMP:0000015,FHB disease index - %|timepoint 4,FHB disease index - %|timepoint 4|COMP:0000015
+FHB disease index T5,COMP:0000016,FHB disease index - %|timepoint 5,FHB disease index - %|timepoint 5|COMP:0000016
+FHB disease index T6,COMP:0000017,FHB disease index - %|timepoint 6,FHB disease index - %|timepoint 6|COMP:0000017
+FHB disease index T7,COMP:0000018,FHB disease index - %|timepoint 7,FHB disease index - %|timepoint 7|COMP:0000018
+FHB diseased florets,CO_321:0501040,FHB diseased florets - %,FHB diseased florets - %|CO_321:0501040
+FHB grain incidence,CO_321:0001155,FHB grain incidence - %,FHB grain incidence - %|CO_321:0001155
+FHB greenhouse severity,CO_321:0501029,FHB severity - Greenhouse - %,FHB severity - Greenhouse - %|CO_321:0501029
+FHB incidence,CO_321:0001149,FHB incidence - %,FHB incidence - %|CO_321:0001149
+FHB ISK index,CO_321:0501041,FHB ISK index - %,FHB ISK index - %|CO_321:0501041
+FHB rating,CO_321:0001148,FHB incidence - 0-9 percentage scale + text,FHB incidence - 0-9 percentage scale + text|CO_321:0001148
+FHB reaction type,CO_321:0501028,FHB plant response - 1-9 response scale,FHB plant response - 1-9 response scale|CO_321:0501028
+FHB severity,CO_321:0001440,FHB severity - %,FHB severity - %|CO_321:0001440
+flag leaf angle,CO_321:0501042,Flag leaf angle - 1-9 Leaf Angle Rating,Flag leaf angle - 1-9 Leaf Angle Rating|CO_321:0501042
+flag leaf angle T1,COMP:0000019,Flag leaf angle - 1-9 Leaf Angle Rating|timepoint 1,Flag leaf angle - 1-9 Leaf Angle Rating|timepoint 1|COMP:0000019
+flag leaf chlorophyll content,CO_321:0501044,Flag leaf chlorophyll content - spad,Flag leaf chlorophyll content - spad|CO_321:0501044
+flag leaf chlorophyll content T1,COMP:0000020,Flag leaf chlorophyll content - spad|timepoint 1,Flag leaf chlorophyll content - spad|timepoint 1|COMP:0000020
+flag leaf chlorophyll content T2,COMP:0000021,Flag leaf chlorophyll content - spad|timepoint 2,Flag leaf chlorophyll content - spad|timepoint 2|COMP:0000021
+flag leaf glaucousness,CO_321:0501047,Flag leaf glaucousness - 0-10 Glaucousness Rating,Flag leaf glaucousness - 0-10 Glaucousness Rating|CO_321:0501047
+flag leaf length,CO_321:0001645,Flag leaf lamina length - cm,Flag leaf lamina length - cm|CO_321:0001645
+flag leaf senescence score,CO_321:0501050,Flag leaf senescence score - 0-9 percentage scale,Flag leaf senescence score - 0-9 percentage scale|CO_321:0501050
+flag leaf senescence score T1,COMP:0000022,Flag leaf senescence score - 0-9 percentage scale|timepoint 1,Flag leaf senescence score - 0-9 percentage scale|timepoint 1|COMP:0000022
+flag leaf senescence score T2,COMP:0000023,Flag leaf senescence score - 0-9 percentage scale|timepoint 2,Flag leaf senescence score - 0-9 percentage scale|timepoint 2|COMP:0000023
+flag leaf stay-green period,CO_321:0501048,Flag leaf stay-green time - day,Flag leaf stay-green time - day|CO_321:0501048
+flag leaf width,CO_321:0501049,Flag leaf lamina width - cm,Flag leaf lamina width - cm|CO_321:0501049
+flour protein content,CO_321:0001136,Flour protein content - %,Flour protein content - %|CO_321:0001136
+flour yield rating,CO_321:0501054,Flour yield rating - -1 to 1 standard deviations,Flour yield rating - -1 to 1 standard deviations|CO_321:0501054
+flour yield score,CO_321:0001141,Flour yield score - %,Flour yield score - %|CO_321:0001141
+flowering date,CO_321:0501001,Anthesis time - Julian date (JD),Anthesis time - Julian date (JD)|CO_321:0501001
+flowering date (fall planting),CO_321:0001048,Anthesis time - Julian date (JD),Anthesis time - Julian date (JD)|CO_321:0001048
+forage ash,CO_321:0501055,Forage ash content - %,Forage ash content - %|CO_321:0501055
+forage fiber,CO_321:0501056,Forage fiber content - %,Forage fiber content - %|CO_321:0501056
+forage moisture,CO_321:0501058,Forage moisture content - %,Forage moisture content - %|CO_321:0501058
+forage NDF,CO_321:0501059,Forage NDF content - %,Forage NDF content - %|CO_321:0501059
+forage protein,CO_321:0501060,Forage protein content - %,Forage protein content - %|CO_321:0501060
+forage starch,CO_321:0501061,Forage starch content - %,Forage starch content - %|CO_321:0501061
+forage yield,CO_321:0501057,Forage dry matter - kg/ha,Forage dry matter - kg/ha|CO_321:0501057
+freeze injury,CO_321:0501062,Frost damage - 0-3 injury scale,Frost damage - 0-3 injury scale|CO_321:0501062
+glume pubescence,CO_321:0501072,Glume pubescence presence - 0-1 Absence/Presence,Glume pubescence presence - 0-1 Absence/Presence|CO_321:0501072
+grain fill duration,CO_321:0001189,Grain filling period - day,Grain filling period - day|CO_321:0001189
+Grain filling rate,CO_321:0501160,Grain filling rate - kg/ha/day,Grain filling rate - kg/ha/day|CO_321:0501160
+grain hardness,CO_321:0501068,Grain hardness - skcs index,Grain hardness - skcs index|CO_321:0501068
+grain number,CO_321:0501077,Grain number - grain,Grain number - grain|CO_321:0501077
+grain number (area),CO_321:0001199,Grain number - grain/m2,Grain number - grain/m2|CO_321:0001199
+grain number per spikelet,CO_321:0001201,Grain number per spikelet - grain/spikelet,Grain number per spikelet - grain/spikelet|CO_321:0001201
+grain weight,CO_321:0501085,Grain weight - g,Grain weight - g|CO_321:0501085
+grain weight per head,CO_321:0001647,Grain weight per spike - g,Grain weight per spike - g|CO_321:0001647
+grain width,CO_321:0001468,Grain width - mm,Grain width - mm|CO_321:0001468
+grain yield,CO_321:0001218,Grain yield - kg/ha,Grain yield - kg/ha|CO_321:0001218
+grain yield (main tillers),CO_321:0501088,Grain yield - main tillers - kg/ha,Grain yield - main tillers - kg/ha|CO_321:0501088
+growth habit,CO_321:0501081,Plant growth habit - 1-4 Growth Habit Rating,Plant growth habit - 1-4 Growth Habit Rating|CO_321:0501081
+harvest index,CO_321:0001231,Harvest index - index,Harvest index - index|CO_321:0001231
+head wax,CO_321:0501150,Spike glaucousness - 0-1 Absence/Presence,Spike glaucousness - 0-1 Absence/Presence|CO_321:0501150
+heading date,CO_321:0001233,Heading time - Julian date (JD),Heading time - Julian date (JD)|CO_321:0001233
+hessian fly damage (biotype B),CO_321:0501089,Hessian fly damage - B - 0-9 percentage scale,Hessian fly damage - B - 0-9 percentage scale|CO_321:0501089
+hessian fly damage (biotype C),CO_321:0501090,Hessian fly damage - C - 0-9 percentage scale,Hessian fly damage - C - 0-9 percentage scale|CO_321:0501090
+hessian fly damage (biotype D),CO_321:0501091,Hessian fly damage - D - 0-9 percentage scale,Hessian fly damage - D - 0-9 percentage scale|CO_321:0501091
+hessian fly damage (biotype L),CO_321:0501093,Hessian fly damage - L - 0-9 percentage scale,Hessian fly damage - L - 0-9 percentage scale|CO_321:0501093
+hessian fly damage (biotype O),CO_321:0501094,Hessian fly damage - O - 0-9 percentage scale,Hessian fly damage - O - 0-9 percentage scale|CO_321:0501094
+hessian fly damage,CO_321:0501092,Hessian fly damage - 1-9 response scale,Hessian fly damage - 1-9 response scale|CO_321:0501092
+K,CO_321:0501079,Grain Potassium content - ppm,Grain Potassium content - ppm|CO_321:0501079
+lactic acid SRC rating,CO_321:0501096,Lactic Acid SRC rating - -1 to 1 standard deviations,Lactic Acid SRC rating - -1 to 1 standard deviations|CO_321:0501096
+lactic acid SRC score,CO_321:0501097,Lactic Acid SRC score - %,Lactic Acid SRC score - %|CO_321:0501097
+leaf chlorophyll content,CO_321:0501025,Leaf chlorophyll content - spad,Leaf chlorophyll content - spad|CO_321:0501025
+leaf rust reaction type,CO_321:0501123,Leaf rust plant response - 0-9 Mc Neal scale,Leaf rust plant response - 0-9 Mc Neal scale|CO_321:0501123
+leaf rust reaction type seedling,CO_321:0501125,Leaf rust seedling response - 0-4 disease rating with qualifiers,Leaf rust seedling response - 0-4 disease rating with qualifiers|CO_321:0501125
+leaf rust reaction type seedling (CA1.2),CO_321:0501124,Leaf rust seedling response - CA1.2 - 0-9 Mc Neal scale,Leaf rust seedling response - CA1.2 - 0-9 Mc Neal scale|CO_321:0501124
+leaf rust reaction type seedling (Field Mix),CO_321:0501126,Leaf rust seedling response - Field Mix - 0-9 Mc Neal scale,Leaf rust seedling response - Field Mix - 0-9 Mc Neal scale|CO_321:0501126
+leaf rust reaction type seedling (Race 1),CO_321:0501127,Leaf rust seedling response - Race 1 - 0-9 Mc Neal scale,Leaf rust seedling response - Race 1 - 0-9 Mc Neal scale|CO_321:0501127
+leaf rust response,CO_321:0501122,Leaf rust plant response - 0-1 response,Leaf rust plant response - 0-1 response|CO_321:0501122
+leaf rust severity,CO_321:0001270,Leaf rust severity - %,Leaf rust severity - %|CO_321:0001270
+Li,CO_321:0501071,Grain Lithium content - ppm,Grain Lithium content - ppm|CO_321:0501071
+lodging degree,CO_321:0001282,Lodging incidence - 0-9 percentage scale,Lodging incidence - 0-9 percentage scale|CO_321:0001282
+lodging incidence,CO_321:0001280,Lodging incidence - %,Lodging incidence - %|CO_321:0001280
+lodging incidence Z50,CO_321:0501098,Lodging incidence - Z50 - %,Lodging incidence - Z50 - %|CO_321:0501098
+lodging incidence Z55,CO_321:0501099,Lodging incidence - Z55 - %,Lodging incidence - Z55 - %|CO_321:0501099
+lysine content,CO_321:0001457,Grain lysine content - %,Grain lysine content - %|CO_321:0001457
+maturity date (canopy),CO_321:0501100,Maturity time - canopy estimation - Julian date (JD),Maturity time - canopy estimation - Julian date (JD)|CO_321:0501100
+maturity date (physiological),CO_321:0001288,Maturity time - physiological - Julian date (JD),Maturity time - physiological - Julian date (JD)|CO_321:0001288
+maturity date (spikes),CO_321:0501101,Maturity time - spike estimation - Julian date (JD),Maturity time - spike estimation - Julian date (JD)|CO_321:0501101
+Mg,CO_321:0501074,Grain Magnesium content - ppm,Grain Magnesium content - ppm|CO_321:0501074
+micro test weight,CO_321:0501106,Micro Test Weight - g,Micro Test Weight - g|CO_321:0501106
+milling quality rating,CO_321:0501102,Milling quality rating - 1-6 Grade Rating,Milling quality rating - 1-6 Grade Rating|CO_321:0501102
+milling quality score,CO_321:0501103,Milling quality score - %,Milling quality score - %|CO_321:0501103
+mixograph peak time,CO_321:0001116,Dough Mixograph mixing time - min,Dough Mixograph mixing time - min|CO_321:0001116
+Mn,CO_321:0501075,Grain Manganese content - ppm,Grain Manganese content - ppm|CO_321:0501075
+Mo,CO_321:0501076,Grain Molybdenum content - ppm,Grain Molybdenum content - ppm|CO_321:0501076
+modified softness equivalent rating,CO_321:0501104,Modified softness equivalent rating - 1-6 Grade Rating,Modified softness equivalent rating - 1-6 Grade Rating|CO_321:0501104
+modified softness equivalent score,CO_321:0501105,Modified softness equivalent score - %,Modified softness equivalent score - %|CO_321:0501105
+Ni,CO_321:0501078,Grain Nickel content - ppm,Grain Nickel content - ppm|CO_321:0501078
+nivalenol level,CO_321:0501107,Nivalenol level - ppm,Nivalenol level - ppm|CO_321:0501107
+Normalized Difference Vegetation Index,CO_321:0001081,Canopy NDVI - index,Canopy NDVI - index|CO_321:0001081
+Normalized water index 3,CO_321:0001085,Canopy normalized water index 3 - index,Canopy normalized water index 3 - index|CO_321:0001085
+P,CO_321:0001203,Grain phosphorous content - ppm,Grain phosphorous content - ppm|CO_321:0001203
+Pb,CO_321:0501070,Grain lead content - ppm,Grain lead content - ppm|CO_321:0501070
+peduncle glaucousness,CO_321:0501108,Peduncle glaucousness - 0-4 Glaucousness Rating,Peduncle glaucousness - 0-4 Glaucousness Rating|CO_321:0501108
+peduncle length,CO_321:0001296,Peduncle length - cm,Peduncle length - cm|CO_321:0001296
+plant height,CO_321:0001301,Plant height - cm,Plant height - cm|CO_321:0001301
+plot grain yield,CO_321:0001221,Grain yield - g/plot,Grain yield - g/plot|CO_321:0001221
+plot shattering,CO_321:0001367,Spike shattering - %,Spike shattering - %|CO_321:0001367
+Polyphenol oxidase activity,CO_321:0501121,Polyphenol oxidase activity - 0-1 Absorbance Units,Polyphenol oxidase activity - 0-1 Absorbance Units|CO_321:0501121
+powdery mildew reaction type,CO_321:0501026,Powdery midlew plant response - 0-10 response scale,Powdery midlew plant response - 0-10 response scale|CO_321:0501026
+pseudo-black chaff,CO_321:0501003,Pseudo-black glume color - 0-1 Absence/Presence,Pseudo-black glume color - 0-1 Absence/Presence|CO_321:0501003
+rachis length,CO_321:0001458,Rachis length - mm,Rachis length - mm|CO_321:0001458
+S,CO_321:0501082,Grain Sulphur content - ppm,Grain Sulphur content - ppm|CO_321:0501082
+SDS sedimentation,CO_321:0001138,Flour SDS sedimentation - ml,Flour SDS sedimentation - ml|CO_321:0001138
+seed color,CO_321:0001183,Grain color - 1-3 GRNCOL scale,Grain color - 1-3 GRNCOL scale|CO_321:0001183
+seeds per head,CO_321:0001200,Grain number per spike - grain/spike,Grain number per spike - grain/spike|CO_321:0001200
+septoria leaf blotch severity,CO_321:0001445,Septoria blotch severity - %,Septoria blotch severity - %|CO_321:0001445
+single kernel weight,CO_321:0501084,Grain weight - single kernel - mg,Grain weight - single kernel - mg|CO_321:0501084
+softness equivalent rating,CO_321:0501141,Softness equivalent rating - -1 to 1 standard deviations,Softness equivalent rating - -1 to 1 standard deviations|CO_321:0501141
+softness equivalent score,CO_321:0501142,Softness equivalent score - %,Softness equivalent score - %|CO_321:0501142
+spike color,CO_321:0501147,Spike Color - 1-5 Color Rating,Spike Color - 1-5 Color Rating|CO_321:0501147
+Spike fertility,CO_321:0501161,Spike fertility - grain number/m2 : chaff weight/m2,Spike fertility - grain number/m2 : chaff weight/m2|CO_321:0501161
+Spike harvest index,CO_321:0501162,Spike harvest index - grain weight (10 spikes) : total spike dry weight,Spike harvest index - grain weight (10 spikes) : total spike dry weight|CO_321:0501162
+spike length,CO_321:0001364,Spike length - cm,Spike length - cm|CO_321:0001364
+spike number,CO_321:0001599,Spike number - spike/m2,Spike number - spike/m2|CO_321:0001599
+spike shattering,CO_321:0501143,Spike shattering - 0-9 percentage scale,Spike shattering - 0-9 percentage scale|CO_321:0501143
+spike weight,CO_321:0501148,Spike dry weight - g,Spike dry weight - g|CO_321:0501148
+spikelets per head,CO_321:0001369,Spikelet number - spikelet/spike,Spikelet number - spikelet/spike|CO_321:0001369
+spot blotch resistance,REMOVED,,
+spring stand,CO_321:0501120,Plant stand - 0-9 density scale,Plant stand - 0-9 density scale|CO_321:0501120
+sprouting tolerance,CO_321:0001376,Sprouting tolerance - 1-9 TOL scale,Sprouting tolerance - 1-9 TOL scale|CO_321:0001376
+stagonospora nodorum glume blotch severity,CO_321:0501146,Septoria nodorum glume blotch severity - 0-9 percentage scale,Septoria nodorum glume blotch severity - 0-9 percentage scale|CO_321:0501146
+stagonospora nodorum leaf blotch reaction type,CO_321:0501144,Septoria nodorum leaf blotch plant response - 0-9 percentage scale,Septoria nodorum leaf blotch plant response - 0-9 percentage scale|CO_321:0501144
+stagonospora nodorum leaf blotch severity,CO_321:0501145,Septoria nodorum leaf blotch severity - 0-9 percentage scale,Septoria nodorum leaf blotch severity - 0-9 percentage scale|CO_321:0501145
+stem diameter,CO_321:0501153,Stem diameter - 1-9 Thickness Rating,Stem diameter - 1-9 Thickness Rating|CO_321:0501153
+stem rust coefficient of infection,CO_321:0001379,Stem rust coefficient of infection - %,Stem rust coefficient of infection - %|CO_321:0001379
+stem rust coefficient of infection T1,COMP:0000024,Stem rust coefficient of infection - %|timepoint 1,Stem rust coefficient of infection - %|timepoint 1|COMP:0000024
+stem rust incidence,CO_321:0501109,Stem rust incidence - %,Stem rust incidence - %|CO_321:0501109
+stem rust infection response,CO_321:0501116,Stem rust plant response - 0-1 Rating,Stem rust plant response - 0-1 Rating|CO_321:0501116
+stem rust infection response T1,COMP:0000025,Stem rust plant response - 0-1 Rating|timepoint 1,Stem rust plant response - 0-1 Rating|timepoint 1|COMP:0000025
+stem rust infection type seedling BCCBC,CO_321:0501110,Stem rust seedling infection type - BCCBC - 0-9 Linearized Stakman Scale Rating,Stem rust seedling infection type - BCCBC - 0-9 Linearized Stakman Scale Rating|CO_321:0501110
+stem rust infection type seedling field bulk,CO_321:0501111,Stem rust seedling infection type - Field Bulk - 0-9 Linearized Stakman Scale Rating,Stem rust seedling infection type - Field Bulk - 0-9 Linearized Stakman Scale Rating|CO_321:0501111
+stem rust infection type seedling JRCQC,CO_321:0501112,Stem rust seedling infection type - JRCQC - 0-9 Linearized Stakman Scale Rating,Stem rust seedling infection type - JRCQC - 0-9 Linearized Stakman Scale Rating|CO_321:0501112
+stem rust infection type seedling TRTTF,CO_321:0501113,Stem rust seedling infection type - TRTTF - 0-9 Linearized Stakman Scale Rating,Stem rust seedling infection type - TRTTF - 0-9 Linearized Stakman Scale Rating|CO_321:0501113
+stem rust infection type seedling TTKSK,CO_321:0501114,Stem rust seedling infection type - TTKSK - 0-9 Linearized Stakman Scale Rating,Stem rust seedling infection type - TTKSK - 0-9 Linearized Stakman Scale Rating|CO_321:0501114
+stem rust infection type seedling TTTTF,CO_321:0501115,Stem rust seedling infection type - TTTTF - 0-9 Linearized Stakman Scale Rating,Stem rust seedling infection type - TTTTF - 0-9 Linearized Stakman Scale Rating|CO_321:0501115
+stem rust severity,CO_321:0001383,Stem rust severity - %,Stem rust severity - %|CO_321:0001383
+stem rust severity plot,CO_321:0501118,Stem rust severity - 0-9 percentage scale,Stem rust severity - 0-9 percentage scale|CO_321:0501118
+stem rust severity T1,COMP:0000026,Stem rust severity - %|timepoint 1,Stem rust severity - %|timepoint 1|COMP:0000026
+stem solidness,CO_321:0501154,Stem solidness - 5-25 5 Stem Solidness Rating,Stem solidness - 5-25 5 Stem Solidness Rating|CO_321:0501154
+sterile spikelets per head,CO_321:0001595,Infertile spike number - spikelet/spike,Infertile spike number - spikelet/spike|CO_321:0001595
+stripe rust reaction type,CO_321:0001394,Stripe rust plant response - 0-9 Mc Neal scale,Stripe rust plant response - 0-9 Mc Neal scale|CO_321:0001394
+stripe rust reaction type seedling,COMP:0000027,Stripe rust plant response - 0-9 Mc Neal scale|seedling,Stripe rust plant response - 0-9 Mc Neal scale|seedling|COMP:0000027
+stripe rust reaction type T1,COMP:0000028,Stripe rust plant response - 0-9 Mc Neal scale|timepoint 1,Stripe rust plant response - 0-9 Mc Neal scale|timepoint 1|COMP:0000028
+stripe rust reaction type T2,COMP:0000029,Stripe rust plant response - 0-9 Mc Neal scale|timepoint 2,Stripe rust plant response - 0-9 Mc Neal scale|timepoint 2|COMP:0000029
+stripe rust reaction type T3,COMP:0000030,Stripe rust plant response - 0-9 Mc Neal scale|timepoint 3,Stripe rust plant response - 0-9 Mc Neal scale|timepoint 3|COMP:0000030
+stripe rust reaction type T4,COMP:0000031,Stripe rust plant response - 0-9 Mc Neal scale|timepoint 4,Stripe rust plant response - 0-9 Mc Neal scale|timepoint 4|COMP:0000031
+stripe rust severity,CO_321:0001396,Stripe rust severity - %,Stripe rust severity - %|CO_321:0001396
+stripe rust severity seedling,COMP:0000032,Stripe rust severity - %|seedling,Stripe rust severity - %|seedling|COMP:0000032
+stripe rust severity T1,COMP:0000033,Stripe rust severity - %|timepoint 1,Stripe rust severity - %|timepoint 1|COMP:0000033
+stripe rust severity T2,COMP:0000034,Stripe rust severity - %|timepoint 2,Stripe rust severity - %|timepoint 2|COMP:0000034
+stripe rust severity T3,COMP:0000035,Stripe rust severity - %|timepoint 3,Stripe rust severity - %|timepoint 3|COMP:0000035
+stripe rust severity T4,COMP:0000036,Stripe rust severity - %|timepoint 4,Stripe rust severity - %|timepoint 4|COMP:0000036
+sucrose SRC rating,CO_321:0501151,Sucrose SRC rating - -1 to 1 standard deviations,Sucrose SRC rating - -1 to 1 standard deviations|CO_321:0501151
+sucrose SRC score,CO_321:0501152,Sucrose SRC score - %,Sucrose SRC score - %|CO_321:0501152
+test weight,CO_321:0001210,Grain test weight - g/l,Grain test weight - g/l|CO_321:0001210
+thousand kernel weight,CO_321:0001213,Grain weight - 1000 kernels - g/1000 grain,Grain weight - 1000 kernels - g/1000 grain|CO_321:0001213
+thousand kernel weight (main tillers),CO_321:0501086,"Grain weight - 1000 kernels, main tillers - g","Grain weight - 1000 kernels, main tillers - g|CO_321:0501086"
+vegetative protein at maturity,CO_321:0501155,Vegetative protein content at maturity - %,Vegetative protein content at maturity - %|CO_321:0501155
+visually scabby kernels,CO_321:0001155,FHB grain incidence - %,FHB grain incidence - %|CO_321:0001155
+waxiness,CO_321:0501069,Glaucousness - 1-9 Glaucousness Rating,Glaucousness - 1-9 Glaucousness Rating|CO_321:0501069
+waxiness (spikes),CO_321:0501149,Spike glaucousness - 1-9 Glaucousness Rating,Spike glaucousness - 1-9 Glaucousness Rating|CO_321:0501149
+whole grain ash,CO_321:0501080,Grain ash content - %,Grain ash content - %|CO_321:0501080
+whole grain protein,CO_321:0001205,Grain protein content - %,Grain protein content - %|CO_321:0001205
+whole grain starch,CO_321:0501163,Grain starch content - %,Grain starch content - %|CO_321:0501163
+winter kill damage,CO_321:0001425,Winter kill damage - %,Winter kill damage - %|CO_321:0001425
+WSBMV incidence,CO_321:0501139,Soil borne mosaic incidence - %,Soil borne mosaic incidence - %|CO_321:0501139
+WSBMV infection coefficient,CO_321:0501138,Soil borne mosaic infection coefficient - 0-5 Rating,Soil borne mosaic infection coefficient - 0-5 Rating|CO_321:0501138
+WSBMV reaction type,CO_321:0501140,Soil borne mosaic plant response - 0-9 Response Scale,Soil borne mosaic plant response - 0-9 Response Scale|CO_321:0501140
+Zn,CO_321:0001226,Grain Zinc content - ppm,Grain Zinc content - ppm|CO_321:0001226
