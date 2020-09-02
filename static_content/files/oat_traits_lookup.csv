@@ -1,0 +1,135 @@
+﻿old_trait_name,breedbase_id,breedbase_name,breedbase_column_header
+freeze damage severity,CO_350:0005001,Freeze damage severity - 0-9 Rating,Freeze damage severity - 0-9 Rating|CO_350:0005001
+storm damage severity,CO_350:0005002,Storm damage severity - 1-5 Rating,Storm damage severity - 1-5 Rating|CO_350:0005002
+winter stress severity,CO_350:0005003,Winter stress severity - 0-9 Rating,Winter stress severity - 0-9 Rating|CO_350:0005003
+winter survival,CO_350:0000170,Winter survival - percent,Winter survival - percent|CO_350:0000170
+agronomic score,CO_350:0000185,Agronomic score - 1-5 agronomic score scale,Agronomic score - 1-5 agronomic score scale|CO_350:0000185
+breakage incidence,CO_350:0000182,Breakage incidence - 1-10 breakage incidence scale,Breakage incidence - 1-10 breakage incidence scale|CO_350:0000182
+emergence,CO_350:0005004,Emergence - %,Emergence - %|CO_350:0005004
+forage rating,CO_350:0005005,Forage rating - 0-9 Rating,Forage rating - 0-9 Rating|CO_350:0005005
+grain yield,CO_350:0000260,Grain yield - g/m2,Grain yield - g/m2|CO_350:0000260
+groat content,CO_350:0000162,Groat content (machine dehulled) - percent,Groat content (machine dehulled) - percent|CO_350:0000162
+groat content hand,CO_350:0005006,Groat content (hand dehulled) - %,Groat content (hand dehulled) - %|CO_350:0005006
+heading date,CO_350:0000270,Heading date - Julian day,Heading date - Julian day|CO_350:0000270
+lodging incidence,CO_350:0000165,Lodging incidence - percent,Lodging incidence - percent|CO_350:0000165
+lodging severity,CO_350:0005007,Lodging severity - 0-9 Rating,Lodging severity - 0-9 Rating|CO_350:0005007
+maturity date,CO_350:0000271,Maturity date - Julian day,Maturity date - Julian day|CO_350:0000271
+phenotype score,CO_350:0005008,Phenotype score - 0-9 Rating,Phenotype score - 0-9 Rating|CO_350:0005008
+plant height,CO_350:0000232,Plant height - cm,Plant height - cm|CO_350:0000232
+relative canopy development,CO_350:0000212,Relative canopy development - 1-9 relative canopy development scale,Relative canopy development - 1-9 relative canopy development scale|CO_350:0000212
+silage yield 65% moisture,CO_350:0005009,Silage yield (65% moisture) - t/ac,Silage yield (65% moisture) - t/ac|CO_350:0005009
+silage yield dry matter,CO_350:0005010,Silage yield (dry matter) - t/ac,Silage yield (dry matter) - t/ac|CO_350:0005010
+snapback,CO_350:0000217,Snapback - 1-9 snapback scale,Snapback - 1-9 snapback scale|CO_350:0000217
+barley yellow dwarf virus incidence,CO_350:0000155,Barley yellow dwarf virus incidence - percent,Barley yellow dwarf virus incidence - percent|CO_350:0000155
+barley yellow dwarf virus severity plot,CO_350:0005011,Barley yellow dwarf virus severity - 0-9 Rating,Barley yellow dwarf virus severity - 0-9 Rating|CO_350:0005011
+bird damage severity,CO_350:0005012,Bird damage severity - 0-9 Rating,Bird damage severity - 0-9 Rating|CO_350:0005012
+cereal leaf beetle damage severity,CO_350:0005013,Cereal leaf beetle damage severity - 0-3 Rating,Cereal leaf beetle damage severity - 0-3 Rating|CO_350:0005013
+crown rust infection response,CO_350:0005014,Crown rust infection response - 0-1 Disease Infection Response Rating,Crown rust infection response - 0-1 Disease Infection Response Rating|CO_350:0005014
+crown rust infection type seedling BQBC,CO_350:0005015,Crown rust infection type - BQBC - 0-4 Murphy Infection Type Rating,Crown rust infection type - BQBC - 0-4 Murphy Infection Type Rating|CO_350:0005015
+crown rust infection type seedling BRBG-94,CO_350:0005016,Crown rust infection type - BRBG-94 - 0-4 Murphy Infection Type Rating,Crown rust infection type - BRBG-94 - 0-4 Murphy Infection Type Rating|CO_350:0005016
+crown rust infection type seedling composite/unknown,CO_350:0005017,Crown rust infection type - Composite/Unknown - 0-4 Murphy Infection Type Rating,Crown rust infection type - Composite/Unknown - 0-4 Murphy Infection Type Rating|CO_350:0005017
+crown rust infection type seedling DQBB,CO_350:0005018,Crown rust infection type - DQBB - 0-4 Murphy Infection Type Rating,Crown rust infection type - DQBB - 0-4 Murphy Infection Type Rating|CO_350:0005018
+crown rust infection type seedling DQBG,CO_350:0005019,Crown rust infection type - DQBG - 0-4 Murphy Infection Type Rating,Crown rust infection type - DQBG - 0-4 Murphy Infection Type Rating|CO_350:0005019
+crown rust infection type seedling DSGB,CO_350:0005020,Crown rust infection type - DSGB - 0-4 Murphy Infection Type Rating,Crown rust infection type - DSGB - 0-4 Murphy Infection Type Rating|CO_350:0005020
+crown rust infection type seedling LQCB-91,CO_350:0005021,Crown rust infection type - LQCB-91 - 0-4 Murphy Infection Type Rating,Crown rust infection type - LQCB-91 - 0-4 Murphy Infection Type Rating|CO_350:0005021
+crown rust infection type seedling LRBG,CO_350:0005022,Crown rust infection type - LRBG - 0-4 Murphy Infection Type Rating,Crown rust infection type - LRBG - 0-4 Murphy Infection Type Rating|CO_350:0005022
+crown rust infection type seedling MHBB,CO_350:0005023,Crown rust infection type - MHBB - 0-4 Murphy Infection Type Rating,Crown rust infection type - MHBB - 0-4 Murphy Infection Type Rating|CO_350:0005023
+crown rust infection type seedling NBFB,CO_350:0005024,Crown rust infection type - NBFB - 0-4 Murphy Infection Type Rating,Crown rust infection type - NBFB - 0-4 Murphy Infection Type Rating|CO_350:0005024
+crown rust infection type seedling NGCC-94,CO_350:0005025,Crown rust infection type - NGCC-94 - 0-4 Murphy Infection Type Rating,Crown rust infection type - NGCC-94 - 0-4 Murphy Infection Type Rating|CO_350:0005025
+crown rust infection type seedling NQBB,CO_350:0005026,Crown rust infection type - NQBB - 0-4 Murphy Infection Type Rating,Crown rust infection type - NQBB - 0-4 Murphy Infection Type Rating|CO_350:0005026
+crown rust infection type seedling NTGG,CO_350:0005027,Crown rust infection type - NTGG - 0-4 Murphy Infection Type Rating,Crown rust infection type - NTGG - 0-4 Murphy Infection Type Rating|CO_350:0005027
+crown rust infection type seedling SJGL,CO_350:0005028,Crown rust infection type - SJGL - 0-4 Murphy Infection Type Rating,Crown rust infection type - SJGL - 0-4 Murphy Infection Type Rating|CO_350:0005028
+crown rust severity,CO_350:0005029,Crown rust severity (flag leaf) - percent,Crown rust severity (flag leaf) - percent|CO_350:0005029
+crown rust severity plot,CO_350:0005030,Crown rust severity (plot) - 0-9 Rating,Crown rust severity (plot) - 0-9 Rating|CO_350:0005030
+crown rust severity whole plant,CO_350:0005031,Crown rust severity (whole plant) - 9-1 Rating,Crown rust severity (whole plant) - 9-1 Rating|CO_350:0005031
+downy mildew severity plot,CO_350:0005032,Downy mildew severity - 0-9 Rating,Downy mildew severity - 0-9 Rating|CO_350:0005032
+fusarium head blight incidence,CO_350:0005033,Fusarium head blight incidence - 0-4 Rating,Fusarium head blight incidence - 0-4 Rating|CO_350:0005033
+fusarium head blight incidence T1,COMP:0000002,Fusarium head blight incidence - 0-4 Rating|timepoint 1,Fusarium head blight incidence - 0-4 Rating|timepoint 1|COMP:0000002
+fusarium head blight incidence T2,COMP:0000003,Fusarium head blight incidence - 0-4 Rating|timepoint 2,Fusarium head blight incidence - 0-4 Rating|timepoint 2|COMP:0000003
+leaf blotch severity plot,CO_350:0000174,Leaf blotch severity - 0-9 disease severity scale,Leaf blotch severity - 0-9 disease severity scale|CO_350:0000174
+powdery mildew incidence,CO_350:0000166,Powdery mildew incidence - percent,Powdery mildew incidence - percent|CO_350:0000166
+root rot incidence,CO_350:0000167,Root rot incidence - percent,Root rot incidence - percent|CO_350:0000167
+smut incidence,CO_350:0000168,Smut incidence - percent,Smut incidence - percent|CO_350:0000168
+stagonospora symptom severity,CO_350:0005034,Stagonospora severity - 0-9 Rating,Stagonospora severity - 0-9 Rating|CO_350:0005034
+stem rust incidence,CO_350:0000169,Stem rust incidence - percent,Stem rust incidence - percent|CO_350:0000169
+stem rust infection response,CO_350:0005035,Stem rust infection response - 0-1 Disease Infection Response Rating,Stem rust infection response - 0-1 Disease Infection Response Rating|CO_350:0005035
+stem rust infection type seedling composite/unknown,CO_350:0005036,Stem rust infection type - Composite - 0-4 Murphy Infection Type Rating,Stem rust infection type - Composite - 0-4 Murphy Infection Type Rating|CO_350:0005036
+stem rust infection type seedling NA1,CO_350:0005037,Stem rust infection type - NA1 - 0-4 Murphy Infection Type Rating,Stem rust infection type - NA1 - 0-4 Murphy Infection Type Rating|CO_350:0005037
+stem rust infection type seedling NA16,CO_350:0005038,Stem rust infection type - NA16 - 0-4 Murphy Infection Type Rating,Stem rust infection type - NA16 - 0-4 Murphy Infection Type Rating|CO_350:0005038
+stem rust infection type seedling NA25,CO_350:0005039,Stem rust infection type - NA25 - 0-4 Murphy Infection Type Rating,Stem rust infection type - NA25 - 0-4 Murphy Infection Type Rating|CO_350:0005039
+stem rust infection type seedling NA27,CO_350:0005040,Stem rust infection type - NA27 - 0-4 Murphy Infection Type Rating,Stem rust infection type - NA27 - 0-4 Murphy Infection Type Rating|CO_350:0005040
+stem rust infection type seedling NA28,CO_350:0005041,Stem rust infection type - NA28 - 0-4 Murphy Infection Type Rating,Stem rust infection type - NA28 - 0-4 Murphy Infection Type Rating|CO_350:0005041
+stem rust infection type seedling NA29,CO_350:0005042,Stem rust infection type - NA29 - 0-4 Murphy Infection Type Rating,Stem rust infection type - NA29 - 0-4 Murphy Infection Type Rating|CO_350:0005042
+stem rust infection type seedling NA55,CO_350:0005043,Stem rust infection type - NA55 - 0-4 Murphy Infection Type Rating,Stem rust infection type - NA55 - 0-4 Murphy Infection Type Rating|CO_350:0005043
+stem rust infection type seedling NA67,CO_350:0005044,Stem rust infection type - NA67 - 0-4 Murphy Infection Type Rating,Stem rust infection type - NA67 - 0-4 Murphy Infection Type Rating|CO_350:0005044
+stem rust infection type seedling NA8,CO_350:0005045,Stem rust infection type - NA8 - 0-4 Murphy Infection Type Rating,Stem rust infection type - NA8 - 0-4 Murphy Infection Type Rating|CO_350:0005045
+stem rust severity,CO_350:0000627,Stem rust severity (plant) - percent,Stem rust severity (plant) - percent|CO_350:0000627
+stem rust severity plot,CO_350:0005046,Stem rust severity (plot) - 0-9 Rating,Stem rust severity (plot) - 0-9 Rating|CO_350:0005046
+GC-MS,CO_350:0005047,GC-MS - intensity,GC-MS - intensity|CO_350:0005047
+LC-MS,CO_350:0005048,LC-MS - intensity,LC-MS - intensity|CO_350:0005048
+grain width 5.0/64 plump,CO_350:0005049,Grain plumpness - 5.0/64 plump - %,Grain plumpness - 5.0/64 plump - %|CO_350:0005049
+grain width 5.0/64 thin,CO_350:0005050,Grain plumpness - 5.0/64 thin - %,Grain plumpness - 5.0/64 thin - %|CO_350:0005050
+grain width 5.5/64 plump,CO_350:0005051,Grain plumpness - 5.5/64 plump - %,Grain plumpness - 5.5/64 plump - %|CO_350:0005051
+groat color,CO_350:0000184,Groat color - 1-4 groat color scale,Groat color - 1-4 groat color scale|CO_350:0000184
+growth habit,CO_350:0005052,Growth habit - 0-9 Rating,Growth habit - 0-9 Rating|CO_350:0005052
+hull color,CO_350:0005053,Hull color - 1-10 grain color scale,Hull color - 1-10 grain color scale|CO_350:0005053
+kernels per spikelet,CO_350:0005054,Kernels per spikelet - kernels/spikelet,Kernels per spikelet - kernels/spikelet|CO_350:0005054
+leaf biomass,CO_350:0005055,Leaf biomass - 0-9 Rating,Leaf biomass - 0-9 Rating|CO_350:0005055
+panicle length,CO_350:0005056,Panicle length - cm,Panicle length - cm|CO_350:0005056
+spikelets per panicle,CO_350:0005057,Spikelets per panicle - spikelets/panicle,Spikelets per panicle - spikelets/panicle|CO_350:0005057
+test weight,CO_350:0000259,Test weight - g/L,Test weight - g/L|CO_350:0000259
+thousand kernel weight,CO_350:0000251,Thousand grain weight - g,Thousand grain weight - g|CO_350:0000251
+avenanthramide 2c,CO_350:0005058,Avenanthramide content - 2c - ug/g,Avenanthramide content - 2c - ug/g|CO_350:0005058
+avenanthramide 2f,CO_350:0005059,Avenanthramide content - 2f - ug/g,Avenanthramide content - 2f - ug/g|CO_350:0005059
+avenanthramide 2p,CO_350:0005060,Avenanthramide content - 2p - ug/g,Avenanthramide content - 2p - ug/g|CO_350:0005060
+avenanthramide 5p,CO_350:0005061,Avenanthramide content - 5p - ug/g,Avenanthramide content - 5p - ug/g|CO_350:0005061
+avenanthramide A UPLC,CO_350:0005062,Avenanthramide relative abundance - A - relative abundance,Avenanthramide relative abundance - A - relative abundance|CO_350:0005062
+avenanthramide B UPLC,CO_350:0005063,Avenanthramide relative abundance - B - relative abundance,Avenanthramide relative abundance - B - relative abundance|CO_350:0005063
+avenanthramide C UPLC,CO_350:0005064,Avenanthramide relative abundance - C - relative abundance,Avenanthramide relative abundance - C - relative abundance|CO_350:0005064
+avenanthramide total,CO_350:0000671,Avenanthramide content - ug/g,Avenanthramide content - ug/g|CO_350:0000671
+beta glucan dwb,CO_350:0000156,Beta-glucan content - dry weight basis - percent,Beta-glucan content - dry weight basis - percent|CO_350:0000156
+beta glucan NIR,CO_350:0005065,Beta-glucan content - NIRS - percent,Beta-glucan content - NIRS - percent|CO_350:0005065
+broken groats,CO_350:0000157,Broken groats - percent,Broken groats - percent|CO_350:0000157
+dehulling efficiency,CO_350:0005066,Dehulling efficiency - %,Dehulling efficiency - %|CO_350:0005066
+dietary fiber HMW ethanol-insoluble,CO_350:0005067,Dietary fiber content - HMW / Ethanol-insoluble - percent,Dietary fiber content - HMW / Ethanol-insoluble - percent|CO_350:0005067
+dietary fiber HMW ethanol-soluble,CO_350:0005068,Dietary fiber content - HMW / Ethanol-soluble - percent,Dietary fiber content - HMW / Ethanol-soluble - percent|CO_350:0005068
+dietary fiber HMW total,CO_350:0005069,Dietary fiber content - HMW - percent,Dietary fiber content - HMW - percent|CO_350:0005069
+dietary fiber LMW total,CO_350:0005070,Dietary fiber content - LMW - percent,Dietary fiber content - LMW - percent|CO_350:0005070
+dietary fiber total,CO_350:0000158,Dietary fiber content - total - percent,Dietary fiber content - total - percent|CO_350:0000158
+DON,CO_350:0000646,Deoxynivalenol concentration - ppm,Deoxynivalenol concentration - ppm|CO_350:0000646
+DON 3-acetyl,CO_350:0005071,3-acetyl-deoxynivalenol concentration - ppm,3-acetyl-deoxynivalenol concentration - ppm|CO_350:0005071
+fatty acid C14:0,CO_350:0005072,Fatty acid content - C14:0 - %,Fatty acid content - C14:0 - %|CO_350:0005072
+fatty acid C16:0,CO_350:0005073,Fatty acid content - C16:0 - %,Fatty acid content - C16:0 - %|CO_350:0005073
+fatty acid C16:1,CO_350:0005074,Fatty acid content - C16:1 - %,Fatty acid content - C16:1 - %|CO_350:0005074
+fatty acid C18:0,CO_350:0005075,Fatty acid content - C18:0 - %,Fatty acid content - C18:0 - %|CO_350:0005075
+fatty acid C18:1(9),CO_350:0005076,Fatty acid content - C18:1(9) - %,Fatty acid content - C18:1(9) - %|CO_350:0005076
+fatty acid C18:1*,CO_350:0005077,Fatty acid content - C18:1* - %,Fatty acid content - C18:1* - %|CO_350:0005077
+fatty acid C18:2,CO_350:0005078,Fatty acid content - C18:2 - %,Fatty acid content - C18:2 - %|CO_350:0005078
+fatty acid C18:3,CO_350:0005079,Fatty acid content - C18:3 - %,Fatty acid content - C18:3 - %|CO_350:0005079
+fatty acid C19:0,CO_350:0005080,Fatty acid content - C19:0 - %,Fatty acid content - C19:0 - %|CO_350:0005080
+fatty acid C20:0,CO_350:0005081,Fatty acid content - C20:0 - %,Fatty acid content - C20:0 - %|CO_350:0005081
+fatty acid C20:1,CO_350:0005082,Fatty acid content - C20:1 - %,Fatty acid content - C20:1 - %|CO_350:0005082
+grain moisture content,CO_350:0000536,Grain moisture content - percent,Grain moisture content - percent|CO_350:0000536
+grain protein content NIR,CO_350:0000161,Grain protein content - percent,Grain protein content - percent|CO_350:0000161
+groat flour falling number,CO_350:0005083,Groat flour falling number - seconds,Groat flour falling number - seconds|CO_350:0005083
+groat oil content,CO_350:0000163,Groat oil content - percent,Groat oil content - percent|CO_350:0000163
+groat protein content,CO_350:0000164,Groat protein content - percent,Groat protein content - percent|CO_350:0000164
+lipid NIR,CO_350:0000574,Lipid content - percent,Lipid content - percent|CO_350:0000574
+lutein,CO_350:0005084,Lutein content - %,Lutein content - %|CO_350:0005084
+phytoene,CO_350:0005085,Phytoene content - %,Phytoene content - %|CO_350:0005085
+phytofluene,CO_350:0005086,Phytofluene content - %,Phytofluene content - %|CO_350:0005086
+seed quality,CO_350:0005087,Seed quality - 1-7 seed quality scale,Seed quality - 1-7 seed quality scale|CO_350:0005087
+silage moisture content,CO_350:0005088,Silage moisture content - %,Silage moisture content - %|CO_350:0005088
+tocol total,CO_350:0005089,Total -tocopherol and -tocotrienol content - ug/g,Total -tocopherol and -tocotrienol content - ug/g|CO_350:0005089
+tocopherol alpha,CO_350:0005090,Alpha-tocopherol content - ug/g,Alpha-tocopherol content - ug/g|CO_350:0005090
+tocopherol beta,CO_350:0005091,Beta-tocopherol content - ug/g,Beta-tocopherol content - ug/g|CO_350:0005091
+tocopherol delta,CO_350:0005092,Delta-tocopherol content - ug/g,Delta-tocopherol content - ug/g|CO_350:0005092
+tocopherol gamma,CO_350:0005093,Gamma-tocopherol content - ug/g,Gamma-tocopherol content - ug/g|CO_350:0005093
+tocotrienol alpha,CO_350:0005094,Alpha-tocotrienol content - ug/g,Alpha-tocotrienol content - ug/g|CO_350:0005094
+tocotrienol beta,CO_350:0005095,Beta-tocotrienol content - ug/g,Beta-tocotrienol content - ug/g|CO_350:0005095
+tocotrienol delta,CO_350:0005096,Delta-tocotrienol content - ug/g,Delta-tocotrienol content - ug/g|CO_350:0005096
+tocotrienol gamma,CO_350:0005097,Gamma-tocotrienol content - ug/g,Gamma-tocotrienol content - ug/g|CO_350:0005097
+tunaxanthin,CO_350:0005098,Tunaxanthin content - %,Tunaxanthin content - %|CO_350:0005098
+undehulled seed,CO_350:0000258,Undehulled seed - g,Undehulled seed - g|CO_350:0000258
+violaxanthin,CO_350:0005099,Violaxanthin content - %,Violaxanthin content - %|CO_350:0005099
+zeaxanthin,CO_350:0005100,Zeaxanthin content - %,Zeaxanthin content - %|CO_350:0005100
