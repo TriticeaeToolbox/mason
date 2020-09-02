@@ -1,0 +1,179 @@
+﻿old_trait_name,breedbase_id,breedbase_name,breedbase_column_header
+50 seed weight,CO_323:0005501,50 grain weight - g,50 grain weight - g|CO_323:0005501
+Barley percentage,CO_323:0005502,Barley ground cover - %,Barley ground cover - %|CO_323:0005502
+Barely percentage T1,COMP:0000002,Barley ground cover - %|timepoint 1,Barley ground cover - %|timepoint 1|COMP:0000002
+Barely percentage T2,COMP:0000003,Barley ground cover - %|timepoint 2,Barley ground cover - %|timepoint 2|COMP:0000003
+Barely percentage T3,COMP:0000004,Barley ground cover - %|timepoint 3,Barley ground cover - %|timepoint 3|COMP:0000004
+Barely percentage T4,COMP:0000005,Barley ground cover - %|timepoint 4,Barley ground cover - %|timepoint 4|COMP:0000005
+Barely percentage T5,COMP:0000006,Barley ground cover - %|timepoint 5,Barley ground cover - %|timepoint 5|COMP:0000006
+CSR_NDVI,REMOVE,,
+Early Plant height,CO_323:0005503,Plant early height - cm,Plant early height - cm|CO_323:0005503
+Early vigor,CO_323:0000490,Plant early vigour - 1-9 Plant vigour scale,Plant early vigour - 1-9 Plant vigour scale|CO_323:0000490
+emergence,REMOVE,,
+flag leaf length,CO_323:0000323,Flag leaf length - cm,Flag leaf length - cm|CO_323:0000323
+flag leaf weight,CO_323:0005504,Flag leaf weight - mg,Flag leaf weight - mg|CO_323:0005504
+flag leaf width,CO_323:0000327,Flag leaf width - cm,Flag leaf width - cm|CO_323:0000327
+grain hardness,CO_323:0005505,Grain hardness SKCS - SKCS,Grain hardness SKCS - SKCS|CO_323:0005505
+grain weight,CO_323:0005506,Grain weight - mg,Grain weight - mg|CO_323:0005506
+grain yield,CO_323:0000390,Grain yield adjusted weight basis - kg/ha,Grain yield adjusted weight basis - kg/ha|CO_323:0000390
+harvest index,CO_323:0000407,Harvest index - %,Harvest index - %|CO_323:0000407
+head drop (0-9),CO_323:0005507,Head drop - 0-9 Head Drop Rating,Head drop - 0-9 Head Drop Rating|CO_323:0005507
+head shattering,CO_323:0005508,Head shattering - %,Head shattering - %|CO_323:0005508
+heading date,CO_323:0005509,Heading time - days,Heading time - days|CO_323:0005509
+heading date (Julian),CO_323:0005510,Heading time - Julian day,Heading time - Julian day|CO_323:0005510
+K,REMOVE,,
+kernel weight,CO_323:0005506,Grain weight - mg,Grain weight - mg|CO_323:0005506
+leaf rust severity,CO_323:0005511,Leaf Rust severity - %,Leaf Rust severity - %|CO_323:0005511
+leaf width,CO_323:0005512,Leaf width - cm,Leaf width - cm|CO_323:0005512
+lodging,CO_323:0005513,Lodging incidence - %,Lodging incidence - %|CO_323:0005513
+lodging degree,CO_323:0005514,Lodging degree - 0-9 lodging degree scale,Lodging degree - 0-9 lodging degree scale|CO_323:0005514
+maturity date (physiological),CO_323:0005515,Maturity time - Julian day,Maturity time - Julian day|CO_323:0005515
+Na,REMOVE,,
+Na/K,REMOVE,,
+non-productive tillers per plant,CO_323:0005516,Non-bearing tiller number per plant - tiller/plant,Non-bearing tiller number per plant - tiller/plant|CO_323:0005516
+Open ground percentage,CO_323:0005517,Open ground cover - %,Open ground cover - %|CO_323:0005517
+Open ground percentage T1,COMP:0000007,Open ground cover - %|timepoint 1,Open ground cover - %|timepoint 1|COMP:0000007
+Open ground percentage T2,COMP:0000008,Open ground cover - %|timepoint 2,Open ground cover - %|timepoint 2|COMP:0000008
+Open ground percentage T3,COMP:0000009,Open ground cover - %|timepoint 3,Open ground cover - %|timepoint 3|COMP:0000009
+Open ground percentage T4,COMP:0000010,Open ground cover - %|timepoint 4,Open ground cover - %|timepoint 4|COMP:0000010
+Open ground percentage T5,COMP:0000011,Open ground cover - %|timepoint 5,Open ground cover - %|timepoint 5|COMP:0000011
+plant dry weight,REMOVE,,
+plant height,CO_323:0000494,Plant height - cm,Plant height - cm|CO_323:0000494
+productive tillers per plant,CO_323:0005518,Effective tiller number - tiller/plant,Effective tiller number - tiller/plant|CO_323:0005518
+Seedling count,CO_323:0005519,Seedling count - count,Seedling count - count|CO_323:0005519
+spikes per area,CO_323:0000538,Spike number - spike/m2,Spike number - spike/m2|CO_323:0000538
+straw breakage,CO_323:0005520,Straw breakage - %,Straw breakage - %|CO_323:0005520
+test weight,CO_323:0005521,Grain test weight - g/L,Grain test weight - g/L|CO_323:0005521
+tillers per plant,CO_323:0005522,Tiller number - tiller/plant,Tiller number - tiller/plant|CO_323:0005522
+tillers per plant T1,COMP:0000017,Tiller number - tiller/plant|timepoint 1,Tiller number - tiller/plant|timepoint 1|COMP:0000017
+tillers per plant T2,COMP:0000018,Tiller number - tiller/plant|timepoint 2,Tiller number - tiller/plant|timepoint 2|COMP:0000018
+tillers per plant T3,COMP:0000019,Tiller number - tiller/plant|timepoint 3,Tiller number - tiller/plant|timepoint 3|COMP:0000019
+tillers per plant T4,COMP:0000020,Tiller number - tiller/plant|timepoint 4,Tiller number - tiller/plant|timepoint 4|COMP:0000020
+tillers per plant T5,COMP:0000021,Tiller number - tiller/plant|timepoint 5,Tiller number - tiller/plant|timepoint 5|COMP:0000021
+tillers per plant T6,COMP:0000022,Tiller number - tiller/plant|timepoint 6,Tiller number - tiller/plant|timepoint 6|COMP:0000022
+tillers per plant T7,COMP:0000023,Tiller number - tiller/plant|timepoint 7,Tiller number - tiller/plant|timepoint 7|COMP:0000023
+tillers per plant Max,CO_323:0005523,Max tiller number - tiller/plant,Max tiller number - tiller/plant|CO_323:0005523
+Weed percentage,CO_323:0005524,Weed ground cover - %,Weed ground cover - %|CO_323:0005524
+Weed percentage T1,COMP:0000012,Weed ground cover - %|timepoint 1,Weed ground cover - %|timepoint 1|COMP:0000012
+Weed percentage T2,COMP:0000013,Weed ground cover - %|timepoint 2,Weed ground cover - %|timepoint 2|COMP:0000013
+Weed percentage T3,COMP:0000014,Weed ground cover - %|timepoint 3,Weed ground cover - %|timepoint 3|COMP:0000014
+Weed percentage T4,COMP:0000015,Weed ground cover - %|timepoint 4,Weed ground cover - %|timepoint 4|COMP:0000015
+Weed percentage T5,COMP:0000016,Weed ground cover - %|timepoint 5,Weed ground cover - %|timepoint 5|COMP:0000016
+African stem rust severity,REMOVE,,
+BYDV rating (0-8),CO_323:0005525,BYDV 0-8 susceptibility rating - 0-8 BYDV Disease Rating,BYDV 0-8 susceptibility rating - 0-8 BYDV Disease Rating|CO_323:0005525
+BYDV rating (0-9),CO_323:0005526,BYDV 0-9 susceptibility rating - 0-9 BYDV Disease Rating,BYDV 0-9 susceptibility rating - 0-9 BYDV Disease Rating|CO_323:0005526
+CRR Severity,CO_323:0005527,Common Root Rot severity - %,Common Root Rot severity - %|CO_323:0005527
+DON,CO_323:0000344,Grain Deoxynivalenol content - ppm,Grain Deoxynivalenol content - ppm|CO_323:0000344
+FHB Incidence,CO_323:0005528,Fusarium Head Blight incidence - %,Fusarium Head Blight incidence - %|CO_323:0005528
+FHB reaction type (0-5),CO_323:0005529,Fusarium Head Blight reaction type - 0-5 FHB Reaction Type Rating,Fusarium Head Blight reaction type - 0-5 FHB Reaction Type Rating|CO_323:0005529
+FHB reaction type (0-9),CO_323:0005530,Fusarium Head Blight reaction type - 0-9 FHB Reaction Type Rating,Fusarium Head Blight reaction type - 0-9 FHB Reaction Type Rating|CO_323:0005530
+FHB Severity,CO_323:0005531,Fusarium Head Blight severity - %,Fusarium Head Blight severity - %|CO_323:0005531
+leaf rust (0-9),CO_323:0005532,Leaf Rust susceptibility - 0-9 LR Disease Rating,Leaf Rust susceptibility - 0-9 LR Disease Rating|CO_323:0005532
+leaf rust (LR30) (0-4),CO_323:0005533,Leaf Rust (LR30) susceptibility - 0-4 LR Disease Rating,Leaf Rust (LR30) susceptibility - 0-4 LR Disease Rating|CO_323:0005533
+leaf rust (LR8) (0-4),CO_323:0005534,Leaf Rust (LR8) susceptibility - 0-4 LR Disease Rating,Leaf Rust (LR8) susceptibility - 0-4 LR Disease Rating|CO_323:0005534
+leaf rust seedling,CO_323:0005535,Leaf Rust (seedling) susceptibility - 0-4 LR Disease Rating,Leaf Rust (seedling) susceptibility - 0-4 LR Disease Rating|CO_323:0005535
+net blotch (1-10),CO_323:0005536,Net Blotch susceptibility - 1-10 Tekauz Scale,Net Blotch susceptibility - 1-10 Tekauz Scale|CO_323:0005536
+net blotch net form reaction type (0-9),CO_323:0005537,Net blotch (net form) reaction type - 0-9 NB Reaction Type Rating,Net blotch (net form) reaction type - 0-9 NB Reaction Type Rating|CO_323:0005537
+powdery mildew (0-4),CO_323:0005538,Powdery Mildew susceptibility - 0-4 PM Disease Rating,Powdery Mildew susceptibility - 0-4 PM Disease Rating|CO_323:0005538
+powdery mildew (0-9),CO_323:0005539,Powdery Mildew susceptibility - 0-9 PM Disease Rating,Powdery Mildew susceptibility - 0-9 PM Disease Rating|CO_323:0005539
+scald (0-8),CO_323:0005540,Leaf Scald susceptibility - 0-8 Scald Disease Rating,Leaf Scald susceptibility - 0-8 Scald Disease Rating|CO_323:0005540
+scald reaction type (0-9),CO_323:0005541,Leaf Scald reaction type - 0-9 Scald Reaction Type Rating,Leaf Scald reaction type - 0-9 Scald Reaction Type Rating|CO_323:0005541
+scald severity,CO_323:0005542,Leaf Scald severity - %,Leaf Scald severity - %|CO_323:0005542
+Septoria seedling infection response (0-5),CO_323:0005543,Septoria (seedling) infection response - 0-5 Septoria Infection Response Rating,Septoria (seedling) infection response - 0-5 Septoria Infection Response Rating|CO_323:0005543
+Septoria speckled leaf blotch (0-9),CO_323:0005544,Septoria susceptibility - 0-9 Septoria Disease Rating,Septoria susceptibility - 0-9 Septoria Disease Rating|CO_323:0005544
+spot blotch infection coefficient,CO_323:0005545,Spot Blotch infection coefficient - %,Spot Blotch infection coefficient - %|CO_323:0005545
+spot blotch reaction type (0-9),CO_323:0005546,Spot Blotch reaction type - 0-9 SB Reaction Type Rating,Spot Blotch reaction type - 0-9 SB Reaction Type Rating|CO_323:0005546
+spot blotch reaction type (1-9),CO_323:0005547,Spot Blotch reaction type - 1-9 SB Reaction Type Rating,Spot Blotch reaction type - 1-9 SB Reaction Type Rating|CO_323:0005547
+spot blotch seedling infection response (1-9),CO_323:0005548,Spot Blotch (seedling) infection response - 1-9 SB Infection Response Rating,Spot Blotch (seedling) infection response - 1-9 SB Infection Response Rating|CO_323:0005548
+spot blotch severity,CO_323:0005549,Spot Blotch severity - %,Spot Blotch severity - %|CO_323:0005549
+spot form net blotch (1-5),CO_323:0005550,Net blotch (spot form) reaction type - 1-5 SFNB Reaction Type Rating,Net blotch (spot form) reaction type - 1-5 SFNB Reaction Type Rating|CO_323:0005550
+stem rust (MCCFC) reaction type,CO_323:0005551,Stem Rust (MCCFC) reaction type - 0-4 Stem Rust Reaction Type Rating,Stem Rust (MCCFC) reaction type - 0-4 Stem Rust Reaction Type Rating|CO_323:0005551
+stem rust (MCCFC) severity,CO_323:0005552,Stem Rust (MCCFC) severity - %,Stem Rust (MCCFC) severity - %|CO_323:0005552
+stem rust (TTKSK) coded reaction type score,REMOVE,,
+stem rust (TTKSK) reaction type,CO_323:0005553,Stem Rust (TTKSK) reaction type - 0-4 Stem Rust Reaction Type Rating,Stem Rust (TTKSK) reaction type - 0-4 Stem Rust Reaction Type Rating|CO_323:0005553
+stem rust seedling reaction type,CO_323:0005554,Stem Rust (seedling) reaction type - 0-4 Stem Rust Reaction Type Rating,Stem Rust (seedling) reaction type - 0-4 Stem Rust Reaction Type Rating|CO_323:0005554
+stem rust severity,CO_323:0005555,Stem Rust severity - %,Stem Rust severity - %|CO_323:0005555
+stripe rust infection type (0-9),CO_323:0005556,Stripe Rust infection type - 0-9 Stripe Rust Infection Type Rating,Stripe Rust infection type - 0-9 Stripe Rust Infection Type Rating|CO_323:0005556
+stripe rust severity,CO_323:0005557,Stripe Rust severity - %,Stripe Rust severity - %|CO_323:0005557
+Xanthomonas translucens subsp. translucens (0-9),CO_323:0005558,Bacterial Leaf Streak susceptibility - 0-9 BLS Disease Rating,Bacterial Leaf Streak susceptibility - 0-9 BLS Disease Rating|CO_323:0005558
+alpha amylase,CO_323:0005559,Alpha Amylase activity - Dextrinizing units,Alpha Amylase activity - Dextrinizing units|CO_323:0005559
+alpha amylase (megazyme),CO_323:0005560,Alpha Amylase activity - megazyme - U/g malt,Alpha Amylase activity - megazyme - U/g malt|CO_323:0005560
+alpha glucosidase,CO_323:0005561,Alpha Glucosidase activity - megazyme - U/kg malt,Alpha Glucosidase activity - megazyme - U/kg malt|CO_323:0005561
+barley color,CO_323:0005562,Grain colour - ASBC Color Rating,Grain colour - ASBC Color Rating|CO_323:0005562
+beta amylase,CO_323:0005563,Beta Amylase activity - megazyme - U/g malt,Beta Amylase activity - megazyme - U/g malt|CO_323:0005563
+beta glucan,CO_323:0000338,Grain Beta Glucan content - %,Grain Beta Glucan content - %|CO_323:0000338
+beta-glucanase activity,CO_323:0005564,Beta Glucanse activity - megazyme - U/kg malt,Beta Glucanse activity - megazyme - U/kg malt|CO_323:0005564
+beta-glucanase thermostability,CO_323:0005565,Beta Glucanase thermostability - U/kg malt,Beta Glucanase thermostability - U/kg malt|CO_323:0005565
+breeders grain protein,CO_323:0005566,Grain Protein content - breeders - %,Grain Protein content - breeders - %|CO_323:0005566
+breeders plump grain,CO_323:0005567,Grain plumpness fraction - 2.4mm - %,Grain plumpness fraction - 2.4mm - %|CO_323:0005567
+diastatic power,CO_323:0000456,Malt diastatic power - degree Linter,Malt diastatic power - degree Linter|CO_323:0000456
+fermentable sugars in the original extract,REMOVE,,
+free amino nitrogen,CO_323:0000581,Wort FAN content - ppm,Wort FAN content - ppm|CO_323:0000581
+friability,CO_323:0000458,Malt friability - %,Malt friability - %|CO_323:0000458
+glassy kernels after malting,CO_323:0005568,Glassy kernels after malting - %,Glassy kernels after malting - %|CO_323:0005568
+grain protein,CO_323:0000381,Grain Protein content - %,Grain Protein content - %|CO_323:0000381
+hot water malt extract,CO_323:0000460,Malt hot water extract - %,Malt hot water extract - %|CO_323:0000460
+limit dextrinase,CO_323:0005569,Limit dextrinase activity - megazyme - U/kg malt,Limit dextrinase activity - megazyme - U/kg malt|CO_323:0005569
+lipoxygenase activity,CO_323:0005570,Lipoxygenase activity - megazyme - U/kg malt,Lipoxygenase activity - megazyme - U/kg malt|CO_323:0005570
+malt beta-glucan,CO_323:0005571,Malt Beta Glucan content - ppm,Malt Beta Glucan content - ppm|CO_323:0005571
+malt extract,CO_323:0005572,Malt extract - %,Malt extract - %|CO_323:0005572
+malt protein,CO_323:0005573,Malt protein content - %,Malt protein content - %|CO_323:0005573
+non-dormant %,CO_323:0005574,Non-dormant percentage - %,Non-dormant percentage - %|CO_323:0005574
+partly unmodified grains after malting,CO_323:0005575,Partly unmodified grains after malting - %,Partly unmodified grains after malting - %|CO_323:0005575
+plump grain,CO_323:0005576,Plump grains - %,Plump grains - %|CO_323:0005576
+real degree of fermentation,CO_323:0005577,Real degree of fermentation - %,Real degree of fermentation - %|CO_323:0005577
+residual beta-glucanase,CO_323:0005578,Residual Beta Glucanase activity - %,Residual Beta Glucanase activity - %|CO_323:0005578
+soluble protein/ total protein,CO_323:0005579,Soluble Protein content - %,Soluble Protein content - %|CO_323:0005579
+thermostable alpha amylase,CO_323:0005580,Thermostable Alpha Amylase activity - %,Thermostable Alpha Amylase activity - %|CO_323:0005580
+thermostable alpha glucosidase,CO_323:0005581,Thermostable Alpha Glucosidase activity - %,Thermostable Alpha Glucosidase activity - %|CO_323:0005581
+thermostable beta amylase,CO_323:0005582,Thermostable Beta Amylase activity - %,Thermostable Beta Amylase activity - %|CO_323:0005582
+thermostable limit dextrinase,CO_323:0005583,Thermostable Limit Dextrinase activity - %,Thermostable Limit Dextrinase activity - %|CO_323:0005583
+thin grains,CO_323:0005584,Thin grains - %,Thin grains - %|CO_323:0005584
+total fermentable sugars,CO_323:0005585,Wort Fermentable Sugar content - g/100L,Wort Fermentable Sugar content - g/100L|CO_323:0005585
+wort clarity,CO_323:0005586,Wort clarity - 1-3 Wort Clarity Rating,Wort clarity - 1-3 Wort Clarity Rating|CO_323:0005586
+wort color,CO_323:0005587,Wort color - ASBC Color Rating,Wort color - ASBC Color Rating|CO_323:0005587
+wort fructose,CO_323:0005588,Wort Fructose content - g/100L,Wort Fructose content - g/100L|CO_323:0005588
+wort glucose,CO_323:0005589,Wort Glucose content - g/100L,Wort Glucose content - g/100L|CO_323:0005589
+wort maltose,CO_323:0005590,Wort Maltose content - g/100L,Wort Maltose content - g/100L|CO_323:0005590
+wort maltotriose,CO_323:0005591,Wort Maltotriose content - g/100L,Wort Maltotriose content - g/100L|CO_323:0005591
+wort protein,CO_323:0005592,Wort Protein content - %,Wort Protein content - %|CO_323:0005592
+wort viscosity,CO_323:0005593,Wort viscosity - cP,Wort viscosity - cP|CO_323:0005593
+awn type,CO_323:0005594,Awn type - 1-8 Awn Type Scale,Awn type - 1-8 Awn Type Scale|CO_323:0005594
+glossy sheath,CO_323:0005595,Glossy sheath presence - Absent-Present scale,Glossy sheath presence - Absent-Present scale|CO_323:0005595
+glossy spike,CO_323:0005596,Glossy spike presence - Absent-Present scale,Glossy spike presence - Absent-Present scale|CO_323:0005596
+grain width,CO_323:0005597,Grain width - mm,Grain width - mm|CO_323:0005597
+kernels per spike,CO_323:0000369,Grain number per spike - grain,Grain number per spike - grain|CO_323:0000369
+lemma and palea color,CO_323:0005598, Lemma colour - 0-1 Lemma color scale, Lemma colour - 0-1 Lemma color scale|CO_323:0005598
+spike angle,CO_323:0000523,Spike attitude - 1-3 Attitude scale,Spike attitude - 1-3 Attitude scale|CO_323:0000523
+spike density,CO_323:0005599,Spike density - average internode length - mm,Spike density - average internode length - mm|CO_323:0005599
+Spike Density 2,CO_323:0005600,Spike density - nodes/cm rachis,Spike density - nodes/cm rachis|CO_323:0005600
+spike exsertion,CO_323:0005601,Spike exsertion - mm,Spike exsertion - mm|CO_323:0005601
+spike length,CO_323:0005602,Spike length - mm,Spike length - mm|CO_323:0005602
+stem diameter,CO_323:0005603,Stem diameter - mm,Stem diameter - mm|CO_323:0005603
+stem length,CO_323:0005604,Stem length - cm,Stem length - cm|CO_323:0005604
+Threshability,CO_323:0005605,Threshability - 0-4 Threshability Rating,Threshability - 0-4 Threshability Rating|CO_323:0005605
+alpha-tocopherol,CO_323:0005606,Alpha-Tocopherol content - ug/g,Alpha-Tocopherol content - ug/g|CO_323:0005606
+alpha-tocotrienol,CO_323:0005607,Alpha-Tocotrienol content - ug/g,Alpha-Tocotrienol content - ug/g|CO_323:0005607
+amylose content,CO_323:0005608,Amylose content - %,Amylose content - %|CO_323:0005608
+beta-tocopherol,CO_323:0005609,Beta-Tocopherol content - ug/g,Beta-Tocopherol content - ug/g|CO_323:0005609
+beta-tocotrienol,CO_323:0005610,Beta-Tocotrienol content - ug/g,Beta-Tocotrienol content - ug/g|CO_323:0005610
+delta-tocopherol,CO_323:0005611,Beta-Tocotrienol content - ug/g,Beta-Tocotrienol content - ug/g|CO_323:0005611
+delta-tocotrienol,CO_323:0005612,Beta-Tocotrienol content - ug/g,Beta-Tocotrienol content - ug/g|CO_323:0005612
+dry matter digestibility,REMOVE,,
+Fe,CO_323:0005613,Grain Iron content - ppm,Grain Iron content - ppm|CO_323:0005613
+gamma-tocopherol,CO_323:0005614,Gamma-Tocopherol content - ug/g,Gamma-Tocopherol content - ug/g|CO_323:0005614
+gamma-tocopherol + beta-tocotrienol,CO_323:0005615,Gamma-Tocopherol and Beta-Tocotrienol content - ug/g,Gamma-Tocopherol and Beta-Tocotrienol content - ug/g|CO_323:0005615
+gamma-tocotrienol,CO_323:0005616,Gamma-Tocotrienol content - ug/g,Gamma-Tocotrienol content - ug/g|CO_323:0005616
+hull proportion,CO_323:0005617,Hull proportion - %,Hull proportion - %|CO_323:0005617
+phenolic compound content,CO_323:0005618,Phenolic Compound content - dry weight basis - %,Phenolic Compound content - dry weight basis - %|CO_323:0005618
+polyphenol oxidase activity,CO_323:0005619,Polyphenol Oxidase activity - dry weight basis - Absorbance,Polyphenol Oxidase activity - dry weight basis - Absorbance|CO_323:0005619
+Solvent Retention Capacity (water),REMOVE,,
+Stirring number,REMOVE,,
+total tocol,CO_323:0005620,Total tocol content - ug/g,Total tocol content - ug/g|CO_323:0005620
+total tocopherol,CO_323:0005621,Total Tocopherol content - ug/g,Total Tocopherol content - ug/g|CO_323:0005621
+total tocotrienol,CO_323:0005622,Total Tocotrienol content - ug/g,Total Tocotrienol content - ug/g|CO_323:0005622
+Zn,CO_323:0005623,Grain Zinc content - ppm,Grain Zinc content - ppm|CO_323:0005623
+fall planting heading date,CO_323:0005509,Heading time - days,Heading time - days|CO_323:0005509
+spring planting heading date,CO_323:0005509,Heading time - days,Heading time - days|CO_323:0005509
+vernalization score,CO_323:0005624,Vernalization score - day,Vernalization score - day|CO_323:0005624
+winter hardiness,CO_323:0005625,Winter hardiness - %,Winter hardiness - %|CO_323:0005625
