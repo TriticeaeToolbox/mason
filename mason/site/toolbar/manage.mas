@@ -16,7 +16,8 @@
     
     <li role="separator" class="divider"></li>
     
-    <li><a href="/breeders/download">Download</a></li>
+    <li><a href="/breeders/download">Download using Lists</a></li>
+    <li><a href="/downloads/download-vcf.pl">Download VCF</a></li>
     <li><a href="/breeders/upload">Upload</a></li>
     <li><a href="/barcode">Barcodes</a></li>
     
