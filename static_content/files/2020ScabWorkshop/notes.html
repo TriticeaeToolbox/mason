@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        T3/Breedbase Workshop - CodiMD
+    </title>
+    <link rel="icon" type="image/png" href="https://notes.triticeaetoolbox.org/favicon.png">
+    <link rel="apple-touch-icon" href="https://notes.triticeaetoolbox.org/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/css/bootstrap.min.css" integrity="sha256-H0KfTigpUV+0/5tn2HXC0CPwhhDhWgSawJdnFd0CGCo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.1.3/css/fork-awesome.min.css" integrity="sha256-ZhApazu+kejqTYhMF+1DzNKjIzP7KXu6AzyXcC1gMus=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,300italic,300|Source+Serif+Pro|Source+Code+Pro:400,300,500&subset=latin,latin-ext);.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{padding:0 1em;color:#777;border-left:.25em solid #ddd}.night .markdown-body blockquote{color:#bcbcbc}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.night .markdown-body h1,.night .markdown-body h2,.night .markdown-body h3,.night .markdown-body h4,.night .markdown-body h5,.night .markdown-body h6{color:#ddd}.markdown-body h1 .fa-link,.markdown-body h2 .fa-link,.markdown-body h3 .fa-link,.markdown-body h4 .fa-link,.markdown-body h5 .fa-link,.markdown-body h6 .fa-link{color:#000;vertical-align:middle;visibility:hidden;font-size:16px}.night .markdown-body h1 .fa-link,.night .markdown-body h2 .fa-link,.night .markdown-body h3 .fa-link,.night .markdown-body h4 .fa-link,.night .markdown-body h5 .fa-link,.night .markdown-body h6 .fa-link{color:#fff}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .fa-link,.markdown-body h2:hover .anchor .fa-link,.markdown-body h3:hover .anchor .fa-link,.markdown-body h4:hover .anchor .fa-link,.markdown-body h5:hover .anchor .fa-link,.markdown-body h6:hover .anchor .fa-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.night .markdown-body table tr{background-color:#5f5f5f}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.night .markdown-body table tr:nth-child(2n){background-color:#4f4f4f}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:.2em 0;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.night .markdown-body code,.night .markdown-body tt{color:#eee;background-color:hsla(0,0%,90.2%,.36)}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\A0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.markdown-body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid;border-color:#ccc #ccc #bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body pre{border:inherit!important}.night .markdown-body pre{filter:invert(100%)}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-webkit-inline-flex;display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.night .markdown-body .gist table tr:nth-child(2n){background-color:#ddd}.markdown-body code[data-gist-id]{background:none;padding:0;filter:invert(100%)}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.geo,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.night .markdown-body pre.graphviz .graph>polygon{fill:#333}.night .markdown-body pre.mermaid .sectionTitle,.night .markdown-body pre.mermaid .titleText,.night .markdown-body pre.mermaid text{fill:#fff}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{max-width:100%;height:100%}.night .markdown-body .abc path{fill:#eee}.night .markdown-body .abc path.note_selected{fill:##4DD0E1}.night tspan{fill:#fefefe}.night pre rect{fill:transparent}.night pre.flow-chart path,.night pre.flow-chart rect{stroke:#fff}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body img{background-color:transparent}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;-webkit-transition:opacity .2s;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;-webkit-transition:opacity .2s;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.geo-map{width:100%;height:250px}.markmap-container{height:300px}.markmap-container>svg{width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:758px;margin-top:25px;margin-bottom:-25px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:10000}.ui-toc-label{opacity:.9;background-color:#ccc;border:none}.ui-toc-label,.ui-toc .open .ui-toc-label{-webkit-transition:opacity .2s;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#5f5f5f}.ui-toc-label:focus{opacity:1;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;-webkit-transition:opacity .2s;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child>ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.night .ui-toc-dropdown .nav>li>a:focus,.night .ui-toc-dropdown .nav>li>a:hover{color:#fff;border-left-color:#fff}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.night .ui-toc-dropdown .nav>.active:focus>a,.night .ui-toc-dropdown .nav>.active:hover>a,.night .ui-toc-dropdown .nav>.active>a{color:#fff;border-left:2px solid #fff}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.night .ui-toc-dropdown .nav>li>a{color:#aaa}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,"\30D2\30E9\30AE\30CE\89D2\30B4   Pro W3",Osaka,Meiryo,"\30E1\30A4\30EA\30AA",MS Gothic,"\FF2D\FF33   \30B4\30B7\30C3\30AF",sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,"\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF",sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang TC,Microsoft JhengHei,"\5FAE\8EDF\6B63\9ED1",sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,"\5FAE\8EDF\6B63\9ED1UI",sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang SC,Microsoft YaHei,"\5FAE\8F6F\96C5\9ED1",sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,"\5FAE\8F6F\96C5\9ED1UI",sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:rgba(0,0,0,.85)}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:contain}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}small span{line-height:22px}small .dropdown{display:inline-block}small .dropdown a:focus,small .dropdown a:hover{text-decoration:none}.unselectable{-moz-user-select:none;-khtml-user-select:none;-webkit-user-select:none;-o-user-select:none;user-select:none}.night .navbar{background:#333;border-bottom-color:#333;color:#eee}.night .navbar a{color:#eee}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid"><h1 id="t3breedbase-workshop"><a class="anchor hidden-xs" href="#t3breedbase-workshop" title="t3breedbase-workshop"><i class="fa fa-link"></i></a>T3/Breedbase Workshop</h1><p><strong><img class="emoji" alt=":calendar:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/calendar.png"> September 8th - 9th, 2020</strong><br>
+<strong><img class="emoji" alt=":email:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/email.png"> David Waring:</strong> <a href="mailto:djw64@cornell.edu" target="_blank" rel="noopener">djw64@cornell.edu</a></p><h2 id="important-links"><a class="anchor hidden-xs" href="#important-links" title="important-links"><i class="fa fa-link"></i></a>Important Links</h2><div class="alert alert-info">
+<p><strong>T3/Breedbase Production Databases:</strong></p>
+<ul>
+<li>T3/Wheat - <a href="https://wheat.triticeaetoolbox.org" target="_blank" rel="noopener">https://wheat.triticeaetoolbox.org</a></li>
+<li>T3/Barley - <a href="https://barley.triticeaetoolbox.org" target="_blank" rel="noopener">https://barley.triticeaetoolbox.org</a></li>
+<li>T3/Oat - <a href="https://oat.triticeaetoolbox.org" target="_blank" rel="noopener">https://oat.triticeaetoolbox.org</a></li>
+</ul>
+<br>
+<p><strong>T3/Breedbase Sandbox Databases:</strong></p>
+<ul>
+<li>T3/Wheat [Sandbox] - <a href="https://wheat-sandbox.triticeaetoolbox.org" target="_blank" rel="noopener">https://wheat-sandbox.triticeaetoolbox.org</a></li>
+<li>T3/Barley [Sandbox] - <a href="https://barley-sandbox.triticeaetoolbox.org" target="_blank" rel="noopener">https://barley-sandbox.triticeaetoolbox.org</a></li>
+<li>T3/Oat [Sandbox] - <a href="https://oat-sandbox.triticeaetoolbox.org" target="_blank" rel="noopener">https://oat-sandbox.triticeaetoolbox.org</a></li>
+</ul>
+<br>
+<p><strong>Phenotype Upload Instructions:</strong></p>
+<ul>
+<li>Wheat - <a href="https://wheat-sandbox.triticeaetoolbox.org/help/phenotype_upload_workflow" target="_blank" rel="noopener">https://wheat-sandbox.triticeaetoolbox.org/help/phenotype_upload_workflow</a></li>
+<li>Barley - <a href="https://barley-sandbox.triticeaetoolbox.org/help/phenotype_upload_workflow" target="_blank" rel="noopener">https://barley-sandbox.triticeaetoolbox.org/help/phenotype_upload_workflow</a></li>
+<li>Oat - <a href="https://oat-sandbox.triticeaetoolbox.org/help/phenotype_upload_workflow" target="_blank" rel="noopener">https://oat-sandbox.triticeaetoolbox.org/help/phenotype_upload_workflow</a></li>
+</ul>
+<br>
+<p><strong>Germplasm Search Tool:</strong></p>
+<ul>
+<li>Wheat - <a href="https://synonyms.triticeaetoolbox.org/?db=T3/Wheat" target="_blank" rel="noopener">https://synonyms.triticeaetoolbox.org/?db=T3/Wheat</a></li>
+<li>Barley - <a href="https://synonyms.triticeaetoolbox.org/?db=T3/Barley" target="_blank" rel="noopener">https://synonyms.triticeaetoolbox.org/?db=T3/Barley</a></li>
+<li>Oat - <a href="https://synonyms.triticeaetoolbox.org/?db=T3/Oat" target="_blank" rel="noopener">https://synonyms.triticeaetoolbox.org/?db=T3/Oat</a></li>
+</ul>
+</div><h2 id="blank-upload-templates"><a class="anchor hidden-xs" href="#blank-upload-templates" title="blank-upload-templates"><i class="fa fa-link"></i></a>Blank Upload Templates</h2><div class="alert alert-success">
+<p><img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/templates/locations.xls" target="_blank" rel="noopener">Location Template</a><br>
+<img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/templates/accessions.xls" target="_blank" rel="noopener">Accession Template</a><br>
+<img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/templates/trials.xls" target="_blank" rel="noopener">Trial Template</a> (trial information and plot layout)<br>
+<img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/templates/phenotypes.xls" target="_blank" rel="noopener">Phenotype Template</a> (trait observations)</p>
+</div><h2 id="trait-lookup-tables"><a class="anchor hidden-xs" href="#trait-lookup-tables" title="trait-lookup-tables"><i class="fa fa-link"></i></a>Trait Lookup Tables</h2><div class="alert alert-success">
+<p><img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/wheat_traits_lookup.csv" target="_blank" rel="noopener">Wheat Trait Lookup Table</a><br>
+<img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://barley.triticeaetoolbox.org/static_content/files/barley_traits_lookup.csv" target="_blank" rel="noopener">Barley Trait Lookup Table</a><br>
+<img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://oat.triticeaetoolbox.org/static_content/files/oat_traits_lookup.csv" target="_blank" rel="noopener">Oat Trait Lookup Table</a></p>
+</div><h1 id="day-one"><a class="anchor hidden-xs" href="#day-one" title="day-one"><i class="fa fa-link"></i></a>Day One</h1><h2 id="what-is-t3"><a class="anchor hidden-xs" href="#what-is-t3" title="what-is-t3"><i class="fa fa-link"></i></a>What is T3?</h2><p>T3 is <ins>The Triticeae Toolbox</ins>:</p><ul>
+<li>a centralized database for small grains breeders (wheat, oat, barley)</li>
+<li>combines accession information, phenotype trial data, and genotype data from various sources</li>
+<li>allows users to create custom datasets</li>
+<li>provides summary and analytical tools</li>
+</ul><h2 id="overview-of-t3breedbase"><a class="anchor hidden-xs" href="#overview-of-t3breedbase" title="overview-of-t3breedbase"><i class="fa fa-link"></i></a>Overview of T3/Breedbase</h2><h3 id="what-is-happening"><a class="anchor hidden-xs" href="#what-is-happening" title="what-is-happening"><i class="fa fa-link"></i></a>What is Happening?</h3><ul>
+<li>T3 is changing the database and website used for collecting, analyzing and displaying breeding data</li>
+<li>Existing data has been transferred to the new database</li>
+<li>New data will be added to the new database - <em>the old database will no longer be receiving new data</em></li>
+<li>The old database will remain accessible as a data archive</li>
+</ul><h3 id="current-status"><a class="anchor hidden-xs" href="#current-status" title="current-status"><i class="fa fa-link"></i></a>Current Status</h3><ul>
+<li><strong>Wheat</strong>: transition complete</li>
+<li><strong>Oat</strong>: transition complete</li>
+<li><strong>Barley</strong>: transition complete, some organization still needed</li>
+</ul><h3 id="what-is-breedbase"><a class="anchor hidden-xs" href="#what-is-breedbase" title="what-is-breedbase"><i class="fa fa-link"></i></a>What is Breedbase?</h3><ul>
+<li>a “comprehensive breeding management and analysis software”</li>
+<li>Database, analytical tools and website</li>
+<li>Developed by Lukas Mueller’s lab at Boyce Thompson Institute</li>
+<li>Currently used by multiple crops: cassava, sweet potato, banana, rice, Solanaceae crops, others</li>
+</ul><h3 id="why-is-t3-transitioning"><a class="anchor hidden-xs" href="#why-is-t3-transitioning" title="why-is-t3-transitioning"><i class="fa fa-link"></i></a>Why is T3 transitioning?</h3><ul>
+<li>more developers
+<ul>
+<li>core development team at BTI</li>
+<li>already being used by multiple crops</li>
+</ul>
+</li>
+<li>unified database
+<ul>
+<li>sharing of ideas, database structures, tools, etc across breeding programs</li>
+</ul>
+</li>
+<li>unique features
+<ul>
+<li>trial design</li>
+<li>seedlot management</li>
+<li>barcodes</li>
+</ul>
+</li>
+</ul><h2 id="workshop-goals"><a class="anchor hidden-xs" href="#workshop-goals" title="workshop-goals"><i class="fa fa-link"></i></a>Workshop Goals</h2><h3 id="demonstrate-how-to-upload-field-trials"><a class="anchor hidden-xs" href="#demonstrate-how-to-upload-field-trials" title="demonstrate-how-to-upload-field-trials"><i class="fa fa-link"></i></a>Demonstrate how to upload field trials</h3><ul>
+<li>Demonstrate the entire process of getting a field trial into the database
+<ul>
+<li>checking for existing Accessions</li>
+<li>updating existing &amp; adding new Accessions</li>
+<li>creating an existing Trial</li>
+<li>working with breedbase traits</li>
+<li>adding phenotype observations</li>
+</ul>
+</li>
+</ul><h3 id="demonstrate-breedbase-integration-into-a-breeding-program"><a class="anchor hidden-xs" href="#demonstrate-breedbase-integration-into-a-breeding-program" title="demonstrate-breedbase-integration-into-a-breeding-program"><i class="fa fa-link"></i></a>Demonstrate Breedbase integration into a breeding program</h3><ul>
+<li>Jessica will demonstrate how she uses breedbase in the University of Illinois wheat breeding program</li>
+</ul><h3 id="try-uploading-your-own-data"><a class="anchor hidden-xs" href="#try-uploading-your-own-data" title="try-uploading-your-own-data"><i class="fa fa-link"></i></a>Try uploading your own data</h3><ul>
+<li>Participants will have the opportunity to try uploading a dataset of their own</li>
+<li>We will be available to help and troubleshoot any issues that arise</li>
+</ul><h3 id="wrap-up-discussion--day-two"><a class="anchor hidden-xs" href="#wrap-up-discussion--day-two" title="wrap-up-discussion--day-two"><i class="fa fa-link"></i></a>Wrap-Up Discussion | Day Two</h3><ul>
+<li>Discuss problems that were encountered
+<ul>
+<li>show solutions for them</li>
+<li>discuss how we might make changes to fix the problem</li>
+</ul>
+</li>
+<li>Introduce some analysis tools that are included with breedbase
+<ul>
+<li>discuss if these may be useful</li>
+<li>allow us to prioritize in setting them up</li>
+</ul>
+</li>
+</ul><h2 id="phenotype-submission-workflow"><a class="anchor hidden-xs" href="#phenotype-submission-workflow" title="phenotype-submission-workflow"><i class="fa fa-link"></i></a>Phenotype Submission Workflow</h2><h3 id="database-organization"><a class="anchor hidden-xs" href="#database-organization" title="database-organization"><i class="fa fa-link"></i></a>Database Organization</h3><p>Each crop has a separate <strong>production</strong> and <strong>sandbox</strong> database.</p><ul>
+<li>The <strong>production</strong> database:
+<ul>
+<li>contains curated data and is <em>read-only</em>.</li>
+<li>Data cannot be added directly to the production database by users.</li>
+<li>This is the database you should go to when you want to access data for research purposes.</li>
+</ul>
+</li>
+<li>The <strong>sandbox</strong> database:
+<ul>
+<li>contains a copy of the production database (typically copied once a week).</li>
+<li>Data can be added directly to the sandbox database and modified by users.</li>
+<li>This is the database you should use when you want to test-load data.</li>
+</ul>
+</li>
+</ul><h3 id="submission-overview"><a class="anchor hidden-xs" href="#submission-overview" title="submission-overview"><i class="fa fa-link"></i></a>Submission Overview</h3><p><strong>Two ways to submit data:</strong></p><ul>
+<li><strong>Using the Sandbox</strong> <img class="emoji" alt=":point_left:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/point_left.png"> <mark>this is the method we’ll be using for the workshop</mark>
+<ul>
+<li>how it works:
+<ul>
+<li>the user creates the necessary upload templates (new accessions, trials, observations, etc)</li>
+<li>the user uploads all of the data to the sandbox</li>
+<li>the user can verify the trials to make sure everything looks correct</li>
+<li>the user submits each trial to the production database</li>
+<li>the curator approves the submission</li>
+<li>the trial is added to the production database</li>
+</ul>
+</li>
+<li>this method is good for:
+<ul>
+<li>uploading a small number of trials (such as a single year’s worth of trials)</li>
+<li>testing a dataset (you want to see how the data looks in the database)</li>
+<li>familiarizing yourself with the database (you can upload data without changing the production database)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Submitting Templates</strong>
+<ul>
+<li>how it works:
+<ul>
+<li>the user creates the necessary upload templates (new accessions, trials, observations, etc)</li>
+<li>the user sends the templates to the curator (via email or the submission form)</li>
+<li>the curator approves the submission</li>
+<li>the trials are added to the production database</li>
+</ul>
+</li>
+<li>this method is good for:
+<ul>
+<li>submitting a large number of trials (such as a historical dataset)</li>
+<li>quickly submitting trial data (when you’re already familiar with the upload template format)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h3 id="instructions"><a class="anchor hidden-xs" href="#instructions" title="instructions"><i class="fa fa-link"></i></a>Instructions</h3><p>Detailed upload instructions are available on the sandbox database for each crop:</p><ul>
+<li><a href="https://wheat-sandbox.triticeaetoolbox.org/help/phenotype_upload_workflow" target="_blank" rel="noopener">wheat</a></li>
+<li><a href="https://barley-sandbox.triticeaetoolbox.org/help/phenotype_upload_workflow" target="_blank" rel="noopener">barley</a></li>
+<li><a href="https://oat-sandbox.triticeaetoolbox.org/help/phenotype_upload_workflow" target="_blank" rel="noopener">oat</a></li>
+</ul><h2 id="demo-data"><a class="anchor hidden-xs" href="#demo-data" title="demo-data"><i class="fa fa-link"></i></a>Demo Data</h2><p>Below is an excerpt from and a link to the demo trial data I’ll be adding to the database:</p><table>
+      <thead>
+        <tr>
+          <th>Plot</th><th>Line</th><th>Row</th><th>Column</th><th>Rep</th><th>Block</th><th>grain yield (kg/ha)</th><th>test weight (g/L)</th><th>FHB Incidence (%)</th><th>FHB Severity (%)</th><th>DON Level (ppm)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>101</td><td>VA14W-99</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1984.58</td><td>739.01</td><td>53.15</td><td>8.91</td><td>1.13</td>
+        </tr><tr>
+          <td>102</td><td>NC14-23372</td><td>1</td><td>2</td><td>1</td><td>1</td><td>2044.19</td><td>756.15</td><td>35.59</td><td>8.08</td><td>1.75</td>
+        </tr><tr>
+          <td>103</td><td>VA13W-38</td><td>1</td><td>3</td><td>1</td><td>1</td><td>2356.95</td><td>787.56</td><td>36.02</td><td>20.78</td><td>1.52</td>
+        </tr><tr>
+          <td>104</td><td>NC15-25672</td><td>1</td><td>4</td><td>1</td><td>1</td><td>2061.00</td><td>752.54</td><td>69.92</td><td>20.64</td><td>2.25</td>
+        </tr><tr>
+          <td>105</td><td>NC14-23373</td><td>1</td><td>5</td><td>1</td><td>1</td><td>1535.94</td><td>769.60</td><td>78.59</td><td>9.40</td><td>1.38</td>
+        </tr>
+      </tbody>
+    </table><div class="alert alert-success">
+<p><img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="http://wheat.triticeaetoolbox.org/static_content/files/2020ScabWorkshop/demo_data.xls" target="_blank" rel="noopener">Complete Demo Data</a></p>
+</div><p>The demo data contains observations from two locations: Ithaca, NY and Geneva, NY.  There are ten lines sampled in three reps at each location with five traits observed: grain yield, test weight, FHB incidence, FHB severity, and DON level.</p><h2 id="create-an-account"><a class="anchor hidden-xs" href="#create-an-account" title="create-an-account"><i class="fa fa-link"></i></a>Create an Account</h2><p>Each crop has a separate <em>production</em> and <em>sandbox</em> database.  These are separate websites and copies of the database and as such have separate account management systems.  <strong>You’ll need to create an account on each database you want access to.</strong></p><p>You can create an account by clicking the <strong>New User</strong>  button in the top-right of the toolbar.  After filling out the registration form you should receive an account confirmation email from <code>noreply@graingenes.org</code> (check your Junk/Spam folder if you don’t see it in your Inbox) with a link to confirm your account.  Once your account has been confirmed you can log in to the website.</p><p>Accounts created on a sandbox database will be automatically granted ‘submitter’ privileges.  Accounts created on a production database will have read-only access.</p><h2 id="locations"><a class="anchor hidden-xs" href="#locations" title="locations"><i class="fa fa-link"></i></a>Locations</h2><blockquote>
+<p><strong>Use Case:</strong> You have trials that were located in two different towns.  Are these locations already in the database?  How do you add a new location?</p>
+</blockquote><h3 id="view-existing-locations"><a class="anchor hidden-xs" href="#view-existing-locations" title="view-existing-locations"><i class="fa fa-link"></i></a>View Existing Locations</h3><p>You can view the locations that are already in the database by going to the <strong>Manage &gt; Locations</strong> page.  Here you’ll see a table and a map of all existing locations to search for your trial locations.</p><h3 id="add-new-locations"><a class="anchor hidden-xs" href="#add-new-locations" title="add-new-locations"><i class="fa fa-link"></i></a>Add New Locations</h3><p>If the location of your trial is not already in the database, there are two ways to add new locations from the <strong>Manage &gt; Locations</strong> page:</p><ul>
+<li><strong>Using the Map</strong>
+<ul>
+<li>Click the location of your trial on the correct spot on the map</li>
+<li>Click the <em>Add Location</em> link</li>
+<li>Fill out the form with the location details</li>
+</ul>
+</li>
+<li><strong>Uploading a Template</strong>
+<ul>
+<li>Create an Excel file with the appropriate headers</li>
+<li>Fill in your location details</li>
+<li>Upload the form</li>
+</ul>
+</li>
+</ul><h3 id="location-template"><a class="anchor hidden-xs" href="#location-template" title="location-template"><i class="fa fa-link"></i></a>Location Template</h3><p>A location template includes the following information:</p><table>
+      <thead>
+        <tr>
+          <th>Name</th><th>Abbreviation</th><th>Country Code</th><th>Country Name</th><th>Program</th><th>Type</th><th>Latitude</th><th>Longitude</th><th>Altitude</th><th>NOAA Station ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Geneva, NY</td><td>GENNY</td><td>USA</td><td>United States of America</td><td>Cornell University</td><td>Field</td><td>42.880173</td><td>-77.009083</td><td>187</td><td>GHCND:USC00303177</td>
+        </tr>
+      </tbody>
+    </table><ul>
+<li><strong>Name:</strong> The Town and State of the location.</li>
+<li><strong>Abbreviation:</strong> A code used to identify the location.  <em>By convention, T3 uses the first 3 letters of the town and the 2 letter state abbreviation.</em></li>
+<li><strong>Country Code:</strong> <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3" target="_blank" rel="noopener">A standardized 3 letter country code</a>.</li>
+<li><strong>Country Name:</strong> The full name of the Country of the location.</li>
+<li><strong>Program:</strong> The Breeding Program(s) that use the location.  <em>The Breeding Program must already exist in the database.</em></li>
+<li><strong>Type:</strong> The location type (one of: Farm, Field, Greenhouse, Screenhouse, Lab, Storage, Other).</li>
+<li><strong>Latitude:</strong> The location latitude (in decimal degrees).</li>
+<li><strong>Longitude:</strong> The location longitude (in decimal degrees) <em>with locations in the Western Hemisphere having a <ins>negative</ins> number</em>.</li>
+<li><strong>Altitude:</strong> The altitude/elevation of the location (in meters).</li>
+<li><strong>NOAA Station ID:</strong> The identifier of the <a href="https://www.ncdc.noaa.gov/cdo-web/search" target="_blank" rel="noopener">closest NOAA weather station</a> (or ‘none’ if one is not nearby).</li>
+</ul><div class="alert alert-success">
+<p><img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/templates/locations.xls" target="_blank" rel="noopener">Blank Location Template</a><br>
+<img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/2020ScabWorkshop/demo_locations.xls" target="_blank" rel="noopener">Demo Location Template</a></p>
+</div><div class="alert alert-info">
+<p><img class="emoji" alt=":information_source:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/information_source.png"> If you’re using R to extract your data to generate the breedbase templates, you can use the <a href="https://github.com/TriticeaeToolbox/breeDBase.R" target="_blank" rel="noopener">breedbase R package</a> to query an API to <a href="https://github.com/TriticeaeToolbox/breeDBase.R#locations" target="_blank" rel="noopener">get the lat, lon, altitude and NOAA Station ID of locations based on street addresses</a>.</p>
+</div><h2 id="accessions"><a class="anchor hidden-xs" href="#accessions" title="accessions"><i class="fa fa-link"></i></a>Accessions</h2><blockquote>
+<p><strong>Use Case:</strong> You have a list of lines that were phenotyped in your trials.  Are these lines already in the database? How do you update existing and add new lines?</p>
+</blockquote><h3 id="germplasm-search-tool"><a class="anchor hidden-xs" href="#germplasm-search-tool" title="germplasm-search-tool"><i class="fa fa-link"></i></a>Germplasm Search Tool</h3><p>The Germplasm Search Tool is a separate tool that queries the breedbase database for germplasm lines and matches your line names up with existing database entries using a number of search methods.  It is available under the <strong>Search</strong> menu as <strong>Bulk Accession Search</strong>.  Links for each crop are:</p><ul>
+<li><a href="https://synonyms.triticeaetoolbox.org/?db=T3/Wheat" target="_blank" rel="noopener">wheat</a></li>
+<li><a href="https://synonyms.triticeaetoolbox.org/?db=T3/Barley" target="_blank" rel="noopener">barley</a></li>
+<li><a href="https://synonyms.triticeaetoolbox.org/?db=T3/Oat" target="_blank" rel="noopener">oat</a></li>
+</ul><p>The Germplasm Search Tool can be used to check the experimental list of lines for existing matches in the database and identify lines that:</p><ul>
+<li><strong>already exist in the database</strong> - line name matches an existing line</li>
+<li><strong>exist under a different name</strong> - line name matches a synonym of an existing line or is similar to an existing line name and/or synonym</li>
+<li><strong>need to be added to the database</strong> - there is no entry that is the same or similar to an existing name and/or synonym</li>
+</ul><p>The ten lines in the demo data are named:</p><pre><code>BESS
+ERNIE
+LES15-5499
+LES15-5605
+NC14-23372
+NC14-23373
+NC15-25672
+VA13W-174
+VA13W-38
+VA14W-99
+</code></pre><p>There are two lines that will need to be added as Accessions in the database:</p><pre><code>NC15-25672
+VA14W-99
+</code></pre><h3 id="accession-template"><a class="anchor hidden-xs" href="#accession-template" title="accession-template"><i class="fa fa-link"></i></a>Accession Template</h3><p>The Accession upload template contains properties about the germplasm lines being added to the database.  If an entry exists with the same name in the database, the properties will be updated with the ones in the template.  At a minimum, the <em>accesion_name</em> and <em>species_name</em> properties are required.</p><p>An Accession template can include the following information:</p><table>
+      <thead>
+        <tr>
+          <th>accession_name</th><th>species_name</th><th>population_name</th><th>organization_name(s)</th><th>synonym(s)</th><th>variety(s)</th><th>country_of_origin(s)</th><th>notes(s)</th><th>accession_number(s)</th><th>purdy_pedigree</th><th>filial_generation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>NC15-25672</td><td>Triticum aestivum</td><td></td><td>North Carolina State University</td><td>NC15_25672</td><td></td><td></td><td></td><td>PI 1234</td><td>NC15-1/NC15-2</td><td>9</td>
+        </tr><tr>
+          <td>VA14W-99</td><td>Triticum aestivum</td><td></td><td>Virginia Tech</td><td>VA14W 99</td><td></td><td></td><td></td><td>CItr 5678</td><td>VA14W-1/VA14W-2</td><td>9</td>
+        </tr>
+      </tbody>
+    </table><ul>
+<li><strong>accession_name <em>(required)</em></strong> A <em>unique</em> name for the germplasm line.  If your breeding program already has similar lines in the database, please try to follow the same naming conventions to keep the names consistent and to reduce the possibility of duplicate entries.</li>
+<li><strong>species_name <em>(required)</em></strong> The genus and species name of the entry.</li>
+<li><strong>population_name</strong> A population is a grouping of accessions stored in the database that can be used by various tools on the website.  If you want to add the entry to a population, you can do so here or through the website after it’s been added to the database.</li>
+<li><strong>organization_name(s)</strong> The name(s) of the breeding program(s) where the entry originated.  Existing breeding program names can be found on the <strong>Manage &gt; Breeding Programs</strong> page.  Multiple breeding programs can be separated by a comma.</li>
+<li><strong>synonym(s)</strong> A comma separated list of alternate names for the entry.</li>
+<li><strong>variety(s)</strong> For released lines, this can be used to store the released variety name.  <em>The variety name should also be listed as a synonym so it can be included in various search functions.</em></li>
+<li><strong>country_of_origin(s)</strong> the entry’s country of origin.</li>
+<li><strong>notes(s)</strong> additional comments about the entry.</li>
+<li><strong>accession_number(s)</strong> a comma separated list of registered accession numbers (such as GRIN PI numbers).  The accession number should include a prefix defining the registration source (such as PI, CItr, etc), <em>followed by a space</em>, then the registration entry number (ex “PI 428501”).</li>
+<li><strong>purdy_pedigree</strong> The Purdy pedigree string of the entry.  <em>Currently, this is not parsed by the database and will be stored as-is</em>.</li>
+<li><strong>filial_generation</strong> The filial generation of the entry.</li>
+</ul><div class="alert alert-success">
+<p><img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/templates/accessions.xls" target="_blank" rel="noopener">Blank Accession Template</a><br>
+<img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/2020ScabWorkshop/demo_accessions.xls" target="_blank" rel="noopener">Demo Accession Template</a></p>
+</div><h3 id="add-new-accessions"><a class="anchor hidden-xs" href="#add-new-accessions" title="add-new-accessions"><i class="fa fa-link"></i></a>Add New Accessions</h3><p>To upload an Accession template:</p><ol>
+<li>Go to the <strong>Manage &gt; Accessions</strong> page</li>
+<li>Click the <strong>Add Accessions Or Upload Accession Info</strong> link near the top right corner of the page</li>
+<li>Select the <strong>Uploading a File</strong> tab</li>
+<li>Click the <strong>Choose File</strong> button to select your upload template</li>
+<li>Click the <strong>Continue</strong> button and follow the prompts</li>
+</ol><h3 id="view-accessions"><a class="anchor hidden-xs" href="#view-accessions" title="view-accessions"><i class="fa fa-link"></i></a>View Accessions</h3><p>Once your upload has been processed, you can find your new Accession(s) by going to the <strong>Search &gt; Accessions and Plots</strong> page and entering the name of one of your Accessions.</p><p>Click the name of your Accession in the results table to open the Accession detail page.  Here the <strong>Additional Info</strong> section should include the property values from your upload template.</p><h2 id="trials"><a class="anchor hidden-xs" href="#trials" title="trials"><i class="fa fa-link"></i></a>Trials</h2><blockquote>
+<p><strong>Use Case:</strong> You have one or more trials that were  previously designed.  You know the plot layout of the trials.  How do you add the trials to the database?</p>
+</blockquote><p>There are multiple methods of adding a trial to the database.  For this example, we’ll be adding an existing trial by uploading a trial template file (not using the trial design tool).  There are two trial template types:</p><ul>
+<li><strong>Single Trial Design</strong>
+<ul>
+<li>This trial template includes just the plot information</li>
+<li>The trial information is filled out in a form on the website</li>
+<li>This method can only be used for a single trial at a time</li>
+</ul>
+</li>
+<li><strong>Multiple Trial Designs</strong> <img class="emoji" alt=":point_left:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/point_left.png"> <mark>This is the method we’ll be using in this example</mark>
+<ul>
+<li>This trial template includes both trial and plot information</li>
+<li>There is no form on the website to fill out when uploading the file</li>
+<li>This method can be used for one or more trials</li>
+</ul>
+</li>
+</ul><h3 id="trial-properties"><a class="anchor hidden-xs" href="#trial-properties" title="trial-properties"><i class="fa fa-link"></i></a>Trial Properties</h3><p>The following properties relate to the trial:</p><ul>
+<li><strong>trial_name <em>(required)</em></strong> A <em>unique</em> name for the trial (cannot contain spaces).  By convention, this is typically a concatenation of an experiment code, year, and location separated by underscores (ex: “USSRWWN_2008_Blacksburg”).</li>
+<li><strong>breeding_program <em>(required)</em></strong> The name of the Breeding Program that performed the trial.  The Breeding Program must already exist in the database (go to the <strong>Manage &gt; Breeding Programs</strong> page to view and/or add a Breeding Program).  For cooperative nurseries, we have created Breeding Programs to contain cooperative nursery trials.</li>
+<li><strong>location <em>(required)</em></strong> The name of the location where the trial was help.  The location must already exist in the database (go to the <strong>Manage &gt; Locations</strong> page to view and/or add a location).</li>
+<li><strong>year <em>(required)</em></strong> The year the trial was held.</li>
+<li><strong>design_type <em>(required)</em></strong>  The code for the trial design type.  It can be one of:
+<ul>
+<li><strong>CRD</strong> Completely Randomized Design</li>
+<li><strong>RCBD</strong> Randomized Complete Block Design</li>
+<li><strong>Alpha</strong> Alpha Lattice Design</li>
+<li><strong>Augmented</strong> Augmented Design</li>
+<li><strong>MAD</strong> Modified Augmented Design</li>
+<li><strong>Westcott</strong> Westcott Design</li>
+<li><strong>Lattice</strong> Lattice Design</li>
+</ul>
+</li>
+<li><strong>description <em>(required)</em></strong>  A description of the trial and any additional notes with relevant information about the trial</li>
+<li><strong>trial_type</strong> The name of the trial type.  It can be one of:
+<ul>
+<li>Seedling Nursery</li>
+<li>phenotyping_trial</li>
+<li>Advanced Yield Trial</li>
+<li>Preliminary Yield Trial</li>
+<li>Uniform Yield Trial</li>
+<li>Variety Release Trial</li>
+<li>Clonal Evaluation</li>
+<li>genetic_gain_trial</li>
+<li>storage_trial</li>
+<li>heterosis_trial</li>
+<li>health_status_trial</li>
+<li>grafting_trial</li>
+<li>Screen House</li>
+<li>Seed Multiplication</li>
+<li>cross_block_trial</li>
+<li>Specialty Trial</li>
+</ul>
+</li>
+<li><strong>plot_width</strong> plot width (meters)</li>
+<li><strong>plot_length</strong> plot length (meters)</li>
+<li><strong>field_size</strong> field size (hectares)</li>
+<li><strong>planting_date</strong> planting date (YYYY-MM-DD)</li>
+<li><strong>harvest_date</strong> harvest date (YYYY-MM-DD)</li>
+</ul><h3 id="plot-properties"><a class="anchor hidden-xs" href="#plot-properties" title="plot-properties"><i class="fa fa-link"></i></a>Plot Properties</h3><p>The following properties relate to a plot:</p><ul>
+<li><strong>plot_name <em>(required)</em></strong> A <em>unique</em> name (cannot contain spaces and must be unique across the entire database) for the plot.  By convention, this is typically a concatenation of the trial name and plot number separated by a dash (ex: “USSRWWN_2008_Blacksburg-PLOT1”)</li>
+<li><strong>accession_name <em>(required)</em></strong> The name of the Accession observed in the plot (must already exist in the database)</li>
+<li><strong>plot_number  <em>(required)</em></strong> the plot number</li>
+<li><strong>block_number <em>(required)</em></strong> the block number</li>
+<li><strong>is_a_control</strong> use <code>1</code> for a control/check and <code>0</code> (or blank) for an experimental line</li>
+<li><strong>rep_number</strong> The replicate number</li>
+<li><strong>range_number</strong> The range number</li>
+<li><strong>row_number</strong> The row number of the plot in the field</li>
+<li><strong>col_number</strong> The column number of the plot in the field</li>
+<li><strong>seedlot_name</strong> The name of the seedlot where the planted seed originated (must already exist in the database)</li>
+<li><strong>num_seed_per_plot</strong> The number of seed transferred from the seedlot to the plot</li>
+<li><strong>weight_gram_seed_per_plot</strong> The weight of seed (g) transferred from the seedlot to the plot</li>
+</ul><h3 id="trial-template"><a class="anchor hidden-xs" href="#trial-template" title="trial-template"><i class="fa fa-link"></i></a>Trial Template</h3><p>The trial upload template combines the trial properties (which are repeated for each plot) and the plot properties.</p><table>
+      <thead>
+        <tr>
+          <th>trial_name</th><th>breeding_program</th><th>location</th><th>year</th><th>design_type</th><th>description</th><th>trial_type</th><th>plot_width</th><th>plot_length</th><th>field_size</th><th>planting_date</th><th>harvest_date</th><th>plot_name</th><th>accession_name</th><th>plot_number</th><th>block_number</th><th>is_a_control</th><th>rep_number</th><th>range_number</th><th>row_number</th><th>col_number</th><th>seedlot_name</th><th>num_seed_per_plot</th><th>weight_gram_seed_per_plot</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AYT_2019_Ithaca</td><td>Cornell University</td><td>Ithaca, NY</td><td>2019</td><td>RCBD</td><td>2019 Advanced Yield Trial @ Ithaca</td><td>Advanced Yield Trial</td><td>1</td><td>1</td><td></td><td>2019-06-15</td><td>2019-10-11</td><td>AYT_2019_Ithaca-PLOT101</td><td>VA14W-99</td><td>101</td><td>1</td><td></td><td>1</td><td></td><td>1</td><td>1</td><td></td><td></td><td></td>
+        </tr><tr>
+          <td>AYT_2019_Ithaca</td><td>Cornell University</td><td>Ithaca, NY</td><td>2019</td><td>RCBD</td><td>2019 Advanced Yield Trial @ Ithaca</td><td>Advanced Yield Trial</td><td>1</td><td>1</td><td></td><td>2019-06-15</td><td>2019-10-11</td><td>AYT_2019_Ithaca-PLOT102</td><td>NC14-23372</td><td>102</td><td>1</td><td></td><td>1</td><td></td><td>1</td><td>2</td><td></td><td></td><td></td>
+        </tr><tr>
+          <td>AYT_2019_Ithaca</td><td>Cornell University</td><td>Ithaca, NY</td><td>2019</td><td>RCBD</td><td>2019 Advanced Yield Trial @ Ithaca</td><td>Advanced Yield Trial</td><td>1</td><td>1</td><td></td><td>2019-06-15</td><td>2019-10-11</td><td>AYT_2019_Ithaca-PLOT103</td><td>VA13W-38</td><td>103</td><td>1</td><td></td><td>1</td><td></td><td>1</td><td>3</td><td></td><td></td><td></td>
+        </tr><tr>
+          <td>AYT_2019_Ithaca</td><td>Cornell University</td><td>Ithaca, NY</td><td>2019</td><td>RCBD</td><td>2019 Advanced Yield Trial @ Ithaca</td><td>Advanced Yield Trial</td><td>1</td><td>1</td><td></td><td>2019-06-15</td><td>2019-10-11</td><td>AYT_2019_Ithaca-PLOT104</td><td>NC15-25672</td><td>104</td><td>1</td><td></td><td>1</td><td></td><td>1</td><td>4</td><td></td><td></td><td></td>
+        </tr><tr>
+          <td>AYT_2019_Ithaca</td><td>Cornell University</td><td>Ithaca, NY</td><td>2019</td><td>RCBD</td><td>2019 Advanced Yield Trial @ Ithaca</td><td>Advanced Yield Trial</td><td>1</td><td>1</td><td></td><td>2019-06-15</td><td>2019-10-11</td><td>AYT_2019_Ithaca-PLOT105</td><td>NC14-23373</td><td>105</td><td>1</td><td></td><td>1</td><td></td><td>1</td><td>5</td><td></td><td></td><td></td>
+        </tr>
+      </tbody>
+    </table><div class="alert alert-success">
+<p><img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/templates/trials.xls" target="_blank" rel="noopener">Blank Trial Template</a><br>
+<img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/2020ScabWorkshop/demo_trials.xls" target="_blank" rel="noopener">Demo Trial Template</a></p>
+</div><h3 id="add-trials"><a class="anchor hidden-xs" href="#add-trials" title="add-trials"><i class="fa fa-link"></i></a>Add Trials</h3><p>To add the trial(s) to the database:</p><ol>
+<li>Go to the <strong>Manage &gt; Field Trials</strong> page</li>
+<li>Click the <strong>Upload Existing Trial(s)</strong> button near the top right of the page</li>
+<li>On <em>Step 2</em>, select the <strong>Multiple Trial Designs</strong> tab</li>
+<li>Click the <strong>Choose File</strong> button to select your upload template</li>
+<li>Click the <strong>Upload Trial Designs</strong> button and follow the prompts</li>
+</ol><h3 id="view-trial"><a class="anchor hidden-xs" href="#view-trial" title="view-trial"><i class="fa fa-link"></i></a>View Trial</h3><p>You can view the trial(s) you added by finding them in the table on the <strong>Search &gt; Field Trials</strong> page (you can filter the table by entering the trial name in the search box in the top right corner of the table).</p><p>You can open the trial detail page by clicking on the name of the trial in the table.  From this page you can check the properties of the trial.  The <em>Field Layout Tools and Phenotype Heatmap</em> section contains a generated field layout with the plot positions.  The <em>Experimental Design</em> section contains information on the field design and the accessions used in the trial.</p><h2 id="traits"><a class="anchor hidden-xs" href="#traits" title="traits"><i class="fa fa-link"></i></a>Traits</h2><blockquote>
+<p><strong>Use Case:</strong> You have a list of traits that were observed in your trials.  Are these traits available in the database?  How do you find the traits?  What do you call the traits when uploading data?</p>
+</blockquote><h3 id="breedbase-trait-management"><a class="anchor hidden-xs" href="#breedbase-trait-management" title="breedbase-trait-management"><i class="fa fa-link"></i></a>Breedbase Trait Management</h3><p>Breedbase manages traits differently than we did with the original version of T3.  Trait management may seem more complicated, but this allows us to more accurately and more precisely define the traits.  In addition, trait observations can now be more easily compared to data stored in other databases that use the same trait definitions.</p><p>On the original T3, there was a T3 <em>trait dictionary</em> that was a list of trait names with descriptions that defined each individual trait.  Trait observations were added to the database by linking each trait value with the T3 trait name.</p><p>On breedbase, traits are organized in a <em>trait ontology</em>, which is a controlled vocabulary of trait terms and definitions.  The ontology is managed in a collaborative effort through The Generation Challenge Programme’s <a href="http://www.cropontology.org/" target="_blank" rel="noopener">Crop Ontology project</a> and is made publicly available online on their website. T3 has contributed trait definitions for all three of our crops:</p><ul>
+<li><a href="http://www.cropontology.org/ontology/CO_321/Wheat" target="_blank" rel="noopener">wheat</a> (CIMMYT, T3)</li>
+<li><a href="http://www.cropontology.org/ontology/CO_323/Barley" target="_blank" rel="noopener">barley</a> (ICARDA, T3)</li>
+<li><a href="http://www.cropontology.org/ontology/CO_350/Oat" target="_blank" rel="noopener">oat</a> (Oat Global, Pepsi/Quaker, T3)</li>
+</ul><p>The trait ontology is organized in a tree-like hierarchical structure.  Under the root of the tree are trait categories - these are broad categories for grouping similar traits (such as Agronomic, Biotic Stress, Quality, etc).  Directly under the trait categories are <em>ontology trait terms</em>, where a trait (in ontology terms) is the entity that is being measured (such as grain yield) but does not include any information about how it is measured or with what units.  Directly under the trait is one or more <em>ontology variable terms</em>.  The variable term contains information for a single trait <em>as well as information about the method in which the trait was measured and the units/scale the value is recorded in.</em> <strong>Observations made from a phenotyping trial must always be associated with a trait ontology <ins>variable</ins></strong>.</p><p><img src="https://notes.triticeaetoolbox.org/uploads/upload_40356e4b9603d03db4425764fc4254ba.png" alt="" class="md-image md-image"></p><h3 id="view-traits"><a class="anchor hidden-xs" href="#view-traits" title="view-traits"><i class="fa fa-link"></i></a>View Traits</h3><p>To view the traits in the trait ontology, open the ontology browser by going to the <strong>Manage &gt; Trait Ontology Browser</strong> page.  This page will display all of the ontologies loaded into the database - the trait ontology will be labeled Wheat traits, Barley Traits, or Oat traits.  Direct links to the trait ontology for each crop are:</p><ul>
+<li><a href="https://wheat.triticeaetoolbox.org/cvterm/85475/view" target="_blank" rel="noopener">Wheat Traits</a></li>
+<li><a href="https://barley.triticeaetoolbox.org/cvterm/77328/view" target="_blank" rel="noopener">Barley Traits</a></li>
+<li><a href="https://oat.triticeaetoolbox.org/cvterm/77272/view" target="_blank" rel="noopener">Oat Traits</a></li>
+</ul><p>Here you can navigate through the ontology tree to find the ontology variable that matches your trait.</p><h3 id="search-traits"><a class="anchor hidden-xs" href="#search-traits" title="search-traits"><i class="fa fa-link"></i></a>Search Traits</h3><p>Traits can also be searched by name by going to the <strong>Search &gt; Traits</strong> page.  Make sure the trait ontology is selected in the search settings and enter a term to search for.</p><p>From the results table, you can choose a term that has a type set to <code>VARIABLE_OF</code> to associate with your trait data.</p><h3 id="trait-usage"><a class="anchor hidden-xs" href="#trait-usage" title="trait-usage"><i class="fa fa-link"></i></a>Trait Usage</h3><p>When loading your phenotype observations you’ll need to know both the <em>trait name</em> and <em>trait id</em> of the trait variable that matches your observed trait.  For example, for wheat grain yield in kg/ha you’ll need to know:</p><ul>
+<li>the trait name: “Grain yield - kg/ha”</li>
+<li>the trait id: “CO_321:0001218”</li>
+</ul><h3 id="trait-lookup-tables-1"><a class="anchor hidden-xs" href="#trait-lookup-tables-1" title="trait-lookup-tables-1"><i class="fa fa-link"></i></a>Trait Lookup Tables</h3><p>If you’re familiar with the old trait names used on T3/Classic, you can use the lookup tables that link the old trait names to their corresponding breedbase trait variable names and IDs.  There is a trait lookup table available for each crop:</p><div class="alert alert-success">
+<p><img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/wheat_traits_lookup.csv" target="_blank" rel="noopener">Wheat Trait Lookup Table</a><br>
+<img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://barley.triticeaetoolbox.org/static_content/files/barley_traits_lookup.csv" target="_blank" rel="noopener">Barley Trait Lookup Table</a><br>
+<img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://oat.triticeaetoolbox.org/static_content/files/oat_traits_lookup.csv" target="_blank" rel="noopener">Oat Trait Lookup Table</a></p>
+</div><h3 id="requesting-new-traits"><a class="anchor hidden-xs" href="#requesting-new-traits" title="requesting-new-traits"><i class="fa fa-link"></i></a>Requesting New Traits</h3><p>If there is no corresponding trait variable that matches your observed trait, you can request to have a new trait added to the ontology.  You can either contact us directly or use the <a href="http://trait-requests.planteome.org/" target="_blank" rel="noopener">trait request form</a>.</p><p>If your trait only differs in the units/scale that was measured, we ask that you convert your values to match the scale of an existing trait variable.</p><h2 id="phenotypes"><a class="anchor hidden-xs" href="#phenotypes" title="phenotypes"><i class="fa fa-link"></i></a>Phenotypes</h2><blockquote>
+<p><strong>Use Case:</strong> You have phenotype observations from one or more trials that have already been added to the database.  How do you add the observations to the trials?</p>
+</blockquote><p>We’ll be adding phenotype observations to the new trials we created by creating a phenotype upload template.  We’ll be creating the template manually, but a blank template with the proper trait column headers can be created by the website (from the trial detail page) if you have the traits you observed already in a list.</p><h3 id="create-phenotype-upload-template"><a class="anchor hidden-xs" href="#create-phenotype-upload-template" title="create-phenotype-upload-template"><i class="fa fa-link"></i></a>Create Phenotype Upload Template</h3><p>We’ll be using the <em>simple</em> phenotyping spreadsheet format.  This format has one required column for the plot name followed by a column for each observed trait.  The column headers are:</p><ul>
+<li><strong>observationunit_name</strong> for the plot name - which are the names we gave each of the plots earlier in the trial upload template.</li>
+<li><strong>trait_name|trait_id</strong> is the format used for the column header for each observed trait.  For example, for wheat grain yield in kg/ha, the column header would be “Grain yield - kg/ha|CO_321:0001218”.  This format can be repeated across multiple columns for multiple observed traits.</li>
+</ul><p>Below is an excerpt of the trait observations from the demo dataset:</p><table>
+      <thead>
+        <tr>
+          <th>observationunit_name</th><th>Grain yield - kg/ha|CO_321:0001218</th><th>Grain test weight - g/l|CO_321:0001210</th><th>FHB incidence - %|CO_321:0001149</th><th>FHB severity - %|CO_321:0001440</th><th>FHB DON content - ppm|CO_321:0001154</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AYT_2019_Ithaca-PLOT101</td><td>1984.58</td><td>739.01</td><td>53.15</td><td>8.91</td><td>1.13</td>
+        </tr><tr>
+          <td>AYT_2019_Ithaca-PLOT102</td><td>2044.19</td><td>756.15</td><td>35.59</td><td>8.08</td><td>1.75</td>
+        </tr><tr>
+          <td>AYT_2019_Ithaca-PLOT103</td><td>2356.95</td><td>787.56</td><td>36.02</td><td>20.78</td><td>1.52</td>
+        </tr><tr>
+          <td>AYT_2019_Ithaca-PLOT104</td><td>2061.00</td><td>752.54</td><td>69.92</td><td>20.64</td><td>2.25</td>
+        </tr><tr>
+          <td>AYT_2019_Ithaca-PLOT105</td><td>1535.94</td><td>769.60</td><td>78.59</td><td>9.40</td><td>1.38</td>
+        </tr>
+      </tbody>
+    </table><div class="alert alert-success">
+<p><img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/templates/phenotypes.xls" target="_blank" rel="noopener">Blank Trial Template</a><br>
+<img class="emoji" alt=":paperclip:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/paperclip.png"> <a href="https://wheat.triticeaetoolbox.org/static_content/files/2020ScabWorkshop/demo_phenotypes.xls" target="_blank" rel="noopener">Demo Trial Template</a></p>
+</div><div class="alert alert-info">
+<p><img class="emoji" alt=":information_source:" src="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/images/basic/information_source.png"> Multiple trials can be uploaded at once with the same phenotype upload template.</p>
+</div><h3 id="upload-phenotype-template"><a class="anchor hidden-xs" href="#upload-phenotype-template" title="upload-phenotype-template"><i class="fa fa-link"></i></a>Upload Phenotype Template</h3><p>To upload the phenotype template:</p><ol>
+<li>Go to the <strong>Manage &gt; Phenotyping Results</strong> page</li>
+<li>Click the <strong>Upload Spreadsheet</strong> link near the top right corner of the page</li>
+<li>Select <strong>Simple</strong> for the Spreadsheet Format</li>
+<li>Click the <strong>Choose File</strong> button to select your template</li>
+<li>Click the <strong>Verify</strong> button to check the format of the template</li>
+<li>Click the <strong>Store</strong> button to store the data in the database</li>
+</ol><h3 id="view-phenotype-data"><a class="anchor hidden-xs" href="#view-phenotype-data" title="view-phenotype-data"><i class="fa fa-link"></i></a>View Phenotype Data</h3><p>You can view the trait observations from the trial detail page (find your trial in the <strong>Search &gt; Field Trials</strong> page and click the trial name to get to the trial detail page).</p><p>In the <em>Phenotype Summary Statistics</em> section you can view a table of trait means and summary statistics and a histogram of trait observations for the trial.  Here you can also download a table of all of the trait observations for the trial.</p><h1 id="day-two"><a class="anchor hidden-xs" href="#day-two" title="day-two"><i class="fa fa-link"></i></a>Day Two</h1><h2 id="discussion-of-day-one"><a class="anchor hidden-xs" href="#discussion-of-day-one" title="discussion-of-day-one"><i class="fa fa-link"></i></a>Discussion of Day One</h2><h3 id="common-problems"><a class="anchor hidden-xs" href="#common-problems" title="common-problems"><i class="fa fa-link"></i></a>Common Problems</h3><ul>
+<li><strong>Database URLs</strong>
+<ul>
+<li><a href="http://breedbase.org" target="_blank" rel="noopener">breedbase.org</a> is a demo website setup by the breedbase Development team which T3 does not have access to</li>
+<li>Links to all T3 Databases are available from <a href="https://triticeaetoolbox.org" target="_blank" rel="noopener">https://triticeaetoolbox.org</a></li>
+<li>Make sure to use the sandbox version for uploading data and the production version for accessing data</li>
+</ul>
+</li>
+<li><strong>Account Creation/Verification</strong>
+<ul>
+<li>most people seem to have received the confirmation email</li>
+<li>a handful of users did not receive the email</li>
+<li>we may need to rethink our email setup</li>
+</ul>
+</li>
+<li><strong>Excel files</strong>
+<ul>
+<li>file names cannot contain spaces</li>
+<li>file type must be the <em>old</em> Excel format (.xls extension - <em>not .xlsx</em>) = Excel 1997-2003 Workbook</li>
+<li>changes we can make:
+<ul>
+<li>make it clear that spaces are not allowed in the file name</li>
+<li>support spaces in file names</li>
+<li>support the “new” Excel format</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Date Formats</strong>
+<ul>
+<li>in the trial template: planting and harvest dates have to be formatted as “YYYY-MM-DD”</li>
+<li>Excel has an annoying habit of converting any value it thinks is a date to an Excel-specific representation of the date (an integer)</li>
+<li>to prevent Excel from changing the values: change the column cell type to “text”</li>
+</ul>
+</li>
+<li><strong>Template Upload Errors</strong>
+<ul>
+<li>the “working” dialog would “hang”
+<ul>
+<li>there was either a problem with the template and the error is not reported back to the user</li>
+<li>the upload did not proceed for an unknown reason</li>
+</ul>
+</li>
+<li>the “working” dialog would disappear with no feedback to the user
+<ul>
+<li>this often due to a problem with the template but it is not reported back to the user</li>
+</ul>
+</li>
+<li>workaround for now:
+<ul>
+<li>try refreshing the page and try uploading the file a second time</li>
+<li>if it still fails, let us know and we can take a closer look</li>
+</ul>
+</li>
+<li>changes we can make:
+<ul>
+<li>improve error detection in the files</li>
+<li>more clearly report the problems back to the user</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h2 id="submitting-trials"><a class="anchor hidden-xs" href="#submitting-trials" title="submitting-trials"><i class="fa fa-link"></i></a>Submitting Trials</h2><p>Once you have your trial(s) up on the sandbox, you can submit them to be included on the production database.</p><p>From the trial detail page, there is a <strong>Submit Trial</strong> button near the top of the page.  This will tell us that the trial is ready for submission.  We will review it and add it to the production database.</p><p><img src="https://notes.triticeaetoolbox.org/uploads/upload_0b999370a085f8cfaad001cc9a982ac0.png" alt="" class="md-image md-image"></p><h2 id="available-shortcuts"><a class="anchor hidden-xs" href="#available-shortcuts" title="available-shortcuts"><i class="fa fa-link"></i></a>Available Shortcuts</h2><h3 id="website-tools"><a class="anchor hidden-xs" href="#website-tools" title="website-tools"><i class="fa fa-link"></i></a>Website Tools</h3><p>There are tools available on the website that can help generate some of the templates we created manually.</p><ul>
+<li><strong>Trial Design Tool</strong> This tool can be used to interactively generate one or more field designs</li>
+<li><strong>Phenotype Spreadsheets</strong> If you have the traits you are observing in a field trial in a list, you can easily generate a blank phenotype observation upload template with the trait column headers filled in.
+<ol>
+<li>Create a list of traits</li>
+<li>Go to <strong>Manage &gt; Phenotyping Results</strong> page</li>
+<li>Click the <strong>Create Spreadsheet</strong> link near the top right of the page</li>
+<li>Select your trials and traits</li>
+<li>Download spreadsheet</li>
+</ol>
+</li>
+</ul><h3 id="android-fieldbook"><a class="anchor hidden-xs" href="#android-fieldbook" title="android-fieldbook"><i class="fa fa-link"></i></a>Android Fieldbook</h3><p>Breedbase is tightly integrated with the <a href="https://github.com/PhenoApps/Field-Book" target="_blank" rel="noopener">Android Fieldbook app</a> which can be used to collect phenotype data on an Android tablet or phone directly in the field.  The website can be used to create the field layout files that are used to load your field trial into the app.  The data files created by the app can then be loaded directly into Breedbase to store the phenotype observations.</p><h3 id="breedbase-r-package"><a class="anchor hidden-xs" href="#breedbase-r-package" title="breedbase-r-package"><i class="fa fa-link"></i></a>Breedbase R Package</h3><p>If you’re using R to interact with your data, you can use the <a href="https://github.com/Triticeaetoolbox/breedbase.R" target="_blank" rel="noopener">Breedbase R package</a> to generate the upload templates.</p><h2 id="analysis-tools-overview"><a class="anchor hidden-xs" href="#analysis-tools-overview" title="analysis-tools-overview"><i class="fa fa-link"></i></a>Analysis Tools Overview</h2><h3 id="trial-summary-tool"><a class="anchor hidden-xs" href="#trial-summary-tool" title="trial-summary-tool"><i class="fa fa-link"></i></a>Trial Summary Tool</h3><p>This is a tool that was available on T3/Classic and ported over to breedbase.  It can be used to generate LSMeans and LSDs for one or more traits across one or more trials.  It is accessible from the <strong>Analyze &gt; Summarize Trials</strong> menu.</p><p><em>To use the tool, you will first need to have the trials you are interested in summarizing in a list.</em></p><h3 id="trial-analysis-tools"><a class="anchor hidden-xs" href="#trial-analysis-tools" title="trial-analysis-tools"><i class="fa fa-link"></i></a>Trial Analysis Tools</h3><p>These tools are included with breedbase and are available in the <strong>Analysis Tools</strong> section of a trial detail page.</p><ul>
+<li><strong>Correlation</strong></li>
+<li><strong>ANOVA</strong></li>
+<li><strong>PCA</strong></li>
+<li><strong>Clustering</strong></li>
+<li><strong>Heritability</strong></li>
+</ul><h3 id="breedbase-analysis-tools"><a class="anchor hidden-xs" href="#breedbase-analysis-tools" title="breedbase-analysis-tools"><i class="fa fa-link"></i></a>Breedbase Analysis Tools</h3><p>These tools are built in to breedbase and could be made available.</p><ul>
+<li><strong>Selection Index</strong></li>
+<li><strong>Genomic Selection</strong></li>
+<li><strong>GWAS</strong></li>
+</ul><p><strong>Some of these tools are not yet available because they require some work from us to get them up and running.</strong>  If you are interested in using any of these tools, please reach out to us and let us know.  This will allow us to prioritize setting up tools that we know people are interested in using.</p></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#t3breedbase-workshop" title="T3/Breedbase Workshop">T3/Breedbase Workshop</a><ul class="nav">
+<li><a href="#important-links" title="Important Links">Important Links</a></li>
+<li><a href="#blank-upload-templates" title="Blank Upload Templates">Blank Upload Templates</a></li>
+<li><a href="#trait-lookup-tables" title="Trait Lookup Tables">Trait Lookup Tables</a></li>
+</ul>
+</li>
+<li><a href="#day-one" title="Day One">Day One</a><ul class="nav">
+<li><a href="#what-is-t3" title="What is T3?">What is T3?</a></li>
+<li><a href="#overview-of-t3breedbase" title="Overview of T3/Breedbase">Overview of T3/Breedbase</a><ul class="nav">
+<li><a href="#what-is-happening" title="What is Happening?">What is Happening?</a></li>
+<li><a href="#current-status" title="Current Status">Current Status</a></li>
+<li><a href="#what-is-breedbase" title="What is Breedbase?">What is Breedbase?</a></li>
+<li><a href="#why-is-t3-transitioning" title="Why is T3 transitioning?">Why is T3 transitioning?</a></li>
+</ul>
+</li>
+<li><a href="#workshop-goals" title="Workshop Goals">Workshop Goals</a><ul class="nav">
+<li><a href="#demonstrate-how-to-upload-field-trials" title="Demonstrate how to upload field trials">Demonstrate how to upload field trials</a></li>
+<li><a href="#demonstrate-breedbase-integration-into-a-breeding-program" title="Demonstrate Breedbase integration into a breeding program">Demonstrate Breedbase integration into a breeding program</a></li>
+<li><a href="#try-uploading-your-own-data" title="Try uploading your own data">Try uploading your own data</a></li>
+<li><a href="#wrap-up-discussion--day-two" title="Wrap-Up Discussion | Day Two">Wrap-Up Discussion | Day Two</a></li>
+</ul>
+</li>
+<li><a href="#phenotype-submission-workflow" title="Phenotype Submission Workflow">Phenotype Submission Workflow</a><ul class="nav">
+<li><a href="#database-organization" title="Database Organization">Database Organization</a></li>
+<li><a href="#submission-overview" title="Submission Overview">Submission Overview</a></li>
+<li><a href="#instructions" title="Instructions">Instructions</a></li>
+</ul>
+</li>
+<li><a href="#demo-data" title="Demo Data">Demo Data</a></li>
+<li><a href="#create-an-account" title="Create an Account">Create an Account</a></li>
+<li><a href="#locations" title="Locations">Locations</a><ul class="nav">
+<li><a href="#view-existing-locations" title="View Existing Locations">View Existing Locations</a></li>
+<li><a href="#add-new-locations" title="Add New Locations">Add New Locations</a></li>
+<li><a href="#location-template" title="Location Template">Location Template</a></li>
+</ul>
+</li>
+<li><a href="#accessions" title="Accessions">Accessions</a><ul class="nav">
+<li><a href="#germplasm-search-tool" title="Germplasm Search Tool">Germplasm Search Tool</a></li>
+<li><a href="#accession-template" title="Accession Template">Accession Template</a></li>
+<li><a href="#add-new-accessions" title="Add New Accessions">Add New Accessions</a></li>
+<li><a href="#view-accessions" title="View Accessions">View Accessions</a></li>
+</ul>
+</li>
+<li><a href="#trials" title="Trials">Trials</a><ul class="nav">
+<li><a href="#trial-properties" title="Trial Properties">Trial Properties</a></li>
+<li><a href="#plot-properties" title="Plot Properties">Plot Properties</a></li>
+<li><a href="#trial-template" title="Trial Template">Trial Template</a></li>
+<li><a href="#add-trials" title="Add Trials">Add Trials</a></li>
+<li><a href="#view-trial" title="View Trial">View Trial</a></li>
+</ul>
+</li>
+<li><a href="#traits" title="Traits">Traits</a><ul class="nav">
+<li><a href="#breedbase-trait-management" title="Breedbase Trait Management">Breedbase Trait Management</a></li>
+<li><a href="#view-traits" title="View Traits">View Traits</a></li>
+<li><a href="#search-traits" title="Search Traits">Search Traits</a></li>
+<li><a href="#trait-usage" title="Trait Usage">Trait Usage</a></li>
+<li><a href="#trait-lookup-tables-1" title="Trait Lookup Tables">Trait Lookup Tables</a></li>
+<li><a href="#requesting-new-traits" title="Requesting New Traits">Requesting New Traits</a></li>
+</ul>
+</li>
+<li><a href="#phenotypes" title="Phenotypes">Phenotypes</a><ul class="nav">
+<li><a href="#create-phenotype-upload-template" title="Create Phenotype Upload Template">Create Phenotype Upload Template</a></li>
+<li><a href="#upload-phenotype-template" title="Upload Phenotype Template">Upload Phenotype Template</a></li>
+<li><a href="#view-phenotype-data" title="View Phenotype Data">View Phenotype Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#day-two" title="Day Two">Day Two</a><ul class="nav">
+<li><a href="#discussion-of-day-one" title="Discussion of Day One">Discussion of Day One</a><ul class="nav">
+<li><a href="#common-problems" title="Common Problems">Common Problems</a></li>
+</ul>
+</li>
+<li><a href="#submitting-trials" title="Submitting Trials">Submitting Trials</a></li>
+<li><a href="#available-shortcuts" title="Available Shortcuts">Available Shortcuts</a><ul class="nav">
+<li><a href="#website-tools" title="Website Tools">Website Tools</a></li>
+<li><a href="#android-fieldbook" title="Android Fieldbook">Android Fieldbook</a></li>
+<li><a href="#breedbase-r-package" title="Breedbase R Package">Breedbase R Package</a></li>
+</ul>
+</li>
+<li><a href="#analysis-tools-overview" title="Analysis Tools Overview">Analysis Tools Overview</a><ul class="nav">
+<li><a href="#trial-summary-tool" title="Trial Summary Tool">Trial Summary Tool</a></li>
+<li><a href="#trial-analysis-tools" title="Trial Analysis Tools">Trial Analysis Tools</a></li>
+<li><a href="#breedbase-analysis-tools" title="Breedbase Analysis Tools">Breedbase Analysis Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#t3breedbase-workshop" title="T3/Breedbase Workshop">T3/Breedbase Workshop</a><ul class="nav">
+<li><a href="#important-links" title="Important Links">Important Links</a></li>
+<li><a href="#blank-upload-templates" title="Blank Upload Templates">Blank Upload Templates</a></li>
+<li><a href="#trait-lookup-tables" title="Trait Lookup Tables">Trait Lookup Tables</a></li>
+</ul>
+</li>
+<li><a href="#day-one" title="Day One">Day One</a><ul class="nav">
+<li><a href="#what-is-t3" title="What is T3?">What is T3?</a></li>
+<li><a href="#overview-of-t3breedbase" title="Overview of T3/Breedbase">Overview of T3/Breedbase</a><ul class="nav">
+<li><a href="#what-is-happening" title="What is Happening?">What is Happening?</a></li>
+<li><a href="#current-status" title="Current Status">Current Status</a></li>
+<li><a href="#what-is-breedbase" title="What is Breedbase?">What is Breedbase?</a></li>
+<li><a href="#why-is-t3-transitioning" title="Why is T3 transitioning?">Why is T3 transitioning?</a></li>
+</ul>
+</li>
+<li><a href="#workshop-goals" title="Workshop Goals">Workshop Goals</a><ul class="nav">
+<li><a href="#demonstrate-how-to-upload-field-trials" title="Demonstrate how to upload field trials">Demonstrate how to upload field trials</a></li>
+<li><a href="#demonstrate-breedbase-integration-into-a-breeding-program" title="Demonstrate Breedbase integration into a breeding program">Demonstrate Breedbase integration into a breeding program</a></li>
+<li><a href="#try-uploading-your-own-data" title="Try uploading your own data">Try uploading your own data</a></li>
+<li><a href="#wrap-up-discussion--day-two" title="Wrap-Up Discussion | Day Two">Wrap-Up Discussion | Day Two</a></li>
+</ul>
+</li>
+<li><a href="#phenotype-submission-workflow" title="Phenotype Submission Workflow">Phenotype Submission Workflow</a><ul class="nav">
+<li><a href="#database-organization" title="Database Organization">Database Organization</a></li>
+<li><a href="#submission-overview" title="Submission Overview">Submission Overview</a></li>
+<li><a href="#instructions" title="Instructions">Instructions</a></li>
+</ul>
+</li>
+<li><a href="#demo-data" title="Demo Data">Demo Data</a></li>
+<li><a href="#create-an-account" title="Create an Account">Create an Account</a></li>
+<li><a href="#locations" title="Locations">Locations</a><ul class="nav">
+<li><a href="#view-existing-locations" title="View Existing Locations">View Existing Locations</a></li>
+<li><a href="#add-new-locations" title="Add New Locations">Add New Locations</a></li>
+<li><a href="#location-template" title="Location Template">Location Template</a></li>
+</ul>
+</li>
+<li><a href="#accessions" title="Accessions">Accessions</a><ul class="nav">
+<li><a href="#germplasm-search-tool" title="Germplasm Search Tool">Germplasm Search Tool</a></li>
+<li><a href="#accession-template" title="Accession Template">Accession Template</a></li>
+<li><a href="#add-new-accessions" title="Add New Accessions">Add New Accessions</a></li>
+<li><a href="#view-accessions" title="View Accessions">View Accessions</a></li>
+</ul>
+</li>
+<li><a href="#trials" title="Trials">Trials</a><ul class="nav">
+<li><a href="#trial-properties" title="Trial Properties">Trial Properties</a></li>
+<li><a href="#plot-properties" title="Plot Properties">Plot Properties</a></li>
+<li><a href="#trial-template" title="Trial Template">Trial Template</a></li>
+<li><a href="#add-trials" title="Add Trials">Add Trials</a></li>
+<li><a href="#view-trial" title="View Trial">View Trial</a></li>
+</ul>
+</li>
+<li><a href="#traits" title="Traits">Traits</a><ul class="nav">
+<li><a href="#breedbase-trait-management" title="Breedbase Trait Management">Breedbase Trait Management</a></li>
+<li><a href="#view-traits" title="View Traits">View Traits</a></li>
+<li><a href="#search-traits" title="Search Traits">Search Traits</a></li>
+<li><a href="#trait-usage" title="Trait Usage">Trait Usage</a></li>
+<li><a href="#trait-lookup-tables-1" title="Trait Lookup Tables">Trait Lookup Tables</a></li>
+<li><a href="#requesting-new-traits" title="Requesting New Traits">Requesting New Traits</a></li>
+</ul>
+</li>
+<li><a href="#phenotypes" title="Phenotypes">Phenotypes</a><ul class="nav">
+<li><a href="#create-phenotype-upload-template" title="Create Phenotype Upload Template">Create Phenotype Upload Template</a></li>
+<li><a href="#upload-phenotype-template" title="Upload Phenotype Template">Upload Phenotype Template</a></li>
+<li><a href="#view-phenotype-data" title="View Phenotype Data">View Phenotype Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#day-two" title="Day Two">Day Two</a><ul class="nav">
+<li><a href="#discussion-of-day-one" title="Discussion of Day One">Discussion of Day One</a><ul class="nav">
+<li><a href="#common-problems" title="Common Problems">Common Problems</a></li>
+</ul>
+</li>
+<li><a href="#submitting-trials" title="Submitting Trials">Submitting Trials</a></li>
+<li><a href="#available-shortcuts" title="Available Shortcuts">Available Shortcuts</a><ul class="nav">
+<li><a href="#website-tools" title="Website Tools">Website Tools</a></li>
+<li><a href="#android-fieldbook" title="Android Fieldbook">Android Fieldbook</a></li>
+<li><a href="#breedbase-r-package" title="Breedbase R Package">Breedbase R Package</a></li>
+</ul>
+</li>
+<li><a href="#analysis-tools-overview" title="Analysis Tools Overview">Analysis Tools Overview</a><ul class="nav">
+<li><a href="#trial-summary-tool" title="Trial Summary Tool">Trial Summary Tool</a></li>
+<li><a href="#trial-analysis-tools" title="Trial Analysis Tools">Trial Analysis Tools</a></li>
+<li><a href="#breedbase-analysis-tools" title="Breedbase Analysis Tools">Breedbase Analysis Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.0/js/bootstrap.min.js" integrity="sha256-kJrlY+s09+QoWjpkOrXXwhxeaoDz9FW5SaxF8I0DibQ=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
