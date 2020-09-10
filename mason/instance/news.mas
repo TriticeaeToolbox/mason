@@ -10,15 +10,16 @@
 -->
 
 <div class="news-item">
-    <p class="news-item-title">Breedbase Workshop</p>
-    <p class="news-item-date">August 20, 2020</p>
+    <p class="news-item-title">Breedbase Workshop Notes</p>
+    <p class="news-item-date">September 10, 2020</p>
     <div class="news-item-content">
-        <p>We will be hosting a remote workshop introducing the breedbase version of T3 and showing the 
-            process of uploading field trial data to the database.  Participants will have the time to test-load 
-            their own data to the database to familiarize themselves with the new workflow.
         <p>
-            The workshop is scheduled for <strong>September 8th and 9th</strong>.  If you would like more information, 
-            you can email the T3 data curator, David Waring, at <a href='mailto:djw64@cornell.edu'>djw64@cornell.edu</a>.
+            T3 hosted a practical remote workshop demonstrating the process of uploading field trial data to the database.
+            Notes from that workshop, which include step-by-step instructions on how to upload a sample dataset, are 
+            <a href="/static_content/files/2020ScabWorkshop/notes.html">now available</a>.
+        </p>
+        <p>
+            A video recording of the workshop will soon be available.
         </p>
     </div>
 </div>     
