@@ -32,6 +32,16 @@
                 let id = term.replace(/pool ?/gi, "");
                 return "https://triticeaetoolbox.org/POOL/EntryShow.php?GID=" + id;
             }
+        },
+        {
+            name: "GrainGenes",
+            prefixes: ["GG"],
+            url: function(term) {
+                let id = term.replace(/gg ?/gi, "");
+                id = id.replace(/ /g, "+");
+                console.log(term + " = " + id);
+                return "https://wheat.pw.usda.gov/cgi-bin/GG3/report.cgi?class=germplasm&name=" + id;
+            }
         }
     ]
 
