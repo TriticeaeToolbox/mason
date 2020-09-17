@@ -63,8 +63,8 @@ $editable_stock_props => {}
                             <b>File format information</b>
                             <br>
                             <a id="accessions_upload_spreadsheet_format_info">Spreadsheet format</a><br>
-                            <a href="https://kurator.vurv.sk/content/files/metodika%20pre%20pedigree.pdf" target="_new">Purdy Format</a><br>
-                            <a href="https://cropforge.github.io/iciswiki/articles/w/h/e/Wheat_Pedigree_ecd4.html" target="_new">Wheat Pedigree</a>
+                            <a href="https://cropforge.github.io/iciswiki/articles/w/h/e/Wheat_Pedigree_ecd4.html" target="_new">Pedigree Management</a><br>
+                            <a href=" https://doi.org/10.2135/cropsci1968.0011183X000800040002x" target="_new">Purdy, 1968</a>
                         </p>
                     </&>
 
