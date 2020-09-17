@@ -46,11 +46,11 @@ search <strong>individual data types</strong>:</p>
 
 
 <script type="text/javascript">
-    $( document ).ready(function() {
+    jQuery( document ).ready(function() {
         toggleLoginDisplay();
         populateExperiments();
-        $("#account-prompts-login").on("click", function() {
-            $('#site_login_dialog').modal("show");
+        jQuery("#account-prompts-login").on("click", function() {
+            jQuery('#site_login_dialog').modal("show");
         });
     });
 
@@ -60,17 +60,17 @@ search <strong>individual data types</strong>:</p>
      */
     function toggleLoginDisplay() {
         // Not logged in...
-        if ( !$.cookie("sgn_session_id") || $.cookie("sgn_session_id") == "" ) {
-            $("#account-prompts").css("display", "block");
-            $("#explore-experiments-login").css("display", "block");
-            $("#explore-experiments-loggedin").css("display", "none");
+        if ( !jQuery.cookie("sgn_session_id") || jQuery.cookie("sgn_session_id") == "" ) {
+            jQuery("#account-prompts").css("display", "block");
+            jQuery("#explore-experiments-login").css("display", "block");
+            jQuery("#explore-experiments-loggedin").css("display", "none");
         }
 
         // Logged in...
         else {
-            $("#account-prompts").css("display", "none");
-            $("#explore-experiments-login").css("display", "none");
-            $("#explore-experiments-loggedin").css("display", "block");
+            jQuery("#account-prompts").css("display", "none");
+            jQuery("#explore-experiments-login").css("display", "none");
+            jQuery("#explore-experiments-loggedin").css("display", "block");
         }
     }
 
