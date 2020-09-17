@@ -21,7 +21,7 @@
 
 
 <script type="text/javascript">
-    $( document ).ready(function() {
+    jQuery( document ).ready(function() {
         toggleRegisterDisplay();
     });
 
@@ -31,13 +31,13 @@
      */
     function toggleRegisterDisplay() {
         // Not logged in...
-        if ( !$.cookie("sgn_session_id") || $.cookie("sgn_session_id") == "" ) {
-            $("#register_button_html_div").css("display", "inline");
+        if ( !jQuery.cookie("sgn_session_id") || jQuery.cookie("sgn_session_id") == "" ) {
+            jQuery("#register_button_html_div").css("display", "inline");
         }
 
         // Logged in...
         else {
-            $("#register_button_html_div").css("display", "none");
+            jQuery("#register_button_html_div").css("display", "none");
         }
     }
 </script>
