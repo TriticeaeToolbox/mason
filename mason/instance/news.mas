@@ -10,7 +10,7 @@
 -->
 
 <div class="news-item">
-    <p class="news-item-title">Breedbase Workshop Notes</p>
+    <p class="news-item-title">Breedbase Workshop Notes &amp; Videos</p>
     <p class="news-item-date">September 10, 2020</p>
     <div class="news-item-content">
         <p>
@@ -19,7 +19,8 @@
             <a href="/static_content/files/2020ScabWorkshop/notes.html">now available</a>.
         </p>
         <p>
-            A video recording of the workshop will soon be available.
+            Video recordings of the workshop are available on the <a href="https://www.youtube.com/channel/UC3jrvvzGKKEHzOriDBgnj0A/videos">
+            Breedbase YouTube Channel</a>.
         </p>
     </div>
 </div>     
