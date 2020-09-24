@@ -14,6 +14,9 @@
 </div>
 
 <style type="text/css">
+  .ui-dialog {
+    z-index: 9999 !important;
+  }
   .no-close .ui-dialog-titlebar-close { 
     display: none;
   }
