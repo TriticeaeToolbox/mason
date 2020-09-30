@@ -22,6 +22,7 @@
     <li><a href="/search/locus?filter=T3:ENSEMBL_GENE_IDS">Ensembl Gene IDs</a></li>
     <li><a href="/search/features">Ensembl Genes</a></li>
     <li><a href="/phenome/gwas.pl">GWAS Results</a></li>
+    <li><a href="/genome/mnase.pl">MNase and VEP</a></li>
     
     <li role="separator" class="divider"></li>
     
