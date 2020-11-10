@@ -1,4 +1,4 @@
-<& /toggle_display.mas, sandbox => "/site/toolbar_sandbox_banner.mas" &>
+<& /toggle_display.mas, sandbox => "/site/toolbar/sandbox_banner.mas" &>
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -19,7 +19,8 @@
         <& toolbar/about.mas &>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <& toolbar/search.mas &>
+        <!-- <& toolbar/search.mas &> -->
+        <& toolbar/register.mas &>
         <& toolbar/login.mas &>
       </ul>
     </div>
@@ -30,6 +31,11 @@
 <& /site/toolbar/alert.mas &>
 
 <style>
+  /* HIDE THE CALENDAR BUTTON IN THE USER BUTTONGROUP */
+  #navbar_personal_calendar {
+    display: none !important;
+  }
+
   li {
     margin-bottom:0;
   }
