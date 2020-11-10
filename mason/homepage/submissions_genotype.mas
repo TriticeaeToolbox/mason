@@ -1,0 +1,6 @@
+<h2>Submit Genotype Data</h2>
+
+<p>
+    Please <a href='/contact/form'>Contact Us</a> if you have genotype data you would like to 
+    submit to <% our $T3_INSTANCE_NAME %>.
+</p>
