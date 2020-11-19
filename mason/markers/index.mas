@@ -67,7 +67,7 @@ my $src_feature = "?data=wheat2016";
 
 </%perl>
 
-<& /page/page_title.mas, title=> "SGN Marker $marker_name" &>
+<& /page/page_title.mas, title=> "Marker $marker_name" &>
 
 <& /markers/basic_marker_info.mas, marker=>$marker, dbh=>$dbh &>
 
