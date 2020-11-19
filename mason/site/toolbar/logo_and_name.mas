@@ -19,12 +19,7 @@
 </a>
 
 <a class="navbar-brand sgn_brand_name" href="/">
-% if ( defined(our $T3_INSTANCE_PRIVATE) ) {
-    <span>&nbsp;</span>
-% } else {
-    <span class="name-badge">New</span>
-% }
-    <span><% $T3_INSTANCE_NAME %></span>
+    <span>&nbsp;&nbsp;<% $T3_INSTANCE_NAME %></span>
 % if ( defined(our $T3_INSTANCE_PRIVATE) ) {
     <span class="name-badge"><% $T3_INSTANCE_PRIVATE %></span>
 % }
