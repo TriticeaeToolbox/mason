@@ -68,8 +68,8 @@
     <& /instance/intro.mas &>
 
 
-    <!-- FEEDBACK -->
-    <& /homepage/feedback.mas &>
+    <!-- DATA USAGE -->
+    <& /homepage/data_usage.mas &>
 
 
     <br /><br /><br />
