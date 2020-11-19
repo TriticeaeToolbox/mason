@@ -54,7 +54,7 @@
 <div class="page-container">
 
     <h1>
-        Welcome to the New <% our $T3_INSTANCE_NAME %>
+        Welcome to <% our $T3_INSTANCE_NAME %>
         <% defined(our $T3_INSTANCE_PRIVATE) ? ' [' . $T3_INSTANCE_PRIVATE . ']' : '' %> 
     </h1>
 
