@@ -5,9 +5,8 @@
 % my $t = $m->request_args->{'page_title'};
   <title>
     <% $t ? "$t - " : '' %>
-    <% defined(our $T3_INSTANCE_PRIVATE) ? '' : '[NEW] ' %>
     <% our $T3_INSTANCE_NAME %>
-    <% defined($T3_INSTANCE_PRIVATE) ? ' [' . $T3_INSTANCE_PRIVATE . ']' : '' %>
+    <% defined(our $T3_INSTANCE_PRIVATE) ? ' [' . $T3_INSTANCE_PRIVATE . ']' : '' %>
   </title>
 
   <link rel='stylesheet' href='/css/nextgen-cassava-base-new.css' type='text/css'>
