@@ -3,6 +3,6 @@
     <li><a href="https://maps.triticeaetoolbox.org/">Comparative Map Viewer</a></li>
     <li><a href="/cview/map.pl?map_version_id=33">CMap Morex 2016, IBSC</a></li>
     <li><a href="/cview/map.pl?map_version_id=37">CMap Barley 50K</a></li>
-    <li><a href="https://wheat.pw.usda.gov/jb?data=/ggds/bar-morex" target="_new">JBrowse Morex IBSC</a></li>
+    <li><a href="https://graingenes.org/jb?data=/ggds/bar-morex2" target="_new">JBrowse Morex IBSC</a></li>
   </ul>
 </li>
