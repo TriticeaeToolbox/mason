@@ -1,3 +1,9 @@
+<%init>
+  my $tag = `git describe --abbrev=0 --tags`;
+  my $commit = `git rev-parse --short HEAD`;
+  my $updated = `git log -1 --format=%cd`;
+</%init>
+
 <style>
   .footer-container {
     border-top: 1px solid #ddd;
@@ -21,6 +27,17 @@
     font-size: 90%;
     color: #aaa;
   }
+  .git-version {
+    display: inline-block;
+    margin-top: 10px;
+  }
+  .git-version p {
+    color: #aaa;
+    font-size: 90%;
+  }
+  span.git-version-tag {
+    float: right;
+  }
 </style>
 
 <!-- END CONTENT WRAPPER -->
@@ -37,6 +54,16 @@
       <a href="https://breedbase.org/">
         <img class="partner-logo" src="/static_content/img/breedbase.png" />
       </a>
+      <br />
+      <div class="git-version">
+        <p>
+          <strong>Version</strong>
+          <br />
+          <span class="git-version-commit"><% $commit %></span>&nbsp;<span class="git-version-tag"><% $tag %></span>
+          <br />
+          <span class="git-version-updated"><% $updated %></span>
+        </p>
+      </div>
     </div>
     <div class="col-sm-5">
       <h3>Partners</h3>
