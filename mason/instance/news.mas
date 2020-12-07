@@ -13,9 +13,10 @@
     <p class="news-item-title">Site update</p>
     <p class="news-item-date">November 1, 2020 SGN-285.0</p>
     <div class="news-item-content">
-        <p>Analysis <a href="https://solgenomics.github.io/sgn/04_data_analysis_tools.html#44-principal-component-analysis-pca">Population Structure (PCA)</a>, 
-        <a href="https://solgenomics.github.io/sgn/04_data_analysis_tools.html#44-principal-component-analysis-pca">Clustering (k-means)</a>
-        <p>Manage tools, contact us to use these features</p>
+        <p>Analysis
+        <p><a href="https://solgenomics.github.io/sgn/04_data_analysis_tools.html#44-principal-component-analysis-pca">Population Structure (PCA)</a>
+        <p><a href="https://solgenomics.github.io/sgn/04_data_analysis_tools.html#44-principal-component-analysis-pca">Clustering (k-means)</a>
+        <p>Manage (contact us to use these features)</p>
         <p><a href="https://solgenomics.github.io/sgn/04_data_analysis_tools.html#413-general-mixed-model-tool">Mixed Model analysis</a>
         <p><a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_04.html">Seed Lots</a>
         <p><a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_06.html">Crosses</a>
