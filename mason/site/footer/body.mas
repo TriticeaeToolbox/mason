@@ -35,6 +35,9 @@
     color: #aaa;
     font-size: 90%;
   }
+  .git-version a {
+    color: #aaa
+  }
   span.git-version-tag {
     float: right;
   }
@@ -59,7 +62,8 @@
         <p>
           <strong>Version</strong>
           <br />
-          <span class="git-version-commit"><% $commit %></span>&nbsp;<span class="git-version-tag"><% $tag %></span>
+          <span class="git-version-commit"><a href="<% our $T3_GITHUB_URL %>/commits/t3/master"><% $commit %></a></span>&nbsp;
+          <span class="git-version-tag"><a href="<% $T3_GITHUB_URL %>/commits/<% $tag %>"><% $tag %></a></span>
           <br />
           <span class="git-version-updated"><% $updated %></span>
         </p>
