@@ -1,0 +1,5 @@
+<hr />
+
+<p class="reference">
+    <% our $T3_INSTANCE_NAME %> is open source software and available under the <a href="<% our $T3_GITHUB_URL %>/blob/master/LICENSE">MIT License</a> and may be downloaded from <a href="<% $T3_GITHUB_URL %>">GitHub</a>.
+</p>
