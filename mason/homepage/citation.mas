@@ -1,8 +1,4 @@
-<hr />
-
-<p class="reference">
-    <& /instance/citation.mas &>
-</p>
-<p class="reference">
-    <% our $T3_INSTANCE_NAME %> is open source software and available under the <a href="<% our $T3_GITHUB_URL %>/blob/master/LICENSE">MIT License</a> and may be downloaded from <a href="<% $T3_GITHUB_URL %>">GitHub</a>.
-</p>
+<br />
+<p><strong>Citation</strong></p>
+<p>If data on The Triticeae Toolbox was relevant to analyses or findings that you publish, please cite:</p>
+<p><& /instance/citation.mas &></p>
