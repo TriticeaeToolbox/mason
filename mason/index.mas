@@ -72,6 +72,10 @@
     <& /homepage/data_usage.mas &>
 
 
+    <!-- CITATION -->
+    <& /homepage/citation.mas &>
+
+
     <br /><br /><br />
 
 
@@ -130,8 +134,8 @@
     </div>
 
 
-    <!-- CITATION -->
-    <& /homepage/citation.mas &>
+    <!-- SOURCE -->
+    <& /homepage/source.mas &>
 
 
     <!-- USAGE AGREEMENT POPUP -->
