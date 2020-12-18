@@ -7,7 +7,7 @@
     <li><a href="/fieldbook">Field Book Tools</a></li>
     <li><a href="/breeders/trials/">Field Trials</a></li>
     <li><a href="/breeders/phenotyping/">Phenotyping Results</a></li>
-    <!-- <li><a href="/breeders/genotyping/">Genotyping Plates</a></li> -->
+    <li><a href="/breeders/genotyping/">Genotyping Results</a></li>
     
     <li role="separator" class="divider"></li>
     
