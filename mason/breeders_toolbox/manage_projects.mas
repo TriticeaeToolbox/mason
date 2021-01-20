@@ -1,0 +1,43 @@
+
+<%args>
+$locations
+$breeding_programs
+$preferred_species
+$editable_stock_props => {}
+$editable_stock_props_definitions => {}
+$timestamp
+$management_factor_types => ()
+$design_types => ()
+</%args>
+
+
+<style>
+    .tutorial {
+        padding: 0 7px;
+        margin: 40px;
+        background-color: #e8cbc5;
+        border: 2px solid #c84c30;
+        border-radius: 5px;
+    }
+    .tutorial a {
+        color: #82311f;
+    }
+    .tutorial p {
+        margin: 10px;
+    }
+</style>
+
+
+<& /page/page_title.mas, title=>"Manage Trials" &>
+
+<div class="container-fluid">
+
+<div class="tutorial">
+    <p>View the <a href="/help/phenotype_upload_workflow">Phenotype Upload Instructions</a> for blank templates and step-by-step instructions on adding a trial to the database</p>
+</div>
+
+<&| /page/info_section.mas, title=>'Trials', collapsible=>1, collapsed=>0, subtitle=>'<button class="btn btn-sm btn-primary" style="margin:3px" name="upload_trial_link">Upload Existing Trial(s)</button>  <button class="btn btn-sm btn-primary" style="margin:3px" id="add_project_link">Design New Trial</button>' &>
+
+  <& /breeders_toolbox/trialtreefolders.mas, locations=>$locations, breeding_programs=>$breeding_programs, preferred_species=>$preferred_species, editable_stock_props=>$editable_stock_props, editable_stock_props_definitions=>$editable_stock_props_definitions, timestamp=>$timestamp, management_factor_types => $management_factor_types, design_types => $design_types &>
+  </&>
+</div>
