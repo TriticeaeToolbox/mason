@@ -72,15 +72,10 @@ $user_roles => 'unknown'
     }
 
     #account-prompts {
-        display: none;
         margin: 15px;
     }
     #account-prompts p {
         margin: 10px 0 0 0;
-    }
-
-    #account-status {
-        display: none;
     }
 </style>
 
@@ -129,31 +124,35 @@ $user_roles => 'unknown'
         <a href="/contact/form">Contact Us</a> to make the change.
     </p>
 
-    <div id="account-prompts">
-        <div class="row">
-            <div class="col-md-5">
-                <a href="/user/new" class="btn btn-primary btn-large btn-home">
-                    <span class="glyphicon glyphicon-user"></span>&nbsp;
-                        Create Account
-                </a>
-                <br />
-                <p>Create a new account if you don't already have one</p>
-            </div>
-            <div class="col-md-2"><br /></div>
-            <div class="col-md-5">
-                <a id="account-prompts-login" href="#" class="btn btn-primary btn-large btn-home">
-                    <span class="glyphicon glyphicon-user"></span>&nbsp;
-                        Login
-                </a>
-                <br />
-                <p>Login to your existing account</p>
+    <&| /util/user.mas:logged_out &>
+        <div id="account-prompts">
+            <div class="row">
+                <div class="col-md-5">
+                    <a href="/user/new" class="btn btn-primary btn-large btn-home">
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;
+                            Create Account
+                    </a>
+                    <br />
+                    <p>Create a new account if you don't already have one</p>
+                </div>
+                <div class="col-md-2"><br /></div>
+                <div class="col-md-5">
+                    <a id="account-prompts-login" href="#" class="btn btn-primary btn-large btn-home">
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;
+                            Login
+                    </a>
+                    <br />
+                    <p>Login to your existing account</p>
+                </div>
             </div>
         </div>
-    </div>
+    </&>
 
-    <div id="account-status">
-        <p><strong>Account Status:</strong> <% $user_roles %></p>
-    </div>
+    <&| /util/user.mas:logged_in &>
+        <div id="account-status">
+            <p><strong>Account Status:</strong> <% $user_roles %></p>
+        </div>
+    </&>
 </div>
 
 <div class="section">
@@ -433,15 +432,6 @@ $user_roles => 'unknown'
 
 <script type="text/javascript">
     $( document ).ready(function() {
-        if ( !$.cookie("sgn_session_id") || $.cookie("sgn_session_id") == "" ) {
-            $("#account-prompts").css("display", "block");
-            $("#account-status").css("display", "none");
-        }
-        else {
-            $("#account-prompts").css("display", "none");
-            $("#account-status").css("display", "block");
-        }
-
         $("#account-prompts-login").on("click", function() {
             $('#site_login_dialog').modal("show");
         });
