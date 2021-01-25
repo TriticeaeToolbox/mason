@@ -33,7 +33,6 @@
         width: 220px;
     }
     #account-prompts {
-        display: none;
         background-color: #eee;
         border: 1px solid #ccc;
         border-radius: 5px;
