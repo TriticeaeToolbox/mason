@@ -1,43 +1,25 @@
-<span id="register_button_html_div">
-    <a href="/user/new" class="btn btn-info" type="button">New User</a>
-</span>
+<&| /util/user.mas:logged_out &>
+    <span id="register_button_html_div">
+        <a href="/user/new" class="btn btn-info" type="button" title="New User">
+            <span class="glyphicon glyphicon-user"></span>
+            <span class="hidden-sm">&nbsp;New User</span>
+        </a>
+    </span>
+</&>
 
 
 <style>
     #register_button_html_div {
-        display: none;
+        display: inline;
     }
 
     #register_button_html_div a.btn {
         color: #fff; 
         margin: 8px 7px 0px 0px;
+        height: 35px !important;
     }
 
     #register_button_html_div a.btn:hover {
         background-color: #31b0d5;
     }
 </style>
-
-
-
-<script type="text/javascript">
-    jQuery( document ).ready(function() {
-        toggleRegisterDisplay();
-    });
-
-
-    /**
-     * Toggle the display of the register button based on the user's login status
-     */
-    function toggleRegisterDisplay() {
-        // Not logged in...
-        if ( !jQuery.cookie("sgn_session_id") || jQuery.cookie("sgn_session_id") == "" ) {
-            jQuery("#register_button_html_div").css("display", "inline");
-        }
-
-        // Logged in...
-        else {
-            jQuery("#register_button_html_div").css("display", "none");
-        }
-    }
-</script>
