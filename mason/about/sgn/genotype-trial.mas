@@ -1,0 +1,54 @@
+<h2><% $T3_INSTANCE_NAME %>Genotype Trial description</h2>
+
+<h2>GBS PstI-MspI</h2>
+<ul>
+        <li><a href="/static_content/files/genotype-trials/Haplotag-2016.pdf">Haplotag: Software for Haplotype-Based GBS Analysis</a>
+        <li><a href="/static_content/files/genotype-trials/Haplotag-2018.pdf">Haplotype-based GBS in oat genome research</a>
+</ul>
+</ul>
+
+<h2>GBS PstI-MspI Spain</h2>
+<ul>
+        <li><a href="/static_content/files/genotype-trials/GBS_Spain_Protocol.docx">Spain Protocol</a><br>
+        <li><a href="/static_content/files/genotype-trials/GBS_Spain_Accessions.xlsx">Spain Accessions</a><br>
+        <li><a href="/static_content/files/genotype-trials/GBS_Spain_Genotypes.txt">Genotype file</a><br>
+</ul>
+
+<h2>HiSeq</h2>
+
+<h2>Infinium</h2>
+
+<h2>Infinium 2020 - Metabolomics-Oat6K</h2>
+<ul>
+        <li><a href="/static_content/files/genotype-trials/Infinium_2020_Metabolomics-Oat6K.pdf">SNP calling for oat biparental genotyping arrays</><br>
+        <li><a href="/static_content/files/genotype_trials/ModifiedSampleNames.xlsx">Sample Names</a><br>
+        <li><a href="/static_content/files/genotype_trials/CleanedMrks.txt">Genotype file</a><br>
+</ul>
+
+<br /><br />
+
+<a class="anchor" id="citation"></a>
+<h2>Cite <% $T3_INSTANCE_NAME %></h2>
+
+<div class="boxcontent">
+    <p>If data on The Triticeae Toolbox was relevant to analyses or findings that you publish, please cite:</p>
+    <p class="well">
+        <& /instance/citation.mas &>
+    </p>
+</div>
+
+<br /><br />
+
+<& /usage_policy.mas &>
+
+<br /><br />
+
+
+<style>
+    a.anchor {
+        display: block;
+        position: relative;
+        top: -50px;
+        visibility: hidden;
+    }
+</style>
