@@ -1,4 +1,4 @@
-<h2><% $T3_INSTANCE_NAME %>Genotype Trial description</h2>
+<h2><% our $T3_INSTANCE_NAME %> Genotype Trial description</h2>
 
 <h2>GBS PstI-MspI</h2>
 <ul>
@@ -21,8 +21,8 @@
 <h2>Infinium 2020 - Metabolomics-Oat6K</h2>
 <ul>
         <li><a href="/static_content/files/genotype-trials/Infinium_2020_Metabolomics-Oat6K.pdf">SNP calling for oat biparental genotyping arrays</><br>
-        <li><a href="/static_content/files/genotype_trials/ModifiedSampleNames.xlsx">Sample Names</a><br>
-        <li><a href="/static_content/files/genotype_trials/CleanedMrks.txt">Genotype file</a><br>
+        <li><a href="/static_content/files/genotype-trials/ModifiedSampleNames.xlsx">Sample Names</a><br>
+        <li><a href="/static_content/files/genotype-trials/CleanedMrks.txt">Genotype file</a><br>
 </ul>
 
 <br /><br />
@@ -30,16 +30,7 @@
 <a class="anchor" id="citation"></a>
 <h2>Cite <% $T3_INSTANCE_NAME %></h2>
 
-<div class="boxcontent">
-    <p>If data on The Triticeae Toolbox was relevant to analyses or findings that you publish, please cite:</p>
-    <p class="well">
-        <& /instance/citation.mas &>
-    </p>
-</div>
-
 <br /><br />
-
-<& /usage_policy.mas &>
 
 <br /><br />
 
