@@ -1,0 +1,23 @@
+<span id="contact_button_html_div">
+    <a href="/contact/form" class="btn btn-primary" type="button" title="Contact Us">
+        <span class="glyphicon glyphicon-question-sign"></span>
+        <span class="hidden-sm">&nbsp;Contact Us</span>
+    </a>
+</span>
+
+
+<style>
+    #contact_button_html_div {
+        display: inline;
+    }
+
+    #contact_button_html_div a.btn {
+        color: #fff; 
+        margin: 8px 7px 0px 0px;
+        height: 35px !important;
+    }
+
+    #contact_button_html_div a.btn:hover {
+        background-color: #337ab7;
+    }
+</style>
