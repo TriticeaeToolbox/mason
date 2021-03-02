@@ -18,6 +18,21 @@ $user_roles => 'unknown'
         border-bottom: 1px solid #ccc;
     }
 
+    .tutorial {
+        padding: 0 7px;
+        margin-top: 40px;
+        background-color: #e8cbc5;
+        border: 2px solid #c84c30;
+        border-radius: 5px;
+    }
+    .tutorial h2 {
+        color: #82311f;
+        border-bottom: 1px solid #c7897b;
+    }
+    .tutorial a {
+        color: #82311f;
+    }
+
     a.template {
         float: right;
         margin: 5px;
@@ -57,15 +72,10 @@ $user_roles => 'unknown'
     }
 
     #account-prompts {
-        display: none;
         margin: 15px;
     }
     #account-prompts p {
         margin: 10px 0 0 0;
-    }
-
-    #account-status {
-        display: none;
     }
 </style>
 
@@ -93,43 +103,66 @@ $user_roles => 'unknown'
     If you have any questions about the process, please feel free to <a href="/contact/form">Contact Us</a>.
 </p>
 
+<div class="tutorial">
+    <h2>Tutorial</h2>
+    <p>
+        <a href="/static_content/files/2020ScabWorkshop/notes.html">View the notes from a September 2020 workshop</a> 
+        on how to load a demo field trial, with step-by-step instructions and example templates, into the database.
+    </p>
+</div>
+
 <div class="section">
     <h2>User Account</h2>
-    <p>In order to submit data to the database, you must have an account with at least submitter privileges.  All 
+    <p>
+        In order to submit data to the database, you must have an account with at least submitter privileges.  All 
         new accounts created on <a href='<% our $T3_SANDBOX_URL %>'>the sandbox database</a> are automatically given 
-        submitter status.</p>
+        submitter status.
+    </p>
+    <p>
+        If you need to modify an existing trial, your account must be associated with the breeding program that originally 
+        created the trial.  If your account is not already associated with the breeding program, please 
+        <a href="/contact/form">Contact Us</a> to make the change.
+    </p>
 
-    <div id="account-prompts">
-        <div class="row">
-            <div class="col-md-5">
-                <a href="/user/new" class="btn btn-primary btn-large btn-home">
-                    <span class="glyphicon glyphicon-user"></span>&nbsp;
-                        Create Account
-                </a>
-                <br />
-                <p>Create a new account if you don't already have one</p>
-            </div>
-            <div class="col-md-2"><br /></div>
-            <div class="col-md-5">
-                <a id="account-prompts-login" href="#" class="btn btn-primary btn-large btn-home">
-                    <span class="glyphicon glyphicon-user"></span>&nbsp;
-                        Login
-                </a>
-                <br />
-                <p>Login to your existing account</p>
+    <&| /util/user.mas:logged_out &>
+        <div id="account-prompts">
+            <div class="row">
+                <div class="col-md-5">
+                    <a href="/user/new" class="btn btn-primary btn-large btn-home">
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;
+                            Create Account
+                    </a>
+                    <br />
+                    <p>Create a new account if you don't already have one</p>
+                </div>
+                <div class="col-md-2"><br /></div>
+                <div class="col-md-5">
+                    <a id="account-prompts-login" href="#" class="btn btn-primary btn-large btn-home">
+                        <span class="glyphicon glyphicon-user"></span>&nbsp;
+                            Login
+                    </a>
+                    <br />
+                    <p>Login to your existing account</p>
+                </div>
             </div>
         </div>
-    </div>
+    </&>
 
-    <div id="account-status">
-        <p><strong>Account Status:</strong> <% $user_roles %></p>
-    </div>
+    <&| /util/user.mas:logged_in &>
+        <div id="account-status">
+            <p><strong>Account Status:</strong> <% $user_roles %></p>
+        </div>
+    </&>
 </div>
 
 <div class="section">
     <h2>Breeding Program</h2>
-    <p>All data (such as Accessions and Trials) are associated with a particular Breeding Program. Generally, 
-        we have a Breeding Program for each University / Institution that submits data to the database.</p>
+    <p>
+        All data (such as Accessions and Trials) are associated with a particular Breeding Program. Generally, 
+        we have a Breeding Program for each University / Institution that submits data to the database.  For cooperative
+        nurseries we've created a separate breeding program for the cooperative so that trials performed for the cooperative 
+        nursery can be grouped together.
+    </p>
 
     <ol>
         <li>Make sure your Breeding Program exists in the Database
@@ -191,14 +224,18 @@ $user_roles => 'unknown'
 <div class="section">
     <a class="template btn btn-primary" href="/static_content/files/templates/accessions.xls"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;Blank Acccession Template</a>
     <h2>Accessions</h2>
-    <p>Each Accession / line that is observed in a phenotype trial must have its own entry in the database.  In addition, 
-    the line names used in your trial design must match the names of the Accessions in the database.</p>
+    <p>
+        Each Accession (germplasm line) that is observed in a phenotype trial must have its own entry in the database.  In addition, 
+        the line names used in your trial design must match the names (or synonyms) of the Accessions in the database.
+    </p>
 
     <ol>
         <li>Make sure your Accessions exist in the Database
             <ul>
                 <li>Use the <a href="/search/phenotypes/stock">Search &gt; Accessions &amp; Plots</a> page to search 
-                for the Accessions in your trial</li>
+                for the Accessions in your trial (individually)</li>
+                <li>Use the <a href="https://synonyms.triticeaetoolbox.org?db=<% our $T3_INSTANCE_NAME %>">Bulk Accession Search tool</a> to find matches 
+                of existing Accessions for all of the lines in your trial.</li>
             </ul>
         </li>
         <li>If one or more of your Accessions don't exist in the database, you can add them by uploading a file of 
@@ -226,6 +263,7 @@ $user_roles => 'unknown'
 
 <div class="section">
     <a class="template btn btn-primary" href="/static_content/files/templates/trials.xls"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;Blank Multi-Trial Template</a>
+    <a class="template btn btn-primary" href="/static_content/files/templates/single_trial.xls"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;Blank Single Trial Template</a>
     <h2>Trials</h2>
     <p>A phenotyping trial must exist in the database before the results can be added.  The Trial contains information about 
     its location, plot and field size, design type, and plot layout.  A Trial can be added in multiple ways:</p>
@@ -369,8 +407,10 @@ $user_roles => 'unknown'
         manual page for more information on creating and managing lists</li>
     </ul>
 
+    <br />
+
     <p>
-        If you are familiar with the traits on the original version of <% our $T3_INSTANCE_NAME %>, you can use the trait lookup table to match 
+        <strong>If you are familiar with the traits on the original version of <% $T3_INSTANCE_NAME %></strong>, you can use the trait lookup table to match 
         the old trait names to their corresponding Breedbase trait names and IDs.  There is a trait lookup table available for each crop:
     </p>
     <ul>
@@ -392,15 +432,6 @@ $user_roles => 'unknown'
 
 <script type="text/javascript">
     $( document ).ready(function() {
-        if ( !$.cookie("sgn_session_id") || $.cookie("sgn_session_id") == "" ) {
-            $("#account-prompts").css("display", "block");
-            $("#account-status").css("display", "none");
-        }
-        else {
-            $("#account-prompts").css("display", "none");
-            $("#account-status").css("display", "block");
-        }
-
         $("#account-prompts-login").on("click", function() {
             $('#site_login_dialog').modal("show");
         });
