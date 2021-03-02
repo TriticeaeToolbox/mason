@@ -92,6 +92,8 @@ my $src_feature_alt = "?data=/ggds/whe-svevo2018";
 
 <& /markers/derivation.mas, marker=>$marker &>
 
+<& /markers/locationsGenotype.mas, marker=>$marker_name, dbh=>$dbh &>
+
 <& /markers/locations.mas, marker=>$marker &>
 
 <& /markers/polymorphisms.mas, marker=>$marker &>
