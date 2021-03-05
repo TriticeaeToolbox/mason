@@ -1,27 +1,34 @@
-<h2><% our $T3_INSTANCE_NAME %> Genotype Trial description</h2>
+<h1><center><% our $T3_INSTANCE_NAME %> Genotype Trial description</h1></center>
 
 <h2>GBS PstI-MspI</h2>
 <ul>
-        <li><a href="/static_content/files/genotype-trials/Haplotag-2016.pdf">Haplotag: Software for Haplotype-Based GBS Analysis</a>
-        <li><a href="/static_content/files/genotype-trials/Haplotag-2018.pdf">Haplotype-based GBS in oat genome research</a>
+        <li>Publication: <a href="/static_content/files/genotype-trials/Haplotag-2016.pdf">Haplotag: Software for Haplotype-Based GBS Analysis</a>
+        <li>Publication: <a href="/static_content/files/genotype-trials/Haplotag-2018.pdf">Haplotype-based GBS in oat genome research</a>
 </ul>
 </ul>
 
 <h2>GBS PstI-MspI Spain</h2>
 <ul>
-        <li><a href="/static_content/files/genotype-trials/GBS_Spain_Protocol.docx">Spain Protocol</a><br>
-        <li><a href="/static_content/files/genotype-trials/GBS_Spain_Accessions.xlsx">Spain Accessions</a><br>
+        <li><a href="/static_content/files/genotype-trials/GBS_Spain_Protocol.docx">Protocol</a><br>
+        <li><a href="/static_content/files/genotype-trials/GBS_Spain_Accessions.xlsx">Accessions</a><br>
         <li><a href="/static_content/files/genotype-trials/GBS_Spain_Genotypes.txt">Genotype file</a><br>
 </ul>
 
-<h2>HiSeq</h2>
-
-<h2>Infinium</h2>
-
-<h2>Infinium 2020 - Metabolomics-Oat6K</h2>
+<h2>GBS 2014 Core</h2>
 <ul>
-        <li><a href="/static_content/files/genotype-trials/Infinium_2020_Metabolomics-Oat6K.pdf">SNP calling for oat biparental genotyping arrays</><br>
-        <li><a href="/static_content/files/genotype-trials/ModifiedSampleNames.xlsx">Sample Names</a><br>
+	<li>Publication: <a href="/static_content/files/genotype-trials/2014-Oat-Core.pdf">Using GBS for Genomic Discovery in Cultivated Oat</a>
+</ul>
+
+<h2>Infinium 2010</h2>
+<ul>
+	<li>Publication: <a href="/static_content/files/genotype-trials/SNPArrayHexaploidOat.pdf">A SNP Genotyping Array for Hexaploid Oat</a>
+</ul>
+
+<h2>Infinium 2020</h2>
+<ul>
+	<li>Publication: <a href="/static_content/files/genotype-trials/OatMetabolome.pdf">Translating insights from the seed metabolome into improved prediction for lipid-composition traits in oat<a>
+        <li><a href="/static_content/files/genotype-trials/Infinium_2020_Metabolomics-Oat6K.pdf">Protocol</><br>
+        <li><a href="/static_content/files/genotype-trials/ModifiedSampleNames.xlsx">Accessions</a><br>
         <li><a href="/static_content/files/genotype-trials/CleanedMrks.txt">Genotype file</a><br>
 </ul>
 
