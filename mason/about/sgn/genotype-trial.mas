@@ -2,6 +2,7 @@
 
 <h2>Exome Capture Watkins</h2> - Watkins Core 2017
 <ul>
+	<li>Raw data: <a href="https://opendata.earlham.ac.uk/wheat/under_license/toronto/Gardiner_et_al_2017_Watkins_exome_capture_SNP_calls_VCF">Grassroots Data Repository</a>
 	<li>Protocol: <a href="/static_content/files/genotype-trials/Gardner_et_all_2017.txt">Protocol</a>
         <li>Publication: <a href="/static_content/files/genotype-trials/Watkins-landrace.pdf">Establishing the A. E. Watkins landrace cultivar collection</a>
         <li>Publication: <a href="/static_content/files/genotype-trials/PBI-Watkins-Collection.pdf">High-density genotyping of the A.E Watkins Collection</a>
