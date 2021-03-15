@@ -1,0 +1,59 @@
+<h1><center><% our $T3_INSTANCE_NAME %> Genotype Trial description</h1></center>
+
+<h2>Exome Capture Watkins</h2> - Watkins Core 2017
+<ul>
+	<li>Raw data: <a href="https://opendata.earlham.ac.uk/wheat/under_license/toronto/Gardiner_et_al_2017_Watkins_exome_capture_SNP_calls_VCF">Grassroots Data Repository</a>
+	<li>Protocol: <a href="/static_content/files/genotype-trials/Gardner_et_all_2017.txt">Protocol</a>
+        <li>Publication: <a href="/static_content/files/genotype-trials/Watkins-landrace.pdf">Establishing the A. E. Watkins landrace cultivar collection</a>
+        <li>Publication: <a href="/static_content/files/genotype-trials/PBI-Watkins-Collection.pdf">High-density genotyping of the A.E Watkins Collection</a>
+</ul>
+
+<h2>GBS KSU 2020</h2> - WheatCAP Regulatory
+<ul>
+	<li>Publication: <a href="/static_content/files/genotype-trials/giz018.pdf">Integrating genomic resources to present full gene and putative promoter capture probe sets for bread wheat</a>
+</ul>
+
+<h2>TGC-GTC 90K</h2> - Tetraploid Wheat Global Collection
+<ul>
+	<li>Publication: <a href="/static_content/files/genotype-trials/s41588-019-0381-3.pdf">Durum wheat genome highlights past domestication signatures</a>
+</ul>
+
+<h2>GBS Seq Cap KSU 2014</h2> - 2014_HapMap_WEC
+<ul>
+	<li>Publication: <a href="/static_content/files/genotype-trials/GenomeBiologyHaplotypeMap.pdf">A haplotype map of allohexaploid wheat reveals distinct patterns of selection on homoeologous genomes</a>
+</ul>
+
+<h2>GBS restriction KSU 2014</h2> - 2014_HapMap_GBS (62 diverse wheat lines)
+<ul>
+	<li>Publication: <a href="/static_content/files/genotype-trials/GenomeBiologyHaplotypeMap.pdf">A haplotype map of allohexaploid wheat reveals distinct patterns of selection on homoeologous genomes</a>
+</ul>
+
+<h2>GBS KSU 2019</h2> - 2019_HapMap (PHG, Diversity)
+<ul>
+	<li>Publication: <a href="/static_content/files/genotype-trials/s41588-019-0382-2.pdf">Exome sequencing highlights the role of wild-relative introgression in shaping the adaptive landscape of the wheat genome</a>
+</ul>
+
+<h2>GBS Seq Cap 2017</h2> - 2017_WheatCAP
+<ul>
+</ul>
+
+<h2>Illumina 90K</h2>
+<ul>
+	<li>Publication: <a href="/static_content/files/genotype-trials/pbi0012-0787.pdf">high-density 90 000 single nucleotide polymorphism array</a>
+</ul>
+
+<h2>Illumina 9K</h2>
+<ul>
+	<li>Publication: <a href="/static_content/files/genotype-trials/pnas.201217133.pdf">9K iSelect Breadchip Assay</a>
+</ul>
+
+<br /><br />
+
+<style>
+    a.anchor {
+        display: block;
+        position: relative;
+        top: -50px;
+        visibility: hidden;
+    }
+</style>
