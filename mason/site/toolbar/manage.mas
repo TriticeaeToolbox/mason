@@ -5,13 +5,20 @@
     <li><a href="/breeders/locations">Locations</a></li>
     <li><a href="/breeders/accessions/">Accessions</a></li>
     <li><a href="/breeders/crosses/">Crosses</a></li>
+
+    <li role="separator" class="divider"></li>
+
     <li><a href="/fieldbook">Field Book Tools</a></li>
     <li><a href="/breeders/trials/">Field Trials</a></li>
     <li><a href="/breeders/phenotyping/">Phenotyping Results</a></li>
-    <li><a href="/breeders/genotyping/">Genotyping Results</a></li>
     
     <li role="separator" class="divider"></li>
+
+    <li><a href="/breeders/genotyping/">Genotyping Results</a></li>
+    <li><a href="/breeders/sequence_metadata/">Sequence Metadata</a></li>
     
+    <li role="separator" class="divider"></li>
+
     <li><a href="/tools/onto/">Trait Ontology Browser</a></li>
     <li><a href="/tools/compose">Compose a New Trait</a></li>
     
@@ -20,9 +27,5 @@
     <li><a href="/breeders/download">Download</a></li>
     <li><a href="/breeders/upload">Upload</a></li>
     <li><a href="/barcode">Barcodes</a></li>
-    
-    <!-- <li role="separator" class="divider"></li> -->
-    
-    <!-- <li><a href="/breeders/manage_roles/">User Roles</a></li> -->
   </ul>
 </li>
