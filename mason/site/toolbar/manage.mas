@@ -14,7 +14,11 @@
     <li><a href="/fieldbook">Field Book Tools</a></li>
     <li><a href="/breeders/trials/">Field Trials</a></li>
     <li><a href="/breeders/phenotyping/">Phenotyping Results</a></li>
+
+    <li role="separator" class="divider"></li>
+    
     <li><a href="/breeders/genotyping/">Genotyping Results</a></li>
+    <li><a href="/breeders/sequence_metadata">Sequence Metadata</a></li>
     
     <li role="separator" class="divider"></li>
     
