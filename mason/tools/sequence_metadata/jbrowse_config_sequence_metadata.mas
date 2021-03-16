@@ -11,7 +11,7 @@ const JBROWSE_CONFIG_SEQUENCE_METADATA = {
     "enabled": true,
     "base_url": "https://wheat.pw.usda.gov/jb/",
     "data_dir": "/ggds/whe-iwgsc2018",
-    "tracks": ["DNA"]
+    "tracks": ["DNA"],
     "location_name": function(feature) {
         return feature.startsWith('chr') ? feature : 'chr' + feature;
     }
