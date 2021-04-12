@@ -35,6 +35,12 @@
         <li><a href="/static_content/files/genotype-trials/CleanedMrks.txt">Genotype file</a><br>
 </ul>
 
+<h2>GBS HiSeq</h2>
+<ul>
+	<li>Publication: <a href="/static_content/files/genotype-trials/pone.0102448.pdf">Using Genotyping-By-Sequencing (GBS) for Genomic Discovery in Cultivated Oat
+        <li><a href="/static_content/files/genotype-trials/pone.0102448.s021.xlsx">GBS sequence reads and a key file for GBS pipeline analysis</a>
+</ul>
+
 <br /><br />
 
 <style>
