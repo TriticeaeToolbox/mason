@@ -1,8 +1,9 @@
 <li class="dropdown"><a class="menu_click_dropdown dropdown-toggle" data-toggle="dropdown">Search</a>
   <ul class="dropdown-menu">
     <li><a href="/breeders/search">Wizard</a></li>
+    <li><a href="/search/bulk">Bulk Search</a></li>
     <li role="separator" class="divider"></li>
-    <li><a href="/search/phenotypes/stock">Accessions and Plots</a></li>
+    <li><a href="/search/stocks">Accessions and Plots</a></li>
 	  <li><a href="https://synonyms.triticeaetoolbox.org/?db=<% our $T3_INSTANCE_NAME %>">Bulk Accession Search</a></li>
     <!-- <li><a href="/search/cross">Progenies and Crosses</a></li> -->
     

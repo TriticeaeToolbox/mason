@@ -6,12 +6,20 @@
  * base_url: host and base url to JBrowse
  * data_dir: JBRowse data directory to include
  * tracks: list of track names to include with the sequence metadata
+ * location_name: function to convert sequence metadata feature name into JBrowse location name
+ * query_params: additional query parameters to add to the sequence metadata gff query api
  */
 const JBROWSE_CONFIG_SEQUENCE_METADATA = {
     "enabled": true,
     "base_url": "https://wheat.pw.usda.gov/jb/",
     "data_dir": "/ggds/whe-iwgsc2018",
-    "tracks": ["DNA"]
+    "tracks": ["DNA"],
+    "location_name": function(feature) {
+        return feature.startsWith('chr') ? feature : 'chr' + feature;
+    },
+    "query_params": {
+        "prepend_chr_to_feature_name": 1
+    }
 }
 
 </script>
