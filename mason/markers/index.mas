@@ -78,6 +78,10 @@ my $src_feature_alt = "?data=/ggds/whe-svevo2018";
 % }
 </&>
 
+<&| /page/info_section.mas, title=>"External Links", collapsible=>1 &>
+    <& /markers/external_links.mas, marker_id=>$marker_id, marker_name=>$marker_name, title=>"External Database Links", collapsible=>1 &>
+</&>
+
 <&| /page/info_section.mas, title=>"Locus associations", collapsible=>1 &>
 <& /markers/kfg.mas, marker=>$marker &>
 </&>
@@ -109,7 +113,7 @@ my $src_feature_alt = "?data=/ggds/whe-svevo2018";
 <& /markers/attributions.mas, marker=>$marker &>
 
 <&| /page/info_section.mas, title => "Genomic location of $marker_name", collapsible=>1 &>
-<& /feature/jbrowse_exact_match.mas, feature=> $marker_name, src_feature=> $src_feature, src_feature_alt=> $src_feature_alt &>
+<& /feature/jbrowse_exact_match.mas, dbh=> $dbh, feature=> $marker_name, src_feature=> $src_feature, src_feature_alt=> $src_feature_alt &>
 </&>
 
 <& /markers/comments.mas, marker=>$marker &>
