@@ -78,10 +78,6 @@ my $src_feature_alt = "?data=/ggds/whe-svevo2018";
 % }
 </&>
 
-<&| /page/info_section.mas, title=>"External Links", collapsible=>1 &>
-    <& /markers/external_links.mas, marker_id=>$marker_id, marker_name=>$marker_name, title=>"External Database Links", collapsible=>1 &>
-</&>
-
 <&| /page/info_section.mas, title=>"Locus associations", collapsible=>1 &>
 <& /markers/kfg.mas, marker=>$marker &>
 </&>
