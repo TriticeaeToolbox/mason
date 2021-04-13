@@ -1,0 +1,37 @@
+<h1><center><% our $T3_INSTANCE_NAME %> Genotype Trial description</h1></center>
+
+<h2>GBS 2015 MN</h2>
+<ul>
+</ul>
+
+<h2>GBS 2016 WBDC</h2>
+<ul>
+        <li><a href="/static_content/files/genotype-trials/WBDC_GBS2016_genotypes.txt">Genotypes</a>
+</ul>
+
+<h2>GBS 2012 MorexBarke</h2>
+<ul>
+	<li>Publication: <a href="/static_content/files/genotype-trials/pone.0032253.pdf">Development of High-Density Genetic Maps for Barley and Wheat Using GBS</a>
+</ul>
+
+<h2>Infinium 50K</h2>
+<ul>
+	<li>Source: Richard Horsley, North Dakota State University
+</ul>
+
+<h2>Infinium 50K Lightning</h2>
+<ul>
+	<li>Source: Daniela Carrijo, Oregon State University
+	<li>Genotypes: <a href="/static_content/files/genotype-trials/LightningT3.csv">Lightning</a>
+</ul>
+
+<br /><br />
+
+<style>
+    a.anchor {
+        display: block;
+        position: relative;
+        top: -50px;
+        visibility: hidden;
+    }
+</style>
