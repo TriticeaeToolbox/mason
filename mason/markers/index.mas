@@ -109,7 +109,7 @@ my $src_feature_alt = "?data=/ggds/whe-svevo2018";
 <& /markers/attributions.mas, marker=>$marker &>
 
 <&| /page/info_section.mas, title => "Genomic location of $marker_name", collapsible=>1 &>
-<& /feature/jbrowse_exact_match.mas, feature=> $marker_name, src_feature=> $src_feature, src_feature_alt=> $src_feature_alt &>
+<& /feature/jbrowse_exact_match.mas, dbh=> $dbh, feature=> $marker_name, src_feature=> $src_feature, src_feature_alt=> $src_feature_alt &>
 </&>
 
 <& /markers/comments.mas, marker=>$marker &>

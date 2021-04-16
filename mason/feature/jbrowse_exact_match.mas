@@ -1,30 +1,44 @@
 <%args>
+    $dbh
     $feature
     $src_feature
+    $src_feature_alt
 </%args>
 
 
 <%perl>
 my $jbrowse_url ;
-my $iframe_url ;
+my @row;
 if ( $feature && $src_feature ) {
 
-   # check if $feature and $src_feature are an object (as used in the locus and feature pages)
-   # or a scalar (as used in the marker pages)
-    my $feature_name= ref($feature) ? $feature->name : $feature;
-    my $data_source = ref($src_feature)  ? $src_feature->name : $src_feature;
+    my $species;
+    my $q = "select distinct(nd_protocolprop.value->>'reference_genome_name') from nd_protocolprop where ? IN (SELECT jsonb_array_elements_text(nd_protocolprop.value->'marker_names') WHERE type_id = 76698)";
+    my $sth = $dbh->prepare($q);
+    $sth->execute($feature);
+    while (@row = $sth->fetchrow_array()) {
+        $species = $row[0];
 
-    $data_source =~ s/(.*\d)(\.?chr?\d\d)/$1/;
-    $jbrowse_url = $c->config->{jbrowse_path} . "/$data_source&loc=$feature_name&tracks=Variants in T3,gene_models" ;
-    $iframe_url = $jbrowse_url . "&tracklist=0&nav=1&overview=0" ;
-    print STDERR "JB.MAS\njbrowse_url = $jbrowse_url\niframe_url = $iframe_url \n\n";
- }
+        # check if $feature and $src_feature are an object (as used in the locus and feature pages)
+        # or a scalar (as used in the marker pages)
+        my $feature_name= ref($feature) ? $feature->name : $feature;
+        my $data_source;
+        if ($species eq 'RefSeq_v1') {
+            $data_source = ref($src_feature) ? $src_feature->name : $src_feature;
+        } else {
+            $data_source = ref($src_feature_alt) ? $src_feature_alt->name : $src_feature_alt;
+        }
 
+        $data_source =~ s/(.*\d)(\.?chr?\d\d)/$1/;
+        $jbrowse_url = $c->config->{jbrowse_path} . "/$data_source&loc=$feature_name&tracks=Variants in T3,gene_models" ;
+
+        </%perl>
+
+        <a href="<% $jbrowse_url %>" target="_new">Genome Browser - <% $species %> JBrowse</a><br>
+
+<%perl>
+    }
+}
 </%perl>
-
-% if ( $jbrowse_url ) {
-    <a href="<% $jbrowse_url %>">Genome Browser - JBrowse</a>
-% }
 
 <script language="javascript" type="text/javascript">
   jQuery.noConflict();

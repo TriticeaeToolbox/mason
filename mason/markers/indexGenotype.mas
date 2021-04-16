@@ -63,13 +63,40 @@ if (!$marker) {
   return;
 }
 
+my $alias;
+my $synonym;
+my @row;
+my @other_names;
+my $exists = $dbh->prepare("select * from pg_class where relname = 'markers_all'");
+$exists->execute();
+if (@row = $exists->fetchrow_array()) {
+    my $name_q = $dbh->prepare("select distinct(alias) from markers_all where marker_name = ?");
+    $name_q->execute($marker_name);
+    ($alias) = $name_q->fetchrow_array();
+    $name_q = $dbh->prepare("select distinct(marker_name) from markers_all where alias = ?");
+    $name_q->execute($alias);
+    while (($synonym) = $name_q->fetchrow_array()) {
+        if ($synonym ne $marker_name) {
+            push(@other_names, $synonym);
+        }
+    }
+} else {
+   print STDERR "warning: no markers_all materialized view\n";
+}
+
 </%perl>
 
 <& /page/page_title.mas, title=> "Marker $marker_name" &>
 
+<&| /page/info_section.mas, title=>"Synonyms", collapsible=>1 &>
+% if (@other_names) {
+    <% join "<br />", @other_names %>
+% }
+</&>
+
 <& /markers/locationsGenotype.mas, marker=>$marker, dbh=>$dbh &>
 
 <&| /page/info_section.mas, title => "Genomic location of $marker_name", collapsible=>1 &>
-<& /feature/jbrowse_exact_match.mas, feature=> $marker_name, src_feature=> $src_feature &>
+<& /feature/jbrowse_exact_match.mas, dbh=> $dbh, feature=> $marker_name, src_feature=> $src_feature, src_feature_alt=> $src_feature_alt &>
 </&>
 
