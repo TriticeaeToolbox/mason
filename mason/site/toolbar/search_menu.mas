@@ -24,6 +24,7 @@
     <li><a href="/search/features">Ensembl Genes</a></li>
     <li><a href="/genome/gwas.pl">GWAS Results</a></li>
     <li><a href="/genome/mnase.pl">MNase and VEP</a></li>
+    <li><a href="/search/sequence_metadata">Sequence Metadata</a></li>
     
     <li role="separator" class="divider"></li>
     

@@ -1,7 +1,8 @@
 <%init>
-  my $tag = `git describe --abbrev=0 --tags`;
-  my $commit = `git rev-parse --short HEAD`;
-  my $updated = `git log -1 --format=%cd`;
+  my $dir = $c->config->{basepath};
+  my $tag = `cd "$dir"; git describe --abbrev=0 --tags`;
+  my $commit = `cd "$dir"; git rev-parse --short HEAD`;
+  my $updated = `cd "$dir"; git log -1 --format=%cd`;
 </%init>
 
 <style>
@@ -62,7 +63,7 @@
         <p>
           <strong>Version</strong>
           <br />
-          <span class="git-version-commit"><a href="<% our $T3_GITHUB_URL %>/commits/t3/master"><% $commit %></a></span>&nbsp;
+          <span class="git-version-commit"><a href="<% our $T3_GITHUB_URL %>/commits/<% $commit %>"><% $commit %></a></span>&nbsp;
           <span class="git-version-tag"><a href="<% $T3_GITHUB_URL %>/commits/<% $tag %>"><% $tag %></a></span>
           <br />
           <span class="git-version-updated"><% $updated %></span>
