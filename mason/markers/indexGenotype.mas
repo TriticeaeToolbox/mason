@@ -66,6 +66,10 @@ if (!$marker) {
 
 <& /page/page_title.mas, title=> "Marker $marker_name" &>
 
+<&| /page/info_section.mas, title=>"External Links", collapsible=>1 &>
+    <& /markers/external_links.mas, marker_name=>$marker_name, title=>"External Database Links", collapsible=>1 &>
+</&>
+
 <& /markers/locationsGenotype.mas, marker=>$marker, dbh=>$dbh &>
 
 <&| /page/info_section.mas, title => "Genomic location of $marker_name", collapsible=>1 &>
