@@ -91,6 +91,10 @@ my $src_feature = "?data=/ggds/oat-ot3098-pepsico";
 
 <& /markers/derivation.mas, marker=>$marker &>
 
+<&| /page/info_section.mas, title=>"External Links", collapsible=>1 &>
+    <& /markers/external_links.mas, marker_name=>$marker_name, title=>"External Database Links", collapsible=>1 &>
+</&>
+
 <& /markers/locationsGenotype.mas, marker=>$marker_name, dbh=>$dbh &>
 
 <& /markers/locations.mas, marker=>$marker &>
