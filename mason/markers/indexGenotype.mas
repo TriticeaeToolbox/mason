@@ -55,6 +55,7 @@ if (!$marker_name) {
 my $marker = $marker_name;
 
 my $src_feature = "?data=/ggds/bar-morex2";
+my $src_feature_alt = "?data=/ggds/bar-morex3";
 
 if (!$marker) { 
   $e = SGN::Exception->new(title=>"Marker detail page error: Marker with name $marker_name does not exist in the database");

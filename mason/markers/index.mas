@@ -64,6 +64,7 @@ if (!$marker) {
 my ($marker_name, @other_names) = $marker->name_that_marker();
 
 my $src_feature = "?data=/ggds/bar-morex2";
+my $src_feature_alt = "?data=/ggds/bar-morex3";
 
 </%perl>
 
