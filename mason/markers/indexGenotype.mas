@@ -1,0 +1,116 @@
+
+<%doc>
+
+=head1 NAME
+
+/markers/indexGenotype.mas - a Mason component displaying a marker detail page.
+
+=head1 DESCRIPTION
+
+The following parameters are required: 
+
+=over 5
+
+=item *
+
+$dbh - a database handle
+
+=item *
+
+$marker_name - the name of a marker in the SGN database
+$protocol_id - the id of the protocol in the SGN database
+
+=back
+
+This component is based on Perl code developed by John Binns.
+
+=head1 AUTHOR
+
+Clay Birkett <clb343@cornell.edu>
+
+=cut
+
+</%doc>
+
+<%args>
+$dbh
+$marker_name => undef
+$protocol_id => undef
+</%args>
+
+<%perl>
+
+use CXGN::Marker;
+use SGN::Exception;
+
+my $e = undef;
+
+if (!$marker_name) { 
+  $c->throw(
+     public_message => 'marker_name must be provided as an argument for this page',
+     is_client_error => 1,
+  );
+}
+
+my $marker = $marker_name;
+
+my $src_feature = "?data=/ggds/bar-morex2";
+
+if (!$marker) { 
+  $e = SGN::Exception->new(title=>"Marker detail page error: Marker with name $marker_name does not exist in the database");
+ $m->comp('/site/error/exception.mas', exception=>$e);
+  return;
+}
+
+my $alias;
+my $h;
+my $synonym;
+my $protocol_name;
+my $protocol_id_syn;
+my %protocol_list;
+my @row;
+my @other_names;
+my $exists = $dbh->prepare("select * from pg_class where relname = 'markers_all'");
+$exists->execute();
+if (@row = $exists->fetchrow_array()) {
+    $h = $dbh->prepare("select nd_protocol_id, name from nd_protocol");
+    $h->execute();
+    while (@row = $h->fetchrow_array()) {
+        $protocol_list{$row[0]} = $row[1];
+    }
+    
+    my $name_q = $dbh->prepare("select distinct(alias) from markers_all where marker_name = ?");
+    $name_q->execute($marker_name);
+    ($alias) = $name_q->fetchrow_array();
+    $name_q = $dbh->prepare("select nd_protocol_id, marker_name from markers_all where alias = ?");
+    $name_q->execute($alias);
+    while (($protocol_id_syn, $synonym) = $name_q->fetchrow_array()) {
+        $protocol_name = $protocol_list{$protocol_id_syn};
+        if ($synonym ne $marker_name) {
+            push(@other_names, $synonym);
+        }
+    }
+} else {
+   print STDERR "warning: no markers_all materialized view\n";
+}
+
+</%perl>
+
+<& /page/page_title.mas, title=> "Marker $marker_name" &>
+
+<&| /page/info_section.mas, title=>"Synonyms", collapsible=>1 &>
+% if (@other_names) {
+    <% join "<br />", @other_names %>
+% }
+</&>
+
+<&| /page/info_section.mas, title=>"External Links", collapsible=>1 &>
+    <& /markers/external_links.mas, marker_name=>$marker_name, title=>"External Database Links", collapsible=>1 &>
+</&>
+
+<& /markers/locationsGenotype.mas, marker=>$marker, dbh=>$dbh &>
+
+<&| /page/info_section.mas, title => "Genomic location of $marker_name", collapsible=>1 &>
+<& /feature/jbrowse_exact_match.mas, dbh=> $dbh, feature=> $marker_name, src_feature=> $src_feature, src_feature_alt=> $src_feature_alt &>
+</&>
+

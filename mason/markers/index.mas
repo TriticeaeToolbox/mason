@@ -91,6 +91,10 @@ my $src_feature = "?data=/ggds/bar-morex2";
 
 <& /markers/derivation.mas, marker=>$marker &>
 
+<&| /page/info_section.mas, title=>"External Links", collapsible=>1 &>
+    <& /markers/external_links.mas, marker_name=>$marker_name, title=>"External Database Links", collapsible=>1 &>
+</&>
+
 <& /markers/locations.mas, marker=>$marker &>
 
 <& /markers/polymorphisms.mas, marker=>$marker &>
