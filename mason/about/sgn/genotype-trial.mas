@@ -28,6 +28,12 @@
 	<li>Source: Richard Horsley, North Dakota State University
 </ul>
 
+<h2>UMN_NSGC_GWAS</h2>
+<ul>
+	<li> 67,607 SNPs from GBS and 50K array for 747 lines from the National Small Grains Core Collection. Positions are based on the newest Morex reference genome (bp and POPSEQ cM positions)
+	<li>Publication: <a href="https://doi.org/10.1534/g3.119.400612">Natural Genetic Variation Underlying Tiller Development in Barley</a>
+</ul>
+
 <h2>Infinium 50K Lightning</h2>
 <ul>
 	<li>Source: Daniela Carrijo, Oregon State University
