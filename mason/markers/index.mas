@@ -98,6 +98,8 @@ my $src_feature_alt = "?data=/ggds/bar-morex3";
 
 <& /markers/locations.mas, marker=>$marker &>
 
+<& /markers/locationsGenotype.mas, marker=>$marker_name, dbh=>$dbh &>
+
 <& /markers/polymorphisms.mas, marker=>$marker &>
 
 <& /markers/unigene_match.mas, marker=>$marker &>
@@ -111,7 +113,7 @@ my $src_feature_alt = "?data=/ggds/bar-morex3";
 <& /markers/attributions.mas, marker=>$marker &>
 
 <&| /page/info_section.mas, title => "Genomic location of $marker_name", collapsible=>1 &>
-<& /feature/jbrowse_exact_match.mas, feature=> $marker_name, src_feature=> $src_feature &>
+<& /feature/jbrowse_exact_match.mas, dbh=> $dbh, feature=> $marker_name, src_feature=> $src_feature, src_feature_alt=> $src_feature_alt &>
 </&>
 
 <& /markers/comments.mas, marker=>$marker &>
