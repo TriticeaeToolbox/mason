@@ -64,10 +64,11 @@ if (!$marker) {
 my ($marker_name, @other_names) = $marker->name_that_marker();
 
 my $src_feature = "?data=/ggds/oat-ot3098-pepsico";
+my $src_feature_alt = "?data=/ggds/oat-ot3098v2-pepsico";
 
 </%perl>
 
-<& /page/page_title.mas, title=> "SGN Marker $marker_name" &>
+<& /page/page_title.mas, title=> "Marker $marker_name" &>
 
 <& /markers/basic_marker_info.mas, marker=>$marker, dbh=>$dbh &>
 
@@ -112,7 +113,7 @@ my $src_feature = "?data=/ggds/oat-ot3098-pepsico";
 <& /markers/attributions.mas, marker=>$marker &>
 
 <&| /page/info_section.mas, title => "Genomic location of $marker_name", collapsible=>1 &>
-<& /feature/jbrowse_exact_match.mas, feature=> $marker_name, src_feature=> $src_feature &>
+<& /feature/jbrowse_exact_match.mas, dbh=> $dbh, feature=> $marker_name, src_feature=> $src_feature, src_feature_alt=> $src_feature_alt &>
 </&>
 
 <& /markers/comments.mas, marker=>$marker &>

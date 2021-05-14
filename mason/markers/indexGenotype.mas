@@ -55,6 +55,7 @@ if (!$marker_name) {
 my $marker = $marker_name;
 
 my $src_feature = "?data=/ggds/oat-ot3098-pepsico";
+my $src_feature = "?data=/ggds/oat-ot3098v2-pepsico";
 
 if (!$marker) { 
   $e = SGN::Exception->new(title=>"Marker detail page error: Marker with name $marker_name does not exist in the database");
@@ -73,6 +74,6 @@ if (!$marker) {
 <& /markers/locationsGenotype.mas, marker=>$marker, dbh=>$dbh &>
 
 <&| /page/info_section.mas, title => "Genomic location of $marker_name", collapsible=>1 &>
-<& /feature/jbrowse_exact_match.mas, feature=> $marker_name, src_feature=> $src_feature &>
+<& /feature/jbrowse_exact_match.mas, dbh=> $dbh, feature=> $marker_name, src_feature=> $src_feature, src_feature_alt=> $src_feature_alt &>
 </&>
 
