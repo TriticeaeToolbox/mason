@@ -31,6 +31,9 @@ if ( $feature && $src_feature ) {
         }
 
         $data_source =~ s/(.*\d)(\.?chr?\d\d)/$1/;
+        if ($feature_name =~ /(\w+\.\d+)\.\d+/) {
+            $feature_name = $1;
+        }
         $jbrowse_url = $c->config->{jbrowse_path} . "/$data_source&loc=$feature_name&tracks=Variants in T3,gene_models" ;
 
         </%perl>
