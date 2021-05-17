@@ -26,6 +26,8 @@ if ( $feature && $src_feature ) {
             $data_source = ref($src_feature) ? $src_feature->name : $src_feature;
         } elsif ($species eq 'PepsiCo_v2') {
             $data_source = ref($src_feature_alt) ? $src_feature_alt->name : $src_feature_alt;
+        } else {
+            next;
         }
 
         $data_source =~ s/(.*\d)(\.?chr?\d\d)/$1/;
