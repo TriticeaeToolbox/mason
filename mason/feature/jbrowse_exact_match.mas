@@ -12,7 +12,7 @@ my @row;
 if ( $feature && $src_feature ) {
 
     my $species;
-    my $q = "select distinct(nd_protocolprop.value->>'reference_genome_name') from nd_protocolprop where ? IN (SELECT jsonb_array_elements_text(nd_protocolprop.value->'marker_names') WHERE type_id = 76698)";
+    my $q = "select distinct(nd_protocolprop.value->>'reference_genome_name') from nd_protocolprop where ? IN (SELECT jsonb_array_elements_text(nd_protocolprop.value->'marker_names') WHERE type_id = 76696)";
     my $sth = $dbh->prepare($q);
     $sth->execute($feature);
     while (@row = $sth->fetchrow_array()) {
