@@ -9,6 +9,7 @@
     <li><a href="/accession_usage">Accession Usage</a></li>
     <li><a href="/tools/trial/comparison/list">Compare Trials</a></li>
     <li><a href="/tools/trial/summary/list">Summarize Trials</a></li>
+    <li><a href="https://shiny.triticeaetoolbox.org/eqtl/" target="_new">Wheat eQTL</a></li>
     <li role="separator" class="divider"></li>
     <li class="dropdown-header">Sequence Analysis</li>
     <li><a href="/tools/blast/">BLAST</a></li>
