@@ -17,11 +17,14 @@ if ( $feature && $src_feature ) {
     # print "<p><strong>Input Src Feature:</strong> $data_source</p>";
 
     # Override data source
+    my $tracks = "";
     if ( $data_source eq 'Morex v3' ) {
         $data_source = "?data=/ggds/bar-morex3";
+        $tracks = "refseq,all";
     }
     else {
         $data_source = "?data=/ggds/bar-morex2";
+        $tracks = "DNA,HC";
     }
 
     # Prepend 'chr' to location, if it's a position
@@ -29,8 +32,8 @@ if ( $feature && $src_feature ) {
         if ( $feature_name !~ /^chr/ ) {
             $feature_name = 'chr' . $feature_name;
         }
-        if ( $feature_name !~ /H$/ ) {
-            $feature_name = $feature_name . 'H';
+        if ( $feature_name !~ /^chr[0-9]H/ ) {
+            $feature_name =~ s/^chr([0-9])/chr$1H/;
         }
     }
 
