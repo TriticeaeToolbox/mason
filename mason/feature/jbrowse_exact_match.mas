@@ -5,27 +5,40 @@
 
 
 <%perl>
-my $jbrowse_url ;
-my $iframe_url ;
+my $jbrowse_url;
 if ( $feature && $src_feature ) {
 
-   # check if $feature and $src_feature are an object (as used in the locus and feature pages)
-   # or a scalar (as used in the marker pages)
+    # check if $feature and $src_feature are an object (as used in the locus and feature pages)
+    # or a scalar (as used in the marker pages)
     my $feature_name= ref($feature) ? $feature->name : $feature;
     my $data_source = ref($src_feature)  ? $src_feature->name : $src_feature;
 
-    $data_source =~ s/(.*\d)(\.?chr?\d\d)/$1/;
-    $jbrowse_url = $c->config->{jbrowse_path} . "/$data_source&loc=$feature_name&tracks=Variants in T3,gene_models" ;
-    $iframe_url = $jbrowse_url . "&tracklist=0&nav=1&overview=0" ;
-    print STDERR "JB.MAS\njbrowse_url = $jbrowse_url\niframe_url = $iframe_url \n\n";
- }
+    print "<p><strong>Input Feature:</strong> $feature_name</p>";
+    print "<p><strong>Input Src Feature:</strong> $data_source</p>";
 
+    # Override data source
+    if ( $data_source eq 'Morex v3' ) {
+        $data_source = "?data=/ggds/whe-svevo2018";
+    }
+    else {
+        $data_source = "?data=/ggds/whe-iwgsc2018";
+    }
+
+    # Prepend 'chr' to location, if it's a position
+    if ( $feature_name =~ /^.*:[0-9]+$/ && $feature_name !~ /^chr/ ) {
+        $feature_name = 'chr' . $feature_name;
+    }
+
+    print "<p><strong>Used Location:</strong> $feature_name</p>";
+    print "<p><strong>Used Data Source:</strong> $data_source</p>";
+
+    $jbrowse_url = $c->config->{jbrowse_path} . "/$data_source&loc=$feature_name&tracks=hiconf-1.1,Variants_in_T3";
+    print STDERR "JB.MAS\njbrowse_url = $jbrowse_url\n";
+
+}
 </%perl>
 
 % if ( $jbrowse_url ) {
-    <a href="<% $jbrowse_url %>">Genome Browser - JBrowse</a>
+    <!-- <code><% $jbrowse_url %></code><br /> -->
+    <a href="<% $jbrowse_url %>" target="_new">Genome Browser - JBrowse</a><br />
 % }
-
-<script language="javascript" type="text/javascript">
-  jQuery.noConflict();
-</script>
