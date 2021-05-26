@@ -13,24 +13,29 @@ if ( $feature && $src_feature ) {
     my $feature_name= ref($feature) ? $feature->name : $feature;
     my $data_source = ref($src_feature)  ? $src_feature->name : $src_feature;
 
-    print "<p><strong>Input Feature:</strong> $feature_name</p>";
-    print "<p><strong>Input Src Feature:</strong> $data_source</p>";
+    # print "<p><strong>Input Feature:</strong> $feature_name</p>";
+    # print "<p><strong>Input Src Feature:</strong> $data_source</p>";
 
     # Override data source
     if ( $data_source eq 'Morex v3' ) {
-        $data_source = "?data=/ggds/whe-svevo2018";
+        $data_source = "?data=/ggds/bar-morex3";
     }
     else {
-        $data_source = "?data=/ggds/whe-iwgsc2018";
+        $data_source = "?data=/ggds/bar-morex2";
     }
 
     # Prepend 'chr' to location, if it's a position
-    if ( $feature_name =~ /^.*:[0-9]+$/ && $feature_name !~ /^chr/ ) {
-        $feature_name = 'chr' . $feature_name;
+    if ( $feature_name =~ /^.*:[0-9]+$/ ) {
+        if ( $feature_name !~ /^chr/ ) {
+            $feature_name = 'chr' . $feature_name;
+        }
+        if ( $feature_name !~ /H$/ ) {
+            $feature_name = $feature_name . 'H';
+        }
     }
 
-    print "<p><strong>Used Location:</strong> $feature_name</p>";
-    print "<p><strong>Used Data Source:</strong> $data_source</p>";
+    # print "<p><strong>Used Location:</strong> $feature_name</p>";
+    # print "<p><strong>Used Data Source:</strong> $data_source</p>";
 
     $jbrowse_url = $c->config->{jbrowse_path} . "/$data_source&loc=$feature_name&tracks=hiconf-1.1,Variants_in_T3";
     print STDERR "JB.MAS\njbrowse_url = $jbrowse_url\n";
