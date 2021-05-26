@@ -1,8 +1,8 @@
 <li class="dropdown"><a class="menu_click_dropdown dropdown-toggle" data-toggle="dropdown" href="/cview">Maps</a>
   <ul class="dropdown-menu">
     <li><a href="https://maps.triticeaetoolbox.org/">Comparative Map Viewer</a></li>
-    <!--li><a href="/cview/map.pl?map_version_id=32">CMap Variants in T3</a></li-->
-    <!--li><a href="/cview/map.pl?map_version_id=33">CMap HapMap 2014</a></li-->
-    <li><a href="https://wheat.pw.usda.gov/jb?data=/ggds/oat-ot3098-pepsico" target=_new>JBrowse Oat Genome</a>
+    <li><a href="https://oat.triticeaetoolbox.org/cview/map.pl?map_version_id=116">PepsiCo v2</a>
+    <li><a href="https://wheat.pw.usda.gov/jb?data=/ggds/oat-ot3098-pepsico" target=_new>JBrowse Oat PepsiCo v1</a>
+    <li><a href="https://wheat.pw.usda.gov/jb?data=/ggds/oat-ot3098v2-pepsico" target=_new>JBrowse Oat PepsiCo v2</a>
   </ul>
 </li>
