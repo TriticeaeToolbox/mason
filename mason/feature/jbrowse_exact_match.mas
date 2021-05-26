@@ -1,50 +1,52 @@
 <%args>
-    $dbh
     $feature
     $src_feature
-    $src_feature_alt
 </%args>
 
 
 <%perl>
-my $jbrowse_url ;
-my @row;
+my $jbrowse_url;
 if ( $feature && $src_feature ) {
 
-    my $species;
-    my $q = "select distinct(nd_protocolprop.value->>'reference_genome_name') from nd_protocolprop where ? IN (SELECT jsonb_array_elements_text(nd_protocolprop.value->'marker_names') WHERE type_id = 76696)";
-    my $sth = $dbh->prepare($q);
-    $sth->execute($feature);
-    while (@row = $sth->fetchrow_array()) {
-        $species = $row[0];
+    # check if $feature and $src_feature are an object (as used in the locus and feature pages)
+    # or a scalar (as used in the marker pages)
+    my $feature_name= ref($feature) ? $feature->name : $feature;
+    my $data_source = ref($src_feature)  ? $src_feature->name : $src_feature;
 
-        # check if $feature and $src_feature are an object (as used in the locus and feature pages)
-        # or a scalar (as used in the marker pages)
-        my $feature_name= ref($feature) ? $feature->name : $feature;
-        my $data_source;
-        if ($species eq 'PepsiCo_2019') {
-            $data_source = ref($src_feature) ? $src_feature->name : $src_feature;
-        } elsif ($species eq 'PepsiCo v2') {
-            $data_source = ref($src_feature_alt) ? $src_feature_alt->name : $src_feature_alt;
-            if ($feature_name =~ /(\w+\.\d+)\.\d+/) {
-                $feature_name = $1;
-            }
-        } else {
-            next;
+    # print "<p><strong>Input Feature:</strong> $feature_name</p>";
+    # print "<p><strong>Input Src Feature:</strong> $data_source</p>";
+
+    # Set Data Source, tracks, and fix feature name (based on src_feature input)
+    my $tracks = "";
+    if ( $data_source eq 'PepsiCo v2' ) {
+        $data_source = "?data=/ggds/oat-ot3098v2-pepsico";
+        $tracks = "refseq,markers";
+
+        # Prepend 'chr' to location, if it's a position
+        if ( $feature_name =~ /^.*:[0-9]+$/ && $feature_name !~ /^chr/ ) {
+            $feature_name = 'chr' . $feature_name;
         }
-
-        $data_source =~ s/(.*\d)(\.?chr?\d\d)/$1/;
-        $jbrowse_url = $c->config->{jbrowse_path} . "/$data_source&loc=$feature_name&tracks=Variants in T3,gene_models" ;
-
-        </%perl>
-
-        <a href="<% $jbrowse_url %>" target="_new">Genome Browser - <% $species %> JBrowse</a><br>
-
-<%perl>
     }
-}
+    else {
+        $data_source = "?data=/ggds/oat-ot3098-pepsico";
+        $tracks = "DNA,t3m";
+
+        # Remove 'chr' from location, if it's a position
+        if ( $feature_name =~ /^.*:[0-9]+$/ && $feature_name =~ /^chr/ ) {
+            $feature_name =~ s/^chr//;
+        }
+    }
+
+    # print "<p><strong>Used Location:</strong> $feature_name</p>";
+    # print "<p><strong>Used Data Source:</strong> $data_source</p>";
+
+    $jbrowse_url = $c->config->{jbrowse_path} . "/$data_source&loc=$feature_name&tracks=";
+    print STDERR "JB.MAS\njbrowse_url = $jbrowse_url\n";
+
+ }
 </%perl>
 
-<script language="javascript" type="text/javascript">
-  jQuery.noConflict();
-</script>
+% if ( $jbrowse_url ) {
+    <!-- <code><% $jbrowse_url %></code><br /> -->
+    <a href="<% $jbrowse_url %>" target="_new">Genome Browser - JBrowse</a><br />
+% }
