@@ -15,8 +15,10 @@
         print "<p><strong>ERROR: </strong>Missing pos!</p>";
     }
 
-    # Strip chr prefix from chromosome name
-    # $chrom =~ s/^chr//;
+    # Add chr prefix to chromosome name
+    if ( $chrom !~ m/^chr/ ) {
+        $chrom = "chr" . $chrom;
+    }
 </%init>
 
 
