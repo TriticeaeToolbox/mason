@@ -70,13 +70,10 @@
     <!-- DATA USAGE -->
     <& /homepage/data_usage.mas &>
 
-
     <!-- CITATION -->
     <& /homepage/citation.mas &>
 
-
-    <br /><br /><br />
-
+    <br /><br />
 
     <!-- MAIN CONTENT -->
     <div class="row">
