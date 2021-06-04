@@ -19,7 +19,7 @@ if ( $feature && $src_feature ) {
     # Override data source
     if ( $data_source eq 'Triticum durum' ) {
         $data_source = "?data=/ggds/whe-svevo2018";
-    } elsif ( $data_source eq 'RefSeq_v2' ) {
+    } elsif ( $data_source eq 'RefSeq v2.1' ) {
         $data_source = "?data=/ggds/whe-iwgsc2";
     } else {
         $data_source = "?data=/ggds/whe-iwgsc2018";
