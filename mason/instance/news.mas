@@ -10,6 +10,16 @@
 -->
 
 <div class="news-item">
+    <p class="news-item-title">RefSeq v2.1 resoucses</p>
+    <p class="news-item-date">June 1, 2021</p>
+    <div class="news-item-content">
+        <p><a href="https://wheat.triticeaetoolbox.org/tools/blast">BLAST</a>
+        <p><a href="https://wheat.pw.usda.gov/jb?data=/ggds/whe-iwgsc2" target="_new">JBrowse</a>
+        <p><a href="https://wheat.triticeaetoolbox.org/search/locus?filter=T3:ENSEMBL_GENE_IDS">Gene IDs</a>
+     </div>
+</div>
+
+<div class="news-item">
     <p class="news-item-title">Genotype projects added</p>
     <p class="news-item-date">March 1, 2021</p>
     <div class="news-item-content">
