@@ -42,9 +42,16 @@
 	<li>Publication: <a href="/static_content/files/genotype-trials/GenomeBiologyHaplotypeMap.pdf">A haplotype map of allohexaploid wheat reveals distinct patterns of selection on homoeologous genomes</a>
 </ul>
 
-<h2>GBS KSU 2019</h2> - 2019_HapMap (PHG, Diversity)
+<h2>GBS 2019 HapMap</h2> 
 <ul>
-	<li>Publication: <a href="/static_content/files/genotype-trials/s41588-019-0382-2.pdf">Exome sequencing highlights the role of wild-relative introgression in shaping the adaptive landscape of the wheat genome</a>
+	<li>200 USA WheatCAP germplasm
+</ul>
+
+<h2>GBS 2019 Diversity</h2>
+<ul>
+	<li>1000 Exomes
+	<li>Passport: <a href="/static_content/files/genotype-trials/1000exomeGermplasm.xlsx">1000 exome germplasm</a>
+	<li>Publication: <a href="/static_content/files/genotype-trials/s41588-019-0382-2.pdf">Exome sequencing highlights the role of wild-relative introgression in shaping the adaptive landscape of the wheat genome</a>		
 </ul>
 
 <h2>GBS Seq Cap 2017</h2> - 2017_WheatCAP
