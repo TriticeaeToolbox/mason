@@ -56,6 +56,9 @@
         Welcome to <% our $T3_INSTANCE_NAME %>
         <% defined(our $T3_INSTANCE_PRIVATE) ? ' [' . $T3_INSTANCE_PRIVATE . ']' : '' %> 
     </h1>
+    <h2>
+	<a href="https://triticeaetoolbox.org/wheat?old=old">T3/Wheat Archive</a> site Jan 2020
+    </h2>
 
     <br />
 
