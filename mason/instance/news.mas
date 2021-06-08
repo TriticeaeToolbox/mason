@@ -10,6 +10,16 @@
 -->
 
 <div class="news-item">
+    <p class="news-item-title">PepsiCo v2 assembly</p>
+    <p class="news-item-date">May, 2021</p>
+    <div class="news-item-content">
+ 	<ul>
+	<li>Analysis <a href="https://oat.triticeaetoolbox.org/tools/blast/">BLAST</a>
+        <li>Maps <a href="https://oat.triticeaetoolbox.org/cview/map.pl?map_version_id=116">Map</a> <a href="https://wheat.pw.usda.gov/jb?data=/ggds/oat-ot3098v2-pepsico" target="_new">JBrowse</a>
+        </ul>
+    </div>
+</div>
+<div class="news-item">
     <p class="news-item-title">Speaking of Oats...</p>
     <p class="news-item-date">February 26, 2020</p>
     <div class="news-item-content">
@@ -24,22 +34,6 @@
             a <a href="https://oatnews.org/oatnews_pdfs/2020/SOO_QA_21Jan2021.pdf">transcript of the Q&A session (PDF)</a> is available 
             from the Oat Newsletter.
         </p>
-    </div>
-</div>
-
-<div class="news-item">
-    <p class="news-item-title">Site update</p>
-    <p class="news-item-date">November 1, 2020 SGN-285.0</p>
-    <div class="news-item-content">
-        <p>Analysis
-        <p><a href="https://solgenomics.github.io/sgn/04_data_analysis_tools.html#44-principal-component-analysis-pca">Population Structure (PCA)</a>
-        <p><a href="https://solgenomics.github.io/sgn/04_data_analysis_tools.html#44-principal-component-analysis-pca">Clustering (k-means)</a>
-        <p>Manage (contact us to use these features)</p>
-        <p><a href="https://solgenomics.github.io/sgn/04_data_analysis_tools.html#413-general-mixed-model-tool">Mixed Model analysis</a>
-        <p><a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_04.html">Seed Lots</a>
-        <p><a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_06.html">Crosses</a>
-        <p><a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_17.html">Drone Imaging</a>
-        <p><a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_07.html">Management Factors (treatments)</a>
     </div>
 </div>
 
