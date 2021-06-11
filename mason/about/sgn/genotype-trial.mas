@@ -8,18 +8,18 @@
 
 <h2>NYS durum GBS</h2>
 <ul>
-	<li>Protocol: GBS (Poland et al., 2012)
-	<li>Methods: <a href="http://dx.doi.org/10.1038/s41588-019-0381-3">Durum wheat genome highlights past domestication</a>
-	<li>Debre Zeit - CIMMYT durum
-	<li>Genotyping was done in USDA-ARS Eastern Regional Small Grains Genotyping Laboratory in Raleigh, NC
+<li>Protocol: GBS (Poland et al., 2012)
+<li>Methods: <a href="http://dx.doi.org/10.1038/s41588-019-0381-3">Durum wheat genome highlights past domestication</a>
+<li>Debre Zeit - CIMMYT durum
+<li>Genotyping was done in USDA-ARS Eastern Regional Small Grains Genotyping Laboratory in Raleigh, NC
 </ul>
 
 <h2>Exome Capture Watkins</h2> - Watkins Core 2017
 <ul>
-	<li>Raw data: <a href="https://opendata.earlham.ac.uk/wheat/under_license/toronto/Gardiner_et_al_2017_Watkins_exome_capture_SNP_calls_VCF">Grassroots Data Repository</a>
-	<li>Protocol: <a href="/static_content/files/genotype-trials/Gardner_et_all_2017.txt">Protocol</a>
-        <li>Publication: <a href="/static_content/files/genotype-trials/Watkins-landrace.pdf">Establishing the A. E. Watkins landrace cultivar collection</a>
-        <li>Publication: <a href="/static_content/files/genotype-trials/PBI-Watkins-Collection.pdf">High-density genotyping of the A.E Watkins Collection</a>
+<li>Raw data: <a href="https://opendata.earlham.ac.uk/wheat/under_license/toronto/Gardiner_et_al_2017_Watkins_exome_capture_SNP_calls_VCF">Grassroots Data Repository</a>
+<li>Protocol: <a href="/static_content/files/genotype-trials/Gardner_et_all_2017.txt">Gardiner_et_al_2017_Watkins_exome_capture_SNP</a>
+<li>Publication: <a href="/static_content/files/genotype-trials/Watkins-landrace.pdf">Establishing the A. E. Watkins landrace cultivar collection</a>
+<li>Publication: <a href="/static_content/files/genotype-trials/PBI-Watkins-Collection.pdf">High-density genotyping of the A.E Watkins Collection</a>
 </ul>
 
 <h2>Promotor capture KSU 2020</h2> - WheatCAP Regulatory
@@ -50,9 +50,9 @@
 
 <h2>Exome capture Diversity 2019</h2>
 <ul>
-	<li>1000 Exomes
-	<li>Passport: <a href="/static_content/files/genotype-trials/1000exomeGermplasm.xlsx">1000 exome germplasm</a>
-	<li>Publication: <a href="/static_content/files/genotype-trials/s41588-019-0382-2.pdf">Exome sequencing highlights the role of wild-relative introgression in shaping the adaptive landscape of the wheat genome</a>		
+    <li>1000 Exomes
+    <li>Passport: <a href="/static_content/files/genotype-trials/1000exomeGermplasm.xlsx">1000 exome germplasm</a>
+    <li>Publication: <a href="/static_content/files/genotype-trials/s41588-019-0382-2.pdf">Exome sequencing highlights the role of wild-relative introgression in shaping the adaptive landscape of the wheat genome</a>		
 </ul>
 
 <h2>Exome capture 2017</h2> - 2017_WheatCAP
