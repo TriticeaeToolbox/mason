@@ -6,8 +6,9 @@
 	<li>Methods: <a href="/static_content/files/genotype-trials/TETRAPLOIDS.docx">Tetraploids</a>
 </ul>
 
-<h2>NYS_durum_GBS</h2>
+<h2>NYS durum GBS</h2>
 <ul>
+	<li>Protocol: GBS (Poland et al., 2012)
 	<li>Methods: <a href="http://dx.doi.org/10.1038/s41588-019-0381-3">Durum wheat genome highlights past domestication</a>
 	<li>Debre Zeit - CIMMYT durum
 	<li>Genotyping was done in USDA-ARS Eastern Regional Small Grains Genotyping Laboratory in Raleigh, NC
@@ -21,9 +22,9 @@
         <li>Publication: <a href="/static_content/files/genotype-trials/PBI-Watkins-Collection.pdf">High-density genotyping of the A.E Watkins Collection</a>
 </ul>
 
-<h2>Exome capture KSU 2020</h2> - WheatCAP Regulatory
+<h2>Promotor capture KSU 2020</h2> - WheatCAP Regulatory
 <ul>
-	<li>Publication: <a href="/static_content/files/genotype-trials/giz018.pdf">Integrating genomic resources to present full gene and putative promoter capture probe sets for bread wheat</a>
+	<li>Protocol: <a href="/static_content/files/genotype-trials/giz018.pdf">Integrating genomic resources to present full gene and putative promoter capture probe sets for bread wheat</a>
 </ul>
 
 <h2>TGC-GTC 90K</h2> - Tetraploid Wheat Global Collection
