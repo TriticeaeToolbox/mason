@@ -57,7 +57,7 @@
         <% defined(our $T3_INSTANCE_PRIVATE) ? ' [' . $T3_INSTANCE_PRIVATE . ']' : '' %> 
     </h1>
     <h2>
-        <a href="https://triticeaetoolbox.org/wheat?old=old">T3/Wheat</a> archive site last updated Jan 2020
+        <a href="https://triticeaetoolbox.org/barley?old=old">T3/Barley</a> archive site last updated June 2020
     </h2>
 
     <!-- SANDBOX BANNER -->
