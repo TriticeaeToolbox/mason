@@ -19,7 +19,6 @@
         <& toolbar/about.mas &>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <!-- <& toolbar/search.mas &> -->
         <& toolbar/contact.mas &>
         <& toolbar/register.mas &>
         <& toolbar/login.mas &>
