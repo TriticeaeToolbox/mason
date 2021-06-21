@@ -40,6 +40,12 @@
 	<li>Genotypes: <a href="/static_content/files/genotype-trials/LightningT3.csv">Lightning</a>
 </ul>
 
+<h2>GBS OREI</h2>
+<ul>
+	<li>OREI Project: <a href="/static_content/files/genotype-trials/OregonStateUniversityOREI.pdf">Oregon State University Project</a>
+        <li>Project Narrative: <a href="/static_content/files/genotype-trials/orei_project_narative.pdf">eOrganic project narrative</a>
+</ul>
+
 <br /><br />
 
 <style>
