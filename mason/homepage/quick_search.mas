@@ -1,0 +1,28 @@
+
+<form id="homepage_search_form" role="search" action="/search/quick_search.pl" style="">
+    <div class="input-group">
+        <span class="input-group-addon">Quick Search</span>
+        <input id="homepage_quick_search_input" type="text" name="term" class="form-control" placeholder="">
+        <div class="input-group-btn">
+            <button id="homepage_quick_search_icon" class="btn btn-default" type="button">
+                &nbsp;
+                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                &nbsp;
+            </button>
+        </div>
+    </div>
+</form>
+
+
+<script defer="defer">
+  jQuery(document).ready(function() {
+    
+    jQuery('#homepage_quick_search_icon').click(function () {
+        var search_val = jQuery('#homepage_quick_search_input').val();
+        if (search_val) {
+            jQuery('#homepage_search_form').submit();
+        }
+    });
+    
+  });
+</script>

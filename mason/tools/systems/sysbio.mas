@@ -1,0 +1,31 @@
+<h1><center>Systems Biology</h1>
+
+Plant Metabolic Pathway Database<br>
+A database containing pathways and their catalytic enzymes, compounds, and genes, from many plant species<br>
+<a href="https://pmn.plantcyc.org/PToolsWebsiteHowto.shtml" target="_new">User's Guide</a><br>
+<a href="https://pmn.plantcyc.org/organism-summary?object=PLANT" target="_new">PlantCyc</a><br>
+Species-specific databases:
+<ul>
+<li><a href="https://pmn.plantcyc.org/organism-summary?object=BREADWHEAT" target="_new">Triticum aestivum</a></li>
+<li><a href="https://pmn.plantcyc.org/organism-summary?object=WHEATA" target="_new">Triticum urartu</a></li>
+</ul>
+
+UniProt<br> 
+A comprehensive resource for protein sequence and annotation data<br>
+<a href="https://www.youtube.com/playlist?list=PLk96kjgxotiZx4ZcHA1ggdx5_b9Je2kxN" target="_new">User's Guide</a><br>
+Species-specific databases:
+<ul>
+<li><a href="https://www.uniprot.org/uniprot/?query=organism%3A%22Triticum+aestivum+%28Wheat%29+%5B4565%5D%22&sort=score" target="_new">Triticum aestivum</a></li>
+<li><a href="https://www.uniprot.org/uniprot/?query=organism%3A%22Triticum+aestivum+%28Wheat%29+%5B4565%5D%22&sort=score" target="_new">Triticum durum</a></li>
+</ul>
+
+Plant Reactome<br>
+A curated and peer-reviewed pathway database<br>
+User's guides: <a href="https://plantreactome.gramene.org/download/current/Plant_Reactome_Primer_10-23-2018.pdf">Plant Reactome Primer</a>
+ and Plant <a href="https://plantreactome.gramene.org/download/current/Plant_Reactome_User_Guide_10-23-2018.pdf">Reactome User Guide</a> for further information.<br>
+Pathway Browsers
+<ul>
+<li><a href="https://plantreactome.gramene.org/PathwayBrowser/#/SPECIES=2408547">Triticum aestivum</a>
+<li><a href="https://plantreactome.gramene.org/PathwayBrowser/#/SPECIES=9617283">Triticum dicoccoides</a>
+<li><a href="https://plantreactome.gramene.org/PathwayBrowser/#/SPECIES=9030261">Triticum turgidum</a>
+</ul>
