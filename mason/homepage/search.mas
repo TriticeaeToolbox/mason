@@ -3,7 +3,7 @@
 <&| /util/user.mas:logged_out &>
     <div id="account-prompts">
         <a href="/user/new" class="btn btn-info btn-large btn-home">
-            <span class="glyphicon glyphicon-user"></span>&nbsp;New User
+            <span class="glyphicon glyphicon-plus"></span>&nbsp;Register
         </a>
         <p>
             To view most of the data on <% $T3_INSTANCE_NAME %>, you'll first need to create a free account.

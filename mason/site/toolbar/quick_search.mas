@@ -1,0 +1,87 @@
+<div id="toolbar_quicksearch_html_div" class="navbar-form">
+    <div id="toolbar_quicksearch_div" class="input-group">
+        <form id="toolbar_quicksearch_form" role="search" action="/search/quick_search.pl">
+            <input id="toolbar_quicksearch_input" name="term" type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+                <button id="toolbar_quicksearch_button" class="btn btn-default" type="button">
+                    &nbsp;<span class="glyphicon glyphicon-search"></span>&nbsp;
+                </button>
+            </span>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+
+        /**
+         * Handle the click of the search button:
+         * - expand if not displayed
+         * - collapse if displayed and not search value
+         * - search if displayed and search value entered
+         */
+        jQuery("#toolbar_quicksearch_button").click(function() {
+            let val = jQuery("#toolbar_quicksearch_input").val();
+            let expanded = jQuery("#toolbar_quicksearch_input").is(":visible");
+            console.log("QUICKSEARCH CLICK: " + val);
+            if ( !expanded ) {
+                quicksearch_expand();
+            }
+            else if ( expanded && (!val || val === '') ) {
+                quicksearch_collapse();
+            }
+            else if ( val && val !== '' ) {
+                quicksearch_search();
+            }
+        });
+
+        /**
+         * Handle the unfocus of the input field
+         * - collapse if no search value entered
+         */
+        jQuery("#toolbar_quicksearch_input").focusout(function() {
+            let val = jQuery("#toolbar_quicksearch_input").val();
+            if ( !val || val === '' ) {
+                quicksearch_collapse();
+            }
+        });
+
+    });
+
+    function quicksearch_expand() {
+        jQuery('#toolbar_contact_login_buttons').animate({ opacity: '0' }, 250, function() {
+            jQuery('#toolbar_contact_login_buttons').css("display", "none");
+            jQuery('#toolbar_quicksearch_input').css("width","0px");
+            jQuery('#toolbar_quicksearch_input').css("display", "inline");
+            jQuery('#toolbar_quicksearch_input').animate({ width: '250px' }, 400);
+            jQuery('#toolbar_quicksearch_input').focus();
+        });
+    }
+
+    function quicksearch_collapse() {
+        jQuery('#toolbar_quicksearch_input').animate({ width: '0px' }, 400, function() {
+            jQuery('#toolbar_quicksearch_input').css("display", "none");
+            jQuery('#toolbar_contact_login_buttons').css("display", "inline");
+            jQuery('#toolbar_contact_login_buttons').animate({ opacity: '1' }, 250);
+        });
+    }
+
+    function quicksearch_search() {
+        console.log("perform search...");
+        jQuery('#toolbar_quicksearch_form').submit();
+    }
+</script>
+
+<style>
+    #toolbar_quicksearch_html_div {
+        display: inline;
+        margin-left: -15px !important;
+    }
+    #toolbar_quicksearch_div {
+        margin: 9px 7px 0px 0px;
+        height: 35px !important;
+    }
+    #toolbar_quicksearch_input {
+        display: none;
+    }
+</style>
