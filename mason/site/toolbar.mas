@@ -19,9 +19,11 @@
         <& toolbar/about.mas &>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <& toolbar/contact.mas &>
-        <& toolbar/register.mas &>
-        <& toolbar/login.mas &>
+        <div id="toolbar_contact_login_buttons" style="display: inline">
+          <& toolbar/contact.mas &>
+          <& toolbar/login.mas &>
+        </div>
+        <& toolbar/quick_search.mas &>
       </ul>
     </div>
   </div>
