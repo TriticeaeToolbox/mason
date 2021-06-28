@@ -3,7 +3,7 @@
 <&| /util/user.mas:logged_out &>
     <div id="account-prompts">
         <a href="/user/new" class="btn btn-info btn-large btn-home">
-            <span class="glyphicon glyphicon-user"></span>&nbsp;New User
+            <span class="glyphicon glyphicon-plus"></span>&nbsp;Register
         </a>
         <p>
             To view most of the data on <% $T3_INSTANCE_NAME %>, you'll first need to create a free account.
@@ -18,6 +18,10 @@
     </div>
 </&>
 
+<p>Use the <strong>Quick Search</strong> to find an Accession, Trial, Trait, etc by name:</p>
+<& /homepage/quick_search.mas &>
+
+<br /><br />
 
 <p>Use the <strong>Search Wizard</strong> to explore the database or 
 search <strong>individual data types</strong>:</p>
@@ -28,7 +32,7 @@ search <strong>individual data types</strong>:</p>
   <a href="/search/trials" type="button" class="btn btn-info">Trials</a>
   <a href="/search/traits" type="button" class="btn btn-info">Traits</a>
   <a href="/search/genotyping_data_projects" type="button" class="btn btn-info">Genotyping Projects</a>
-  <a href="/search/markers" type="button" class="btn btn-info">Markers</a>
+  <a href="/search/variants" type="button" class="btn btn-info">Markers</a>
 </div>
 
 
