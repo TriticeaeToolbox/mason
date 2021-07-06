@@ -52,7 +52,8 @@
 <ul>
     <li>1000 Exomes
     <li>Passport: <a href="/static_content/files/genotype-trials/1000exomeGermplasm.xlsx">1000 exome germplasm</a>
-    <li>Publication: <a href="/static_content/files/genotype-trials/s41588-019-0382-2.pdf">Exome sequencing highlights the role of wild-relative introgression in shaping the adaptive landscape of the wheat genome</a>		
+    <li>Publication: <a href="/static_content/files/genotype-trials/s41588-019-0382-2.pdf">Exome sequencing highlights the role of wild-relative introgression in shaping the adaptive landscape of the wheat genome</a>
+    <li>Filter: minimum allele count = 2, MAF > 0.002 and missing genotype calls <25%
 </ul>
 
 <h2>Exome capture 2017</h2> - 2017_WheatCAP
