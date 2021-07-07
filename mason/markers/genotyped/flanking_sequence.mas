@@ -15,8 +15,15 @@
         print "<p><strong>ERROR: </strong>Missing pos!</p>";
     }
 
-    # Strip chr prefix from chromosome name
-    $chrom =~ s/^chr//;
+    # Add/remove chr prefix based for specific blast db
+    if ( $blast_db eq "4" ) {
+        $chrom =~ s/^chr//;
+    }
+    elsif ( $blast_db eq "6" ) {
+        if ( $chrom !~ /^chr/ ) {
+            $chrom = "chr" . $chrom;
+        }
+    }
 </%init>
 
 
