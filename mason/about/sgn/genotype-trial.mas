@@ -3,6 +3,8 @@
 <h2>GBS 2015 MN</h2>
 <ul>
 	<li>Source: Kevin Smith, University of Minnesota
+	<li>Protocol: Illumina Hi-Seq 2000, Poland et al (2012)
+	<li>Filter: VCF file filtered for: QUAL gte 40, GQ gte 40, DP gte 5, mean DP gte 10
 </ul>
 
 <h2>GBS 2016 WBDC</h2>
@@ -32,6 +34,7 @@
 <ul>
 	<li> 67,607 SNPs from GBS and 50K array for 747 lines from the National Small Grains Core Collection. Positions are based on the newest Morex reference genome (bp and POPSEQ cM positions)
 	<li>Publication: <a href="https://doi.org/10.1534/g3.119.400612">Natural Genetic Variation Underlying Tiller Development in Barley</a>
+	<li>Filter: GBS SNPs were removed if more than 50% of calls were missing or heterozygous and the minor allele frequency (MAF) was less than 0.03, and 50K array SNPs were eliminated if they contained more than 20% missing or heterozygous calls and a MAF less than 0.03. The GBS and 50K SNP datasets were then merged and missing data were imputed using the LD-kNNi imputation method in TASSEL 5 (sites = 20, Taxa = 5, maxLDDistance = -1). The merged, imputed SNP dataset was filtered again for missing data, eliminating SNPs and lines with more than 5% missing/heterozygous data.
 </ul>
 
 <h2>Infinium 50K Lightning</h2>
