@@ -14,6 +14,13 @@
         <li><a href="/static_content/files/genotype-trials/WBDC_GBS2016_genotypes.txt">Genotypes</a>
 </ul>
 
+<h2>GBS 2016 HapMap</h2>
+<ul>
+	<li>Exome capture, Leibniz Institute of Plant Genetics and Crop Plant Research (IPK)
+	<li>primarily wild material and landraces that were purified by two rounds of single-seed descent (SSD)
+	<li>Publication: <a href="http://www.nature.com/ng/journal/v48/n9/full/ng.3612.html">primarily wild material and landraces that were purified by two rounds of single-seed descent (SSD)</a>
+</ul>
+
 <h2>GBS 2019 WBDC</h2>
 <ul>
 	<li>Wild Barley Diversity Collection
