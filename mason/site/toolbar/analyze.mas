@@ -13,6 +13,8 @@
     <li role="separator" class="divider"></li>
     <li class="dropdown-header">Sequence Analysis</li>
     <li><a href="/tools/blast/">BLAST</a></li>
+    <li class="dropdown-header">Systems Biology</li>
+    <li><a href="/tools/systems/">Resources</a></li>
     <li role="separator" class="divider"></xls>
     <li class="dropdown-header">Primer Design</li>
     <li><a href="https://galaxy.triticeaetoolbox.org" target="_new">SNP Primer Pipeline</a></li>
