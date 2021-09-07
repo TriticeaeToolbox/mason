@@ -1,7 +1,7 @@
 <%init>
-  my $tag = $ENV{'SGN_TAG'};
-  my $commit = $ENV{'SGN_COMMIT'};
-  my $updated = $ENV{'SGN_UPDATED'};
+  my $tag = `cat /home/production/.sgn_build_info | grep SGN_TAG | cut -d '=' -f 2`;
+  my $commit = `cat /home/production/.sgn_build_info | grep SGN_COMMIT | cut -d '=' -f 2`;
+  my $updated = `cat /home/production/.sgn_build_info | grep SGN_UPDATED | cut -d '=' -f 2`;
 </%init>
 
 <style>
