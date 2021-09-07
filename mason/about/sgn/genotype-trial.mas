@@ -5,6 +5,10 @@
 	<li>Description: GBS PstI-MspI, Public Oat Genotyping Initiative, Haplotag
         <li>Publication: <a href="/static_content/files/genotype-trials/Haplotag-2016.pdf">Haplotag: Software for Haplotype-Based GBS Analysis</a>
         <li>Publication: <a href="/static_content/files/genotype-trials/Haplotag-2018.pdf">Haplotype-based GBS in oat genome research</a>
+	<li>Filter: Output was filtered across the full population to maintain markers for which genotype calls were 50% or 80% complete,
+	heterozygosity was 10%, and minor allele frequency was 5%. Additional filters for Haplotag included a maximum base difference of three for aligning
+	tags, a maximum of nine tags per cluster, a maximum heterozygote frequency on a haplotype basis of 0.25, and a maximum tolerance
+	for tri-zygotes and multi-zygotes of 1% and 0%, respectively.
 </ul>
 </ul>
 
@@ -14,19 +18,22 @@
         <li><a href="/static_content/files/genotype-trials/GBS_Spain_Protocol.docx">Protocol</a><br>
         <li><a href="/static_content/files/genotype-trials/GBS_Spain_Accessions.xlsx">Accessions</a><br>
         <li><a href="/static_content/files/genotype-trials/GBS_Spain_Genotypes.txt">Genotype file</a><br>
+	<li>Filter: removed all markers with lower than 80% completeness, less than 5% minor allele frequency, or greater than 10% heterozygosity 
 </ul>
 
 <h2>GBS Core</h2>
 <ul>
 	<li>Description: Collaborative Oat Research Enterprise
-        <li>Description: GBS data called by TASSEL/UNEAK on 635 CORE diversity lines, filtered at >= 95% completeness, >= 1% MAF, >= 5% heterozygous.
+        <li>Description: GBS data called by TASSEL/UNEAK on 635 CORE diversity lines
 	<li>Publication: <a href="/static_content/files/genotype-trials/2014-Oat-Core.pdf">Using GBS for Genomic Discovery in Cultivated Oat</a>
         <li><a href="/static_content/files/genotype-trials/pone.0102448.s021.xlsx">GBS sequence reads and a key file for GBS pipeline analysis</a>
+	<li>Filter: filtered at >= 95% completeness, >= 1% MAF, >= 5% heterozygous
 </ul>
 
 <h2>Infinium 2010</h2>
 <ul>
 	<li>Publication: <a href="/static_content/files/genotype-trials/SNPArrayHexaploidOat.pdf">A SNP Genotyping Array for Hexaploid Oat</a>
+	<li>Filter: filtered SNPs to maximize predicted minor allele frequency (MAF), to minimize heterozygotes within varieties (which could signify miss-assemblies of orthologous and paralogous loci), and to eliminate SNPs that contained multiple variants within the 120- or 200-base context sequence used for assay design
 </ul>
 
 <h2>Infinium 2020</h2>
@@ -35,6 +42,7 @@
         <li><a href="/static_content/files/genotype-trials/Infinium_2020_Metabolomics-Oat6K.pdf">Protocol</><br>
         <li><a href="/static_content/files/genotype-trials/ModifiedSampleNames.xlsx">Accessions</a><br>
         <li><a href="/static_content/files/genotype-trials/CleanedMrks.txt">Genotype file</a><br>
+	<li>Filter: no filtering based on MAF for missingness
 </ul>
 
 <br /><br />
