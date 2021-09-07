@@ -1,8 +1,7 @@
 <%init>
-  my $dir = $c->config->{basepath};
-  my $tag = `cd "$dir"; git describe --abbrev=0 --tags`;
-  my $commit = `cd "$dir"; git rev-parse --short HEAD`;
-  my $updated = `cd "$dir"; git log -1 --format=%cd`;
+  my $tag = $ENV{'SGN_TAG'};
+  my $commit = $ENV{'SGN_COMMIT'};
+  my $updated = $ENV{'SGN_UPDATED'};
 </%init>
 
 <style>
