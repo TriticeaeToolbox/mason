@@ -1,8 +1,8 @@
 <%init>
   my $dir = $c->config->{basepath};
-  my $tag = `git --git-dir "$dir" describe --abbrev=0 --tags`;
-  my $commit = `git --git-dir "$dir" rev-parse --short HEAD`;
-  my $updated = `git --git-dir "$dir" log -1 --format=%cd`;
+  my $tag = `cd "$dir"; git describe --abbrev=0 --tags`;
+  my $commit = `cd "$dir"; git rev-parse --short HEAD`;
+  my $updated = `cd "$dir"; git log -1 --format=%cd`;
 </%init>
 
 <style>
