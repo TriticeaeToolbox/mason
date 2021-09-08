@@ -1,7 +1,8 @@
 <%init>
-  my $tag = `cat /home/production/.sgn_build_info | grep SGN_TAG | cut -d '=' -f 2`;
-  my $commit = `cat /home/production/.sgn_build_info | grep SGN_COMMIT | cut -d '=' -f 2`;
-  my $updated = `cat /home/production/.sgn_build_info | grep SGN_UPDATED | cut -d '=' -f 2`;
+  my $dir = $c->config->{basepath};
+  my $tag = `git --git-dir "$dir" describe --abbrev=0 --tags`;
+  my $commit = `git --git-dir "$dir" rev-parse --short HEAD`;
+  my $updated = `git --git-dir "$dir" log -1 --format=%cd`;
 </%init>
 
 <style>
