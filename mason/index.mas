@@ -56,9 +56,6 @@
         Welcome to <% our $T3_INSTANCE_NAME %>
         <% defined(our $T3_INSTANCE_PRIVATE) ? ' [' . $T3_INSTANCE_PRIVATE . ']' : '' %> 
     </h1>
-    <h2>
-        <a href="https://triticeaetoolbox.org/barley?old=old">T3/Barley</a> archive site last updated June 2020
-    </h2>
 
     <!-- SANDBOX BANNER -->
     <& /toggle_display.mas, sandbox => "/homepage/sandbox_banner.mas" &>
@@ -66,7 +63,6 @@
 
     <!-- INTRO -->
     <& /instance/intro.mas &>
-
 
     <!-- DATA USAGE -->
     <& /homepage/data_usage.mas &>
