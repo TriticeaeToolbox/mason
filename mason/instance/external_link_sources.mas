@@ -15,16 +15,16 @@
             name: "GRIN",
             prefixes: ["PI", "CItr"],
             url: function(term) {
-                return "https://npgsweb.ars-grin.gov/gringlobal/accessiondetail.aspx?accid=" + term;
+                return "https://npgsweb.ars-grin.gov/gringlobal/search?q=" + term;
             }
         },
-        {
-            name: "GRIN-CA",
-            prefixes: ["CIav", "CN", "PGR"],
-            url: function(term) {
-                return "https://pgrc3.agr.gc.ca/cgi-bin/npgs/html/acc_search.pl?accid=" + term
-            }
-        }
+        // {
+        //     name: "GRIN-CA",
+        //     prefixes: ["CIav", "CN", "PGR"],
+        //     url: function(term) {
+        //         return "https://pgrc3.agr.gc.ca/cgi-bin/npgs/html/acc_search.pl?accid=" + term
+        //     }
+        // }
     ]
 
 </script>
