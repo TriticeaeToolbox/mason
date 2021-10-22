@@ -99,6 +99,11 @@
             <!-- SEARCH -->
             <& /homepage/search.mas &>
 
+            <br /><br />
+
+            <!-- EXPERIMENTS -->
+            <& /homepage/experiments.mas &>
+
 
             <br /><br /><br />
             
