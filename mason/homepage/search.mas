@@ -35,103 +35,12 @@ search <strong>individual data types</strong>:</p>
   <a href="/search/variants" type="button" class="btn btn-info">Markers</a>
 </div>
 
-
-<br /><br />
-
-<div id="explore-experiments">
-    <p>Explore <strong>Experiments</strong> in the Search Wizard:</p>
-
-    <&| /util/user.mas:logged_out &>
-        <div id="explore-experiments-login">
-            <p><em>You must first log in to view the lists of experiments...</em></p>
-        </div>
-    </&>
-
-    <&| /util/user.mas:logged_in &>
-        <div id="explore-experiments-loggedin">
-            <select class="form-control" id="explore-experiments-select"></select>
-        </div>
-    </&>
-</div>
-
-
 <script type="text/javascript">
     jQuery( document ).ready(function() {
-        populateExperiments();
         jQuery("#account-prompts-login").on("click", function() {
             jQuery('#site_login_dialog').modal("show");
         });
     });
-
-
-    /**
-     * Get private and public lists and populate the experiments
-     * select options with Experiment lists
-     */
-    function populateExperiments() {
-        let EXPERIMENT_LISTS = [];
-        getLists(false, function(lists) {
-            EXPERIMENT_LISTS = EXPERIMENT_LISTS.concat(lists);
-            getLists(true, function(lists) {
-                EXPERIMENT_LISTS = EXPERIMENT_LISTS.concat(lists);
-                displayLists(EXPERIMENT_LISTS);
-            });
-        });
-    }
-
-    /**
-     * Get Available Lists
-     * @param {boolean} public True for public lists, false for private
-     * @param {Function} callback Callback function(lists)
-     */
-    function getLists(public, callback) {
-        let url = public ? '/list/available_public' : '/list/available';
-        jQuery.ajax({
-            url: url,
-            data: {type: 'trials'},
-            method: 'GET',
-            error: function(response) {
-                console.log("ERROR: Could not get lists [" + url + "]");
-                console.log(response);
-                return callback([]);
-            },
-            success: function(lists) {
-                if ( lists && Array.isArray(lists) ) {
-                    return callback(lists);
-                }
-                return callback([]);
-            }
-        })
-    }
-
-    /**
-     * Update the select options for the experiment lists
-     * @param {Array[]} lists List of lists
-     */
-    function displayLists(lists) {
-        let options = ["<option value=''>---- Select an Experiment to Explore ----</option>"];
-        let added_trial_ids = [];
-        for ( let i = 0; i < lists.length; i++ ) {
-            let id = lists[i][0];
-            let name = lists[i][1];
-            let type = lists[i][5];
-
-            if ( type === "trials" && name.startsWith("Experiment:") && !added_trial_ids.includes(id) ) {
-                name_cleaned = name.replace("Experiment: ", "").replace("Experiment:", "");
-                let html = "<option value='" + id + "'>" + name_cleaned + "</option>";
-                options.push(html);
-                added_trial_ids.push(id);
-            }
-        }
-        jQuery("#explore-experiments-select").html(options.join(''));
-
-        jQuery("#explore-experiments-select").change(function() {
-            let listId = jQuery(this).find('option:selected').val();
-            if ( listId && listId !== "" ) {
-                window.location = "/breeders/search?list=" + listId;
-            }
-        });
-    }
 </script>
 
 
