@@ -96,6 +96,13 @@
             <!-- SEARCH -->
             <& /homepage/search.mas &>
 
+            <br /><br />
+
+            <!-- EXPERIMENTS -->
+% if ( $m->comp_exists("/homepage/experiments.mas") ) {
+            <& /homepage/experiments.mas &>
+% }
+
 
             <br /><br /><br />
             
