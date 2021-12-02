@@ -202,7 +202,21 @@ jQuery(document).ready(function () {
    };
    trait_table.on( 'deselect', selection_changed);
    trait_table.on( 'select', selection_changed);
+   parseArgs();
 
 });
+
+
+/**
+ * Parse query params sent to the page
+ * - name = trait name to search on
+ */
+function parseArgs() {
+    const params = new URLSearchParams(window.location.search);
+    if ( params.has('name') ) {
+        jQuery("#trait_search_name").val(params.get('name'));
+        jQuery('#submit_trait_search').click();
+    }
+}
 
 </script>
