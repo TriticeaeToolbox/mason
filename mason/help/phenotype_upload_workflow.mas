@@ -198,7 +198,7 @@ $user_roles => 'unknown'
             <ul>
                 <li>Go to the <a href="/breeders/locations">Manage &gt; Locations</a> page</li>
                 <li>Click the <strong>Upload New Locations</strong> link in the top right corner of that page</li>
-                <li>Create an Excel (.xls) file with the specified headers</li>
+                <li>Create an Excel (.xls) file (<a href="/static_content/files/templates/locations.xls">Download blank template</a>) with the specified headers</li>
                 <li>Upload the file</li>
                 <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_02.html">Managing 
                 Locations</a> manual page for more information.</li>
@@ -245,7 +245,7 @@ $user_roles => 'unknown'
                 <li>Click the <strong>Add Accessions or Upload Accession Info</strong> link in the top-right 
                     corner of that page.</li>
                 <li>Click the <strong>Uploading a File</strong> tab</li>
-                <li>Create an Excel (.xls) file with the specified headers (Click <em>Spreadsheet format</em> for more info)</li>
+                <li>Create an Excel (.xls) (<a href="/static_content/files/templates/accessions.xls">Download blank template</a>) file with the specified headers (Click <em>Spreadsheet format</em> for more info)</li>
                 <li>When creating a spreadsheet of Accessions, a minimum of these columns should be filled in:
                     <ul>
                         <li><strong>accession_name</strong>: the unique name of the accession</li>
@@ -300,7 +300,7 @@ $user_roles => 'unknown'
                 <li>Click the <strong>Upload Existing Trial(s)</strong> button in the top-right corner</li>
                 <li>On Step 2, select the <strong>Single Trial Design</strong> tab</li>
                 <li>
-                    Create an Excel (.xls) file that describes the plot layout with the specified headers 
+                    Create an Excel (.xls) file (<a href="/static_content/files/templates/single_trial.xls">Download blank template</a>) that describes the plot layout with the specified headers 
                     (Click <em>Single trial spreadsheet</em> for more information).  The following columns 
                     are required:
                     <ul>
@@ -309,6 +309,7 @@ $user_roles => 'unknown'
                         <li>plot_number - must be unique within this trial</li>
                         <li>block_number</li>
                     </ul>
+                    <em>If you have <strong>private data</strong> included in your trial</em>, you can add a <code>1</code> to the <code>is_private</code> column for plots to exclude from the database.
                 </li>
                 <li>Fill out the Trial metadata form</li>
                 <li>Upload the plot layout template</li>
@@ -330,9 +331,10 @@ $user_roles => 'unknown'
                 <li>Go to the <a href="/breeders/trials">Manage &gt; Field Trials</a> page</li>
                 <li>Click the <strong>Upload Existing Trial(s)</strong> button in the top-right corner</li>
                 <li>On Step 2, select the <strong>Multiple Trial Designs</strong> tab</li>
-                <li>Create an Excel (.xls) file that includes the trial metadata and plot layout for each trial with the 
+                <li>Create an Excel (.xls) file (<a href="/static_content/files/templates/trials.xls">Download blank template</a>) that includes the trial metadata and plot layout for each trial with the 
                     specified headers (Click <em>Multiple trial spreadsheet</em> for more information, including required 
-                    columns and the data required for each column).
+                    columns and the data required for each column).<br />
+                    <em>If you have <strong>private data</strong> included in your trial</em>, you can add a <code>1</code> to the <code>is_private</code> column for plots to exclude from the database.
                 <li>Upload the trial design template</li>
                 <li>Review any possible errors in the trials and/or their design</li>
                 <li>Save the Trials and their plot layouts to the database</li>
