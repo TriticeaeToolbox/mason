@@ -44,7 +44,7 @@
     setTimeout(function() {
       var cookie = jQuery.cookie("website_usage_policy_approved");
       if (cookie == undefined && ! jQuery("#site_login_dialog").data('bs.modal')?.isShown) {
-        jQuery('#usage_policy').modal("show");
+        // jQuery('#usage_policy').modal("show");
       }
       else {
         jQuery('#usage_policy').modal("hide");
