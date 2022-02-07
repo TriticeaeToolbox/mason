@@ -84,6 +84,10 @@
             <& /homepage/news.mas &>
             <br /><br />
 
+            <!-- TEMPLATES -->
+            <& /homepage/templates.mas &>
+            <br /><br />
+
         </div>
 
 
