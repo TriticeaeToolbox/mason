@@ -5,7 +5,7 @@
         overflow: auto;
     }
     .templates-panel-list {
-        padding-left: 20px;
+        padding-left: 24px;
     }
 </style>
 
@@ -18,6 +18,8 @@
 <div class="panel panel-success">
     <div class="panel-heading">Templates</div>
     <div class="panel-body templates-panel-body">
+
+        <!-- BLANK TEMPLATES -->
         <p><strong>Blank Upload Templates</strong></p>
         <p>Below are blank upload templates for each data type
 % if ( $self_upload ) {
@@ -77,6 +79,21 @@
               <li>Spreadsheet Format: Simple</li>
             </ol>
 % }
+        </ul>
+
+
+        <hr />
+
+
+        <!-- DEMO TEMPLATES -->
+        <p><strong>Example Templates</strong></p>
+        <p>Below are example templates generated for demo trial data from <a href="/static_content/files/2020ScabWorkshop/notes.html">a 2020 workshop</a>.</p>
+
+        <ul class="templates-panel-list">
+          <li><a href="/static_content/files/2020ScabWorkshop/demo_locations.xls">Locations (.xls)</a></li>
+          <li><a href="/static_content/files/2020ScabWorkshop/demo_accessions.xls">Accessions (.xls)</a></li>
+          <li><a href="/static_content/files/2020ScabWorkshop/demo_trials.xls">Trials (.xls)</a></li>
+          <li><a href="/static_content/files/2020ScabWorkshop/demo_phenotypes.xls">Phenotype Observations (.xls)</a></li>
         </ul>
 
 % if ( !$self_upload ) {
