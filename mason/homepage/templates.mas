@@ -1,0 +1,108 @@
+<style>
+    .templates-panel-body {
+        padding: 8px;
+        max-height: 550px;
+        overflow: auto;
+    }
+    .templates-panel-list {
+        padding-left: 24px;
+    }
+</style>
+
+<%init>
+  my $self_upload = defined(our $T3_INSTANCE_PRIVATE) || our $T3_INSTANCE_TYPE eq "SANDBOX";
+</%init>
+
+
+<!-- TEMPLATES PANEL -->
+<div class="panel panel-success">
+    <div class="panel-heading">Templates</div>
+    <div class="panel-body templates-panel-body">
+
+        <!-- BLANK TEMPLATES -->
+        <p><strong>Blank Upload Templates</strong></p>
+        <p>Below are blank upload templates for each data type
+% if ( $self_upload ) {
+          with basic upload instructions
+% }
+        </p>        
+        
+        <ul class="templates-panel-list">
+          
+          <!-- Locations -->
+          <li>
+            
+            <a href="/static_content/files/templates/locations.xls">Locations (.xls)</a>
+% if ( $self_upload ) {
+            <ol class="templates-panel-list">
+              <li><a href="/breeders/locations">Manage &gt; Locations</a></li>
+              <li>[Upload New Locations]</li>
+            </ol>
+% }
+          </li>
+          
+          <!-- Accessions -->
+          <li><a href="/static_content/files/templates/accessions.xls">Accessions (.xls)</a></li>
+% if ( $self_upload ) {
+            <ol class="templates-panel-list">
+              <li><a href="/breeders/accessions">Manage &gt; Accessions</a></li>
+              <li>[Add Accessions Or Upload Accession Info]</li>
+              <li>[Uploading a File]</li>
+            </ol>
+% }
+
+          <!-- Pedigrees -->
+          <li><a href="/static_content/files/templates/pedigrees.txt">Pedigrees (.txt)</a></li>
+% if ( $self_upload ) {
+            <ol class="templates-panel-list">
+              <li><a href="/breeders/accessions">Manage &gt; Accessions</a></li>
+              <li>[Upload Pedigree File]</li>
+            </ol>
+% }
+
+          <!-- Trials -->
+          <li><a href="/static_content/files/templates/trials.xls">Trials (.xls)</a></li>
+% if ( $self_upload ) {
+            <ol class="templates-panel-list">
+              <li><a href="/breeders/trials">Manage &gt; Field Trials</a></li>
+              <li>Upload Existing Trial(s)</li>
+              <li>File Formatting (Step 2): Multiple Trial Designs</li>
+            </ol>
+% }
+
+          <!-- Observations -->
+          <li><a href="/static_content/files/templates/phenotypes.xls">Phenotype Observations (.xls)</a></li>
+% if ( $self_upload ) {
+            <ol class="templates-panel-list">
+              <li><a href="/breeders/phenotyping">Manage &gt; Phenotyping Results</a></li>
+              <li>[Upload Spreadsheet]</li>
+              <li>Spreadsheet Format: Simple</li>
+            </ol>
+% }
+        </ul>
+
+
+        <hr />
+
+
+        <!-- DEMO TEMPLATES -->
+        <p><strong>Example Templates</strong></p>
+        <p>Below are example templates generated for demo trial data from <a href="/static_content/files/2020ScabWorkshop/notes.html">a 2020 workshop</a>.</p>
+
+        <ul class="templates-panel-list">
+          <li><a href="/static_content/files/2020ScabWorkshop/demo_locations.xls">Locations (.xls)</a></li>
+          <li><a href="/static_content/files/2020ScabWorkshop/demo_accessions.xls">Accessions (.xls)</a></li>
+          <li><a href="/static_content/files/2020ScabWorkshop/demo_trials.xls">Trials (.xls)</a></li>
+          <li><a href="/static_content/files/2020ScabWorkshop/demo_phenotypes.xls">Phenotype Observations (.xls)</a></li>
+        </ul>
+
+% if ( !$self_upload ) {
+        <hr />
+        <p>Use the <a href="/submit/pheno">Phenotype Submission Form</a> to submit your data to the curators for inclusion in <% our $T3_INSTANCE_NAME %>.</p>
+% }
+
+        <hr />
+        <p>For more detailed instructions, see the <a href="/help/phenotype_upload_workflow">Detailed Phenotype Upload Instructions</a></p>
+    </div>
+</div>
+
