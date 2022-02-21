@@ -32,6 +32,13 @@ Refactored for Catalyst Feb 2011
 
 </%doc>
 
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
 <%args>
 $map_by_species
 $map_url
@@ -62,6 +69,18 @@ my $submit = qq | <b>[<a href="/cview/help/map_submission">Submit New Map</a>]</
 <br /><br />
 <% $d %>
 
+Each genotype protocol and genotype project is loaded with map information that is current when that project was created. This webite also has Cview as a web-based comparative viewer. To view documentation on the Cview program see <a href="https://pubmed.ncbi.nlm.nih.gov/18202028/">The SGN comparative map viewer</a>. To view genetic maps, see our archived site <a href="https://triticeaetoolbox.org/oat/maps/maps.php" target="_new">Map Sets</a>. To download genetic maps, see our archived site <a href="https://triticeaetoolbox.org/oat/maps/map_flapjack.php" target="_new">Download Map Sets</a>.<br><br>
 
+<table>
+<tr><td>Provena x CDC Boyer (2015)<td>A de-novo genetic linkage map of Provena x CDC Boyer (PB) that was used in the construction of the Hexaploid Oat Consensus Map (2015). The map was developed using 874 Illumina SNPs that were applied to the RIL population of 139 PB progeny. The MultiPoint package (MultiQTL Ltd.) was used to generate six maps that were averaged to construct a representative map with 27 LGs and genome coverage of 1613.1 cM. Babiker et al. (2015) developed the first linkage map for the PB mapping population.
+<tr><td>Provena x 94197A1-9-2-2-2-5 (2015)<td>A de-novo genetic linkage map of Provena x 94197A1-9-2-2-5 (PG) that was used in the construction of the Hexaploid Oat Consensus Map (2015). The map was developed using 3722 markers (1480 Illumina, 2242 GBS) that were applied to the RIL population of 98 PG progeny. The MultiPoint package (MultiQTL Ltd.) was used to generate nine maps that were averaged to construct a representative map with 33 LGs and genome coverage of 2533.6 cM. Oliver et al. (2013) developed the first linkage map for the PG mapping population.
+<tr><td>Otana x PI260616 (2015)<td>A de-novo genetic linkage map of Otana x PI260616 (OP) that was used in the construction of the Hexaploid Oat Consensus Map (2015). The map was developed using 4376 markers (1882 Illumina, 2494 GBS) that were applied to the RIL population of 98 OP progeny. The MultiPoint package (MultiQTL Ltd.) was used to generate seven maps that were averaged to construct a representative map with 22 LGs and genome coverage of 1873.4 cM. Oliver et al. (2013) developed the first linkage map for the OP mapping population.
+<tr><td>Ogle x TAM)-301 (2015)<td>A de-novo genetic linkage map of Ogle x TAMO-301 (OT) that was used in the construction of the Hexaploid Oat Consensus Map (2015). The map was developed using 6603 markers (2014 Illumina, 4063 GBS, 526 Other) that were applied to the RIL population of 53 OT progeny. The MultiPoint package (MultiQTL Ltd.) was used to generate six maps that were averaged to construct a representative map with 28 LGs and genome coverage of 2393.2 cM. Kremer et al. (2001) developed the first linkage map for the OT mapping population
+<tr><td>Oat Consensus Map (2018)<td>Consensus map from 4657 accessions of cultivated oat. See “Haplotype‐based genotyping‐by‐sequencing in oat genome research” Bekele et. al. January 2018. https://doi.org/10.1111/pbi.12888.
+<tr><td>Aegilops tauschii, 2009<td>From Luo et al, (2009) PNAS 106(37):15780-15785
+<tr><td>Kanota x Ogle (2015)<td>A de-novo genetic linkage map of Kanota x Ogle (KO) that was used in the construction of the Hexaploid Oat Consensus Map (2015). The map was developed using 3727 markers (1652 Illumina, 1237 GBS, 838 Other) that were applied to the RIL population of 52 KO progeny. The Multipoint Package (MultiQTL Ltd.) was used to produce a linkage map with 43 LGs and genome coverage of 2774.4 cM. O’Donoughue et al. (1995) developed the first linkage map for the KO mapping population.
+<tr><td>IL86-6404 x Clintland 64 (2015)<td>A de-novo genetic linkage map of IL86-6404 x Clintland 64 (IL5) that was used in the construction of the Hexaploid Oat Consensus Map (2015). The map was developed using 964 Illumina SNPs that were applied to the RIL population of 171 IL5 progeny. The MultiPoint package (MultiQTL Ltd.) was used to generate 21 maps that were averaged to construct a representative map with 25 LGs and genome coverage of 823.7 cM. Pallotta et al. (2003) developed the first linkage map for the IL5 mapping population.
+<tr><td>IL86-1156 x Clintland 64 (2015)<td>A de-novo genetic linkage map of IL86-1156 x Clintland 64 (IL4) that was used in the construction of the Hexaploid Oat Consensus Map (2015). The map was developed using 924 Illumina SNPs that were applied to the RIL population of 112 IL4 progeny. The MultiPoint package (MultiQTL Ltd.) was used to generate 22 maps that were averaged to construct a representative map with 23 LGs and genome coverage of 1057.6 cM. Pallotta et al. (2003) developed the first linkage map for the IL4 mapping population.
+</table>
 
 </div>
