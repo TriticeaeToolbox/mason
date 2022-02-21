@@ -32,6 +32,13 @@ Refactored for Catalyst Feb 2011
 
 </%doc>
 
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
 <%args>
 $map_by_species
 $map_url
@@ -62,6 +69,16 @@ my $submit = qq | <b>[<a href="/cview/help/map_submission">Submit New Map</a>]</
 <br /><br />
 <% $d %>
 
+Each genotype protocol and genotype project is loaded with map information that is current when that project was created. This webite also has Cview as a web-based comparative viewer. To view documentation on the Cview program see <a href="https://pubmed.ncbi.nlm.nih.gov/18202028/">The SGN comparative map viewer</a>. To view genetic maps, see our archived site <a href="https://triticeaetoolbox.org/wheat/maps/maps.php" target="_new">Map Sets</a>. To download genetic maps, see our archived site <a href="https://triticeaetoolbox.org/wheat/maps/map_flapjack.php" target="_new">Download Map Sets</a>.<br><br>
 
+<table>
+<tr><td>wsnp 2013 Consensus<td>Consensus wsnp map from C.R. Cavanaugh et. al. (2013) PNAS 110:8057-8062
+<tr><td>SynOpt GBS BinMap, 2012<td>Bin map of Synthetic W9784 x Opata M85 constructed using 19,720 GBS SNP markers.  Common markers between the SynOp GBS BinMap, 2012 and the SynOP GBS AntMap, 2012 are synonyms in T3.  From Poland et al., (2012) PLoS One e32253
+<tr><td>SynOpt GBS AntMap, 2012<td>Genetic linkage map of Synthetic W9784 x Opata M85 constructed de novo using the Antmap algorithm mapping 1485 GBS SNP markers.  Common markers between the SynOp GBS BinMap, 2012 and the SynOP GBS AntMap, 2012 are synonyms in T3.  From Poland et al., (2012) PLoS One e32253
+<tr><td>KleinProteo x KlienChaja, 2012<td>Contacts: Jorge Dubcovsky, Luxmi Tomar.Contributors: Luxmi Tomar, Laura Pfluger, Shiaoman Chao, Deven See
+<tr><td>CSS POPSEQ 2014<td>A genetic map created by locating the markers on the 1,397,432 contigs of the IWGSC2, Nov 2014. Contigs were anchored to the genetic map of Poland et al., 2012, PLOS ONE. The match criteria is homology greater than 95% and E-value less than 1E-30. The analysis used blastn v2.2.28  with the following arguments -outfmt 6 -dust no -word_size 16 -task megablast -evalue 1e-08. Updated May 2016 to fix errors in 4DL and marker flanking sequence of Infinium 90K platform
+<tr><td>Aegilops tauschii, 2009<td>From Luo et al, (2009) PNAS 106(37):15780-15785
+<tr><td>90K Array Consensus<td>From: Wang et. al. (2014) Characterization of polyploid wheat genomic diversity using a high-density 90 000 single nucleotide polymorphism array, Plant Biotechnol J. 12(6): 787-796
+</table>
 
 </div>
