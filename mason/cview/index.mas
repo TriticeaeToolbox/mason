@@ -69,7 +69,9 @@ my $submit = qq | <b>[<a href="/cview/help/map_submission">Submit New Map</a>]</
 <br /><br />
 <% $d %>
 
-Each genotype protocol and genotype project is loaded with map information that is current when that project was created. This webite also has Cview as a web-based comparative viewer. To view documentation on the Cview program see <a href="https://pubmed.ncbi.nlm.nih.gov/18202028/">The SGN comparative map viewer</a>. To view genetic maps, see our archived site <a href="https://triticeaetoolbox.org/oat/maps/maps.php" target="_new">Map Sets</a>. To download genetic maps, see our archived site <a href="https://triticeaetoolbox.org/oat/maps/map_flapjack.php" target="_new">Download Map Sets</a>.<br><br>
+Each genotype protocol and genotype project is loaded with map information that is current when that project was created. This webite also has Cview as a web-based comparative viewer. To view documentation on the Cview program see <a href="https://pubmed.ncbi.nlm.nih.gov/18202028/">The SGN comparative map viewer</a>.<br>
+<h3>Oat Maps on archived site</h3>
+ To view genetic maps, see our archived site <a href="https://triticeaetoolbox.org/oat/maps/maps.php" target="_new">Map Sets</a>. To download genetic maps, see our archived site <a href="https://triticeaetoolbox.org/oat/maps/map_flapjack.php" target="_new">Download Map Sets</a>.<br><br>
 
 <table>
 <tr><td>Provena x CDC Boyer (2015)<td>A de-novo genetic linkage map of Provena x CDC Boyer (PB) that was used in the construction of the Hexaploid Oat Consensus Map (2015). The map was developed using 874 Illumina SNPs that were applied to the RIL population of 139 PB progeny. The MultiPoint package (MultiQTL Ltd.) was used to generate six maps that were averaged to construct a representative map with 27 LGs and genome coverage of 1613.1 cM. Babiker et al. (2015) developed the first linkage map for the PB mapping population.
