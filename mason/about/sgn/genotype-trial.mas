@@ -47,6 +47,7 @@
 <h2>Exome capture HapMap 2019</h2> 
 <ul>
 	<li>200 USA WheatCAP germplasm
+	<li>The final dataset after filtering for MAF>5 accessions, includes ~7 million SNPs and short indels detected using GATK
 </ul>
 
 <h2>Exome capture Diversity 2019</h2>
