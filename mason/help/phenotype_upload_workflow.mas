@@ -111,6 +111,19 @@ $user_roles => 'unknown'
     </p>
 </div>
 
+<div class="tutorial">
+    <h2>Sample Templates</h2>
+    <p>
+        You can <a href="/help/sample_templates">Generate a set of sample templates</a> for new accessions, locations, 
+        trials, and trait observations. These templates contain all new data in properly formatted templates that can 
+        be used to practice uploading each data type to the database.
+    </p>
+    <p>
+        Once you've generated the sample templates, follow the instructions below for each data type to upload each 
+        sample template.
+    </p>
+</div>
+
 <div class="section">
     <h2>User Account</h2>
     <p>
