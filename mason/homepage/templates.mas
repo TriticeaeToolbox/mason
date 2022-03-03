@@ -10,7 +10,9 @@
 </style>
 
 <%init>
-  my $self_upload = defined(our $T3_INSTANCE_PRIVATE) || our $T3_INSTANCE_TYPE eq "SANDBOX";
+  my $is_sandbox = our $T3_INSTANCE_TYPE eq "SANDBOX";
+  my $is_private = defined(our $T3_INSTANCE_PRIVATE);
+  my $self_upload = $is_private || $is_sandbox;
 </%init>
 
 
@@ -49,7 +51,7 @@
 
 
         <!-- SAMPLE TEMPLATES -->
-% if ( $self_upload ) {
+% if ( $is_sandbox ) {
         <hr />
         <p><strong>Sample Templates</strong></p>
 
