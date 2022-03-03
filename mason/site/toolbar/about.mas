@@ -7,10 +7,17 @@
     
     <li role="separator" class="divider"></li>
 
-    <li><a href="/contact/form">Contact Us</a></li>
     <li><a href="https://solgenomics.github.io/sgn/">Breedbase Manual</a></li>
     <li><a href="https://www.youtube.com/channel/UC3jrvvzGKKEHzOriDBgnj0A">Video Tutorials</a></li>
-    <li><a href="/static_content/files/2020ScabWorkshop/notes.html">Field Trial Upload Demo</a></li>
     <li><a href="/static_content/files/FieldBookAppT3.pdf">Field Book App</a></li>
+
+    <li role="separator" class="divider"></li>
+
+    <li><a href="/static_content/files/2020ScabWorkshop/notes.html">Field Trial Tutorial</a></li>
+    <li><a href="/help/sample_templates">Generate Sample Templates</a></li>
+
+    <li role="separator" class="divider"></li>
+
+    <li><a href="/contact/form">Contact Us</a></li>
   </ul>
 </li>

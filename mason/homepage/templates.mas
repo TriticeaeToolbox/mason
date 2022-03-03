@@ -21,64 +21,14 @@
 
         <!-- BLANK TEMPLATES -->
         <p><strong>Blank Upload Templates</strong></p>
-        <p>Below are blank upload templates for each data type
-% if ( $self_upload ) {
-          with basic upload instructions
-% }
-        </p>        
+        <p>Below are blank upload templates for each data type</p>        
         
         <ul class="templates-panel-list">
-          
-          <!-- Locations -->
-          <li>
-            
-            <a href="/static_content/files/templates/locations.xls">Locations (.xls)</a>
-% if ( $self_upload ) {
-            <ol class="templates-panel-list">
-              <li><a href="/breeders/locations">Manage &gt; Locations</a></li>
-              <li>[Upload New Locations]</li>
-            </ol>
-% }
-          </li>
-          
-          <!-- Accessions -->
+          <li><a href="/static_content/files/templates/locations.xls">Locations (.xls)</a></li>
           <li><a href="/static_content/files/templates/accessions.xls">Accessions (.xls)</a></li>
-% if ( $self_upload ) {
-            <ol class="templates-panel-list">
-              <li><a href="/breeders/accessions">Manage &gt; Accessions</a></li>
-              <li>[Add Accessions Or Upload Accession Info]</li>
-              <li>[Uploading a File]</li>
-            </ol>
-% }
-
-          <!-- Pedigrees -->
           <li><a href="/static_content/files/templates/pedigrees.txt">Pedigrees (.txt)</a></li>
-% if ( $self_upload ) {
-            <ol class="templates-panel-list">
-              <li><a href="/breeders/accessions">Manage &gt; Accessions</a></li>
-              <li>[Upload Pedigree File]</li>
-            </ol>
-% }
-
-          <!-- Trials -->
           <li><a href="/static_content/files/templates/trials.xls">Trials (.xls)</a></li>
-% if ( $self_upload ) {
-            <ol class="templates-panel-list">
-              <li><a href="/breeders/trials">Manage &gt; Field Trials</a></li>
-              <li>Upload Existing Trial(s)</li>
-              <li>File Formatting (Step 2): Multiple Trial Designs</li>
-            </ol>
-% }
-
-          <!-- Observations -->
           <li><a href="/static_content/files/templates/phenotypes.xls">Phenotype Observations (.xls)</a></li>
-% if ( $self_upload ) {
-            <ol class="templates-panel-list">
-              <li><a href="/breeders/phenotyping">Manage &gt; Phenotyping Results</a></li>
-              <li>[Upload Spreadsheet]</li>
-              <li>Spreadsheet Format: Simple</li>
-            </ol>
-% }
         </ul>
 
 
@@ -87,7 +37,8 @@
 
         <!-- DEMO TEMPLATES -->
         <p><strong>Example Templates</strong></p>
-        <p>Below are example templates generated for demo trial data from <a href="/static_content/files/2020ScabWorkshop/notes.html">a 2020 workshop</a>.</p>
+        <p>Below are example templates generated for demo trial data from <a href="/static_content/files/2020ScabWorkshop/notes.html">a 2020 workshop</a>. 
+        You can use these files to see how the templates are properly formatted.</p>
 
         <ul class="templates-panel-list">
           <li><a href="/static_content/files/2020ScabWorkshop/demo_locations.xls">Locations (.xls)</a></li>
@@ -96,8 +47,25 @@
           <li><a href="/static_content/files/2020ScabWorkshop/demo_phenotypes.xls">Phenotype Observations (.xls)</a></li>
         </ul>
 
+
+        <!-- SAMPLE TEMPLATES -->
+% if ( $self_upload ) {
+        <hr />
+        <p><strong>Sample Templates</strong></p>
+
+        <p>Generate a set of sample templates for new accessions, locations, trials, and trait observations.  These templates 
+        contain all new data in properly formatted templates that can be used to practice uploading each data type 
+        to the database.<p>
+
+        <ol>
+            <li><a href="/help/sample_templates">Generate your set of sample templates</a></li>
+            <li>Follow the <a href="/help/phenotype_upload_workflow">phenotype upload instructions</a> to upload the template for each data type</a></li>
+        </ol>
+% }
+
 % if ( !$self_upload ) {
         <hr />
+        <p><strong>Submission</strong></p>
         <p>Use the <a href="/submit/pheno">Phenotype Submission Form</a> to submit your data to the curators for inclusion in <% our $T3_INSTANCE_NAME %>.</p>
 % }
 
