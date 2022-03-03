@@ -32,6 +32,13 @@ Refactored for Catalyst Feb 2011
 
 </%doc>
 
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
 <%args>
 $map_by_species
 $map_url
@@ -62,6 +69,37 @@ my $submit = qq | <b>[<a href="/cview/help/map_submission">Submit New Map</a>]</
 <br /><br />
 <% $d %>
 
+Each genotype protocol and genotype project is loaded with map information that is current when that project was created. This webite also has Cview as a web-based comparative viewer. To view documentation on the Cview program see <a href="https://pubmed.ncbi.nlm.nih.gov/18202028/">The SGN comparative map viewer</a>.<br>
+<h3>Barley Maps on archived site</h3>
+To view genetic maps, see our archived site <a href="https://triticeaetoolbox.org/barley/maps/maps.php" target="_new">Map Sets</a>. To download genetic maps, see our archived site <a href="https://triticeaetoolbox.org/barley/maps/map_flapjack.php" target="_new">Download Map Sets</a>.<br><br>
 
+<table>
+<tr><td>UCR04162008<td>Consensus Map from the Close Lab, UC Riverside. The map contains only
+SNPs (2943 of them) and is a consensus genetic linkage map derived from
+four DH populations. Approximately 22,000 SNPs were identified from
+barley ESTs and sequenced amplicons; 4,596 of them were tested for
+performance in three pilot phase Illumina GoldenGate assays. Data from
+three barley doubled haploid mapping populations supported the
+production of an initial consensus map. Over 200 germplasm selections,
+principally European and US breeding material, were used to estimate
+minor allele frequency (MAF) for each SNP. We selected 3,072 of these
+tested SNPs based on technical performance, map location, MAF and
+biological interest to fill two 1536-SNP production assays (BOPA1 and
+BOPA2), which were made available to the barley genetics community. Data
+were added using BOPA1 from a fourth mapping population to yield a
+consensus map containing 2,943 SNP loci in 975 marker bins covering a
+genetic distance of 1099 cM. From: Szucs et al, Development and
+Implementation of High-Throughput SNP Genotyping in Barley. BMC
+Genomics 10:582 (2009).
+<tr><td>Steptoe x Morex<td>Map is from Table S1, Additional File 3 of Based on supplemental data file in Close, T. J., Bhat, P. R., Lonardi, S., Wu, Y., Rostoks, N., Ramsay, L., et al. (2009). Development and implementation of high-throughput SNP genotyping in barley. BMC Genomics, 10, 582.
+<tr><td>OWB_2383<td>OWB_2383 Hayes Lab; the 722 bPb type DArT marker mapped in the OWB, 458 markers were used to develop the barley DArT consensus map (Wenzl et al. 2006); Historical SNPs from (GrainGenes (http://wheat.pw.usda.gov/ggpages/maps/OWB/) Map Data Report: Barley, OWB, 2005). From  Szucs, V. Blake, P.R. Bhat, S. Chao, T.J. Close, A. Cuesta-Marcos, G.J. Muehlbauer, L. Ramsay, R. Waugh, and P. M. Hayes. 2009. An integrated resource for barley linkage map and malting quality QTL alignment. The Plant Genome. In press.
+<tr><td>Oregon Wolfe Barley, GBS 2012<td>35,000K marker GBS map for the Oregon Wolfe Barley population. From http://www.wheatgenetics.org/index.php/download/viewcategory/9-oregonwolfebarley
+<tr><td>Morex x Barke, GBS 2012<td>Data contributed by Jesse Poland, July 2012.
+<tr><td>Morex x Barke<td>Based on supplemental data file in Close, T. J., Bhat, P. R., Lonardi, S., Wu, Y., Rostoks, N., Ramsay, L., et al. (2009). Development and implementation of high-throughput SNP genotyping in barley. BMC Genomics, 10, 582.
+<tr><td>iSelect_2013Consensus_ChipSNPs<td>Consensus map from Morex x Barke iSelect SNP (Comadran et al. 2012) and mapped POPA SNPs from  Munoz-Amatriain et al, The Plant Genome (2011) 4:328 .  This is a subset of the iSelect_2013Consensus_AllSNPs map set containing only markers found on the iSelect chip.This map is being made available before publication and  users should cite the map as Munoz-Amatriain et al. (in preparation)
+<tr><td>iSelect_2013Consensus_AllSNPs<td>Consensus map from Morex x Barke iSelect SNP (Comadran et al. 2012) and mapped POPA SNPs from  Munoz-Amatriain et al, The Plant Genome (2011) 4:328 .  This map is being made available before publication and users should cite the map as Munoz-Amatriain et al. (in preparation)
+<tr><td>Barley, 2012 SNP, JHutton<td>SNP map with BOPA and SCRI markers. Morex x Barke map published by Comadran et al. (2012)  Data from http://bioinf.hutton.ac.uk/iselect/app/
+<tr><td>Barley, 2012 OPA, Consensus<td>Consensus maps from Munoz-Amatriain, et al., (2011) The Plant Journal 4:238. Note, in T3, POPA names are given for markers not included in the BOPA1 or BOPA2 arrays.
+</table>
 
 </div>
