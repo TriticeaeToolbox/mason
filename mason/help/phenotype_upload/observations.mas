@@ -1,0 +1,76 @@
+<a class="template btn btn-primary" href="/static_content/files/templates/phenotypes.xls"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;Blank Simple Phenotypes Template</a>
+<h2>Phenotype Observations</h2>
+<p>Once a Trial has been created, phenotype observations can be added to the Trial.  If you use the 
+    <a href="http://phenoapps.org/all-courses/field-book/">Field Book</a> tablet app, you can create a file for 
+    recording your observations directly on Field Book.  If you already have data, you can download a spreadsheet 
+    template specifically for the trial.</p>
+
+<ul>
+    <li><strong>Using Field Book:</strong>
+        <ol>
+            <li>Go to the Trial detail page for your trial
+                <ul>
+                    <li>Go to the <a href="/search/trials">Search &gt; Field Trials</a> page or the <a href="breeders/trials">Manage &gt; Field Trials</a> page</li>
+                    <li>Find your trial</li>
+                    <li>Click the name of your trial to open the Trial detail page</li>
+                </ul>
+            </li>
+            <li>Open the <strong>Upload Data Files</strong> section</li>
+            <li>Click the <strong>Create Field Book</strong> button
+                <ul>
+                    <li>This file can then be used as a field layout file to collect data using the Android Field Book app</li>
+                </ul>
+            </li>
+            <li>After data collection: Click the <strong>Upload</strong> button next to <strong>Android Field Book Exported</strong></li>
+            <li>Additional files, such as images or raw data files can be uploaded in the <strong>Upload Additional Files</strong> section</li>
+        </ol>
+    </li>
+    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_09.html">Using Field Book App</a> 
+    section in the manual for more information on collecting field data using the Android tablet app.</li>
+    <br />
+    <li><strong>Uploading Existing Data:</strong>
+        <ol>
+            <li>Create a list of Traits that were observed in your trial</li>
+            <li>Go to the Trial detail page for your trial
+                <ul>
+                    <li>Go to the <a href="/search/trials">Search &gt; Field Search</a> page or the <a href="breeders/trials">Manage &gt; Field Trials</a> page</li>
+                    <li>Find your trial</li>
+                    <li>Click the name of your trial to open the Trial detail page</li>
+                </ul>
+            </li>
+            <li>Open the <strong>Upload Data Files</strong> section</li>
+            <li>Click the <strong>Create Spreadsheet</strong> button next to <strong>Phenotyping Spreadsheets</strong>
+                <ul>
+                    <li><strong>Trait List:</strong> The list of Traits observed in this Trial</li>
+                    <li><strong>Spreadsheet Format:</strong> Simple</li>
+                    <li><strong>Data Level:</strong> Plots (for both plot-level data AND trial-mean data)
+                        <ul>
+                            <li><strong>For plot-level data:</strong> Observations at the individual plots can be recorded in each separate plot</li>
+                            <li><strong>For trial-mean data:</strong> Trial means for each trait will be recorded as a single observation in one plot for each Accession</li>
+                        </ul>
+                    </li>
+                    <li>This will create a template, for this specific trial, for adding phenotype observations to</li>
+                </ul>
+            </li>
+            <li>Once data has been entered into the template: Click the <strong>Upload</strong> button next to <strong>Phenotyping Spreadsheets</strong>
+            to add the recorded observations.</li>
+            <li>Additional files, such as images or raw data files can be uploaded in the <strong>Upload Additional Files</strong> section</li>
+        </ol>
+    </li>
+    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_10.html#3102-uploading-spreadsheet-phenotypes">Uploading 
+    Spreadsheet Phenotypes</a> manual page for more information on uploading phenotype data as a spreadsheet.</li>
+    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/01_basic_website_usage.html#working-with-lists">Working with Lists</a> 
+    manual page for more information on creating and managing lists</li>
+</ul>
+
+<br />
+
+<p>
+    <strong>If you are familiar with the traits on the original version of <% our $T3_INSTANCE_NAME %></strong>, you can use the trait lookup table to match 
+    the old trait names to their corresponding Breedbase trait names and IDs.  There is a trait lookup table available for each crop:
+</p>
+<ul>
+    <li><a href="https://wheat.triticeaetoolbox.org/static_content/files/wheat_traits_lookup.csv">Wheat Traits Lookup Table</a></li>
+    <li><a href="https://oat.triticeaetoolbox.org/static_content/files/oat_traits_lookup.csv">Oat Traits Lookup Table</a></li>
+    <li><a href="https://barley.triticeaetoolbox.org/static_content/files/barley_traits_lookup.csv">Barley Traits Lookup Table</a></li>
+</ul>
