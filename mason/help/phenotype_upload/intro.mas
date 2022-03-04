@@ -50,17 +50,26 @@
         <a href="/static_content/files/2020ScabWorkshop/notes.html">View the notes from a September 2020 workshop</a> 
         on how to load a demo field trial, with step-by-step instructions and example templates, into the database.
     </p>
+    <p>Example Templates from the Workshop can be downloaded here:</p>
+    <ul>
+        <li><a href="/static_content/files/2020ScabWorkshop/demo_locations.xls">Locations (.xls)</a></li>
+        <li><a href="/static_content/files/2020ScabWorkshop/demo_accessions.xls">Accessions (.xls)</a></li>
+        <li><a href="/static_content/files/2020ScabWorkshop/demo_trials.xls">Trials (.xls)</a></li>
+        <li><a href="/static_content/files/2020ScabWorkshop/demo_phenotypes.xls">Phenotype Observations (.xls)</a></li>
+    </ul>
 </div>
 
-<div class="tutorial">
-    <h2>Sample Templates</h2>
-    <p>
-        You can <a href="/help/sample_templates">Generate a set of sample templates</a> for new accessions, locations, 
-        trials, and trait observations. These templates contain all new data in properly formatted templates that can 
-        be used to practice uploading each data type to the database.
-    </p>
-    <p>
-        Once you've generated the sample templates, follow the instructions below for each data type to upload each 
-        sample template.
-    </p>
-</div>
+% if ( our $T3_INSTANCE_TYPE eq "SANDBOX" ) {
+    <div class="tutorial">
+        <h2>Sample Templates</h2>
+        <p>
+            You can <a href="/help/sample_templates">Generate a set of sample templates</a> for new accessions, locations, 
+            trials, and trait observations. These templates contain all new data in properly formatted templates that can 
+            be used to practice uploading each data type to the database.
+        </p>
+        <p>
+            Once you've generated the sample templates, follow the instructions below for each data type to upload each 
+            sample template.
+        </p>
+    </div>
+% }

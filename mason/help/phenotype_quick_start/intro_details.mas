@@ -30,6 +30,7 @@
 
   <br />
 
+% if ( our $T3_INSTANCE_TYPE eq "SANDBOX" ) {
   <!-- SAMPLE TEMPLATES -->
   <p><strong>Sample Templates</strong></p>
 
@@ -40,5 +41,6 @@
   <ul>
     <li><a href="/help/sample_templates">Generate Sample Templates</a></li>
   </ul>
+% }
 
 </&>
