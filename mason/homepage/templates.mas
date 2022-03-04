@@ -23,7 +23,7 @@
 
         <!-- BLANK TEMPLATES -->
         <p><strong>Blank Upload Templates</strong></p>
-        <p>Below are blank upload templates for each data type</p>        
+        <p>Below are blank upload templates for each data type</p>
         
         <ul class="templates-panel-list">
           <li><a href="/static_content/files/templates/locations.xls">Locations (.xls)</a></li>
@@ -61,7 +61,7 @@
 
         <ol>
             <li><a href="/help/sample_templates">Generate your set of sample templates</a></li>
-            <li>Follow the <a href="/help/phenotype_upload_workflow">phenotype upload instructions</a> to upload the template for each data type</a></li>
+            <li>Follow the <a href="/help/phenotype_quick_start">Guided Phenotype Upload Workflow</a> to upload the template for each data type</a></li>
         </ol>
 % }
 

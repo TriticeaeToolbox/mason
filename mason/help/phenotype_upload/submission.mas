@@ -1,0 +1,5 @@
+<& /toggle_display.mas, 
+    production => "/help/phenotype_upload/submission_production.mas",
+    sandbox => "/help/phenotype_upload/submission_sandbox.mas",
+    private => "/help/phenotype_upload/submission_private.mas"
+&>
