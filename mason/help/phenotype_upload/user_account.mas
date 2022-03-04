@@ -1,0 +1,63 @@
+<%args>
+    $user_roles => 'unknown'
+</%args>
+
+<style>
+    #account-prompts {
+        margin: 15px;
+    }
+    #account-prompts p {
+        margin: 10px 0 0 0;
+    }
+</style>
+
+<h2>User Account</h2>
+<p>
+    In order to submit data to the database, you must have an account with at least submitter privileges.  All 
+    new accounts created on <a href='<% our $T3_SANDBOX_URL %>'>the sandbox database</a> are automatically given 
+    submitter status.
+</p>
+<p>
+    If you need to modify an existing trial, your account must be associated with the breeding program that originally 
+    created the trial.  If your account is not already associated with the breeding program, please 
+    <a href="/contact/form">Contact Us</a> to make the change.
+</p>
+
+<&| /util/user.mas:logged_out &>
+    <div id="account-prompts">
+        <div class="row">
+            <div class="col-md-5">
+                <a href="/user/new" class="btn btn-primary btn-large btn-home">
+                    <span class="glyphicon glyphicon-user"></span>&nbsp;
+                        Create Account
+                </a>
+                <br />
+                <p>Create a new account if you don't already have one</p>
+            </div>
+            <div class="col-md-2"><br /></div>
+            <div class="col-md-5">
+                <a id="account-prompts-login" href="#" class="btn btn-primary btn-large btn-home">
+                    <span class="glyphicon glyphicon-user"></span>&nbsp;
+                        Login
+                </a>
+                <br />
+                <p>Login to your existing account</p>
+            </div>
+        </div>
+    </div>
+</&>
+
+<&| /util/user.mas:logged_in &>
+    <div id="account-status">
+        <p><strong>Account Status:</strong> <% $user_roles %></p>
+    </div>
+</&>
+
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $("#account-prompts-login").on("click", function() {
+            $('#site_login_dialog').modal("show");
+        });
+    });
+</script>

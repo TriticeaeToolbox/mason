@@ -1,0 +1,75 @@
+<style>
+    p.intro {
+        margin: 5px 40px;
+    }
+    .tutorial {
+        padding: 0 7px;
+        margin-top: 40px;
+        background-color: #e8cbc5;
+        border: 2px solid #c84c30;
+        border-radius: 5px;
+    }
+    .tutorial h2 {
+        color: #82311f;
+        border-bottom: 1px solid #c7897b;
+    }
+    .tutorial a {
+        color: #82311f;
+    }
+</style>
+
+
+<!-- INTRO -->
+<p class="intro">
+    These instructions will guide you through the process of creating a phenotype trial and uploading 
+    all of its associated data to the database.
+</p>
+
+<!-- SUBMISSION -->
+% if ( defined(our $T3_INSTANCE_PRIVATE) ) {
+<p class="intro">
+    Once your data has been submitted to this database, the last section will guide you through 
+    the process of submitting your trial(s) to the public version of <% our $T3_INSTANCE_NAME %>.
+</p>
+% } elsif ( our $T3_INSTANCE_TYPE eq "SANDBOX" ) {
+<p class="intro">
+    Once your data has been submitted to this sandbox database, the last section will guide you through 
+    the process of submitting your trial(s) to the production version of <% our $T3_INSTANCE_NAME %>.
+</p>
+% }
+
+<p class="intro">
+    If you have any questions about the process, please feel free to <a href="/contact/form">Contact Us</a>.
+</p>
+
+
+<!-- TUTORIALS -->
+<div class="tutorial">
+    <h2>Tutorial</h2>
+    <p>
+        <a href="/static_content/files/2020ScabWorkshop/notes.html">View the notes from a September 2020 workshop</a> 
+        on how to load a demo field trial, with step-by-step instructions and example templates, into the database.
+    </p>
+    <p>Example Templates from the Workshop can be downloaded here:</p>
+    <ul>
+        <li><a href="/static_content/files/2020ScabWorkshop/demo_locations.xls">Locations (.xls)</a></li>
+        <li><a href="/static_content/files/2020ScabWorkshop/demo_accessions.xls">Accessions (.xls)</a></li>
+        <li><a href="/static_content/files/2020ScabWorkshop/demo_trials.xls">Trials (.xls)</a></li>
+        <li><a href="/static_content/files/2020ScabWorkshop/demo_phenotypes.xls">Phenotype Observations (.xls)</a></li>
+    </ul>
+</div>
+
+% if ( our $T3_INSTANCE_TYPE eq "SANDBOX" ) {
+    <div class="tutorial">
+        <h2>Sample Templates</h2>
+        <p>
+            You can <a href="/help/sample_templates">Generate a set of sample templates</a> for new accessions, locations, 
+            trials, and trait observations. These templates contain all new data in properly formatted templates that can 
+            be used to practice uploading each data type to the database.
+        </p>
+        <p>
+            Once you've generated the sample templates, follow the instructions below for each data type to upload each 
+            sample template.
+        </p>
+    </div>
+% }

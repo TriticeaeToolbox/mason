@@ -1,0 +1,12 @@
+<h2>Submission</h2>
+
+<p>Users cannot upload data directly to the production instance of <% our $T3_INSTANCE_NAME %>.  You can generate 
+the upload templates for each data type and then either:</p>
+<ul>
+  <li><a href="/submit/pheno">Submit the templates for curation</a> and we will review the files and then submit them 
+  to the production database</li>
+  <li>Upload the templates to the <em>Sandbox</em> instance and then submit the individual trials from the sandbox 
+  (using the <em>Submit Trial</em> button on the trial detail page of each trial)</li>
+</ul>
+
+<p>Please feel free to <a href='/contact/form'>Contact Us</a> if you have any questions about data submission.</p>
