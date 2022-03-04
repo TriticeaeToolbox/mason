@@ -1,8 +1,39 @@
 <a class="template btn btn-primary" href="/static_content/files/templates/trials.xls"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;Blank Multi-Trial Template</a>
 <a class="template btn btn-primary" href="/static_content/files/templates/single_trial.xls"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;Blank Single Trial Template</a>
 <h2>Trials</h2>
+
 <p>A phenotyping trial must exist in the database before the results can be added.  The Trial contains information about 
-its location, plot and field size, design type, and plot layout.  A Trial can be added in multiple ways:</p>
+its location, plot and field size, design type, planting/harvest dates, and plot layout. For <strong>trial mean data</strong>, 
+create a Trial with one rep of Plots (one Plot for each Accession).  Then, add the trial means as the trait value for each of the plots.</p>
+
+<p>Trials and Plots must all have <em>unique names</em> in the database.  <% our $T3_INSTANCE_NAME %> uses the following <strong>naming conventions</strong> 
+for Trials and Plots:</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Naming Convention</th>
+            <th style="width: 250px">Examples</th>
+        </tr>
+    <thead>
+    <tbody>
+        <tr>
+            <td><strong>Trials</strong></td>
+            <td>In order to create a globally unique name, it is best to include a Breeding Program-specific prefix and/or experiment code, 
+                the year of the trial, and the name of the Location.</td>
+            <td>UMOPN_2020_Urbana<br />UIL_AYT_2020_Urbana</td>
+        </tr>
+        <tr>
+            <td><strong>Plots</strong></td>
+            <td>In order to create a globally unique name, we use the plot naming convention: <em>{TRIAL_NAME}-PLOT{PLOT#}</em></td>
+            <td>UMOPN_2020_Urbana-PLOT1<br />UIL_AYT_2020_Urbana-PLOT1</td>
+        </tr>
+    </tbody>
+</table>
+
+<br />
+
+<p>A Trial can be added in multiple ways:</p>
 
 <ul>
     <li>
@@ -40,7 +71,7 @@ its location, plot and field size, design type, and plot layout.  A Trial can be
                 (Click <em>Single trial spreadsheet</em> for more information).  The following columns 
                 are required:
                 <ul>
-                    <li>plot_name - which must be unique across the database (ie: UEOPN_Urbana_2019-plot1)</li>
+                    <li>plot_name - must be unique across the database (ie: UEOPN_Urbana_2019-plot1)</li>
                     <li>accession_name - must match an existing Accession</li>
                     <li>plot_number - must be unique within this trial</li>
                     <li>block_number</li>

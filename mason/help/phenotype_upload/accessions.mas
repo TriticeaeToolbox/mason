@@ -8,10 +8,11 @@
 <ol>
     <li>Make sure your Accessions exist in the Database
         <ul>
-            <li>Use the <a href="/search/phenotypes/stock">Search &gt; Accessions &amp; Plots</a> page to search 
+            <li>Use the <a href="/search/phenotypes/stock">Search &gt; Accessions and Plots</a> page to search 
             for the Accessions in your trial (individually)</li>
-            <li>Use the <a href="https://synonyms.triticeaetoolbox.org?db=<% our $T3_INSTANCE_NAME %>">Bulk Accession Search tool</a> to find matches 
-            of existing Accessions for all of the lines in your trial.</li>
+            <li>Use the <a href="/search/bulk?type=accessions">Search &gt; Bulk Search</a> page to find exact matches of multiple entries</li>
+            <li>Use the <a href="https://synonyms.triticeaetoolbox.org?db=<% our $T3_INSTANCE_NAME %>">BrAPI Germplasm Search tool</a> 
+            to find matches of existing Accessions (or variations in spelling and/or punctuation) for all of the lines in your trial.</li>
         </ul>
     </li>
     <li>If one or more of your Accessions don't exist in the database, you can add them by uploading a file of 
@@ -27,6 +28,7 @@
                     <li><strong>accession_name</strong>: the unique name of the accession</li>
                     <li><strong>species_name</strong>: Triticum aestivum</li>
                     <li><strong>organization_names(s):</strong> The Breeding Program(s) that originated the Accession</li>
+                    <li><strong>purdy_pedigree:</strong> The Purdy pedigree string for the accession (Female Parent/Male Parent)</li>
                 </ul>
             </li>
             <li>Upload the Accessions template</li>

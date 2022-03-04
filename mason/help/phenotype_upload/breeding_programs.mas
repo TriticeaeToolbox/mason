@@ -1,9 +1,10 @@
 <h2>Breeding Program</h2>
 <p>
     All data (such as Accessions and Trials) are associated with a particular Breeding Program. Generally, 
-    we have a Breeding Program for each University / Institution that submits data to the database.  For cooperative
-    nurseries we've created a separate breeding program for the cooperative so that trials performed for the cooperative 
-    nursery can be grouped together.
+    we have a Breeding Program for each University / Institution that submits data to the database.  For 
+    <em>cooperative / nursery trials</em>, there may be a Breeding Program created specifically for the nursery 
+    (ex: Uniform Oat Performace Nursery).  Trials performed for the nursery are associated with the nursery 
+    Breeding Program in order to keep them grouped together in the database.
 </p>
 
 <ol>
