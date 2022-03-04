@@ -1,0 +1,46 @@
+<br /><br />
+
+<&| /page/info_section.mas, title=>'Download Templates', collapsible=>1, collapsed=>1 &>
+
+  <!-- BLANK TEMPLATES -->
+  <p><strong>Blank Upload Templates</strong></p>
+  <p>Below are blank upload templates for each data type</p>
+
+  <ul>
+    <li><a href="/static_content/files/templates/locations.xls">Locations (.xls)</a></li>
+    <li><a href="/static_content/files/templates/accessions.xls">Accessions (.xls)</a></li>
+    <li><a href="/static_content/files/templates/pedigrees.txt">Pedigrees (.txt)</a></li>
+    <li><a href="/static_content/files/templates/trials.xls">Trials (.xls)</a></li>
+    <li><a href="/static_content/files/templates/phenotypes.xls">Phenotype Observations (.xls)</a></li>
+  </ul>
+
+  <br />
+
+  <!-- DEMO TEMPLATES -->
+  <p><strong>Example Templates</strong></p>
+  <p>Below are example templates generated for demo trial data from <a href="/static_content/files/2020ScabWorkshop/notes.html">a 2020 workshop</a>. 
+  You can use these files to see how the templates are properly formatted.</p>
+
+  <ul>
+    <li><a href="/static_content/files/2020ScabWorkshop/demo_locations.xls">Locations (.xls)</a></li>
+    <li><a href="/static_content/files/2020ScabWorkshop/demo_accessions.xls">Accessions (.xls)</a></li>
+    <li><a href="/static_content/files/2020ScabWorkshop/demo_trials.xls">Trials (.xls)</a></li>
+    <li><a href="/static_content/files/2020ScabWorkshop/demo_phenotypes.xls">Phenotype Observations (.xls)</a></li>
+  </ul>
+
+  <br />
+
+% if ( our $T3_INSTANCE_TYPE eq "SANDBOX" ) {
+  <!-- SAMPLE TEMPLATES -->
+  <p><strong>Sample Templates</strong></p>
+
+  <p>Generate a set of sample templates for new accessions, locations, trials, and trait observations.  These templates 
+  contain all new data in properly formatted templates that can be used to practice uploading each data type 
+  to the database.<p>
+
+  <ul>
+    <li><a href="/help/sample_templates">Generate Sample Templates</a></li>
+  </ul>
+% }
+
+</&>

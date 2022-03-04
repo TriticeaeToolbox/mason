@@ -3,11 +3,18 @@
 <p>Contributing data to <% our $T3_INSTANCE_NAME %></p>
 
 <a href="/help/phenotype_upload_workflow" class="btn btn-primary btn-large btn-home">
-    <span class="glyphicon glyphicon-pushpin"></span>&nbsp;
+    <span class="glyphicon glyphicon-tasks"></span>&nbsp;
+    Guided Workflow
+</a>
+
+<p><strong>Guided Phenotype Upload Workflow:</strong> Step-by-step instructions on how to upload phenotype data to <% $T3_INSTANCE_NAME %>.</p>
+
+<a href="/help/phenotype_upload_workflow" class="btn btn-primary btn-large btn-home">
+    <span class="glyphicon glyphicon-info-sign"></span>&nbsp;
     Upload Instructions
 </a>
 
-<p><strong>Phenotype Upload Instructions:</strong> Instructions and general steps for adding phenotype trial data to <% $T3_INSTANCE_NAME %>.</p>
+<p><strong>Detailed Phenotype Upload Instructions:</strong> Instructions and general steps for adding phenotype trial data to <% $T3_INSTANCE_NAME %>.</p>
 
 <a href="/breeders/phenotyping" class="btn btn-primary btn-large btn-home">
     <span class="glyphicon glyphicon-leaf"></span>&nbsp;
