@@ -1,0 +1,37 @@
+<a class="template btn btn-primary" href="/static_content/files/templates/accessions.xls"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;Blank Acccession Template</a>
+<h2>Accessions</h2>
+<p>
+    Each Accession (germplasm line) that is observed in a phenotype trial must have its own entry in the database.  In addition, 
+    the line names used in your trial design must match the names (or synonyms) of the Accessions in the database.
+</p>
+
+<ol>
+    <li>Make sure your Accessions exist in the Database
+        <ul>
+            <li>Use the <a href="/search/phenotypes/stock">Search &gt; Accessions &amp; Plots</a> page to search 
+            for the Accessions in your trial (individually)</li>
+            <li>Use the <a href="https://synonyms.triticeaetoolbox.org?db=<% our $T3_INSTANCE_NAME %>">Bulk Accession Search tool</a> to find matches 
+            of existing Accessions for all of the lines in your trial.</li>
+        </ul>
+    </li>
+    <li>If one or more of your Accessions don't exist in the database, you can add them by uploading a file of 
+        Accession information
+        <ul>
+            <li>Go to the <a href="/breeders/accessions">Manage &gt; Accessions</a> page</li>
+            <li>Click the <strong>Add Accessions or Upload Accession Info</strong> link in the top-right 
+                corner of that page.</li>
+            <li>Click the <strong>Uploading a File</strong> tab</li>
+            <li>Create an Excel (.xls) (<a href="/static_content/files/templates/accessions.xls">Download blank template</a>) file with the specified headers (Click <em>Spreadsheet format</em> for more info)</li>
+            <li>When creating a spreadsheet of Accessions, a minimum of these columns should be filled in:
+                <ul>
+                    <li><strong>accession_name</strong>: the unique name of the accession</li>
+                    <li><strong>species_name</strong>: Triticum aestivum</li>
+                    <li><strong>organization_names(s):</strong> The Breeding Program(s) that originated the Accession</li>
+                </ul>
+            </li>
+            <li>Upload the Accessions template</li>
+            <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_03.html">Managing 
+            Accessions</a> manual page for more information.</li>
+        </ul>
+    </li>
+</ol>
