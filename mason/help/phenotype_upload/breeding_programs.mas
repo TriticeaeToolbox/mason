@@ -1,0 +1,25 @@
+<h2>Breeding Program</h2>
+<p>
+    All data (such as Accessions and Trials) are associated with a particular Breeding Program. Generally, 
+    we have a Breeding Program for each University / Institution that submits data to the database.  For 
+    <em>cooperative / nursery trials</em>, there may be a Breeding Program created specifically for the nursery 
+    (ex: Uniform Oat Performace Nursery).  Trials performed for the nursery are associated with the nursery 
+    Breeding Program in order to keep them grouped together in the database.
+</p>
+
+<ol>
+    <li>Make sure your Breeding Program exists in the Database
+        <ul>
+            <li>View existing Breeding Programs: <a href="/breeders/manage_programs">Manage &gt; Breeding Programs</a></li>
+        </ul>
+    </li>
+    <li>If it is not listed, add it to the Database:
+        <ul>
+            <li>Go to the <a href="/breeders/manage_programs">Manage &gt; Breeding Programs</a> page</li>
+            <li>Click the <strong>Add New Program</strong> button at the bottom of the page</li>
+            <li>Fill out the Breeding Program name and description</li>
+            <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_01.html">Managing 
+            Breeding Programs</a> manual page for more information.</li>
+        </ul>
+    </li>
+</ol>
