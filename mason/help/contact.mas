@@ -5,6 +5,15 @@ $website_name => ''
 $email_address_to_display => ''
 </%args>
 
+<%perl>
+    my $user_name = '';
+    my $user_email = '';
+    if ($c->user) {
+        $user_name = $c->user->get_object()->get_first_name() . ' ' . $c->user->get_object()->get_last_name();
+        $user_email = $c->user->get_object()->get_private_email();
+    }
+</%perl>
+
 
 
 <& "/page/page_title.mas", title => "Contact Us" &>
@@ -29,7 +38,7 @@ my $infoNeeded = ["name", "email", "subject", ];
       <label class="col-sm-2 control-label"><% ucfirst $info_category %>* : 
       </label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" value="" name="<% $info_category %>"></input>
+        <input type="text" class="form-control" name="<% $info_category %>" value="<% $info_category eq 'name' ? $user_name : $info_category eq 'email' ? $user_email : '' %>">
       </div>
     </div>
 % }

@@ -57,6 +57,8 @@
         <% defined(our $T3_INSTANCE_PRIVATE) ? ' [' . $T3_INSTANCE_PRIVATE . ']' : '' %> 
     </h1>
 
+    <br />
+
     <!-- SANDBOX BANNER -->
     <& /toggle_display.mas, sandbox => "/homepage/sandbox_banner.mas" &>
 
@@ -69,11 +71,6 @@
 
     <!-- CITATION -->
     <& /homepage/citation.mas &>
-
-    <!-- SUBMITTER ACCESS -->
-    <& /toggle_display.mas, 
-        private => "/homepage/submitter.mas"
-    &>
 
     <br /><br /><br />
 
