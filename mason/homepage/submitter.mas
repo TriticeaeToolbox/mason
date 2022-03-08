@@ -1,0 +1,21 @@
+<%perl>
+    my $user_role = '';
+    if ($c->user) {
+        $user_role = $c->user->get_object()->get_user_type();
+    }
+</%perl>
+
+% if ( $user_role eq 'user' ) {
+    <br /><br />
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <strong>Need Submitter Privileges?</strong>
+        </div>
+        <div class="panel-body">
+            <p>By default, new accounts have read-only access, meaning they can view and download data but cannot 
+            add new data to the database.  If you would like to be able to submit data to the database, send us 
+            a request for submitter privileges using the <a href="/contact/form">Contact Form</a> along with which 
+            Breeding Program(s) you plan on submitting data for.</p>
+        </div>
+    </div>
+% }
