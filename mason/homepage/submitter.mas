@@ -6,7 +6,6 @@
 </%perl>
 
 % if ( $user_role eq 'user' ) {
-    <br /><br />
     <div class="panel panel-warning">
         <div class="panel-heading">
             <strong>Need Submitter Privileges?</strong>

@@ -74,12 +74,6 @@
     <!-- CITATION -->
     <& /homepage/citation.mas &>
 
-
-    <!-- SUBMITTER ACCESS -->
-    <& /toggle_display.mas, 
-        private => "/homepage/submitter.mas"
-    &>
-
     <br /><br /><br />
 
     <!-- MAIN CONTENT -->

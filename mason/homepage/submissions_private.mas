@@ -1,5 +1,7 @@
 <h2>Upload Data</h2>
 
+<& /homepage/submitter.mas &>
+
 <p>Contributing data to <% our $T3_INSTANCE_NAME %></p>
 
 <a href="/help/phenotype_upload_workflow" class="btn btn-primary btn-large btn-home">
