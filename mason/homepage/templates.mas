@@ -23,7 +23,7 @@
 
         <!-- BLANK TEMPLATES -->
         <p><strong>Blank Upload Templates</strong></p>
-        <p>Below are blank upload templates for each data type</p>
+        <p>Below are blank upload templates for each data type.</p>
         
         <ul class="templates-panel-list">
           <li><a href="/static_content/files/templates/locations.xls">Locations (.xls)</a></li>
@@ -34,12 +34,28 @@
         </ul>
 
 
+        <!-- SAMPLE TEMPLATES -->
+% if ( $is_sandbox ) {
+        <hr />
+        <p><strong>Sample Templates</strong></p>
+
+        <p>Generate a set of sample templates for new accessions, locations, trials, and trait observations.  These templates 
+        contain all new data in properly formatted templates that can be used to practice uploading each data type 
+        to the sandbox.<p>
+
+        <ol>
+            <li><a href="/help/sample_templates">Generate your set of sample templates</a></li>
+            <li>Follow the <a href="/help/phenotype_quick_start">Guided Phenotype Upload Workflow</a> to upload the template for each data type</a></li>
+        </ol>
+% }
+
+
         <hr />
 
 
         <!-- DEMO TEMPLATES -->
         <p><strong>Example Templates</strong></p>
-        <p>Below are example templates generated for demo trial data from <a href="/static_content/files/2020ScabWorkshop/notes.html">a 2020 workshop</a>. 
+        <p>Below are example templates generated for demo wheat trials from <a href="/static_content/files/2020ScabWorkshop/notes.html">a 2020 workshop</a>. 
         You can use these files to see how the templates are properly formatted.</p>
 
         <ul class="templates-panel-list">
@@ -50,21 +66,7 @@
         </ul>
 
 
-        <!-- SAMPLE TEMPLATES -->
-% if ( $is_sandbox ) {
-        <hr />
-        <p><strong>Sample Templates</strong></p>
-
-        <p>Generate a set of sample templates for new accessions, locations, trials, and trait observations.  These templates 
-        contain all new data in properly formatted templates that can be used to practice uploading each data type 
-        to the database.<p>
-
-        <ol>
-            <li><a href="/help/sample_templates">Generate your set of sample templates</a></li>
-            <li>Follow the <a href="/help/phenotype_quick_start">Guided Phenotype Upload Workflow</a> to upload the template for each data type</a></li>
-        </ol>
-% }
-
+        <!-- SANDBOX / PRIVATE SUBMISSION -->
 % if ( !$self_upload ) {
         <hr />
         <p><strong>Submission</strong></p>
@@ -72,6 +74,8 @@
 % }
 
         <hr />
+
+        <!-- DETAILED INSTRUCTIONS -->
         <p>For more detailed instructions, see the <a href="/help/phenotype_upload_workflow">Detailed Phenotype Upload Instructions</a></p>
     </div>
 </div>
