@@ -64,14 +64,18 @@
     <!-- INTRO -->
     <& /instance/intro.mas &>
 
-
     <!-- DATA USAGE -->
     <& /homepage/data_usage.mas &>
 
     <!-- CITATION -->
     <& /homepage/citation.mas &>
 
-    <br /><br />
+    <!-- SUBMITTER ACCESS -->
+    <& /toggle_display.mas, 
+        private => "/homepage/submitter.mas"
+    &>
+
+    <br /><br /><br />
 
     <!-- MAIN CONTENT -->
     <div class="row">
