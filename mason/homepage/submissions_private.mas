@@ -4,7 +4,7 @@
 
 <p>Contributing data to <% our $T3_INSTANCE_NAME %></p>
 
-<a href="/help/phenotype_upload_workflow" class="btn btn-primary btn-large btn-home">
+<a href="/help/phenotype_quick_start" class="btn btn-primary btn-large btn-home">
     <span class="glyphicon glyphicon-tasks"></span>&nbsp;
     Guided Workflow
 </a>
