@@ -1,0 +1,89 @@
+<a class="template btn btn-primary" href="/static_content/files/templates/locations.xls"><span class="glyphicon glyphicon-paperclip"></span>&nbsp;Blank Location Template</a>
+<h2>Locations</h2>
+<p>A phenotyping trial must be linked to a specific location.  Generally, the location of a trial is set as the 
+closest town to the actual field site.  However, more specific locations can be added (such as separate locations 
+for each field).</p>
+<p><% our $T3_INSTANCE_NAME %> uses the following <strong>naming conventions</strong> for the Location name and abbreviation:</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Type of Location</th>
+            <th>Name Convention</th>
+            <th>Name Example</th>
+            <th>Abbreviation Convention</th>
+            <th>Abbreviation Example</th>
+            <th>Location Type</th>
+        </tr>
+    <thead>
+    <tbody>
+        <tr>
+            <td>Town (closest to field site)</td>
+            <td>{Town name}, {2-letter State / Province abbreviation}</td>
+            <td>Ithaca, NY</td>
+            <td>{First 3 letters of town name}{2-letter State / Province abbreviation}</td>
+            <td>ITHNY</td>
+            <td>Farm</td>
+        </tr>
+        <tr>
+            <td>Actual field site</td>
+            <td>{Town name}, {2-letter State / Province abbreviation} - {Field name}</td>
+            <td>Ithaca, NY - Caldwell</td>
+            <td>{First 3 letters of town name}{2-letter State / Province abbreviation}-{First 3 letters of Field name}</td>
+            <td>ITHNY-CAL</td>
+            <td>Field</td>
+        </tr>
+        <tr>
+            <td colspan="6">
+                These are suggested naming conventions, but can be changed if there are conflicts with existing locations 
+                or a different abbreviation is more suitable for a specific Location.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<br />
+
+<ol>
+    <li>Make sure the Location of your Trial(s) exist in the Database
+        <ul>
+            <li>Use the <a href="/breeders/locations">Manage &gt; Locations</a> page to search for existing Locations.</li>
+        </ul>
+    </li>
+    <li>If the one or more of your Locations don't exist in the database, you can add them by either:
+        <ul>
+            <li>uploading a file of location information:
+                <ul>
+                    <li>Go to the <a href="/breeders/locations">Manage &gt; Locations</a> page</li>
+                    <li>Click the <strong>Upload New Locations</strong> link in the top right corner of that page</li>
+                    <li>Create an Excel (.xls) file (<a href="/static_content/files/templates/locations.xls">Download blank template</a>) with the specified headers</li>
+                    <li>Upload the file</li>
+                </ul>
+            </li>
+            <li>selecting the location from the map:
+                <ul>
+                    <li>Go to the <a href="/breeders/locations">Manage &gt; Locations</a> page</li>
+                    <li>Scroll and zoom in on the map to the location</li>
+                    <li>Click on the map where the location should be added</li>
+                    <li>Click the <strong>Add Location</strong> link in the pop-up</li>
+                    <li>Fill out the form with the Location properties</li>
+                    <li>Click the <strong>Store Location Details</strong> button to save the Location</li>
+                </ul>
+            </li>
+            <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_02.html">Managing Locations</a> manual page for more information.</li>
+        </ul>
+    </li>
+    <li>Make sure your Breeding Program is associated with the location.
+        <ul>
+            <li>In the Location Table on the <a href="/breeders/locations">Manage &gt; Locations</a> page, the <strong>Program</strong> 
+                column lists all of the Breeding Programs associated with each Location.</li>
+            <li>If your Breeding Program is NOT associated with the Location:
+                <ol>
+                    <li>Find the location on the map</li>
+                    <li>Click the <strong>Edit</strong> link</li>
+                    <li>In the <strong>Program</strong> select box, <strong>ctrl-click</strong> / <strong>command-click</strong>
+                        your Breeding Program from the list to add it to the existing Breeding Programs already associated with the location.</li>
+                    <li>Click the <strong>Store Location Details</strong> button to save your changes.</li>
+                </ol>
+            </li>
+    </li>
+</ol>

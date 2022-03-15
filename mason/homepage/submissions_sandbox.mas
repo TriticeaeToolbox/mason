@@ -36,6 +36,11 @@
 </p>
 
 <br />
-<a class="btn btn-primary btn-block" href="/help/phenotype_upload_workflow">
-    <span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Detailed Upload Instructions
-</a>
+<div class="btn-group btn-group-justified" role="group">
+    <a class="btn btn-primary" href="/help/phenotype_quick_start">
+        <span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;Guided Workflow
+    </a>
+    <a class="btn btn-primary" href="/help/phenotype_upload_workflow">
+        <span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Detailed Upload Instructions
+    </a>
+</div>
