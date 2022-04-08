@@ -17,6 +17,7 @@
         <& toolbar/analyze.mas &>
         <& toolbar/maps.mas &>
         <& toolbar/about.mas &>
+        <& toolbar/curator.mas &>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <div id="toolbar_contact_login_buttons" style="display: inline">

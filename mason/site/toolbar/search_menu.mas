@@ -26,10 +26,5 @@
     <!-- <li><a href="/search/features">Ensembl Genes</a></li> -->
     <li><a href="/genome/gwas.pl">GWAS Results</a></li>
     <li><a href="/search/sequence_metadata">Sequence Metadata</a></li>
-    
-    <li role="separator" class="divider"></li>
-    
-    <!-- <li><a href="/search/images">Images</a></li> -->
-    <li><a href="/search/people">People</a></li>
   </ul>
 </li>

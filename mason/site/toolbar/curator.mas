@@ -1,0 +1,25 @@
+<%perl>
+    my $user_role = '';
+    if ($c->user) {
+        $user_role = $c->user->get_object()->get_user_type();
+    }
+</%perl>
+
+% # Only display the menu if the user is a curator!
+% if ( $user_role eq 'curator' ) {
+
+<li class="dropdown">
+  <a class="menu_click_dropdown dropdown-toggle" data-toggle="dropdown">
+    &nbsp;<span class="glyphicon glyphicon-wrench"></span>&nbsp;
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="/breeders/manage_roles/">Manage User Roles</a></li>
+    <li><a href="/search/people">Search People</a></li>
+    <li><a href="/about/status/logins">Current Logins</a></li>
+
+    <li role="separator" class="divider"></li>
+
+  </ul>
+</li>
+
+% }
