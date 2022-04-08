@@ -22,10 +22,5 @@
     <li><a href="/search/markers">Markers</a></li>
     <li><a href="/search/locus">Loci</a></li> 
     <li><a href="/search/features">Genomic Features</a></li>
-    
-    <li role="separator" class="divider"></li>
-    
-    <!-- <li><a href="/search/images">Images</a></li> -->
-    <li><a href="/search/people">People</a></li>
   </ul>
 </li>
