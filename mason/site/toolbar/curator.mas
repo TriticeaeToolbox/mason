@@ -16,6 +16,7 @@
     <li><a href="/breeders/manage_roles/">Manage User Roles</a></li>
     <li><a href="/search/people">Search People</a></li>
     <li><a href="/about/status/logins">Current Logins</a></li>
+    <li><a href="/search/genotyping_data_public">Genotype Data Public</a></li>
 
     <li role="separator" class="divider"></li>
 
