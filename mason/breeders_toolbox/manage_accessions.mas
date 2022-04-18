@@ -7,10 +7,33 @@ $editable_stock_props => {}
 $editable_stock_props_definitions => {}
 </%args>
 
+<style>
+    .tutorial {
+        padding: 0 7px;
+        margin: 40px;
+        background-color: #e8cbc5;
+        border: 2px solid #c84c30;
+        border-radius: 5px;
+    }
+    .tutorial a {
+        color: #82311f;
+    }
+    .tutorial p {
+        margin: 10px;
+    }
+</style>
+
+
 <& /util/import_javascript.mas, classes => [ 'bootstrap_min.js', 'jquery.iframe-post-form','CXGN.List','CXGN.BreedersToolbox.Accessions', 'CXGN.BreedersToolbox.UploadPedigrees' ] &>
 
 
 <& /page/page_title.mas, title=>"Manage Accessions" &>
+
+<div class="tutorial">
+    <p><strong>Before adding new Accessions to the database</strong>, check your new Accession names against those already 
+    in the database using the <a href="https://synonyms.triticeaetoolbox.org/?db=<% our $T3_INSTANCE_NAME %>">Bulk Accession Search</a>. 
+    This will help reduce the possibility of creating duplicate Accession entries with slight variations in names.</p>
+</div>
 
 <div class="container-fluid">
 
