@@ -1,5 +1,12 @@
 <h1><center><% our $T3_INSTANCE_NAME %> Genotype Trial description</h1></center>
 
+<h2>Tinker QTL 2021</h2>
+<ul>
+	<li>Description: GBS PstI-MspI, data called across 5 biparental oat populations
+	<li>Publication: <a href=https://www.nature.com/articles/s42003-022-03256-5>Genome analysis in Avena sativa reveals hidden breeding barriers and opportunities for oat improvement</a>
+	<li>Filter: heterozygosity was 10%, and minor allele frequency was 10%, minimum complete genotypes: 10%
+</ul>
+
 <h2>GBS POGI</h2>
 <ul>
 	<li>Description: GBS PstI-MspI, Public Oat Genotyping Initiative, Haplotag
