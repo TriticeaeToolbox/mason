@@ -10,6 +10,7 @@
     <li><a href="/breeders/trials/">Field Trials</a></li>
     <li><a href="/breeders/phenotyping/">Phenotyping Results</a></li>
     <li><a href="/fieldbook">Field Book Tools</a></li>
+    <li><a href="/breeders/nirs/">High Dimensional Phenotypes</a></li>
 
     <li role="separator" class="divider"></li>
     
@@ -17,7 +18,6 @@
     <li><a href="/breeders/genetic_characters">Genetic Characters</a></li>
     <!-- <li><a href="/breeders/genotyping/">Genotyping Plates</a></li> -->
 
-    
     <li role="separator" class="divider"></li>
     
     <li><a href="/tools/onto/">Trait Ontology Browser</a></li>
