@@ -21,9 +21,10 @@ Phenotyping projects are public 2 years after they have been loaded into the Whe
                 <th>Year</th>
                 <th>Planting Date</th>
                 <th>Harvest Date</th>
+                <th>Has Trial Layout</th>
                 <th>Create Date</th>
-		<th>Public Date</th>
-		<th>Transferred</th>
+                <th>Public Date</th>
+                <th>Transferred</th>
             </tr>
             </thead>
             </table>
@@ -49,7 +50,8 @@ jQuery(document).ready(function () {
 
    var trial_table = jQuery('#trial_search_results').DataTable( {
        'ajax': '/ajax/search/trials_public?location_id=<% $location_id %>',
-       "scrollX": true
+       "scrollX": true,
+       "order": [[7, 'desc']],
    });
 
    jQuery('#trial_search_results').on( 'draw.dt', function () {
