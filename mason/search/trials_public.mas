@@ -22,6 +22,7 @@ Phenotyping projects are public 2 years after they have been loaded into the Whe
                 <th>Planting Date</th>
                 <th>Harvest Date</th>
                 <th>Has Trial Layout</th>
+                <th>Has Trait Data</th>
                 <th>Create Date</th>
                 <th>Public Date</th>
                 <th>Transferred</th>
