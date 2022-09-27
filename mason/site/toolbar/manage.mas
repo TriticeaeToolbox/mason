@@ -15,7 +15,7 @@
     
     <li><a href="/breeders/sequence_metadata">Sequence Metadata</a></li>
     <li><a href="/breeders/genetic_characters">Genetic Characters</a></li>
-    <!-- <li><a href="/breeders/genotyping/">Genotyping Plates</a></li> -->
+    <li><a href="/breeders/genotyping/">Genotyping Plates</a></li>
 
     
     <li role="separator" class="divider"></li>
