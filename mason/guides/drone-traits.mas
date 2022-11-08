@@ -3,7 +3,7 @@
   my $dbh = CXGN::DB::Connection->new();
 
   # SQL Filter to get base drone traits
-  my $BASE_TRAIT_FILTER = 'name LIKE \'%UASHub%\'';
+    my $BASE_TRAIT_FILTER = 'name LIKE \'%UASHub%\' OR name = \'Canopy temperature - handheld - degrees C\' OR name = \'Canopy temperature - drone - degrees C\'';
 
   # Get the base traits from the DB
   my $base_trait_query = "SELECT name 
