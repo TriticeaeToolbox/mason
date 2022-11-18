@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practical Haplotype Graph (PHG) imputation</title>
+  <meta charset="utf-8">
+  <style>
+  table, th, td {
+  border: 1px solid black;
+  padding: 12px;
+  border-collapse: collapse;
+  }
+  </style>
+</head>
+<body>
+<h1><center>T3/Wheat Practical Haplotype Graph (PHG) imputation</center></h1>
+
+<h2>PHG Description</h2>
+The Practical Haplotype Graph (PHG) V2 database was constructed using whole-exome capture sequencing data from a diverse set of 472 wheat accessions.
+<br>Publication for PHG V1: <a href="https://academic.oup.com/g3journal/article/12/2/jkab390/6423995" target="_blank"> Development of the Wheat Practical Haplotype Graph</a>
+<br>Number of Markers: 2.89M
+
+<h2>Imputation Pipeline</h2>
+The imputation was done using the ImputePipelinePlugin of the PHG (<a href="https://bitbucket.org/bucklerlab/practicalhaplotypegraph/wiki/UserInstructions/ImputeWithPHG_main.md" target="_blank">PHG Wiki</a>). The ImputePipelinePlugin was run with minRead=0 so that all haplotypes are imputed. PHG Version 0.0.40 was used to run the ImputePipelinePlugin.
+<br>
+<h2>Download Genotyping Projects</h2>
+Imputation accuracy
+<table>
+<tr><th>Genotyping Protocol<th>PHG accession<th>other accessions</tr>
+<tr><td><a href="/breeders_toolbox/protocol/48">Genotyping by multiplexed sequencing, GMS</a>
+    <td>
+    <td>
+<tr><td><a href="/breeders_toolbox/protocol/71">Infinium 9K</a>
+    <td>
+    <td>
+<tr><td><a href="/breeders_toolbox/protocol/70">Infinium 90K</a>
+    <td>92%
+    <td>79%
+</table>
+<br>
+<h3>PHG imputation protocol</h3>
+<ul><li>Converting Illumina Infinium before imputation<br>
+Illumina data is saved in the T3 database as Ref = A_allele, Alt = B_allele. To impute this data and merge with other genotype protocols it is necessary to convert the Illumina so that it alligns (strand and orientation) with the reference genome.<br><br>
+<a href=/static_content/files/Illumina_90K_conversion.docx>Converting Illumina 9K and 90K before imputation</a><br><br>
+
+<li>PHG imputation accuracy<br><br>
+<a href=/static_content/files/PHG_accuracy_v2.docx>Testing PHG accuracy</a><br>
+</ul>
+</body>
+</html>
