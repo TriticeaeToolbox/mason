@@ -21,7 +21,7 @@ For GoldenGate and DArT genotyping projects see <a href=https://triticeaetoolbox
                   <th>Protocol Description</th>
                   <th>Reference Genome</th>
                   <th>Species Name</th>
-                  <th>Sample Type</th>
+                  <th>Create Date</th>
             </tr>
             </thead>
             </table>
@@ -47,7 +47,8 @@ jQuery(document).ready(function () {
 
    var trial_table = jQuery('#genotyping_protocol_search_results').DataTable( {
        'ajax': '/ajax/genotyping_protocol/search',
-       "scrollX": true
+       "scrollX": true,
+       order: [[6, 'desc']]
    });
 
    jQuery('#genotyping_protocol_search_results').on( 'draw.dt', function () {
