@@ -19,11 +19,3 @@
         advanced features (such as Seedlots and Barcodes).</p>
     </div>
 </div>
-
-<div class="news-item">
-    <p class="news-item-title">IWGSC RefSeq v2.1 Assembly</p>
-    <p class="news-item-date">June 1, 2021</p>
-    <div class="news-item-content">
-        <p>The <strong>WheatCAP</strong> instance of T3/Wheat is created with the initial data from the public instance of T3/Wheat.</p>
-     </div>
-</div>
