@@ -10,6 +10,17 @@
 -->
 
 <div class="news-item">
+    <p class="news-item-title">Scab Forum Presentation</p>
+    <p class="news-item-date">Dec 5, 2022</p>
+    <div class="news-item-content">
+        <p>The presentation of T3/Breedbase given at the 2022 Wheat &amp; Barley Scab Forum can be found 
+        <a href="/static_content/files/2022ScabForum.pdf">here</a>.  It includes information about the main features 
+        of T3/Breedbase, a general overview of creating phenotype upload templates, and highlights some of T3/Breedbase's 
+        advanced features (such as Seedlots and Barcodes).</p>
+    </div>
+</div>
+
+<div class="news-item">
     <p class="news-item-title">IWGSC RefSeq v2.1 Assembly</p>
     <p class="news-item-date">June 1, 2021</p>
     <div class="news-item-content">
