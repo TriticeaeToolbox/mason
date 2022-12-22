@@ -1,1 +1,16 @@
-Blake, V., Birkett, C.L., Matthews, D.E., Hane, D., Bradbury, P., Jannink, J. 2016. <a href="https://acsess.onlinelibrary.wiley.com/doi/full/10.3835/plantgenome2014.12.0099">The Triticeae Toolbox: Combining Phenotype and Genotype Data to Advance Small-Grains Breeding</a>. The Plant Genome. doi: 10.3835/PlantGenome2014.12.0099.
+Nicolas Morales, Jean-Luc Jannink, Clay L. Birkett, David J Waring, Lukas A Mueller, et. al., Breedbase: a digital ecosystem for modern plant breeding, G3 Genes|Genomes|Genetics, Volume 12, Issue 7, July 2022, jkac078, <a href="https://doi.org/10.1093/g3journal/jkac078">https://doi.org/10.1093/g3journal/jkac078</a>
+<br>
+
+<p>
+If you have data to publish in this database, please load the data. 
+Then you should use the trial id and dataset id as references in your publication. If you have multiple data submissions that are related, please create a "Dataset" using the <a href=https://wheat.triticeaetoolbox.org/breeders/search>wizard</a>, use the wizard again make the Dataset Public, then list the dataset id as a reference. The following are examples of how to cite your data.
+
+<table style="padding: 20px">
+<tr><th>data type<th>name<th>citation
+<tr><td>Phenotype trial<td>1RS-Dry_2012_Davis<td><a href=https://wheat.triticeaetoolbox.org/breeders/trial/7658>https://wheat.triticeaetoolbox.org/breeders/trial/7658</a>
+<tr><td>Genotype project<td>2012_SRWW_ElitePanel<td><a href=https://wheat.triticeaetoolbox.org/breeders/trial/2780>https://wheat.triticeaetoolbox.org/breeders/trial/2780</a> 
+<tr><td>Genotype protocol<td>Infinium 90K<td><a href=https://wheat.triticeaetoolbox.org/breeders_toolbox/protocol/70>https://wheat.triticeaetoolbox.org/breeders_toolbox/protocol/70</a>
+<tr><td>Breeding Program<td>Allele Based Breeding Cooperative<td><a href=https://wheat.triticeaetoolbox.org/breeders/program/6208>https://wheat.triticeaetoolbox.org/breeders/program/6208</a>
+<tr><td>Breeding Program folder<td>ABB Mid<td><a href=https://wheat.triticeaetoolbox.org/folder/6210>https://wheat.triticeaetoolbox.org/folder/6210</a>
+<tr><td>Dataset<td>Tinker QTL 2021<td><a href=https://oat.triticeaetoolbox.org/dataset/18683>https://oat.triticeaetoolbox.org/dataset/18683</a>
+</table>
