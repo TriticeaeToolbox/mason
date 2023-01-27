@@ -17,8 +17,8 @@
 <h2>PHG Description</h2>
 The Practical Haplotype Graph (PHG) V2 database was constructed using whole-exome capture sequencing data from a diverse set of 472 wheat accessions with 2.89M markers
 <br>Publication for PHG V1: <a href="https://academic.oup.com/g3journal/article/12/2/jkab390/6423995" target="_blank"> Development of the Wheat Practical Haplotype Graph</a>
-<br>Visualize reference ranges and haplotype caounts: <a href=https://triticeaetoolbox.org/jbrowse/?data=wheat2>JBrowse</a>
-<br>Accesions used to create PHG: <a href=/static_content/files/PHG472_T3Matches.xlsx>PHG472_T3Matches.xlsx</a>
+<br>Visualize reference ranges and haplotype counts: <a href=https://triticeaetoolbox.org/jbrowse/?data=wheat2>JBrowse</a>
+<br>Accessions used to create PHG: <a href=/static_content/files/PHG472_T3Matches.xlsx>PHG472_T3Matches.xlsx</a>
 
 <h2>Imputation Pipeline</h2>
 The imputation was done using the ImputePipelinePlugin of the PHG (<a href="https://bitbucket.org/bucklerlab/practicalhaplotypegraph/wiki/UserInstructions/ImputeWithPHG_main.md" target="_blank">PHG Wiki</a>). The ImputePipelinePlugin was run with minRead=0 so that all haplotypes are imputed. PHG Version 0.0.40 was used to run the ImputePipelinePlugin.
@@ -38,7 +38,7 @@ The imputation was done using the ImputePipelinePlugin of the PHG (<a href="http
 <br>
 <h3>PHG imputation protocol</h3>
 <ul><li>Converting Illumina Infinium before imputation<br>
-Illumina data is saved in the T3 database as Ref = A_allele, Alt = B_allele. To impute this data and merge with other genotype protocols it is necessary to convert the Illumina so that it alligns (strand and orientation) with the reference genome.<br><br>
+Illumina data is saved in the T3 database as Ref = A_allele, Alt = B_allele. To impute this data and merge with other genotype protocols it is necessary to convert the Illumina so that it aligns (strand and orientation) with the reference genome.<br><br>
 <a href=/static_content/files/Illumina_90K_conversion.docx>Converting Illumina 9K and 90K before imputation</a><br><br>
 
 <li>Imputation documentation<br><br>
