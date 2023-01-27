@@ -1,14 +1,15 @@
 
 % if( eval{ $c->get_conf('production_server') } ) {
 
-<!-- Global Site Tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37631546-3"></script>
+<!-- T3/OAT PROPERTY -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQCJLW8G60"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-37631546-3');
+  gtag('config', 'G-GQCJLW8G60');
 </script>
 
 % }
