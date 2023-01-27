@@ -1,7 +1,7 @@
 
 % if( eval{ $c->get_conf('production_server') } ) {
 
-<!-- T3/WHEAT - ARS/KS - PROPERTY
+<!-- T3/WHEAT - ARS/KS - PROPERTY -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BXFXM84LW0"></script>
 <script>
