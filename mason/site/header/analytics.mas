@@ -1,15 +1,15 @@
 
 % if( eval{ $c->get_conf('production_server') } ) {
 
-<!-- T3/WHEAT PROPERTY -->
+<!-- T3/WHEAT - WHEATCAP - PROPERTY -->
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CL3SWL6DS0"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1LMN182F01"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-CL3SWL6DS0');
+  gtag('config', 'G-1LMN182F01');
 </script>
 
 % }
