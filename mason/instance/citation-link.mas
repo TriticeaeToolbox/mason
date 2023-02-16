@@ -1,5 +1,5 @@
 <p>
-If you have data to publish in our database, please submit the data using <a href=https://wheat-sandbox.triticeaetoolbox.org/>wheat-sandbox</a>. Then, once the data has been loaded in the production database you should use the trial id and dataset id as references in your publication. If you have multiple data submissions that are related, please create a "Dataset" using the <a href=https://wheat.triticeaetoolbox.org/breeders/search>wizard</a>, use the wizard again make the Dataset Public, then list the dataset id as a reference. The following are examples of how to cite your data.
+If you have data to publish in our database, please submit the data using <a href=https://wheat-sandbox.triticeaetoolbox.org/>wheat-sandbox</a>. Then, once the data has been loaded in the production database you should use the trial id and dataset id as references in your publication. If you have multiple data submissions that are related, please create a "Dataset" using the <a href=https://wheatcap.triticeaetoolbox.org/breeders/search>wizard</a>, use the wizard again make the Dataset Public, then list the dataset id as a reference. The following are examples of how to cite your data.
 
 <table style="padding: 20px">
 <tr><th>data type<th>name<th>citation
