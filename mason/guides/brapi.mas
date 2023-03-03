@@ -1,0 +1,130 @@
+<& "/page/page_title.mas", title => "BrAPI R Tutorial" &>
+
+<div style="max-width: 800px; margin: 25px auto">
+
+  <h2>Overview</h2>
+
+  <p>
+    This tutorial will show you how to access data from T3 using BrAPI.  The examples given here will be written in R, 
+    but the general ideas will be the same regardless of the programming language you choose to use.
+  </p>
+
+  <h2>What is BrAPI?</h2>
+
+  <p>
+    <a href="https://brapi.org" target="_blank">BrAPI</a> is the <strong>Br</strong>eeding <strong>A</strong>pplication <strong>P</strong>rogramming 
+    <strong>I</strong>nterface - a standardized way for breeding databases and applications to transmit breeding data between themselves.  It is a 
+    great way to programatically retrieve data from T3, other breedbase instances, and any other database that supports BrAPI.
+  </p>
+
+  <p>
+    BrAPI is implemented as a <strong>RESTful API</strong>, meaning the <u>client</u> (the R scripts that you will write) makes standard HTTP <u>requests</u> 
+    (using the <code>httr</code> R package) to documented BrAPI <u>endpoints</u> (the URLs available to access specific resources) on the <u>server</u>.  
+    Ther server will then return a <u>response</u> that contains the data you requested, the status of a database search, 
+    or information about the data you're adding to the database.  The response is returned as text in a standardized 
+    <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON" target="_blank">JSON format</a>, 
+    which R can parse into a named list for JSON objects and vectors for JSON arrays.
+  </p>
+
+  <img src="/static_content/img/brapi/rest.jpg" width="400px" style="margin: 0 auto" />
+
+  <h2>API Requests</h2>
+
+  <p>A Request to an API server has the following components:</p>
+
+  <ul>
+    <li>
+      <strong>Method (required)</strong>: the method describes the type of action your request will make on the server.<br />
+      BrAPI uses these methods:
+      <ul>
+        <li><strong>GET</strong>: when retrieving data from the database</li>
+        <li><strong>POST</strong>: when adding new data to the database</li>
+        <li><strong>PUT</strong>: when updating existing data in the database</li>
+      </ul>
+    </li>
+    <li>
+      <strong>URL / Endpoint (required)</strong>: this is the URL pointing to the specific data resource you're requesting<br />
+      Sometimes, the URL of the endpoint is dynamic and includes a parameter that is different depending on which specific resource you are requesting.
+      For example, when requesting the data on a specific single germplasm record, the URL of the endpoint will include the unique germplasm ID.  In the 
+      BrAPI documentation the endpoint may be represented as: <code>/germplasm/{germplasmDbId}</code>.  In this example, the second part of the endpoint 
+      is a variable that you'll replace with a value when making your request, such as: <code>/germplasm/2589</code>.
+    </li>
+    <li>
+      <strong>Query Parameters (optional)</strong>: Additional key/value parameters that modify the request<br />
+      For example, most BrAPI endpoints can accept <code>page</code> and <code>pageSize</code> query parameters that determine 
+      <em>which set of</em> and <em>how many</em> result items are returned, for example: <code>page=3</code> and <code>pageSize=25</code>.
+    </li>
+    <li>
+      <strong>Body Parameters (optional)</strong>: <code>POST</code> and <code>PUT</code> requests generally include a body 
+      with the request, which is the content/data being sent along with the request (such as the new data being added to the database).
+      In many RESTful APIs, including BrAPI, the the server expects the body to be formatted as JSON.  In R, lists and vectors can  
+      be automatically converted into JSON before sending the request to the server.
+    </li>
+  </ul>
+
+  <h2>BrAPI Endpoints</h2>
+
+  <p>
+    BrAPI has a large number of endpoints available to access all of the many different data types stored on T3.  View the 
+    <a href="https://brapi.org/specification" target="_blank">BrAPI Specification Documentation</a> for a full list of BrAPI 
+    endpoints (some of which may not be implemented in T3/Breedbase).
+  </p>
+
+  <p>The full URL of a BrAPI endpoint uses the following format:</p>
+
+  <div style="width: 100%; text-align: center">
+    <p style="font-weight: bold; font-size: 125%">https://<code>server</code>/brapi/<code>version</code>/<code>call</code></p>
+  </div>
+
+  <ul>
+    <li><strong>server</strong> is the host name of the specific database you're accessing, such as:
+      <ul>
+        <li>wheat.triticeaetoolbox.org</li>
+        <li>oat.triticeaetoolbox.org</li>
+        <li>barley.triticeaetoolbox.org</li>
+        <li>cassavabase.org</li>
+        <li>sugarkelpbase.org</li>
+      </ul>
+    </li>
+    <li>
+      <strong>version</strong> is the version of the BrAPI specification you're using, such as:
+      <ul>
+        <li>v1</li>
+        <li><strong>v2</strong> -- which is the recommended version to use at this point</li>
+      </ul>
+    </li>
+    <li>
+      <strong>call</strong> is the final part of the URL / endpoint and specifies which resource you're requesting. 
+      Some commonly used calls include:
+      <ul>
+        <li>/germplasm</li>
+        <li>/pedigree</li>
+        <li>/studies</li>
+      </ul>
+    </li>
+  </ul>
+
+
+  <h2>Step 1: Setup R</h2>
+
+  <p>The HTTP requests to the BrAPI server will be made using the <code>httr</code> R package, so make sure you have 
+  that package installed.</p>
+
+  <pre><code class="language-r">install.packages("httr")
+x <- 2+2</code></pre>
+
+  <p>
+    Download and Source the BrAPI helper script.  This file contains some simple boiler-plate code that handle 
+    <code>GET</code>, <code>POST</code>, and <code>PUT</code> requests to a BrAPI server using the <code>httr</code> 
+    library.
+  </p>
+
+
+
+
+</div>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
