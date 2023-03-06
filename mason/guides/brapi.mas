@@ -1,6 +1,6 @@
 <& "/page/page_title.mas", title => "BrAPI R Tutorial" &>
 
-<div style="max-width: 800px; margin: 25px auto">
+<div id="brapi" style="max-width: 800px; margin: 25px auto">
 
   <h2>Overview</h2>
 
@@ -9,7 +9,7 @@
     but the general ideas will be the same regardless of the programming language you choose to use.
   </p>
 
-  <h2>What is BrAPI?</h2>
+  <h3>What is BrAPI?</h3>
 
   <p>
     <a href="https://brapi.org" target="_blank">BrAPI</a> is the <strong>Br</strong>eeding <strong>A</strong>pplication <strong>P</strong>rogramming 
@@ -26,9 +26,9 @@
     which R can parse into a named list for JSON objects and vectors for JSON arrays.
   </p>
 
-  <img src="/static_content/img/brapi/rest.jpg" width="400px" style="margin: 0 auto" />
+  <img src="/static_content/img/brapi/rest.jpg" style="width: 100%; max-width: 400px" />
 
-  <h2>API Requests</h2>
+  <h3>API Requests</h3>
 
   <p>A Request to an API server has the following components:</p>
 
@@ -62,7 +62,7 @@
     </li>
   </ul>
 
-  <h2>BrAPI Endpoints</h2>
+  <h3>BrAPI Endpoints</h3>
 
   <p>
     BrAPI has a large number of endpoints available to access all of the many different data types stored on T3.  View the 
@@ -105,20 +105,251 @@
   </ul>
 
 
-  <h2>Step 1: Setup R</h2>
+  <h2>Usage</h2>
+
+  <h3>Setup R</h3>
 
   <p>The HTTP requests to the BrAPI server will be made using the <code>httr</code> R package, so make sure you have 
   that package installed.</p>
 
-  <pre><code class="language-r">install.packages("httr")
-x <- 2+2</code></pre>
+  <pre><code class="language-r">install.packages("httr")</code></pre>
 
   <p>
-    Download and Source the BrAPI helper script.  This file contains some simple boiler-plate code that handle 
-    <code>GET</code>, <code>POST</code>, and <code>PUT</code> requests to a BrAPI server using the <code>httr</code> 
-    library.
+    Download and Source the <a href="/static_content/files/brapi/brapi.R" target="_blank">BrAPI helper script</a>.  This 
+    file contains some simple boiler-plate code that handles <code>GET</code>, <code>POST</code>, and <code>PUT</code> 
+    requests to a BrAPI server using the <code>httr</code> library.
   </p>
 
+  <pre><code class="language-r"># Download the brapi.R helper script to your Desktop
+download.file("https://wheat.triticeaetoolbox.org/static_content/files/brapi/brapi.R", "~/Desktop/brapi.R")
+
+# Source the helper script into your R session
+source("~/Desktop/brapi.R")</code></pre>
+
+  <h3>Setting the BrAPI Server</h3>
+
+  <p>
+    The BrAPI helper script needs to know which BrAPI server to send your requests to.  You can set the BrAPI 
+    server using this command:
+  </p>
+
+  <pre><code class="language-r"># Replace the wheat.triticeaetoolbox.org String with the hostname of the database you want to connect to
+brapi$server = "wheat.triticeaetoolbox.org"</code></pre>
+
+  <h3>Setting the BrAPI Version</h3>
+
+  <p>
+    By default, the BrAPI helper script will use <strong>version 2</strong> of the BrAPI specification.  If you want to change the version, 
+    you can do so using this command:
+  </p>
+
+  <pre><code class="language-r"># You only need to do this if you don't want to use version 2 of the BrAPI specification
+brapi$version = "v1"</code></pre>
+
+
+  <h3>Finding a BrAPI Endpoint</h3>
+
+  <p>
+    Use the BrAPI Specification Documentation to find a BrAPI Endpoint that will return the data you're interested in.
+    The documentation is broken into different modules:
+  </p>
+
+  <ul>
+    <li>
+      <strong><a href="https://app.swaggerhub.com/apis/PlantBreedingAPI/BrAPI-Core/2.1" target="_blank">BrAPI-Core</a></strong>: 
+      contains endpoints related to programs, trials, studies, and locations.
+    </li>
+    <li>
+      <strong><a href="https://app.swaggerhub.com/apis/PlantBreedingAPI/BrAPI-Germplasm/2.1" target="_blank">BrAPI-Germplasm</a></strong>:
+      contains endpoints related to germplasm, crosses, seedlots, pedigrees.
+    </li>
+    <li>
+      <strong><a href="https://app.swaggerhub.com/apis/PlantBreedingAPI/BrAPI-Phenotyping/2.1" target="_blank">BrAPI-Phenotyping</a></strong>:
+      contains endpoints related to observations, observation units, observation variables (traits).
+    </li>
+    <li>
+      <strong><a href="https://app.swaggerhub.com/apis/PlantBreedingAPI/BrAPI-Genotyping/2.1" target="_blank">BrAPI-Genotyping</a></strong>:
+      contains endpoints related to calls, call sets, variants, variant sets, plates, samples, maps.
+    </li>
+  </ul>
+
+  <p style="margin-top: 36px">From the Documentation, you'll need to get:</p>
+  <ul>
+    <li><strong>HTTP Method</strong>: this will be either <code>GET</code>, <code>PUT</code>, or <code>POST</code></li>
+    <li>
+      <strong>BrAPI Call</strong>: this will be the final part of the URL to the BrAPI endpoint, such as 
+      <code>/germplasm</code> or <code>/search/trials</code>
+    </li>
+  </ul>
+  <a href="/static_content/img/brapi/docs-endpoint.png" target="_blank">
+    <img src="/static_content/img/brapi/docs-endpoint.png" style="width: 100%; max-width: 800px"  />
+  </a>
+
+  <p style="margin-top: 36px">
+    Each endpoint will have its own set of parameters that can be used to modify the request or send data to the server. 
+    To use a parameter, you'll need to know:
+  </p>
+  <ul>
+    <li>
+      <strong>parameter name</strong>: query parameters have a specific name that needs to be used and a request body 
+      needs to follow a specific format with properly named attributes.
+    </li>
+    <li>
+      <strong>parameter type</strong>: this will either be listed as a <em>query</em> parameter or will be shown as 
+      part of an example request <em>body</em>.
+    </li>
+  </ul>
+  <a href="/static_content/img/brapi/docs-query.png" target="_blank">
+    <img src="/static_content/img/brapi/docs-query.png" style="width: 100%; max-width: 800px"  />
+  </a>
+  <br /><br />
+  <a href="/static_content/img/brapi/docs-body.png" target="_blank">
+    <img src="/static_content/img/brapi/docs-body.png" style="width: 100%; max-width: 800px"  />
+  </a>
+
+  <br /><br />
+
+
+  <h3>Making a Request</h3>
+
+  <p>
+    Once you know the method, call, and any parameters, you can make a request to the specific BrAPI endpoint using one 
+    of the functions from the BrAPI helper script.  There is one function for each method:
+  </p>
+
+  <ul>
+    <li><strong>brapi$get(call, ...)</strong>: makes a GET request</li>
+    <li><strong>brapi$put(call, ...)</strong>: makes a PULL request</li>
+    <li><strong>brapi$post(call, ...)</strong>: makes a POST request</li>
+  </ul>
+
+  <p>Each of the methods requires the <u>call</u> to be specified, such as <code>/germplasm</code> or <code>/search/trials</code></p>
+
+  <p>Depending on the specific request you're making, you can add additional <em>named</em> arguments:</p>
+
+  <ul>
+    <li>
+      <strong>query</strong>: a named list of query parameters.  For example:
+      <pre><code class="language-r">query = list(
+    programDbId = 360,
+    species = "Triticum aestivum"
+)</code></pre>
+    </li>
+    <li>
+      <strong>body</strong>: a named list of the request body.  For example:
+      <pre><code class="language-r"># create a named list for the first item in the body (to be converted into a JSON object)
+b1 = list(
+    observationUnitDbId = 1380641,
+    observationVariableDbId = 84308,
+    value = 125
+)
+# create a named list for the second item in the body (to be converted into a JSON object)
+b2 = list(
+    observationUnitDbId = 1380563,
+    observationVariableDbId = 84308,
+    value = 130
+)
+# combine the two named lists into an unnamed list (to be converted into a JSON array)
+body = list(b1, b2)</code></pre>
+    </li>
+    <li><strong>page</strong>: specify the page number of paginated results (default: 0)</li>
+    <li><strong>pageSize</strong>: specify the number of items per page of paginated results (default: 10)</li>
+    <li><strong>token</strong>: specify the access token for requests that require authentication</li>
+  </ul>
+
+  <h3>Handling the Response</h3>
+
+  <p>If the request was successful, the helper scripts will return a list with 3 items:</p>
+
+  <ul>
+    <li><strong>response:</strong> the raw httr response</li>
+    <li><strong>status:</strong> information about the status code returned with the response</li>
+    <li>
+      <strong>content:</strong> the data returned in the response.  Most BrAPI responses will include these two items in the content:
+      <ul>
+        <li><strong>result:</strong> the data of the response</li>
+        <li><strong>metadata:</strong> metadata about the response, such as pagination information and/or error messages</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>This screenshot shows the general structure of a BrAPI response.  This response is from the <code>/germplasm</code> endpoint 
+  and the <code>r$content$result$data</code> list contains information about the first 10 germplasm entries returned from the query.
+  The <code>r$content$metadata$pagination</code> list contains information about the current page and total number of pages.</p>
+
+  <a href="/static_content/img/brapi/rstudio-result.png" target="_blank">
+    <img src="/static_content/img/brapi/rstudio-result.png" style="width: 100%; max-width: 800px" />
+  </a>
+
+
+  <h3>Pagination</h3>
+
+  <p>
+    Many of the BrAPI requests can return any number of matching items from the database.  To reduce the chances of getting 
+    a very large response back, the results are paginated.  This means that not all of the results will be returned at once.
+    By default, only 10 items will be returned per page.  You can increase the number of items returned by setting a higher 
+    page size in the request (by setting the <code>pageSize</code> argument).  By default, the first page (page 0) is returned.
+    To get additional pages, you'll need to make additional requests and set the <code>page</code> argument in each request.
+  </p>
+
+  <p>For example, to get 50 germplasm per page and to get the 2nd page (the first page is page = 0):</p>
+  <pre><code class="language-r">r = brapi$get("germplasm", pageSize=50, page=1)</code></pre>
+
+  <h3>Authentication</h3>
+
+  <p>
+    Depending on the setup of the BrAPI server, some or all of the requests may require you to authenticate (login) to the
+    server before you can make any requests.  Making a <code>POST</code> request that adds data to the database will generally 
+    always require you to authenticate first.  Retrieving data from the database may not require you to authenticate.
+  </p>
+
+  <p>To authenticate with a breedbase server (the authentication process may differ for different BrAPI servers):</p>
+  <pre><code class="language-r"># send your username and password to the server to get an access token
+l = brapi$post("token", query=list(username="your_username", password="your_password"))
+# extract the access token from the response
+t = l$content$access_token
+# t should be a long random alphanumeric string</code></pre>
+
+  <p>Then, you'll use the access token in any future requests:</p>
+  <pre><code class="language-r">r = brapi$post("observations", body=list(b1, b2), token=t)</code></pre>
+
+
+  <h3>Searches</h3>
+
+  <p>
+    Many of the search endpoints, like <code>/search/germplasm</code> and <code>/search/studies</code> don't return 
+    the search results right away.  Instead, they return a <code>searchResultsDbId</code> which allows the search 
+    to run in the background.  Once you have the search ID, you make another request to <code>/search/germplasm/{searchResultsDbId}</code>, etc... to get the status of the search and its results once complete.
+  </p>
+
+
+
+  <h2>Examples</h2>
+
+  <h3>Germplasm</h3>
+
+  <p>To get a single germplasm entry filtered by name:</p>
+  <pre><code class="language-r">r = brapi$get("germplasm", query=list(germplasmName="JERRY"))
+jerry = r$content$result$data[[1]]</pre></code>
+
+  <p>To get any matching germplasm entries by searching by name:</p>
+  <pre><code class="language-r"># start the search
+s = brapi$post("search/germplasm", body=list(germplasmNames=list("JERRY", "AJAX")))
+
+# extract the search id from the first response
+id = s$content$result$searchResultDbId
+
+# get the search results
+r = brapi$get(paste0("search/germplasm/", id))
+
+# extract the matching germplasm entries from the second response
+matches = r$content$result$data</code></pre>
+
+  <h3>T3/Breedbase Trials = BrAPI Studies</h3>
+
+  <p>To get all of the observations for a Study (you'll need to refer to the Study by its DB ID):</p>
+  <pre><code class="language-r">r = brapi$get("observations", query=list(studyDbId=9411))</code></pre>
+  <p>The returned data will include one object for each recorded plot / trait observation for the specified Study.</p>
 
 
 
@@ -128,3 +359,17 @@ x <- 2+2</code></pre>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+
+<style>
+  #brapi h2 {
+    font-size: 150%;
+    border-bottom: 2px solid #A2AD00;
+    margin-top: 36px;
+    margin-bottom: 12px;
+  }
+  #brapi pre {
+    margin: 12px;
+    padding: 0;
+    border: 1px solid #CE8E00;
+  }
+</style>
