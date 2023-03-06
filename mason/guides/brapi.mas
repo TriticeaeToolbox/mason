@@ -225,7 +225,7 @@ brapi$version = "v1"</code></pre>
 
   <p>Each of the methods requires the <u>call</u> to be specified, such as <code>/germplasm</code> or <code>/search/trials</code></p>
 
-  <p>Depending on the specific request you're making you can add additional <em>named</em> arguments:</p>
+  <p>Depending on the specific request you're making, you can add additional <em>named</em> arguments:</p>
 
   <ul>
     <li>
@@ -293,7 +293,7 @@ body = list(b1, b2)</code></pre>
   </p>
 
   <p>For example, to get 50 germplasm per page and to get the 2nd page (the first page is page = 0):</p>
-  <pre><code class="language-r">r = brapi$get("/germplasm", pageSize=50, page=1)</code></pre>
+  <pre><code class="language-r">r = brapi$get("germplasm", pageSize=50, page=1)</code></pre>
 
   <h3>Authentication</h3>
 
@@ -312,6 +312,44 @@ t = l$content$access_token
 
   <p>Then, you'll use the access token in any future requests:</p>
   <pre><code class="language-r">r = brapi$post("observations", body=list(b1, b2), token=t)</code></pre>
+
+
+  <h3>Searches</h3>
+
+  <p>
+    Many of the search endpoints, like <code>/search/germplasm</code> and <code>/search/studies</code> don't return 
+    the search results right away.  Instead, they return a <code>searchResultsDbId</code> which allows the search 
+    to run in the background.  Once you have the search ID, you make another request to <code>/search/germplasm/{searchResultsDbId}</code>, etc... to get the status of the search and its results once complete.
+  </p>
+
+
+
+  <h2>Examples</h2>
+
+  <h3>Germplasm</h3>
+
+  <p>To get a single germplasm entry filtered by name:</p>
+  <pre><code class="language-r">r = brapi$get("germplasm", query=list(germplasmName="JERRY"))
+jerry = r$content$result$data[[1]]</pre></code>
+
+  <p>To get any matching germplasm entries by searching by name:</p>
+  <pre><code class="language-r"># start the search
+s = brapi$post("search/germplasm", body=list(germplasmNames=list("JERRY", "AJAX")))
+
+# extract the search id from the first response
+id = s$content$result$searchResultDbId
+
+# get the search results
+r = brapi$get(paste0("search/germplasm/", id))
+
+# extract the matching germplasm entries from the second response
+matches = r$content$result$data</code></pre>
+
+  <h3>T3/Breedbase Trials = BrAPI Studies</h3>
+
+  <p>To get all of the observations for a Study (you'll need to refer to the Study by its DB ID):</p>
+  <pre><code class="language-r">r = brapi$get("observations", query=list(studyDbId=9411))</code></pre>
+  <p>The returned data will include one object for each recorded plot / trait observation for the specified Study.</p>
 
 
 
