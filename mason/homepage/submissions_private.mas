@@ -31,3 +31,12 @@
 </a>
 
 <p>Or <strong>Upload Files</strong> for various other types of data.</p>
+
+<br /><br /><br />
+
+<h2>Submit Phenotype Data</h2>
+
+<p>If you have trials on this database that you want to submit to the production database, you can do so 
+by clicking the <strong>Submit Trial</strong> button on the trial detail page of each trial you want to 
+submit OR you can create a list of multiple trials to submit and submit them all at once from the 
+<a href="/submit/trials">Submit Multiple Trials</a> page.</p>
