@@ -15,6 +15,7 @@
     <p>If data on The Triticeae Toolbox was relevant to analyses or findings that you publish, please cite:</p>
     <p class="well">
         <& /instance/citation.mas &>
+        <& /instance/citation-link.mas &>
     </p>
 </div>
 
