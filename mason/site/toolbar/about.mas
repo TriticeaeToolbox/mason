@@ -4,12 +4,13 @@
     <li><a href="/about#citation">How to Cite <% our $T3_INSTANCE_NAME %></a>
     <li><a href="/status">Content Status</a></li>
     <li><a href="/about/genotype-trial.pl">Genotype Protocol description</a></li>
+    <li><a href="https://files.triticeaetoolbox.org">FTP data</a></li>
     
     <li role="separator" class="divider"></li>
 
     <li><a href="https://solgenomics.github.io/sgn/">Breedbase Manual</a></li>
     <li><a href="/guides/videos">Video Tutorials</a></li>
-    <li><a href="https://files.triticeaetoolbox.org">FTP data</a></li>
+    <li><a href="/guides/brapi">BrAPI Tutorial</a></li>
 
     <li role="separator" class="divider"></li>
 
