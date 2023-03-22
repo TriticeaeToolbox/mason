@@ -63,15 +63,24 @@ $stock_id
         for ( let i = 0; i < props.length; i++ ) {
             let prop = props[i];
             let accession_number = prop.value;
-            let prefix = accession_number.split(' ')[0];
-            for ( let j = 0; j < T3_EXTERNAL_LINKS.length; j++ ) {
-                let link = T3_EXTERNAL_LINKS[j];
-                if ( link.prefixes.includes(prefix) ) {
-                    html += "<ul>";
-                    html += "<a href='" + link.url(accession_number) + "'>"
-                    html += link.name + ': ' + accession_number;
-                    html += "</a>";
-                    html += "</ul>";
+            let prefix;
+            if ( accession_number.includes(" ") ) {
+                prefix = accession_number.split(' ')[0];
+            }
+            else {
+                prefix = accession_number.match(/^[A-z]+/)[0];
+            }
+            if ( prefix ) {
+                for ( let j = 0; j < T3_EXTERNAL_LINKS.length; j++ ) {
+                    let link = T3_EXTERNAL_LINKS[j];
+                    let link_prefixes = link.prefixes.map((e) => e.toLowerCase())
+                    if ( link_prefixes.includes(prefix.toLowerCase()) ) {
+                        html += "<ul>";
+                        html += "<a href='" + link.url(accession_number) + "'>"
+                        html += link.name + ': ' + accession_number;
+                        html += "</a>";
+                        html += "</ul>";
+                    }
                 }
             }
         }
