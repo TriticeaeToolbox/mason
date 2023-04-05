@@ -25,6 +25,15 @@
         //         return "https://pgrc3.agr.gc.ca/cgi-bin/npgs/html/acc_search.pl?accid=" + term
         //     }
         // }
+        {
+            name: "GrainGenes",
+            prefixes: ["GG"],
+            url: function(term) {
+                let id = term.replace(/gg ?/gi, "");
+                id = id.replace(/ /g, "+");
+                return "https://wheat.pw.usda.gov/cgi-bin/GG3/report.cgi?class=germplasm&name=" + id;
+            }
+        }
     ]
 
 </script>
