@@ -21,19 +21,24 @@
     to check for any errors.
 </p>
 
+% if ( $c->config->{allow_trial_submissions} ) {
 
 <h3>Step 3: Submit Trial Data</h3>
 
 <p>
     If your trial data has been successfully added to the Sandbox you can submit your trials 
     directly to the production site by clicking the <strong>Submit Trial</strong> button on 
-    the trial detail page.
+    the trial detail page of each trial you want to submit OR you can create a list of multiple 
+    trials to submit and submit them all at once from the <a href="/submit/trials">Submit Multiple 
+    Trials</a> page.
 </p>
 <p>
     If your data has not been added to the Sandbox or if you would prefer to submit your files 
     directly to the production site, you can submit your individual upload templates or data files to us 
     using the <a href='<% our $T3_PRODUCTION_URL %>/submit/pheno'>Phenotype Submission Form</a>.
 </p>
+
+% }
 
 <br />
 <div class="btn-group btn-group-justified" role="group">
