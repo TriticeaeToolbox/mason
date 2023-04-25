@@ -332,6 +332,23 @@ $dataset_id => undef
         </table>
         </div>
       </div>
+
+      <div class="panel panel-default panel4">
+        <div class="panel-heading" role="button" data-toggle="collapse" data-parent="#wiz-down-group" href="#wiz-down-5-c" aria-controls="wiz-down-5-c">
+          <span class="btnn btn-link" type="text" disabled>VCF File Genotype Data</span>
+          <input class="btnn btn-link" type="text" id="panel5" disabled>
+        </div>
+        <div id="wiz-down-5-c" class="panel-collapse collapse" role="tabpanel">
+          <table class="table"><tr><td>
+          <span>This genotype project is too big for the database so is provided as a static download
+               <input class="wizard-download-genotypes-vcf form-control input-sm" type="text" disabled></input>
+               <span class="glyphicon glyphicon-info-sign" title="Retieve VCF file"></span>
+               <span>Retrieve Genotypes</span><br>
+               <button class="wizard-download-vcf-file btn btn-sm btn-primary">Download file</button> all accessions in project
+        </table>
+        </div>
+      </div>
+
       <div class="panel panel-default">
         <div class="panel-heading" role="button" data-toggle="collapse" data-parent="#wiz-down-group" href="#wiz-down-2-c" aria-controls="wiz-down-2-c">
           <span class="btnn btn-link">Related Trial Metadata</span>
@@ -598,6 +615,26 @@ $dataset_id => undef
       if ( selected_genotyping_project !== SELECTED_GENOTYPING_PROJECT ) {
         SELECTED_GENOTYPING_PROJECT = selected_genotyping_project;
         jQuery.ajax({
+          url: '/ajax/breeder/search/genotyping_project_large',
+          method: "GET",
+          data: { 'genotyping_project': SELECTED_GENOTYPING_PROJECT },
+          error: function(response) {
+            console.log("ERROR: Could not get chromosome names for genotyping project #" + SELECTED_GENOTYPING_PROJECT);
+            console.log("error " + response);
+            updateLarge();
+          },
+          success: function(response) {
+            if (response.error) {
+              console.log("ERROR: Server returned an error trying to get the chromosome names for genotyping protocol #" + SELECTED_GENOTYPING_PROTOCOL);
+              console.log("error " + repsonse.error);
+              updateImputed();
+            } else {
+              updateLarge(response.large);
+              console.log("rest " + response.large);
+            }
+          }
+        }); 
+        jQuery.ajax({
           url: '/ajax/breeder/search/genotyping_project_imputed',
           method: "GET",
           data: { 'genotyping_project': SELECTED_GENOTYPING_PROJECT },
@@ -651,6 +688,10 @@ $dataset_id => undef
   // Set the message if imputed project found
   function updateImputed(msg) {
     document.getElementById("panel3").value = " " + msg;
+  }
+  // Set the message if large project found
+  function updateLarge(msg) {
+    document.getElementById("panel5").value = " " + msg;
   }
 
 </script>
