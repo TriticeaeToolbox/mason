@@ -21,11 +21,11 @@
     <!-- <li><a href="/search/markers">Markers</a></li> -->
     <li><a href="/search/variants">Markers</a></li>
     <li><a href="/search/locus?filter=T3:T3_GC_CATEGORIES">Genetic Characters</a></li>
+    <li><a href="/search/sequence_metadata">Sequence Metadata</a></li>
     <li><a href="/search/locus?filter=T3:UNIPROT_PROTEINS">UniProt Proteins</a></li>
     <li><a href="/search/locus?filter=T3:ENSEMBL_GENE_IDS">Ensembl Gene IDs</a></li>
     <li><a href="/search/features">Ensembl Genes</a></li>
     <li><a href="/genome/gwas.pl">GWAS Results</a></li>
     <li><a href="/genome/mnase.pl">MNase and VEP</a></li>
-    <li><a href="/search/sequence_metadata">Sequence Metadata</a></li>
   </ul>
 </li>
