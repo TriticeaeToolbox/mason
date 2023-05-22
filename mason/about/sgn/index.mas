@@ -6,7 +6,7 @@
 
 <div class="boxcontent">Note that data on <% $T3_INSTANCE_NAME %> are associated with Data Agreements and that they are not necessarily in the public domain. Please contact the authors of the data if you are interested in any aspect of data production or analysis.</div>
 
-<br /><br />
+<br />
 
 <a class="anchor" id="citation"></a>
 <h2>Cite <% $T3_INSTANCE_NAME %></h2>
@@ -18,7 +18,7 @@
     </p>
 </div>
 
-<br /><br />
+<br />
 
 <& /usage_policy.mas &>
 
@@ -31,5 +31,11 @@
         position: relative;
         top: -50px;
         visibility: hidden;
+    }
+    th, td {
+      padding: 10px;
+    }
+    table, th, td {
+      border: 1px solid black;
     }
 </style>
