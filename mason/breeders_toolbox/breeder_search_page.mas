@@ -1,6 +1,7 @@
 
 <%args>
 $dataset_id => undef
+$preferred_species => undef
 </%args>
 
 <& /util/import_javascript.mas, entries => ["wizard"] &>
@@ -326,6 +327,7 @@ $dataset_id => undef
                 the imputed genotypes can be downloaded from a prepared file. A description of the 
                 imputation process can be found in <a href="/static_content/files/imputation.html">About PHG imputation</a>.</span><br/></br>
                <input class="wizard-download-genotypes-imput form-control input-sm" type="text" disabled></input>
+               <input type="hidden" id="species" value=<% $preferred_species %>></input>
                <span class="glyphicon glyphicon-info-sign" title="Retieve Imputed Genotypes"></span>
                <span>Retrieve Genotypes</span><br>
                <button class="wizard-download-imputed-file btn btn-sm btn-primary">Download file</button> all accessions in project 
@@ -342,6 +344,7 @@ $dataset_id => undef
           <table class="table"><tr><td>
           <span>This genotype project is too big for the database so is provided as a static download
                <input class="wizard-download-genotypes-vcf form-control input-sm" type="text" disabled></input>
+               <input type="hidden" id="species" value=<% $preferred_species %>></input>
                <span class="glyphicon glyphicon-info-sign" title="Retieve VCF file"></span>
                <span>Retrieve Genotypes</span><br>
                <button class="wizard-download-vcf-file btn btn-sm btn-primary">Download file</button> all accessions in project
