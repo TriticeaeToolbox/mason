@@ -31,8 +31,8 @@ brapi = list(
     
     # Add page parameters to the query list, for GET requests
     if ( method == "GET" ) {
-      query$page = page
-      query$pageSize = pageSize
+      query$page = ifelse("page" %in% names(query), query$page, page)
+      query$pageSize = ifelse("pageSize" %in% names(query), query$pageSize, pageSize)
     }
     
     # Add token as Authorization header, if provided
