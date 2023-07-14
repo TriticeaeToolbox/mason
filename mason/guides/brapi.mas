@@ -115,36 +115,40 @@
   <pre><code class="language-r">install.packages("httr")</code></pre>
 
   <p>
-    Download and Source the <a href="/static_content/files/brapi/brapi.R" target="_blank">BrAPI helper script</a>.  This 
-    file contains some simple boiler-plate code that handles <code>GET</code>, <code>POST</code>, and <code>PUT</code> 
+    Install the <a href="https://github.com/TriticeaeToolbox/BrAPI.R" target="_blank">BrAPI.R package</a>.  This 
+    package contains some simple boiler-plate code that handles <code>GET</code>, <code>POST</code>, and <code>PUT</code> 
     requests to a BrAPI server using the <code>httr</code> library.
   </p>
 
-  <pre><code class="language-r"># Download the brapi.R helper script to your Desktop
-download.file("https://wheat.triticeaetoolbox.org/static_content/files/brapi/brapi.R", "~/Desktop/brapi.R")
+  <pre><code class="language-r"># Install devtools, if you haven't already
+install.packages("devtools")
 
-# Source the helper script into your R session
-source("~/Desktop/brapi.R")</code></pre>
+# Install the BrAPI package from GitHub
+library(devtools)
+install_github("TriticeaeToolbox/BrAPI.R")
+library(BrAPI)</code></pre>
 
   <h3>Setting the BrAPI Server</h3>
 
   <p>
-    The BrAPI helper script needs to know which BrAPI server to send your requests to.  You can set the BrAPI 
-    server using this command:
+    You'll need to create a BrAPIConnection object to send HTTP requests to a specific BrAPI Server:
   </p>
 
-  <pre><code class="language-r"># Replace the wheat.triticeaetoolbox.org String with the hostname of the database you want to connect to
-brapi$server = "wheat.triticeaetoolbox.org"</code></pre>
+  <pre><code class="language-r"># Use a known BrAPI Server
+conn <- getBrAPIConnection("T3/Wheat")
+
+# Manually set the BrAPI Server host
+oat <- createBrAPIConnection("oat.triticeaetoolbox.org")</code></pre>
 
   <h3>Setting the BrAPI Version</h3>
 
   <p>
-    By default, the BrAPI helper script will use <strong>version 2</strong> of the BrAPI specification.  If you want to change the version, 
-    you can do so using this command:
+    By default, the BrAPIConnection will use <strong>version 2</strong> of the BrAPI specification.  If you want to change the version, 
+    you can do so when creating a new connection
   </p>
 
   <pre><code class="language-r"># You only need to do this if you don't want to use version 2 of the BrAPI specification
-brapi$version = "v1"</code></pre>
+oat <- createBrAPIConnection("oat.triticeaetoolbox.org", version="v1")</code></pre>
 
 
   <h3>Finding a BrAPI Endpoint</h3>
@@ -218,9 +222,9 @@ brapi$version = "v1"</code></pre>
   </p>
 
   <ul>
-    <li><strong>brapi$get(call, ...)</strong>: makes a GET request</li>
-    <li><strong>brapi$put(call, ...)</strong>: makes a PULL request</li>
-    <li><strong>brapi$post(call, ...)</strong>: makes a POST request</li>
+    <li><strong>conn$get(call, ...)</strong>: makes a GET request</li>
+    <li><strong>conn$put(call, ...)</strong>: makes a PULL request</li>
+    <li><strong>conn$post(call, ...)</strong>: makes a POST request</li>
   </ul>
 
   <p>Each of the methods requires the <u>call</u> to be specified, such as <code>/germplasm</code> or <code>/search/trials</code></p>
@@ -259,23 +263,19 @@ body = list(b1, b2)</code></pre>
 
   <h3>Handling the Response</h3>
 
-  <p>If the request was successful, the helper scripts will return a list with 3 items:</p>
+  <p>If the request was successful, the helper scripts will return a list with the Response properties</p>
 
   <ul>
     <li><strong>response:</strong> the raw httr response</li>
     <li><strong>status:</strong> information about the status code returned with the response</li>
-    <li>
-      <strong>content:</strong> the data returned in the response.  Most BrAPI responses will include these two items in the content:
-      <ul>
-        <li><strong>result:</strong> the data of the response</li>
-        <li><strong>metadata:</strong> metadata about the response, such as pagination information and/or error messages</li>
-      </ul>
-    </li>
+    <li><strong>content:</strong> the full data returned in the response.</li>
+    <li><strong>metadata:</strong> metadata about the response, such as pagination information and/or error messages (if returned in the content)</li>
+    <li><strong>data:</strong> the data of the response (if returned in the content)</li>
   </ul>
 
   <p>This screenshot shows the general structure of a BrAPI response.  This response is from the <code>/germplasm</code> endpoint 
-  and the <code>r$content$result$data</code> list contains information about the first 10 germplasm entries returned from the query.
-  The <code>r$content$metadata$pagination</code> list contains information about the current page and total number of pages.</p>
+  and the <code>r$data</code> list contains information about the first 10 germplasm entries returned from the query.
+  The <code>r$metadata$pagination</code> list contains information about the current page and total number of pages.</p>
 
   <a href="/static_content/img/brapi/rstudio-result.png" target="_blank">
     <img src="/static_content/img/brapi/rstudio-result.png" style="width: 100%; max-width: 800px" />
@@ -293,7 +293,10 @@ body = list(b1, b2)</code></pre>
   </p>
 
   <p>For example, to get 50 germplasm per page and to get the 2nd page (the first page is page = 0):</p>
-  <pre><code class="language-r">r = brapi$get("germplasm", pageSize=50, page=1)</code></pre>
+  <pre><code class="language-r">r = conn$get("germplasm", pageSize=50, page=1)</code></pre>
+
+  <p>When you set `page = "all"`, all of the available pages will be fetched and the properties of each page along with the combined 
+  data will be returned from the request function.</p>
 
   <h3>Authentication</h3>
 
@@ -305,13 +308,13 @@ body = list(b1, b2)</code></pre>
 
   <p>To authenticate with a breedbase server (the authentication process may differ for different BrAPI servers):</p>
   <pre><code class="language-r"># send your username and password to the server to get an access token
-l = brapi$post("token", query=list(username="your_username", password="your_password"))
+l = conn$post("token", query=list(username="your_username", password="your_password"))
 # extract the access token from the response
 t = l$content$access_token
 # t should be a long random alphanumeric string</code></pre>
 
   <p>Then, you'll use the access token in any future requests:</p>
-  <pre><code class="language-r">r = brapi$post("observations", body=list(b1, b2), token=t)</code></pre>
+  <pre><code class="language-r">r = conn$post("observations", body=list(b1, b2), token=t)</code></pre>
 
 
   <h3>Searches</h3>
@@ -329,18 +332,18 @@ t = l$content$access_token
   <h3>Germplasm</h3>
 
   <p>To get a single germplasm entry filtered by name:</p>
-  <pre><code class="language-r">r = brapi$get("germplasm", query=list(germplasmName="JERRY"))
+  <pre><code class="language-r">r = conn$get("germplasm", query=list(germplasmName="JERRY"))
 jerry = r$content$result$data[[1]]</pre></code>
 
   <p>To get any matching germplasm entries by searching by name:</p>
   <pre><code class="language-r"># start the search
-s = brapi$post("search/germplasm", body=list(germplasmNames=list("JERRY", "AJAX")))
+s = conn$post("search/germplasm", body=list(germplasmNames=list("JERRY", "AJAX")))
 
 # extract the search id from the first response
 id = s$content$result$searchResultDbId
 
 # get the search results
-r = brapi$get(paste0("search/germplasm/", id))
+r = conn$get(paste0("search/germplasm/", id))
 
 # extract the matching germplasm entries from the second response
 matches = r$content$result$data</code></pre>
@@ -348,7 +351,7 @@ matches = r$content$result$data</code></pre>
   <h3>T3/Breedbase Trials = BrAPI Studies</h3>
 
   <p>To get all of the observations for a Study (you'll need to refer to the Study by its DB ID):</p>
-  <pre><code class="language-r">r = brapi$get("observations", query=list(studyDbId=9411))</code></pre>
+  <pre><code class="language-r">r = conn$get("observations", query=list(studyDbId=9411))</code></pre>
   <p>The returned data will include one object for each recorded plot / trait observation for the specified Study.</p>
 
 
