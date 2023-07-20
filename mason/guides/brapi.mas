@@ -107,12 +107,7 @@
 
   <h2>Usage</h2>
 
-  <h3>Setup R</h3>
-
-  <p>The HTTP requests to the BrAPI server will be made using the <code>httr</code> R package, so make sure you have 
-  that package installed.</p>
-
-  <pre><code class="language-r">install.packages("httr")</code></pre>
+  <h3>Install BrAPI R Package</h3>
 
   <p>
     Install the <a href="https://github.com/TriticeaeToolbox/BrAPI.R" target="_blank">BrAPI.R package</a>.  This 
@@ -131,7 +126,7 @@ library(BrAPI)</code></pre>
   <h3>Setting the BrAPI Server</h3>
 
   <p>
-    You'll need to create a BrAPIConnection object to send HTTP requests to a specific BrAPI Server:
+    You'll need to create a <code>BrAPIConnection</code> object to send HTTP requests to a specific BrAPI Server:
   </p>
 
   <pre><code class="language-r"># Use a known BrAPI Server
@@ -143,7 +138,7 @@ oat <- createBrAPIConnection("oat.triticeaetoolbox.org")</code></pre>
   <h3>Setting the BrAPI Version</h3>
 
   <p>
-    By default, the BrAPIConnection will use <strong>version 2</strong> of the BrAPI specification.  If you want to change the version, 
+    By default, the <code>BrAPIConnection</code> will use <strong>version 2</strong> of the BrAPI specification.  If you want to change the version, 
     you can do so when creating a new connection
   </p>
 
@@ -218,7 +213,7 @@ oat <- createBrAPIConnection("oat.triticeaetoolbox.org", version="v1")</code></p
 
   <p>
     Once you know the method, call, and any parameters, you can make a request to the specific BrAPI endpoint using one 
-    of the functions from the BrAPI helper script.  There is one function for each method:
+    of the functions of the `BrAPIConnection` object.  There is one function for each method:
   </p>
 
   <ul>
@@ -256,7 +251,7 @@ b2 = list(
 # combine the two named lists into an unnamed list (to be converted into a JSON array)
 body = list(b1, b2)</code></pre>
     </li>
-    <li><strong>page</strong>: specify the page number of paginated results (default: 0)</li>
+    <li><strong>page</strong>: specify the page number of paginated results (default: 0) or <code>all</code> to fetch all available pages</li>
     <li><strong>pageSize</strong>: specify the number of items per page of paginated results (default: 10)</li>
     <li><strong>token</strong>: specify the access token for requests that require authentication</li>
   </ul>
@@ -272,6 +267,10 @@ body = list(b1, b2)</code></pre>
     <li><strong>metadata:</strong> metadata about the response, such as pagination information and/or error messages (if returned in the content)</li>
     <li><strong>data:</strong> the data of the response (if returned in the content)</li>
   </ul>
+
+  <p>If you requested all of the pages (<code>page="all"</code>), then all of the above response properties will be a list containing
+  the property for each returned page.  It will also contain a vector named <code>combined_data</code> which will contain the data 
+  from each response page combined into a single vector.</p>
 
   <p>This screenshot shows the general structure of a BrAPI response.  This response is from the <code>/germplasm</code> endpoint 
   and the <code>r$data</code> list contains information about the first 10 germplasm entries returned from the query.
@@ -295,8 +294,13 @@ body = list(b1, b2)</code></pre>
   <p>For example, to get 50 germplasm per page and to get the 2nd page (the first page is page = 0):</p>
   <pre><code class="language-r">r = conn$get("germplasm", pageSize=50, page=1)</code></pre>
 
-  <p>When you set `page = "all"`, all of the available pages will be fetched and the properties of each page along with the combined 
+  <p>When you set <code>page="all"</code>, all of the available pages will be fetched and the properties of each page along with the combined 
   data will be returned from the request function.</p>
+
+  <pre><code class="language-r">r = conn$get("germplasm", pageSize=1000, page="all")
+
+# a vector containing metadata for all 43000 germplasm
+r$combined_data</code></pre>
 
   <h3>Authentication</h3>
 
@@ -333,7 +337,7 @@ t = l$content$access_token
 
   <p>To get a single germplasm entry filtered by name:</p>
   <pre><code class="language-r">r = conn$get("germplasm", query=list(germplasmName="JERRY"))
-jerry = r$content$result$data[[1]]</pre></code>
+jerry = r$data[[1]]</pre></code>
 
   <p>To get any matching germplasm entries by searching by name:</p>
   <pre><code class="language-r"># start the search
@@ -346,7 +350,7 @@ id = s$content$result$searchResultDbId
 r = conn$get(paste0("search/germplasm/", id))
 
 # extract the matching germplasm entries from the second response
-matches = r$content$result$data</code></pre>
+matches = r$data</code></pre>
 
   <h3>T3/Breedbase Trials = BrAPI Studies</h3>
 
@@ -354,7 +358,9 @@ matches = r$content$result$data</code></pre>
   <pre><code class="language-r">r = conn$get("observations", query=list(studyDbId=9411))</code></pre>
   <p>The returned data will include one object for each recorded plot / trait observation for the specified Study.</p>
 
-
+  <p><strong>For more examples,</strong> see the <a href="https://github.com/TriticeaeToolbox/BrAPI.R/blob/main/README.md">README.md</a> 
+  or <a href="https://github.com/TriticeaeToolbox/BrAPI.R/blob/main/TUTORIAL.md">TUTORIAL.md</a> files in the 
+  <a href="https://github.com/TriticeaeToolbox/BrAPI.R">BrAPI.R repository</a>.</p>
 
 </div>
 
