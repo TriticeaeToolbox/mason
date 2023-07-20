@@ -20,8 +20,9 @@
     
     <li><a href="/search/genotyping_protocols">Genotyping Protocols</a></li>
     <li><a href="/search/genotyping_data_projects">Genotyping Projects</a></li>
-    <li><a href="/search/markers">Markers</a></li>
-    <li><a href="/search/locus">Loci</a></li> 
+    <li><a href="/search/variants">Markers</a></li>
+    <li><a href="/search/locus?filter=T3:T3_GC_CATEGORIES">Genetic Characters</a></li>
+    <li><a href="/search/sequence_metadata">Sequence Metadata</a></li>
     <li><a href="/search/features">Genomic Features</a></li>
   </ul>
 </li>
