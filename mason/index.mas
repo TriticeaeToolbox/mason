@@ -88,7 +88,7 @@
             <br /><br />
 
             <!-- NEWS -->
-            <& /homepage/news.mas &>
+            <& /homepage/listmonk_news.mas &>
             <br /><br />
 
             <!-- TEMPLATES -->
