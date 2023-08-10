@@ -2,7 +2,7 @@
 <h2>Locations</h2>
 <p>A phenotyping trial must be linked to a specific location.  Generally, the location of a trial is set as the 
 closest town to the actual field site.  However, more specific locations can be added (such as separate locations 
-for each field).</p>
+for each farm and/or field).</p>
 <p><% our $T3_INSTANCE_NAME %> uses the following <strong>naming conventions</strong> for the Location name and abbreviation:</p>
 <table class="table table-bordered">
     <thead>
@@ -22,14 +22,22 @@ for each field).</p>
             <td>Ithaca, NY</td>
             <td>{First 3 letters of town name}{2-letter State / Province abbreviation}</td>
             <td>ITHNY</td>
+            <td>Town</td>
+        </tr>
+        <tr>
+            <td>Farm (a specific farm site, but an unknown / unspecified field at the farm)</td>
+            <td>{Town name}, {2-letter State / Province abbreviation} - {Farm name}</td>
+            <td>Ithaca, NY - Caldwell</td>
+            <td>{First 3 letters of town name}{2-letter State / Province abbreviation}-{First 3 letters of the Farm name}</td>
+            <td>ITHNY-CAL</td>
             <td>Farm</td>
         </tr>
         <tr>
-            <td>Actual field site</td>
-            <td>{Town name}, {2-letter State / Province abbreviation} - {Field name}</td>
-            <td>Ithaca, NY - Caldwell</td>
-            <td>{First 3 letters of town name}{2-letter State / Province abbreviation}-{First 3 letters of Field name}</td>
-            <td>ITHNY-CAL</td>
+            <td>Field (a specific field within a farm site)</td>
+            <td>{Town name}, {2-letter State / Province abbreviation} - {Farm name} - {Field identifier}</td>
+            <td>Ithaca, NY - Caldwell - A</td>
+            <td>{First 3 letters of town name}{2-letter State / Province abbreviation}-{First 3 letters of Field name}-{Field ID}</td>
+            <td>ITHNY-CAL-A</td>
             <td>Field</td>
         </tr>
         <tr>
