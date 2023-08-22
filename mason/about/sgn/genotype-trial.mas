@@ -48,7 +48,7 @@
 <ul>
 	<li>329 USA WheatCAP germplasm
 	<li>Publication: <a href="/static_content/files/genotype-trials/jkab390.pdf">Development of the Wheat Practical Haplotype Graph database</a>
-	<li>Publication: <a href="/static_content/files/genotyping-trials/s13059-015-0606.pdf">A haplotype map of allohexaploid wheat reveals distinct patterns of selection on homoeologous genomes</a>
+	<li>Publication: <a href="/static_content/files/genotype-trials/s13059-015-0606.pdf">A haplotype map of allohexaploid wheat reveals distinct patterns of selection on homoeologous genomes</a>
 	<li>The final dataset after filtering for MAF>5 accessions, includes ~7 million SNPs and short indels detected using GATK
 </ul>
 
