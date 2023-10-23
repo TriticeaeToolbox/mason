@@ -1,0 +1,41 @@
+<h2>About <% our $T3_INSTANCE_NAME %></h2>
+
+<div class="boxcontent"><% $T3_INSTANCE_NAME %> is a breeding database designed for advanced breeding methods in small grains breeding.</div>
+
+<div class="boxcontent">If you are interested in submitting your breeding trial or genotyping data to <% $T3_INSTANCE_NAME %>, please <a href="/contact/form">contact us</a>.</div>
+
+<div class="boxcontent">Note that data on <% $T3_INSTANCE_NAME %> are associated with Data Agreements and that they are not necessarily in the public domain. Please contact the authors of the data if you are interested in any aspect of data production or analysis.</div>
+
+<br /><br />
+
+<a class="anchor" id="citation"></a>
+<h2>Cite <% $T3_INSTANCE_NAME %></h2>
+
+<div class="boxcontent">
+    <p>If data on The Triticeae Toolbox was relevant to analyses or findings that you publish, please cite:</p>
+    <p class="well">
+        <& /instance/citation.mas &>
+    </p>
+</div>
+
+<br /><br />
+
+<& ../usage_policy.mas &>
+
+<br /><br />
+
+
+<style>
+    a.anchor {
+        display: block;
+        position: relative;
+        top: -50px;
+        visibility: hidden;
+    }
+    th, td {
+      padding: 10px;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+</style>
