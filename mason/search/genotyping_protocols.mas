@@ -6,7 +6,7 @@
 
 <& /page/page_title.mas, title => "Genotyping Protocol Search" &>
 
-For GoldenGate and DArT genotyping projects see <a href=https://triticeaetoolbox.org/oat?old=old target=_blank>T3/Wheat Classic</a><br><br>
+For GoldenGate and DArT genotyping projects see <a href=https://triticeaetoolbox.org/oat?old=old target=_blank>T3/Oat Classic</a><br><br>
 
 <div class="well well-sm">
     <div class="panel panel-default">
