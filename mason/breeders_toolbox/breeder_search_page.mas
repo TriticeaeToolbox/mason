@@ -322,8 +322,8 @@ $preferred_species => undef
         </div>
         <div id="wiz-down-4-c" class="panel-collapse collapse" role="tabpanel">
           <table class="table"><tr><td>
-          <span>The genotype projects have been imputed using the Practical Haplotype Graph (PHG). The imputed marker density is 1.3M markers
-                for assembly RefSeq_v1 and 2.9M markers for assembly RefSeq v2.1. For quick access
+          <span>The genotype projects have been imputed using the Practical Haplotype Graph (PHG). The imputed marker density is 
+                2.9M markers for assembly RefSeq v2.1. For quick access
                 the imputed genotypes can be downloaded from a prepared file. A description of the 
                 imputation process can be found in <a href="/static_content/files/imputation.html">About PHG imputation</a>.</span><br/></br>
                <input class="wizard-download-genotypes-imput form-control input-sm" type="text" disabled></input>
