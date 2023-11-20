@@ -116,7 +116,10 @@
       <td><input type="text" class="form-control form-output" id="trait-name" readonly></td>
     </tr>
     <tr>
-      <td><p>Trait&nbsp;Header</p></td>
+      <td style="display: flex; gap: 12px">
+        <p>Trait&nbsp;Header</p>
+        <button id="trait-header-copy" class="btn btn-info"><span class="glyphicon glyphicon-copy"></span></button>
+      </td>
       <td><input type="text" class="form-control form-output" id="trait-header" readonly></td>
     </tr>
   </table>
@@ -145,8 +148,8 @@
   }
 
   /**
-  * Calculate the Julian Day (number of days since Jan 1) from a date in YYYY-MM-DD format
-  */
+   * Calculate the Julian Day (number of days since Jan 1) from a date in YYYY-MM-DD format
+   */
   function getJulianDay(date) {
     const ONE_DAY = 60 * 60 * 24 * 1000;
     var d = new Date(date + " 00:00:00");
@@ -156,6 +159,9 @@
     return(day)
   }
 
+  /**
+   * Download the composed trait info as a CSV file
+   */
   function downloadLookupTable() {
     const colDelim = ',';
     const rowDelim = '\r\n';
@@ -193,6 +199,26 @@
     e.click();  
   }
 
+  /**
+   * Copy the specifed trait information to the user's clipboard
+   * - text = text to copy
+   */
+  async function copy(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      jQuery("#trait-header-copy").removeClass("btn-info").addClass("btn-success").html("<span class='glyphicon glyphicon-ok'></span>");
+    }
+    catch (err) {
+      jQuery("#trait-header-copy").removeClass("btn-info").addClass("btn-danger").html("<span class='glyphicon glyphicon-remove'></span>");
+    }
+    finally {
+      setTimeout(() => {
+        jQuery("#trait-header-copy").removeClass("btn-success btn-danger").addClass("btn-info").html("<span class='glyphicon glyphicon-copy'></span>");
+      }, 2500)
+    }
+    return false;
+  }
+
   jQuery(document).ready(() => {
     
     jQuery(".form-input").change(() => {
@@ -208,7 +234,7 @@
         if ( COMPOSED_TRAITS.hasOwnProperty(base_trait) ) {
           if ( COMPOSED_TRAITS[base_trait].hasOwnProperty('' + jd) ) {
             let ct = COMPOSED_TRAITS[base_trait]['' + jd];
-            jQuery("#trait-id").val(ct.trait_id);
+            jQuery("#trait-id").val(ct.trait_ontology_id);
             jQuery("#trait-name").val(ct.trait_name);
             jQuery("#trait-header").val(ct.trait_header);
           }
@@ -218,6 +244,10 @@
     });
 
     jQuery("#drone-trait-download-lookup").click(downloadLookupTable);
+
+    jQuery("#trait-header-copy").click(() => {
+      copy(jQuery("#trait-header").val());
+    })
 
   });
 
