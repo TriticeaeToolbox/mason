@@ -93,8 +93,18 @@ Imputed protocols and projects
 <tr><td>UCD2022 GBS
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/235/UCD2022_Wheat_W22GBS1.vcf.gz>UCD2022</a><td>345<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2022GBS.png>PCA</a><td>na
 <tr><td rowspan=2>SDSU GBS
-<td><a href=https://files.triticeaetoolbox.org/download/wheat/240/SDSU2022.vcf.gz>SDSU_2022</a><td>157<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2022GBS.png>PCA</a><td>na
-<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/241/SDSU2023.vcf.gz>SDSU_2023</a><td>155<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2022GBS.png>PCA</a><td>na
+<td><a href=https://files.triticeaetoolbox.org/download/wheat/240/SDSU2022.vcf.gz>SDSU_2022</a>
+<td>157<td rowspan=2><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2022GBS.png>PCA</a><td>na
+<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/241/SDSU2023.vcf.gz>SDSU_2023</a><td>155<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2022GBS.png>PCA</a>
+<tr><td>MSU2023 GBS
+<td><a href=https://files.triticeaetoolbox.org/download/wheat/242/MSU_2023.vcf.gz>MSU_2023</a><td>3115
+<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-MSU2023.png>PCA</a><td>na
+<tr><td rowspan=2>WSU2023 AgriSeq
+<td><a href=https://files.triticeaetoolbox.org/download/wheat/244/WSU2023.vcf.gz>WSU_2023</a><td>92
+<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-WSU2023.png>PCA</a><td rowspan=2>na
+<tr>
+<td><a href=https://files.triticeaetoolbox.org/download/wheat/244/WSU2023.vcf.gz>WSU_2023</a><td>94
+<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-WSU2023.png>PCA</a>
 </table>
 Notes:<br>
 1. Cluster analysis for Infinium calculated by merging unimputed data with PHG genotypes (common markers).<br>
