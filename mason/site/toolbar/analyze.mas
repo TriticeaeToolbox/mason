@@ -17,7 +17,7 @@
     <li><a href="/tools/systems.pl">Resources</a></li>
     <li role="separator" class="divider"></xls>
     <li class="dropdown-header">Primer Design</li>
-    <li><a href="https://galaxy.triticeaetoolbox.org" target="_new">SNP Primer Pipeline</a></li>
+    <!--li><a href="https://galaxy.triticeaetoolbox.org" target="_new">SNP Primer Pipeline</a></li-->
     <li><a href="https://shiny.triticeaetoolbox.org/primer_filter" target="_new">KASP marker design</a></li>
   </ul>
 </li>
