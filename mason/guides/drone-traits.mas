@@ -1,0 +1,269 @@
+<%init>
+  use CXGN::DB::Connection;
+  my $dbh = CXGN::DB::Connection->new();
+
+  # SQL Filter to get base drone traits
+  my $BASE_TRAIT_FILTER = 'name LIKE \'%UAS%\'';
+
+  # Get the base traits from the DB
+  my $base_trait_query = "SELECT name 
+      FROM cvterm 
+      WHERE cv_id = (SELECT cv_id FROM cvprop WHERE type_id = (SELECT cvterm_id FROM cvterm WHERE name = 'trait_ontology')) 
+        AND ($BASE_TRAIT_FILTER) 
+      ORDER BY name;";
+  my $base_traits = $dbh->selectcol_arrayref($base_trait_query);
+
+  # Get the composed traits from the DB
+  my $comp_trait_query = "SELECT 
+          split_part(cvterm.name, '|', 1) AS base_trait,
+          split_part(split_part(cvterm.name, '|', 2), 'day ', 2)::integer AS julian_day,
+          cvterm.cvterm_id AS trait_db_id,
+          CONCAT('COMP:', dbxref.accession) AS trait_ontology_id,
+          cvterm.name AS trait_name,
+          CONCAT(cvterm.name, '|COMP:', dbxref.accession) AS column_header
+      FROM cvterm 
+      LEFT JOIN dbxref USING (dbxref_id)
+      WHERE split_part(cvterm.name, '|', 1) IN ('" . join("', '", @$base_traits) . "')
+      AND cv_id = (SELECT cv_id FROM cv WHERE name = 'composed_trait')
+      ORDER BY base_trait ASC, julian_day ASC;";
+  my $sth = $dbh->prepare($comp_trait_query);
+  $sth->execute();
+
+  # Parse the composed into a hash (base_trait -> julian_day -> {trait_id, trait_name, trait_header})
+  my %composed_traits;
+  while ( my ($base_trait, $julian_day, $trait_db_id, $trait_ontology_id, $trait_name, $column_header) = $sth->fetchrow_array() ) {
+    $composed_traits{$base_trait}{$julian_day} = {
+      trait_db_id => $trait_db_id,
+      trait_ontology_id => $trait_ontology_id,
+      trait_name => $trait_name,
+      trait_header => $column_header
+    };
+  }
+</%init>
+
+<& "/page/page_title.mas", title => "Drone Trait Lookup" &>
+
+<div style="max-width: 800px; margin: 25px auto">
+
+  <p>
+    In order to keep track of the date of when drone imagery was captured, the derived drone traits
+    are stored in T3/Breedbase as a <strong>composed trait</strong>.  A composed trait is a 
+    <em>"meta"</em> trait that consists of two terms: 
+      <ul>
+        <li>
+          the <strong>base trait</strong>: which is the existing trait term from the trait ontology
+          (such as <em>Canopy Cover</em>)
+        </li>
+        <li>
+          a <strong>time term</strong>: which is the julian day of when the drone imagery was captured 
+          (such as <em>day 152</em> for June 1st)
+        </li>
+      </ul>
+    The combination of these two terms is the composed trait.  Any dervied drone traits stored in T3 
+    should be associated with the composed trait, otherwise the date of the drone flight will not be 
+    stored in the database.
+  </p>
+
+  <p>
+    You can use this page to lookup the composed trait (its name, id, and the formatted trait column 
+    header for the phenotype observation upload template) by selecting a base trait and a date.
+  </p>
+
+  <div style="background-color: #d1ecf1; color: #0c5460; border-color: #bee5eb; border: 1px solid; border-radius: 0.25rem; padding: 0.75rem 1.25rem">
+    <p>If you're automating the generation of upload templates or uploading via BrAPI, you can 
+    download a lookup table that contains all of the drone base traits and the composed trait 
+    terms for all 365 julian days.</p>
+    <button id="drone-trait-download-lookup" class="btn btn-info">Download Lookup Table</button>
+  </div>
+
+</div>
+
+<br />
+
+<div class="well" style="max-width: 600px; margin: 25px auto">
+
+  <h2>Base Trait</h2>
+  <select class="form-control form-input" name="base-trait" id="base-trait">
+% for my $base_trait (@$base_traits) {
+    <option><% $base_trait %></option>
+% }
+  </select>
+
+  <br />
+
+  <h2>Date</h2>
+  <div style="display: flex; gap: 25px">
+    <input class="form-control form-input" type="date" id="date" name="date" required>
+    <div>
+      <p>
+        Julian&nbsp;Day:<br />
+        <span id="date-jd"></span>
+      </p>
+    </div>
+  </div>
+
+  <br />
+
+  <h2>Composed Trait</h2>
+
+  <table class="form-output-table">
+    <tr>
+      <td><p>Trait&nbsp;ID</p></td>
+      <td><input type="text" class="form-control form-output" id="trait-id" readonly></td>
+    </tr>
+    <tr>
+      <td><p>Trait&nbsp;Name</p></td>
+      <td><input type="text" class="form-control form-output" id="trait-name" readonly></td>
+    </tr>
+    <tr>
+      <td style="display: flex; gap: 12px">
+        <p>Trait&nbsp;Header</p>
+        <button id="trait-header-copy" class="btn btn-info"><span class="glyphicon glyphicon-copy"></span></button>
+      </td>
+      <td><input type="text" class="form-control form-output" id="trait-header" readonly></td>
+    </tr>
+  </table>
+
+</div>
+
+<br />
+
+<script type="text/javascript">
+
+  // Write the composed traits from perl to a JS Object
+  const COMPOSED_TRAITS = {
+% foreach my $base_trait (keys %composed_traits) {
+    "<% $base_trait %>": {
+%   foreach my $julian_day (keys %{$composed_traits{$base_trait}}) {
+%     my $composed_trait = $composed_traits{$base_trait}{$julian_day};
+      "<% $julian_day %>": {
+        "trait_db_id": "<% $composed_trait->{'trait_db_id'} %>",
+        "trait_ontology_id": "<% $composed_trait->{'trait_ontology_id'} %>",
+        "trait_name": "<% $composed_trait->{'trait_name'} %>",
+        "trait_header": "<% $composed_trait->{'trait_header'} %>"
+      },
+%   }
+    },
+% }
+  }
+
+  /**
+   * Calculate the Julian Day (number of days since Jan 1) from a date in YYYY-MM-DD format
+   */
+  function getJulianDay(date) {
+    const ONE_DAY = 60 * 60 * 24 * 1000;
+    var d = new Date(date + " 00:00:00");
+    var start = new Date(d.getFullYear(), 0, 0);
+    var diff = (d - start) + ((start.getTimezoneOffset() - d.getTimezoneOffset()) * 60 * 1000);
+    var day = Math.floor(diff / ONE_DAY);
+    return(day)
+  }
+
+  /**
+   * Download the composed trait info as a CSV file
+   */
+  function downloadLookupTable() {
+    const colDelim = ',';
+    const rowDelim = '\r\n';
+    const rows = [];
+
+    // Add Header
+    rows.push(["base_trait", "julian_day", "trait_db_id", "trait_ontology_id", "trait_name", "column_header"].join(colDelim));
+
+    // Add each composed trait
+    for ( const base_trait in COMPOSED_TRAITS ) {
+      if ( COMPOSED_TRAITS.hasOwnProperty(base_trait) ) {
+
+        for ( const julian_day in COMPOSED_TRAITS[base_trait] ) {
+          if ( COMPOSED_TRAITS[base_trait].hasOwnProperty(julian_day) ) {
+
+            const trait_db_id = COMPOSED_TRAITS[base_trait][julian_day].trait_db_id;
+            const trait_ontology_id = COMPOSED_TRAITS[base_trait][julian_day].trait_ontology_id;
+            const trait_name = COMPOSED_TRAITS[base_trait][julian_day].trait_name;
+            const trait_header = COMPOSED_TRAITS[base_trait][julian_day].trait_header;
+
+            rows.push([base_trait, julian_day, trait_db_id, trait_ontology_id, trait_name, trait_header].join(colDelim));
+          }
+        }
+      }
+    }
+
+    // Generate CSV
+    const csv = rows.join(rowDelim);
+    
+    // Download the CSV
+    var e = document.createElement('a');  
+    e.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);  
+    e.target = '_blank';  
+    e.download = 'drone_traits_lookup.csv';  
+    e.click();  
+  }
+
+  /**
+   * Copy the specifed trait information to the user's clipboard
+   * - text = text to copy
+   */
+  async function copy(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      jQuery("#trait-header-copy").removeClass("btn-info").addClass("btn-success").html("<span class='glyphicon glyphicon-ok'></span>");
+    }
+    catch (err) {
+      jQuery("#trait-header-copy").removeClass("btn-info").addClass("btn-danger").html("<span class='glyphicon glyphicon-remove'></span>");
+    }
+    finally {
+      setTimeout(() => {
+        jQuery("#trait-header-copy").removeClass("btn-success btn-danger").addClass("btn-info").html("<span class='glyphicon glyphicon-copy'></span>");
+      }, 2500)
+    }
+    return false;
+  }
+
+  jQuery(document).ready(() => {
+    
+    jQuery(".form-input").change(() => {
+      jQuery("#trait-id").val("");
+      jQuery("#trait-name").val("");
+      jQuery("#trait-header").val("");
+
+      let base_trait = jQuery("#base-trait").val();
+      let date = jQuery("#date").val();
+      if ( date && date !== '' ) {
+        let jd = getJulianDay(date);
+        jQuery("#date-jd").html(jd);
+        if ( COMPOSED_TRAITS.hasOwnProperty(base_trait) ) {
+          if ( COMPOSED_TRAITS[base_trait].hasOwnProperty('' + jd) ) {
+            let ct = COMPOSED_TRAITS[base_trait]['' + jd];
+            jQuery("#trait-id").val(ct.trait_ontology_id);
+            jQuery("#trait-name").val(ct.trait_name);
+            jQuery("#trait-header").val(ct.trait_header);
+          }
+        }
+      }
+      
+    });
+
+    jQuery("#drone-trait-download-lookup").click(downloadLookupTable);
+
+    jQuery("#trait-header-copy").click(() => {
+      copy(jQuery("#trait-header").val());
+    })
+
+  });
+
+</script>
+
+
+<style>
+  .form-output-table {
+    width: 100%;
+    border: none;
+  }
+  .form-output-table td {
+    padding: 5px;
+  }
+  .form-output-table p {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+</style>
