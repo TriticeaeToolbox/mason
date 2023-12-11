@@ -73,8 +73,10 @@ Imputed protocols and projects
 <tr><td>
     <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/WorldwideDiversityPanel_9K_V2.vcf.gz>WorldwideDiversityPanel_9K</a><td>2255
     <td>
-<tr><td>GMS v2.1
-<td><a href=https://files.triticeaetoolbox.org/download/wheat/245/2021_GMS_Utah.vcf.gz>2021_GMS</a><td>288<td><td>82% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-GMS-imp-2019hapmap-filtered_mr0-byaccn.txt>details</a>
+<tr><td rowspan=2>GMS v2.1
+<td><a href=https://files.triticeaetoolbox.org/download/wheat/245/2021_GMS_Utah.vcf.gz>2021_GMS</a><td>288<td>
+<td>82% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-GMS-imp-2019hapmap-filtered_mr0-byaccn.txt>details</a>
+<tr><td>2022_GMS<td>471<td><td>
 <tr><td rowspan=8>MRASeq RPN
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/238/RPN_2020.vcf.gz>RPN_2020</a><td>86<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-RPN2020.png>PCA</a>
 <td rowspan=8>84% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-RPN2020-imp-2019hapmap-filtered_mr0-byaccn.txt>details</a>
@@ -105,6 +107,14 @@ Imputed protocols and projects
 <tr>
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/WSU2023_plate2.vcf.gz>WSU_2023_plate2</a><td>94
 <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-WSU2023.png>PCA</a>
+<tr><td rowspan=7>USDA 3K
+<td>MNA_2022<td><td>
+<tr><td>MT_2022<td>765<td>
+<tr><td>NDS_2022<td>124<td>
+<tr><td>UCD_2022<td>176<td>
+<tr><td>MSU_2023<td>432<td>
+<tr><td>UWM_2023<td>181<td>
+<tr><td>WSU_2023<td>364<td>
 </table>
 Notes:<br>
 1. Cluster analysis for Infinium calculated by merging unimputed data with PHG genotypes (common markers).<br>
