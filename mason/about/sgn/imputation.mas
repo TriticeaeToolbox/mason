@@ -66,11 +66,11 @@ Imputed protocols and projects
     <td>
 <tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/243/TCAP90K_SNBWW_V2.vcf.gz>TCAP90K_SNBWWW</a><td>266
     <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandTCAP90K_SNBWW.png>PCA</a>
-<tr><td>Infinium 9K v2.1
+<tr><td rowspan=2>Infinium 9K v2.1
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/NSGCwheat9K_4X_V2.vcf.gz>NSGCwheat9K_4X</a><td>542
     <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandTCAP90K_NSGwheat9K_4X>PCA</a>
     <td rowspan=2>94% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-WorldwideDiversity-imp-2019hapmap-filtered_mr0-byaccn.txt >details</a>
-<tr><td>
+<tr>
     <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/WorldwideDiversityPanel_9K_V2.vcf.gz>WorldwideDiversityPanel_9K</a><td>2255
     <td>
 <tr><td rowspan=2>GMS v2.1
@@ -108,8 +108,8 @@ Imputed protocols and projects
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/WSU2023_plate2.vcf.gz>WSU_2023_plate2</a><td>94
 <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-WSU2023.png>PCA</a>
 <tr><td rowspan=7>USDA 3K
-<td>MNA_2022<td><td>
-<tr><td>MT_2022<td>765<td>
+<td>MNA_2022<td>765<td>
+<tr><td>MT_2022<td>417<td>
 <tr><td>NDS_2022<td>124<td>
 <tr><td>UCD_2022<td>176<td>
 <tr><td>MSU_2023<td>432<td>
