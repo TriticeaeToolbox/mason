@@ -1,0 +1,222 @@
+<%args>
+    $year => (localtime)[5] + 1900
+</%args>
+
+<%init>
+  use CXGN::DB::Connection;
+  my $dbh = CXGN::DB::Connection->new();
+  my $current_year = (localtime)[5] + 1900;
+  my @available_years = ($current_year-5..$current_year+1);
+
+  # Get number of genotyping protocols for selected year
+  my $q_geno = "SELECT bp.project_id AS breeding_program_id, bp.name AS breeding_program_name, COUNT(*) AS genotyping_project_count
+                FROM breeding_programsxgenotyping_projects AS mv
+                LEFT JOIN project AS gp ON (gp.project_id = mv.genotyping_project_id)
+                LEFT JOIN project AS bp ON (bp.project_id = mv.breeding_program_id)
+                LEFT JOIN public.projectprop AS py ON (gp.project_id = py.project_id)
+                  AND py.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project year')
+                WHERE py.value = ?
+                GROUP BY bp.project_id, bp.name
+                ORDER BY bp.name;";
+  my $sth_geno = $dbh->prepare($q_geno);
+  $sth_geno->execute($year);
+  my %geno_data;
+  $geno_data{'_total'} = {};
+  while ( my ($bp_id, $bp_name, $count) = $sth_geno->fetchrow_array() ) {
+    $geno_data{$bp_name} = {
+      id => $bp_id,
+      name => $bp_name,
+      count => $count
+    };
+    $geno_data{'_total'} = {
+      count => $geno_data{'_total'}->{'count'} + $count
+    };
+  }
+
+  # Get phenotyping details for selected year
+  my $q_pheno = "SELECT
+                    q.breeding_program_id,
+                    q.breeding_program,
+                    COUNT(*) AS trials_total,
+                    SUM(plot_count) AS plots_total,
+                    COUNT(*) FILTER (WHERE q.observed_traits > 0) AS trials_with_pheno,
+                    COALESCE(SUM(plot_count) FILTER (WHERE q.observed_traits > 0), 0) AS plots_with_pheno,
+                    COUNT(*) FILTER (WHERE q.observed_traits = 0) AS trials_no_pheno,
+                    COALESCE(SUM(plot_count) FILTER (WHERE q.observed_traits = 0), 0) AS plots_no_pheno
+                  FROM (
+                    SELECT project.project_id, project.name, project.create_date, py.value AS year, 
+                      bp.project_id AS breeding_program_id, bp.name AS breeding_program,
+                      COUNT(DISTINCT(materialized_phenoview.trait_id)) AS observed_traits,
+                      COUNT(DISTINCT(materialized_phenoview.stock_id)) AS plot_count
+                    FROM public.project
+                    LEFT JOIN public.projectprop AS py ON (project.project_id = py.project_id)
+                      AND py.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project year')
+                    LEFT JOIN public.project_relationship AS pr ON (project.project_id = pr.subject_project_id)
+                      AND pr.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'breeding_program_trial_relationship')
+                    LEFT JOIN public.project AS bp ON (pr.object_project_id = bp.project_id)
+                    LEFT JOIN public.materialized_phenoview ON (project.project_id = materialized_phenoview.trial_id)
+                    WHERE py.value = ?
+                      AND project.project_id IN (SELECT DISTINCT(trial_id) FROM public.materialized_phenoview)
+                    GROUP BY project.project_id, project.name, project.create_date, py.value, bp.project_id, bp.name
+                  ) AS q
+                  GROUP BY q.breeding_program_id, q.breeding_program
+                  ORDER BY q.breeding_program;";
+  my $sth_pheno = $dbh->prepare($q_pheno);
+  $sth_pheno->execute($year);
+  my %pheno_data;
+  $pheno_data{'_total'} = {};
+  while ( my ($bp_id, $bp_name, $trials_total, $plots_total, $trials_pheno, $plots_pheno, $trials_no_pheno, $plots_no_pheno) = $sth_pheno->fetchrow_array() ) {
+    $pheno_data{$bp_name} = {
+      id => $bp_id,
+      name => $bp_name,
+      trials_total => $trials_total,
+      plots_total => $plots_total,
+      trials_pheno => $trials_pheno,
+      plots_pheno => $plots_pheno,
+      trials_no_pheno => $trials_no_pheno,
+      plots_no_pheno => $plots_no_pheno,
+    };
+    $pheno_data{'_total'} = {
+      trials_total => $pheno_data{'_total'}->{'trials_total'} + $trials_total,
+      plots_total => $pheno_data{'_total'}->{'plots_total'} + $plots_total,
+      trials_pheno => $pheno_data{'_total'}->{'trials_pheno'} + $trials_pheno,
+      plots_pheno => $pheno_data{'_total'}->{'plots_pheno'} + $plots_pheno,
+      trials_no_pheno => $pheno_data{'_total'}->{'trials_no_pheno'} + $trials_no_pheno,
+      plots_no_pheno => $pheno_data{'_total'}->{'plots_no_pheno'} + $plots_no_pheno,
+    };
+  }
+</%init>
+
+<& "/page/page_title.mas", title => "Annual Data Summary" &>
+
+<h2>Year</h2>
+<div class="form-group">
+  <div class="col-sm-4">
+    <select id="year" class="form-control">
+% foreach (@available_years) {
+% if ( $_ eq $year ) {
+      <option selected><% $_ %></option>
+% } else {
+      <option><% $_ %></option>
+% }
+% }
+    </select> 
+  </div>
+</div>
+
+<br /><br /><br /><br /><br />
+
+<h2>Genotyping Projects</h2>
+
+<p class="description">
+  This table shows the number of genotyping projects what have a project year set 
+  to <strong><% $year %></strong> for each breeding program.  Click on the breeding program 
+  name to see more details about the data added by that program.
+</p> 
+
+<table class="summary-table">
+  <tr>
+    <th>Breeding Program</th>
+    <th>Genotyping Project Count</th>
+  </tr>
+% foreach my $key (sort keys %geno_data) {
+  <tr>
+% if ( $key eq '_total' ) {
+  <td><strong>TOTAL</strong></td>
+% } else {
+    <td>
+      <a href="/guides/annual-summary-details?year=<% $year %>&program=<% $geno_data{$key}->{'id'} %>">
+        <% $geno_data{$key}->{'name'} %>
+      </a>
+    </td>
+% }
+    <td><% $geno_data{$key}->{'count'} %></td>
+  </tr>
+% }
+</table>
+
+<br /><br />
+
+<h2>Phenotyping Trials</h2>
+
+<p class="description">
+  This table summarizes the phenotyping trials with a havest year of <strong><% $year %></strong> by breeding 
+  program.  It includes the total number of trials and the total number of plots in those trials, the number 
+  of trials and plots that have any trait observations stored, and the number of trials and plots that do 
+  not have any trait observations stored.
+</p>
+
+<table class="summary-table">
+  <tr>
+    <th>Breeding Program</th>
+    <th>Trials Total</th>
+    <th>Plots Total</th>
+    <th>Trials With Observations</th>
+    <th>Plots With Observations</th>
+    <th>Trials With No Observations</th>
+    <th>Plots With No Observations</th>
+  </tr>
+% foreach my $key (sort keys %pheno_data) {
+  <tr>
+% if ( $key eq '_total' ) {
+  <td><strong>TOTAL</strong></td>
+% } else {
+    <td>
+      <a href="/guides/annual-summary-details?year=<% $year %>&program=<% $pheno_data{$key}->{'id'} %>">
+        <% $pheno_data{$key}->{'name'} %>
+      </a>
+    </td>
+% }
+    <td><% $pheno_data{$key}->{'trials_total'} %></td>
+    <td><% $pheno_data{$key}->{'plots_total'} %></td>
+    <td><% $pheno_data{$key}->{'trials_pheno'} %></td>
+    <td><% $pheno_data{$key}->{'plots_pheno'} %></td>
+    <td><% $pheno_data{$key}->{'trials_no_pheno'} %></td>
+    <td><% $pheno_data{$key}->{'plots_no_pheno'} %></td>
+  </tr>
+% }
+</table>
+
+<br /><br /><br />
+
+<script type="text/javascript">
+  jQuery(document).on("ready", () => {
+    jQuery("#year").on("change", () => {
+      window.location = "/guides/annual-summary?year=" + jQuery("#year").val();
+    })
+  });
+</script>
+
+<style>
+  .description {
+    font-size: 100%;
+    color: #666;
+  }
+
+  .summary-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .summary-table td, .summary-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  .summary-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .summary-table tr:hover {
+    background-color: #EBDEDB
+  }
+
+  .summary-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #C84C30;
+    color: white;
+  }
+</style>
