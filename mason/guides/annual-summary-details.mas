@@ -26,11 +26,11 @@
                 LEFT JOIN public.accessionsxgenotyping_projects AS amv ON (amv.genotyping_project_id = gp.project_id)
                 LEFT JOIN public.genotyping_projectsxgenotyping_protocols AS gmv ON (gmv.genotyping_project_id = gp.project_id)
                 LEFT JOIN public.nd_protocol AS pp ON (gmv.genotyping_protocol_id = pp.nd_protocol_id)
-                WHERE py.value = ?
+                WHERE py.value = ? AND mv.breeding_program_id = ?
                 GROUP BY gp.project_id, gp.name, pp.nd_protocol_id, pp.name
                 ORDER BY gp.name;";
   my $sth_geno = $dbh->prepare($q_geno);
-  $sth_geno->execute($year);
+  $sth_geno->execute($year, $program);
   my %geno_data;
   while ( my ($project_id, $project_name, $protocol_id, $protocol_name, $accession_count ) = $sth_geno->fetchrow_array() ) {
     $geno_data{$project_name} = {
@@ -55,11 +55,11 @@
                 LEFT JOIN public.project AS bp ON (pr.object_project_id = bp.project_id)
                 LEFT JOIN public.materialized_phenoview ON (project.project_id = materialized_phenoview.trial_id)
                 LEFT JOIN public.cvterm ON (materialized_phenoview.trait_id = cvterm.cvterm_id)
-                WHERE py.value = ? AND bp.name = ?
+                WHERE py.value = ? AND bp.project_id = ?
                   AND project.project_id IN (SELECT DISTINCT(trial_id) FROM public.materialized_phenoview)
                 GROUP BY project.project_id, project.name, project.create_date, py.value, bp.project_id, bp.name;";
   my $sth_pheno = $dbh->prepare($q_pheno);
-  $sth_pheno->execute($year, $program_name);
+  $sth_pheno->execute($year, $program);
   my %pheno_data;
   while ( my ($project_id, $project_name, $trait_count, $trait_names, $plot_count ) = $sth_pheno->fetchrow_array() ) {
     $pheno_data{$project_name} = {
@@ -70,8 +70,6 @@
       plot_count => $plot_count
     };
   }
-
-
 </%init>
 
 <& "/page/page_title.mas", title => "Annual Data Summary Details" &>
