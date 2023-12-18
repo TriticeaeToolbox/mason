@@ -88,7 +88,9 @@
             <br /><br />
 
             <!-- NEWS -->
+% if ( $m->comp_exists("/homepage/listmonk_news.mas") ) {
             <& /homepage/listmonk_news.mas &>
+% }
             <br /><br />
 
             <!-- TEMPLATES -->
