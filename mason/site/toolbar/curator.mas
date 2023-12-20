@@ -19,6 +19,8 @@
     <li role="separator" class="divider"></li>
     <li><a href="/search/genotyping_data_public">Genotype Data Public</a></li>
     <li><a href="/search/trials_public">Phenotype Data Public</a></li>
+    <li><a href="/guides/annual-summary">Annual Summary Report</a></li>
+
   </ul>
 </li>
 

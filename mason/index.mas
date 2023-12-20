@@ -86,7 +86,9 @@
             <br /><br />
 
             <!-- NEWS -->
+% if ( $m->comp_exists("/homepage/listmonk_news.mas") ) {
             <& /homepage/listmonk_news.mas &>
+% }
             <br /><br />
 
             <!-- TEMPLATES -->
@@ -127,6 +129,13 @@
 
             <!-- GENOTYPE SUBMISSIONS -->
             <& /homepage/submissions_genotype.mas &>
+
+
+            <br /><br /><br />
+
+
+            <!-- ANNUAL SUMMARY -->
+            <& /homepage/annual_summary.mas &>
 
 
             <br /><br /><br />

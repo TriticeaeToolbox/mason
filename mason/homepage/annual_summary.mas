@@ -1,0 +1,10 @@
+<h2>Annual Summary</h2>
+
+<p>
+  View tables summarizing the genotype and phenotype data added for each breeding program by calendar year.
+</p>
+
+<a class="btn btn-primary btn-block" href="/guides/annual-summary">
+    <span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;
+    Annual Summary Report
+</a>
