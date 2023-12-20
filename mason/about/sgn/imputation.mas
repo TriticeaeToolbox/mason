@@ -107,7 +107,7 @@ Imputed protocols and projects
 <tr>
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/WSU2023_plate2.vcf.gz>WSU_2023_plate2</a><td>94
 <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-WSU2023.png>PCA</a>
-<tr><td rowspan=7>USDA 3K
+<tr><td rowspan=7>USDA 3K<td><td rowspan=7>93% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-3K-imp-2019hapmap-filtered_mr0-byaccn.txt>details</a>
 <td>MNA_2022<td>765<td>
 <tr><td>MT_2022<td>417<td>
 <tr><td>NDS_2022<td>124<td>
