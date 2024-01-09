@@ -102,14 +102,14 @@ Imputed protocols and projects
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/242/MSU_2023.vcf.gz>MSU_2023</a><td>3115
 <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-MSU2023.png>PCA</a><td>na
 <tr><td rowspan=4>ThermoFisher AgriSeq
-<td><a href=https://files.triticeaetoolbox.org/download/wheat/244/WSU_2023_plate1.vcf.gz>WSU_2023_plate1</a><td>92
+<td><a href=https://files.triticeaetoolbox.org/download/wheat/244/UCD_2023_plate1.vcf.gz>UCD_2023_plate1</a><td>92
 <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-WSU2023.png>PCA</a><td rowspan=2>na
 <tr>
-<td><a href=https://files.triticeaetoolbox.org/download/wheat/244/WSU_2023_plate2.vcf.gz>WSU_2023_plate2</a><td>94
+<td><a href=https://files.triticeaetoolbox.org/download/wheat/244/UCD_2023_plate2.vcf.gz>UCD_2023_plate2</a><td>94
 <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-WSU2023.png>PCA</a>
-<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/244/Carter_A.vcf.gz>Carter_A</a><td>96
+<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/244/Carter_A.vcf.gz>WSU_2023_A</a><td>96
     <td><td rowspan=2>too many ambiguous alt alleles
-<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/244/Carter_B.vcf.gz>Carter_B</a><td>96
+<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/244/Carter_B.vcf.gz>WSU_2023_B</a><td>96
     <td>
 <tr><td rowspan=7>USDA 3K
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/246/MT_2022_3K.vcf.gz>MNA_2022</a><td>765<td><td rowspan=7>93% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-3K-imp-2019hapmap-filtered_mr0-byaccn.txt>details</a>
