@@ -74,9 +74,9 @@ Imputed protocols and projects
     <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/WorldwideDiversityPanel_9K_V2.vcf.gz>WorldwideDiversityPanel_9K</a><td>2255
     <td>
 <tr><td rowspan=2>GMS v2.1
-<td><a href=https://files.triticeaetoolbox.org/download/wheat/227/2021_GMS_Utah.vcf.gz>USU_2021</a><td>288<td>
+<td><a href=https://files.triticeaetoolbox.org/download/wheat/227/GMS_Utah_2021.vcf.gz>USU_2021</a><td>288<td>
 <td>82% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-GMS-imp-2019hapmap-filtered_mr0-byaccn.txt>details</a>
-<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/245/2022_GMS_Utah.vcf.gz>USU_2022</td><td>471<td><td>
+<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/245/GMS_Utah_2022.vcf.gz>USU_2022</td><td>471<td><td>
 <tr><td rowspan=8>MRASeq RPN
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/238/RPN_2020.vcf.gz>RPN_2020</a><td>86<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-RPN2020.png>PCA</a>
 <td rowspan=8>84% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-RPN2020-imp-2019hapmap-filtered_mr0-byaccn.txt>details</a>
@@ -93,7 +93,7 @@ Imputed protocols and projects
 <tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/239/RGON_2022.vcf.gz>RGON_2022</a><td>327<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-RPN2022.png>PCA</a>
 <tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/239/RGON_2023.vcf.gz>RGON_2023</a><td>412<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-RPN2023.png>PCA</a>
 <tr><td>UCD GBS
-<td><a href=https://files.triticeaetoolbox.org/download/wheat/235/UCD2022_GBS1_V2.vcf.gz>UCD2022</a><td>345<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2022GBS.png>PCA</a><td>na
+<td><a href=https://files.triticeaetoolbox.org/download/wheat/235/UCD2022_GBS1_V2.vcf.gz>UCD_2022</a><td>345<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2022GBS.png>PCA</a><td>na
 <tr><td rowspan=2>SDSU GBS
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/240/SDSU_2022.vcf.gz>SDSU_2022</a>
 <td>157<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2022GBS.png>PCA</a><td rowspan=2>na
