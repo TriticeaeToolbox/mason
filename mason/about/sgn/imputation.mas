@@ -39,7 +39,7 @@ The Practical Haplotype Graph (PHG) database was constructed using whole-exome c
 
 Imputed protocols and projects
 <br>Method: Practical Haplotype Graph - PHG V2 with 2.9M markers
-<br>Visualize: <a href=https://files.triticeaetoolbox.org/jbrowse?data=phg>JBrowse</a>
+<br>Visualize: <a href=https://github.com/TriticeaeToolbox/PHGv2/tree/main/visualization target="_new">Explore options</a>
 <br>Description: <a href=https://wheat.triticeaetoolbox.org/static_content/files/imputation.html>Imputation pipeline and accuracy</a><br>
 
 <table>
