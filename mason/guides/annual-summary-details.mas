@@ -1,0 +1,193 @@
+<%args>
+  $year => undef,
+  $program => undef
+</%args>
+
+<%init>
+  use Data::Dumper;
+  use CXGN::DB::Connection;
+  my $dbh = CXGN::DB::Connection->new();
+
+  # Get the breeding program name
+  my $q_bp = "SELECT name FROM public.project WHERE project_id = ?";
+  my $sth_bp = $dbh->prepare($q_bp);
+  $sth_bp->execute($program);
+  my ($program_name) = $sth_bp->fetchrow_array();
+
+  # Get the genotyping project details
+  my $q_geno = "SELECT gp.project_id AS genotyping_project_id, gp.name AS genotyping_project_name, 
+                  pp.nd_protocol_id AS genotyping_protocol_id, pp.name AS genotyping_protocol,
+                  COUNT(DISTINCT(amv.accession_id)) AS accession_count
+                FROM breeding_programsxgenotyping_projects AS mv
+                LEFT JOIN project AS gp ON (gp.project_id = mv.genotyping_project_id)
+                LEFT JOIN project AS bp ON (bp.project_id = mv.breeding_program_id)
+                LEFT JOIN public.projectprop AS py ON (gp.project_id = py.project_id)
+                  AND py.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project year')
+                LEFT JOIN public.accessionsxgenotyping_projects AS amv ON (amv.genotyping_project_id = gp.project_id)
+                LEFT JOIN public.genotyping_projectsxgenotyping_protocols AS gmv ON (gmv.genotyping_project_id = gp.project_id)
+                LEFT JOIN public.nd_protocol AS pp ON (gmv.genotyping_protocol_id = pp.nd_protocol_id)
+                WHERE py.value = ? AND mv.breeding_program_id = ?
+                GROUP BY gp.project_id, gp.name, pp.nd_protocol_id, pp.name
+                ORDER BY gp.name;";
+  my $sth_geno = $dbh->prepare($q_geno);
+  $sth_geno->execute($year, $program);
+  my %geno_data;
+  while ( my ($project_id, $project_name, $protocol_id, $protocol_name, $accession_count ) = $sth_geno->fetchrow_array() ) {
+    $geno_data{$project_name} = {
+      project_id => $project_id,
+      project_name => $project_name,
+      protocol_id => $protocol_id,
+      protocol_name => $protocol_name,
+      accession_count => $accession_count
+    };
+  }
+
+  # Get the phenotyping trial details
+  my $q_pheno = "SELECT project.project_id, project.name,
+                  COUNT(DISTINCT(materialized_phenoview.trait_id)) AS trait_count,
+                  STRING_AGG(DISTINCT(cvterm.name), ', ') AS trait_names,
+                  COUNT(DISTINCT(materialized_phenoview.stock_id)) AS plot_count
+                FROM public.project
+                LEFT JOIN public.projectprop AS py ON (project.project_id = py.project_id)
+                  AND py.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project year')
+                LEFT JOIN public.project_relationship AS pr ON (project.project_id = pr.subject_project_id)
+                  AND pr.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'breeding_program_trial_relationship')
+                LEFT JOIN public.project AS bp ON (pr.object_project_id = bp.project_id)
+                LEFT JOIN public.materialized_phenoview ON (project.project_id = materialized_phenoview.trial_id)
+                LEFT JOIN public.cvterm ON (materialized_phenoview.trait_id = cvterm.cvterm_id)
+                WHERE py.value = ? AND bp.project_id = ?
+                  AND project.project_id IN (SELECT DISTINCT(trial_id) FROM public.materialized_phenoview)
+                GROUP BY project.project_id, project.name, project.create_date, py.value, bp.project_id, bp.name;";
+  my $sth_pheno = $dbh->prepare($q_pheno);
+  $sth_pheno->execute($year, $program);
+  my %pheno_data;
+  while ( my ($project_id, $project_name, $trait_count, $trait_names, $plot_count ) = $sth_pheno->fetchrow_array() ) {
+    $pheno_data{$project_name} = {
+      project_id => $project_id,
+      project_name => $project_name,
+      trait_count => $trait_count,
+      trait_names => $trait_names,
+      plot_count => $plot_count
+    };
+  }
+</%init>
+
+<& "/page/page_title.mas", title => "Annual Data Summary Details" &>
+
+<div style="display: flex; gap: 30px">
+  <div>
+    <h2>Year</h2>
+    <p class="subtitle"><% $year %></p>
+  </div>
+  <div>
+    <h2>Breeding Program</h2>
+    <p class="subtitle"><% $program_name %></p>
+  </div>
+</div>
+
+<br />
+
+<h2>Genotyping Projects</h2>
+
+<p class="description">
+  This table shows the Genotyping Projects that were added by the <strong><% $program_name %></strong>
+  breeding program and have a year set to <strong><% $year %></strong>.  It also includes the protocol that 
+  is associated with the project and the number of accessions that were sampled by the project. 
+  Click the project or protocol name to view more details about the specific project or protocol.
+</p>
+
+<table class="summary-table">
+  <tr>
+    <th>Genotyping Project</th>
+    <th>Genotyping Protocol</th>
+    <th>Accession Count</th>
+  </tr>
+% foreach my $key (sort keys %geno_data) {
+  <tr>
+    <td>
+      <a href="/breeders/trial/<% $geno_data{$key}->{'project_id'} %>">
+        <% $geno_data{$key}->{'project_name'} %>
+      </a>
+    </td>
+    <td>
+      <a href="/breeders_toolbox/protocol/<% $geno_data{$key}->{'protocol_id'} %>">
+        <% $geno_data{$key}->{'protocol_name'} %>
+      </a>
+    </td>
+    <td><% $geno_data{$key}->{'accession_count'} %></td>
+  </tr>
+% }
+</table>
+
+<br />
+
+<h2>Phenotyping Trials</h2>
+
+<p class="description">
+  This table shows the Phenotyping Trials that were added by the <strong><% $program_name %></strong>
+  breeding program and have a harvest year set to <strong><% $year %></strong>.  It also includes 
+  the number of traits that were observed in the trial and the total number of plots in the trial.
+  Click the trial name to view more details about the specific trial.
+</p>
+
+<table class="summary-table">
+  <tr>
+    <th>Phenotyping Trial</th>
+    <th>Trait Count</th>
+    <th>Trait Names</th>
+    <th>Plot Count</th>
+  </tr>
+% foreach my $key (sort keys %pheno_data) {
+  <tr>
+    <td>
+      <a href="/breeders/trial/<% $pheno_data{$key}->{'project_id'} %>">
+        <% $pheno_data{$key}->{'project_name'} %>
+      </a>
+    </td>
+    <td><% $pheno_data{$key}->{'trait_count'} %></td>
+    <td><% $pheno_data{$key}->{'trait_names'} %></td>
+    <td><% $pheno_data{$key}->{'plot_count'} %></td>
+  </tr>
+% }
+</table>
+
+<br /><br /><br />
+
+
+<style>
+  .subtitle {
+    font-size: 120%;
+    font-weight: 600;
+  }
+  .description {
+    font-size: 100%;
+    color: #666;
+  }
+
+  .summary-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .summary-table td, .summary-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  .summary-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  .summary-table tr:hover {
+    background-color: #EBDEDB
+  }
+
+  .summary-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #C84C30;
+    color: white;
+  }
+</style>
