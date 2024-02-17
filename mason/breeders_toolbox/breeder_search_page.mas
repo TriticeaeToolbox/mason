@@ -242,6 +242,7 @@ $preferred_species => undef
                             <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
                             Download Genotypes
                         </button>
+                        <input class="wizard-download-genotypes-info2 form-control btn-warning" type="text" hidden></input>
                     </td>
                     <td colspan="6">
                     </td>
@@ -580,6 +581,9 @@ $preferred_species => undef
   // Wizard Callback: get chromosome names for a single selected genotyping protocol
   var SELECTED_GENOTYPING_PROTOCOL = undefined;
   var SELECTED_GENOTYPING_PROJECT = undefined;
+  var SELECTED_ACCESSIONS = undefined;
+  var num_markers = 0;
+  var download_units = 0;
   window.sWizard.wizard.on_change(function(categories, selections, operations) {
     var selected_genotyping_protocols = selections.hasOwnProperty('genotyping_protocols') ? selections.genotyping_protocols : [];
     var selected_genotyping_projects = selections.hasOwnProperty('genotyping_projects') ? selections.genotyping_projects : [];
@@ -607,11 +611,41 @@ $preferred_species => undef
             }
           }
         });
+        jQuery.ajax({
+          url: '/ajax/genotyping_protocol/num_markers',
+          method: "GET",
+          data: { 'protocol_ids': SELECTED_GENOTYPING_PROTOCOL },
+          error: function(response) {
+            console.log("ERROR: Could not get markers for genotyping protocol #" + SELECTED_GENOTYPING_PROTOCOL);
+            console.log(response);
+          },
+          success: function(response) {
+            if (response.error) {
+              console.log("ERROR: Server returned an error trying to get markers for genotyping protocol #" + SELECTED_GENOTYPING_PROTOCOL);
+              console.log(repsonse.error);
+            }
+            else {
+              num_markers = response.data;
+            }
+          }
+        });
       }
     }
     else {
       SELECTED_GENOTYPING_PROTOCOL = "";
       updateChromosomeNames();
+    }
+    if ( selected_accessions !== SELECTED_ACCESSIONS ) {
+      console.log("accessions new " + selected_accessions);
+      SELECTED_ACCESSIONS = selected_accessions;
+      download_units = num_markers * selected_accessions;
+      if (download_units > 1000000) {
+            $(".wizard-download-genotypes-info2").show();
+            $(".wizard-download-genotypes-info2").val(download_units + " download will be slow");
+      } else {
+            $(".wizard-download-genotypes-info2").hide();
+            $(".wizard-download-genotypes-info2").val(download_units.toString());
+      }
     }
     if ( selected_genotyping_projects.length <= 1 ) {
       var selected_genotyping_project = selected_genotyping_projects.length === 1 ? selected_genotyping_projects[0].id : "";
