@@ -587,6 +587,8 @@ $preferred_species => undef
   window.sWizard.wizard.on_change(function(categories, selections, operations) {
     var selected_genotyping_protocols = selections.hasOwnProperty('genotyping_protocols') ? selections.genotyping_protocols : [];
     var selected_genotyping_projects = selections.hasOwnProperty('genotyping_projects') ? selections.genotyping_projects : [];
+    var selected_accessions = selections.hasOwnProperty('accessions') ? selections.accessions : [];
+    selected_accessions = selected_accessions.length;
     if ( selected_genotyping_protocols.length <= 1 ) {
       var selected_genotyping_protocol = selected_genotyping_protocols.length === 1 ? selected_genotyping_protocols[0].id : "";
       if ( selected_genotyping_protocol !== SELECTED_GENOTYPING_PROTOCOL ) {
