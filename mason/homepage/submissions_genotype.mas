@@ -1,6 +1,14 @@
 <h2>Submit Genotype Data</h2>
 
 <p>
-    Please <a href='/contact/form'>Contact Us</a> if you have genotype data you would like to 
-    submit to <% our $T3_INSTANCE_NAME %>.
+    If you have genotype data you would like to submit to <% our $T3_INSTANCE_NAME %>, please 
+    use the <strong>Genotype Submission Form</strong>.  This will ask you some questions 
+    about the data and then you can upload a VCF file of the data.  We'll make sure the file 
+    is properly formatted, the correct genotype protocol is used for the data, and add the genotype 
+    data to the database. 
 </p>
+
+<a class="btn btn-primary btn-block" href="/submit/geno">
+    <span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;&nbsp;
+    Genotype Submission Form
+</a>
