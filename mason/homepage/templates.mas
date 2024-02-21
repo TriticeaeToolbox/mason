@@ -18,65 +18,72 @@
 
 <!-- TEMPLATES PANEL -->
 <div class="panel panel-success">
-    <div class="panel-heading">Templates</div>
-    <div class="panel-body templates-panel-body">
+    <div class="panel-heading">Upload Templates</div>
+    <div class="panel-body templates-panel-body" style="overflow: hidden">
+
+      <div class="row">
 
         <!-- BLANK TEMPLATES -->
-        <p><strong>Blank Upload Templates</strong></p>
-        <p>Below are blank upload templates for each data type.</p>
-        
-        <ul class="templates-panel-list">
-          <li><a href="/static_content/files/templates/locations.xls">Locations (.xls)</a></li>
-          <li><a href="/static_content/files/templates/accessions.xls">Accessions (.xls)</a></li>
-          <li><a href="/static_content/files/templates/pedigrees.txt">Pedigrees (.txt)</a></li>
-          <li><a href="/static_content/files/templates/trials.xls">Trials (.xls)</a></li>
-          <li><a href="/static_content/files/templates/phenotypes.xls">Phenotype Observations (.xls)</a></li>
-        </ul>
-
+        <div class="col-md-4">
+          <p><strong>Blank Upload Templates</strong></p>
+          <p>Below are blank upload templates for each data type.</p>
+          
+          <ul class="templates-panel-list">
+            <li><a href="/static_content/files/templates/locations.xls">Locations (.xls)</a></li>
+            <li><a href="/static_content/files/templates/accessions.xls">Accessions (.xls)</a></li>
+            <li><a href="/static_content/files/templates/pedigrees.txt">Pedigrees (.txt)</a></li>
+            <li><a href="/static_content/files/templates/trials.xls">Trials (.xls)</a></li>
+            <li><a href="/static_content/files/templates/phenotypes.xls">Phenotype Observations (.xls)</a></li>
+          </ul>
+        </div>
 
         <!-- SAMPLE TEMPLATES -->
+        <div class="col-md-4">
+          <p><strong>Sample Templates</strong></p>
+
+          <p>Generate a set of sample templates for new accessions, locations, trials, and trait observations.  These templates 
+          contain all new data in properly formatted templates that can be used to practice uploading each data type 
+          to the sandbox.<p>
 % if ( $is_sandbox ) {
-        <hr />
-        <p><strong>Sample Templates</strong></p>
-
-        <p>Generate a set of sample templates for new accessions, locations, trials, and trait observations.  These templates 
-        contain all new data in properly formatted templates that can be used to practice uploading each data type 
-        to the sandbox.<p>
-
-        <ol>
+          <ol>
+              <li><a href="/help/sample_templates">Generate your set of sample templates</a></li>
+              <li>Follow the <a href="/help/phenotype_quick_start">Guided Phenotype Upload Workflow</a> to upload the template for each data type</a></li>
+          </ol>
+% } else {
+          <ul class="templates-panel-list">
             <li><a href="/help/sample_templates">Generate your set of sample templates</a></li>
-            <li>Follow the <a href="/help/phenotype_quick_start">Guided Phenotype Upload Workflow</a> to upload the template for each data type</a></li>
-        </ol>
+          </ul>
 % }
-
-
-        <hr />
-
+        </div>
 
         <!-- DEMO TEMPLATES -->
-        <p><strong>Example Templates</strong></p>
-        <p>Below are example templates generated for demo wheat trials from <a href="/static_content/files/2020ScabWorkshop/notes.html">a 2020 workshop</a>. 
-        You can use these files to see how the templates are properly formatted.</p>
+        <div class="col-md-4">
+          <p><strong>Example Templates</strong></p>
+          <p>Below are example templates generated for demo wheat trials from <a href="/static_content/files/2020ScabWorkshop/notes.html">a 2020 workshop</a>. 
+          You can use these files to see how the templates are properly formatted.</p>
 
-        <ul class="templates-panel-list">
-          <li><a href="/static_content/files/2020ScabWorkshop/demo_locations.xls">Locations (.xls)</a></li>
-          <li><a href="/static_content/files/2020ScabWorkshop/demo_accessions.xls">Accessions (.xls)</a></li>
-          <li><a href="/static_content/files/2020ScabWorkshop/demo_trials.xls">Trials (.xls)</a></li>
-          <li><a href="/static_content/files/2020ScabWorkshop/demo_phenotypes.xls">Phenotype Observations (.xls)</a></li>
-        </ul>
+          <ul class="templates-panel-list">
+            <li><a href="/static_content/files/2020ScabWorkshop/demo_locations.xls">Locations (.xls)</a></li>
+            <li><a href="/static_content/files/2020ScabWorkshop/demo_accessions.xls">Accessions (.xls)</a></li>
+            <li><a href="/static_content/files/2020ScabWorkshop/demo_trials.xls">Trials (.xls)</a></li>
+            <li><a href="/static_content/files/2020ScabWorkshop/demo_phenotypes.xls">Phenotype Observations (.xls)</a></li>
+          </ul>
+        </div>
+
+      </div>
 
 
         <!-- SANDBOX / PRIVATE SUBMISSION -->
 % if ( !$self_upload ) {
-        <hr />
-        <p><strong>Submission</strong></p>
-        <p>Use the <a href="/submit/pheno">Phenotype Submission Form</a> to submit your data to the curators for inclusion in <% our $T3_INSTANCE_NAME %>.</p>
+      <hr />
+      <p><strong>Submission</strong></p>
+      <p>Use the <a href="/submit/pheno">Phenotype Submission Form</a> to submit your data to the curators for inclusion in <% our $T3_INSTANCE_NAME %>.</p>
 % }
 
-        <hr />
+      <hr />
 
-        <!-- DETAILED INSTRUCTIONS -->
-        <p>For more detailed instructions, see the <a href="/help/phenotype_upload_workflow">Detailed Phenotype Upload Instructions</a></p>
+      <!-- DETAILED INSTRUCTIONS -->
+      <p>For more detailed instructions, see the <a href="/help/phenotype_upload_workflow">Detailed Phenotype Upload Instructions</a></p>
     </div>
 </div>
 
