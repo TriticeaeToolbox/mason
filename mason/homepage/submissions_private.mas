@@ -1,4 +1,6 @@
-<h2>Upload Data</h2>
+<&| /page/info_section.mas, title=>'<h2 style="display: inline-block">Upload Data</h2>', collapsible=>1, collapsed=>1, subtitle=>'' &>
+
+<br />
 
 <& /homepage/submitter.mas &>
 
@@ -25,6 +27,14 @@
 
 <p><strong>Manage your Phenotypic Data</strong> to create spreadsheets for new uploads, add new data, and/or manage your existing uploads.</p>
 
+
+<a href="/breeders/genotyping_projects" class="btn btn-primary btn-large btn-home">
+    <span class="glyphicon glyphicon-align-left"></span>&nbsp;
+    Manage Genotyping Projects
+</a>
+
+<p><strong>Manage your Genotyping Projects</strong> to add a new genotyping project, a new genotyping plate, or upload a VCF file.</p>
+
 <a href="/breeders/upload" class="btn btn-primary btn-large btn-home">
     <span class="glyphicon glyphicon-open-file"></span>&nbsp;
     Upload Files
@@ -44,3 +54,5 @@ submit OR you can create a list of multiple trials to submit and submit them all
 <a href="/submit/trials">Submit Multiple Trials</a> page.</p>
 
 % }
+
+</&>

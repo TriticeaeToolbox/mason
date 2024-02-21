@@ -91,10 +91,6 @@
 % }
             <br /><br />
 
-            <!-- TEMPLATES -->
-            <& /homepage/templates.mas &>
-            <br /><br />
-
         </div>
 
 
@@ -128,7 +124,11 @@
 
 
             <!-- GENOTYPE SUBMISSIONS -->
-            <& /homepage/submissions_genotype.mas &>
+            <& /toggle_display.mas, 
+                production => "/homepage/submissions_genotype.mas", 
+                sandbox => "/homepage/submissions_genotype.mas",
+                private => "/homepage/submissions_genotype_private.mas"
+            &>
 
 
             <br /><br /><br />
@@ -142,6 +142,13 @@
 
 
         </div>
+
+    </div>
+
+    <div class="row" style="padding: 15px">
+
+        <!-- TEMPLATES -->
+        <& /homepage/templates.mas &>
 
     </div>
 
