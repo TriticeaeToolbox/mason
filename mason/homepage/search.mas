@@ -21,19 +21,6 @@
 <p>Use the <strong>Quick Search</strong> to find an Accession, Trial, Trait, etc by name:</p>
 <& /homepage/quick_search.mas &>
 
-<br /><br />
-
-<p>Use the <strong>Search Wizard</strong> to explore the database or 
-search <strong>individual data types</strong>:</p>
-
-<div class="btn-group search-group" role="group">
-  <a href="/breeders/search" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span>&nbsp;Search Wizard</a>
-  <a href="/search/phenotypes/stock" type="button" class="btn btn-info">Accessions</a>
-  <a href="/search/trials" type="button" class="btn btn-info">Trials</a>
-  <a href="/search/traits" type="button" class="btn btn-info">Traits</a>
-  <a href="/search/genotyping_data_projects" type="button" class="btn btn-info">Genotyping Projects</a>
-  <a href="/search/variants" type="button" class="btn btn-info">Markers</a>
-</div>
 
 <script type="text/javascript">
     jQuery( document ).ready(function() {
