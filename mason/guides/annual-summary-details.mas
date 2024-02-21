@@ -1,4 +1,5 @@
 <%args>
+  $schema => undef,
   $year => (localtime)[5] + 1900,
   $program => undef
 </%args>
@@ -6,9 +7,15 @@
 <%init>
   use Data::Dumper;
   use CXGN::DB::Connection;
+  use SGN::View::Stock qw|breeding_programs|;
   my $dbh = CXGN::DB::Connection->new();
+
+  # Set current and available years
   my $current_year = (localtime)[5] + 1900;
   my @available_years = ($current_year-5..$current_year+1);
+
+  # Get all breeding programs
+  my $breeding_programs = SGN::View::Stock::breeding_programs($schema);
 
   # Get the breeding program name
   my $q_bp = "SELECT name FROM public.project WHERE project_id = ?";
@@ -93,7 +100,17 @@
   </div>
   <div>
     <h2>Breeding Program</h2>
-    <p class="subtitle"><% $program_name %></p>
+    <div class="form-group">
+      <select id="breeding_program" class="form-control">
+% foreach (@$breeding_programs) {
+%   if ( $_->[0] eq $program ) {
+        <option value="<% $_->[0] %>" selected><% $_->[1] %></option>
+%   } elsif ( $_->[0] ne 0 ) {
+        <option value="<% $_->[0] %>"><% $_->[1] %></option>
+%   }
+% }
+      </select>
+    </div>
   </div>
 </div>
 
@@ -167,9 +184,9 @@
 
 <script type="text/javascript">
   jQuery(document).on("ready", () => {
-    jQuery("#year").on("change", () => {
-      window.location = "/guides/annual-summary-details?program=<% $program %>&year=" + jQuery("#year").val();
-    })
+    jQuery("#year, #breeding_program").on("change", () => {
+      window.location = "/guides/annual-summary-details?year=" + jQuery("#year").val() + "&program=" + jQuery("#breeding_program").val();
+    });
   });
 </script>
 
