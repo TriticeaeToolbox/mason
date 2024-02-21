@@ -1,4 +1,6 @@
-<h2>Submit Phenotype Data</h2>
+<&| /page/info_section.mas, title=>'<h2 style="display: inline-block">Submit Phenotype Data</h2>', collapsible=>1, collapsed=>1, subtitle=>'' &>
+
+<br />
 
 <p>To submit phenotype data to <% our $T3_INSTANCE_NAME %> follow these three general steps:</p>
 
@@ -49,3 +51,5 @@
         <span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Detailed Upload Instructions
     </a>
 </div>
+
+</&>

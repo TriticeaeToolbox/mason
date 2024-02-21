@@ -1,5 +1,6 @@
-<h2>User Guides</h2>
+<&| /page/info_section.mas, title=>'<h2 style="display: inline-block">User Guides</h2>', collapsible=>1, collapsed=>1, subtitle=>'' &>
 
+<br />
 
 <div class="btn-group-vertical btn-group-home">
     <a href="https://solgenomics.github.io/sgn/" type="button" class="btn btn-primary">
@@ -16,3 +17,5 @@
     View the comprehensive <strong>Documentation</strong> from the Breedbase team to learn about 
     available features or watch the detailed <strong>Video Tutorials</strong>.
 </p>
+
+</&>
