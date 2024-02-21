@@ -110,6 +110,13 @@
 
 
             <br /><br /><br />
+
+
+            <!-- ANNUAL SUMMARY -->
+            <& /homepage/annual_summary.mas &>
+
+
+            <br /><br /><br />
             
             
             <!-- SUBMISSIONS -->
@@ -129,13 +136,6 @@
                 sandbox => "/homepage/submissions_genotype.mas",
                 private => "/homepage/submissions_genotype_private.mas"
             &>
-
-
-            <br /><br /><br />
-
-
-            <!-- ANNUAL SUMMARY -->
-            <& /homepage/annual_summary.mas &>
 
 
             <br /><br /><br />
