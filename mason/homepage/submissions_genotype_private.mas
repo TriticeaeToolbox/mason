@@ -1,3 +1,9 @@
+<%init>
+  my $private_instance_name = our $T3_INSTANCE_PRIVATE;
+</%init>
+
+% if ( $private_instance_name eq 'CAP' ) {
+
 <&| /page/info_section.mas, title=>'<h2 style="display: inline-block">Submit Genotype Data</h2>', collapsible=>1, collapsed=>1, subtitle=>'' &>
 
 <br />
@@ -16,3 +22,5 @@
 </a>
 
 </&>
+
+% }
