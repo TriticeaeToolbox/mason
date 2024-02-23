@@ -123,6 +123,7 @@
   breeding program and have a year set to <strong><% $year %></strong>.  It also includes the protocol that 
   is associated with the project and the number of accessions that were sampled by the project. 
   Click the project or protocol name to view more details about the specific project or protocol.
+  Click the download link to download the original VCF file that was loaded for the specific project.
 </p>
 
 <table class="summary-table">
@@ -158,12 +159,14 @@
   This table shows the Phenotyping Trials that were added by the <strong><% $program_name %></strong>
   breeding program and have a harvest year set to <strong><% $year %></strong>.  It also includes 
   the number of traits that were observed in the trial and the total number of plots in the trial.
-  Click the trial name to view more details about the specific trial.
+  Click the trial name to view more details about the specific trial.  Click the download link to download 
+  an Excel spreadsheet containing all of the trait observations saved for the specific trial.
 </p>
 
 <table class="summary-table">
   <tr>
     <th>Phenotyping Trial</th>
+    <th>Has Plot Layout?</th>
     <th>Trait Count</th>
     <th>Trait Names</th>
     <th>Plot Count</th>
@@ -176,6 +179,7 @@
         <% $pheno_data{$key}->{'project_name'} %>
       </a>
     </td>
+    <td id="pheno-layout-<% $pheno_data{$key}->{'project_id'} %>" class="pheno-layout" data-id="<% $pheno_data{$key}->{'project_id'} %>">...</td>
     <td><% $pheno_data{$key}->{'trait_count'} %></td>
     <td><% $pheno_data{$key}->{'trait_names'} %></td>
     <td><% $pheno_data{$key}->{'plot_count'} %></td>
@@ -222,6 +226,28 @@
         },
         error: function(response) {
           console.log("ERROR: Could not get geno download for project: " + project_id);
+        }
+      });
+    });
+
+    // Add Pheno Layout Checks
+    jQuery(".pheno-layout").each((i, obj) => {
+      const project_id = jQuery(obj).data("id");
+      jQuery.ajax( {
+        'url': '/ajax/search/trial_layout',
+        'method': 'GET',
+        'data': { 
+          'trial_id': project_id,
+        },
+        'success': function(response) {
+          let html = "";
+          if ( response && response.has_trial_layout === "true" ) {
+            html = '<span class="glyphicon glyphicon-ok-sign" style="color: #3c7d3d; font-size: 150%"></span>';
+          }
+          jQuery(obj).html(html);
+        },
+        error: function(response) {
+          console.log("ERROR: Could not get pheno layout for project: " + project_id);
         }
       });
     });
