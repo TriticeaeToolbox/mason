@@ -1,12 +1,21 @@
 <%args>
-  $year => undef,
+  $schema => undef,
+  $year => (localtime)[5] + 1900,
   $program => undef
 </%args>
 
 <%init>
   use Data::Dumper;
   use CXGN::DB::Connection;
+  use SGN::View::Stock qw|breeding_programs|;
   my $dbh = CXGN::DB::Connection->new();
+
+  # Set current and available years
+  my $current_year = (localtime)[5] + 1900;
+  my @available_years = ($current_year-5..$current_year+1);
+
+  # Get all breeding programs
+  my $breeding_programs = SGN::View::Stock::breeding_programs($schema);
 
   # Get the breeding program name
   my $q_bp = "SELECT name FROM public.project WHERE project_id = ?";
@@ -77,11 +86,31 @@
 <div style="display: flex; gap: 30px">
   <div>
     <h2>Year</h2>
-    <p class="subtitle"><% $year %></p>
+    <div class="form-group">
+      <select id="year" class="form-control">
+% foreach (@available_years) {
+%   if ( $_ eq $year ) {
+        <option selected><% $_ %></option>
+%   } else {
+        <option><% $_ %></option>
+%   }
+% }
+      </select>
+    </div>
   </div>
   <div>
     <h2>Breeding Program</h2>
-    <p class="subtitle"><% $program_name %></p>
+    <div class="form-group">
+      <select id="breeding_program" class="form-control">
+% foreach (@$breeding_programs) {
+%   if ( $_->[0] eq $program ) {
+        <option value="<% $_->[0] %>" selected><% $_->[1] %></option>
+%   } elsif ( $_->[0] ne 0 ) {
+        <option value="<% $_->[0] %>"><% $_->[1] %></option>
+%   }
+% }
+      </select>
+    </div>
   </div>
 </div>
 
@@ -101,6 +130,7 @@
     <th>Genotyping Project</th>
     <th>Genotyping Protocol</th>
     <th>Accession Count</th>
+    <th>Download</th>
   </tr>
 % foreach my $key (sort keys %geno_data) {
   <tr>
@@ -115,6 +145,7 @@
       </a>
     </td>
     <td><% $geno_data{$key}->{'accession_count'} %></td>
+    <td id="geno-download-<% $geno_data{$key}->{'project_id'} %>" class="geno-download" data-id="<% $geno_data{$key}->{'project_id'} %>">...</td>
   </tr>
 % }
 </table>
@@ -136,6 +167,7 @@
     <th>Trait Count</th>
     <th>Trait Names</th>
     <th>Plot Count</th>
+    <th>Donwload</th>
   </tr>
 % foreach my $key (sort keys %pheno_data) {
   <tr>
@@ -147,17 +179,61 @@
     <td><% $pheno_data{$key}->{'trait_count'} %></td>
     <td><% $pheno_data{$key}->{'trait_names'} %></td>
     <td><% $pheno_data{$key}->{'plot_count'} %></td>
+    <td>
+      <a href="/breeders/trials/phenotype/download?trial_list=[<% $pheno_data{$key}->{'project_id'} %>]">
+        <span class='glyphicon glyphicon-download-alt'></span>&nbsp;&nbsp;XLSX
+      </a>
+    </td>
   </tr>
 % }
 </table>
 
 <br /><br /><br />
 
+<script type="text/javascript">
+  jQuery(document).on("ready", () => {
+    
+    // Refresh the page when the year or breeding program is changed
+    jQuery("#year, #breeding_program").on("change", () => {
+      window.location = "/guides/annual-summary-details?year=" + jQuery("#year").val() + "&program=" + jQuery("#breeding_program").val();
+    });
+
+    // Add Geno Download Links
+    jQuery(".geno-download").each((i, obj) => {
+      const project_id = jQuery(obj).data("id");
+      jQuery.ajax( {
+        'url': '/ajax/genotyping_project/has_archived_vcf',
+        'method': 'GET',
+        'data': { 
+          'genotyping_project_id': project_id,
+          'limit': true
+        },
+        'success': function(response) {
+          let html = "File not found";
+          if ( response && response[project_id] ) {
+            const data = response[project_id][0];
+            if ( data && data.exists === "true" ) {
+              html = `<a href='/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=${project_id}&basename=${data.basename}' target='_blank'>`
+              html += "<span class='glyphicon glyphicon-download-alt'></span>&nbsp;&nbsp;VCF";
+              html += '</a>';
+            }
+          }
+          jQuery(obj).html(html);
+        },
+        error: function(response) {
+          console.log("ERROR: Could not get geno download for project: " + project_id);
+        }
+      });
+    });
+
+  });
+</script>
 
 <style>
   .subtitle {
     font-size: 120%;
     font-weight: 600;
+    margin-top: 20px;
   }
   .description {
     font-size: 100%;
