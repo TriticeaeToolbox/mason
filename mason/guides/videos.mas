@@ -2,6 +2,114 @@
 
 <div style="max-width: 800px; margin: 25px auto">
 
+  <h2>Tutorial Videos</h2>
+
+  <p>
+    These videos by Ismaila Olaniyi demonstrate some of the primary features of T3 and 
+    how to use data downloaded from the database.
+  </p>
+
+  <a href="https://www.youtube.com/@gdslab/videos">
+    More videos from the Geospatial Data Science Lab at Purdue
+  </a>
+
+  <div class="video">
+    <div class="video-thumbnail">
+      <a href="https://www.youtube.com/watch?v=DwUJg3ApcqM">
+        <figure class="hover-img">
+          <img class="video-image" src="/static_content/img/videos/ismail_download.png"/>
+          <figcaption>
+            <span class="glyphicon glyphicon-play"></span>
+          </figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="video-details">
+      <p class="video-title">Downloading Phenotypic Data from T3</p>
+      <p class="video-description">
+        This video shows you how to find one or more trials from a particular breeding program 
+        and how to download all of the trait data for a trial from the trial detail page.
+      </p>
+    </div>
+  </div>
+
+  <div class="video">
+    <div class="video-thumbnail">
+      <a href="https://www.youtube.com/watch?v=CyI2oEubEfg">
+        <figure class="hover-img">
+          <img class="video-image" src="/static_content/img/videos/ismail_dates.png"/>
+          <figcaption>
+            <span class="glyphicon glyphicon-play"></span>
+          </figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="video-details">
+      <p class="video-title">Converting Julian Dates to Days After Planting</p>
+      <p class="video-description">
+        This video shows you how to convert the Julian Date used in time-series traits 
+        to days after planting for a trial where the planting date is known.
+      </p>
+    </div>
+  </div>
+
+  <hr />
+
+  <p>
+    Jessica Rutkoski has adopted Breedbase as a data management system to be used in the day-to-day breeding 
+    activities of her lab.  She has created some useful how-to videos on using some of the more advanced 
+    features of Breedbase and how she incorporates them into her breeding routines.
+  </p>
+
+  <a href="https://www.youtube.com/@jessicarutkoski1192/videos">
+    More videos from Jessica Rutkoski
+  </a>
+
+  <div class="video">
+    <div class="video-thumbnail">
+      <a href="https://www.youtube.com/watch?v=PaHlQ_kbbrU">
+        <figure class="hover-img">
+          <img class="video-image" src="/static_content/img/videos/jessica_barcodes.png"/>
+          <figcaption>
+            <span class="glyphicon glyphicon-play"></span>
+          </figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="video-details">
+      <p class="video-title">Making barcodes in Breedbase</p>
+      <p class="video-description">
+        Learn how to make barcodes for any list of items using Breedbase
+      </p>
+    </div>
+  </div>
+
+  <div class="video">
+    <div class="video-thumbnail">
+      <a href="https://www.youtube.com/watch?v=JyWXmJAK07g">
+        <figure class="hover-img">
+          <img class="video-image" src="/static_content/img/videos/jessica_seedlots.png"/>
+          <figcaption>
+            <span class="glyphicon glyphicon-play"></span>
+          </figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="video-details">
+      <p class="video-title">Downloading seedlot information for a list of accessions</p>
+      <p class="video-description">
+        Learn how to find and download seedlots for a list of many accessions in Breedbase.
+      </p>
+    </div>
+  </div>
+
+  
+
+  <br /><br />
+
+
+
+
   <h2>2020 Workshop</h2>
 
   <p>
@@ -177,60 +285,6 @@
       <p class="video-title">Speaking of Oats... The T3 Database and Applications to Oats</p>
       <p class="video-description">
         An overview of T3/Breedbase, highlighting its main features, and how they can be used by the Oat community.
-      </p>
-    </div>
-  </div>
-
-
-
-  <br /><br />
-
-
-
-  <h2>University of Illinois Videos</h2>
-
-  <p>
-    Jessica Rutkoski has adopted Breedbase as a data management system to be used in the day-to-day breeding 
-    activities of her lab.  She has created some useful how-to videos on using some of the more advanced 
-    features of Breedbase and how she incorporates them into her breeding routines.
-  </p>
-
-  <a href="https://www.youtube.com/@jessicarutkoski1192/videos">Jessica Rutkoski's videos</a>
-
-  <div class="video">
-    <div class="video-thumbnail">
-      <a href="https://www.youtube.com/watch?v=PaHlQ_kbbrU">
-        <figure class="hover-img">
-          <img class="video-image" src="/static_content/img/videos/jessica_barcodes.png"/>
-          <figcaption>
-            <span class="glyphicon glyphicon-play"></span>
-          </figcaption>
-        </figure>
-      </a>
-    </div>
-    <div class="video-details">
-      <p class="video-title">Making barcodes in Breedbase</p>
-      <p class="video-description">
-        Learn how to make barcodes for any list of items using Breedbase
-      </p>
-    </div>
-  </div>
-
-  <div class="video">
-    <div class="video-thumbnail">
-      <a href="https://www.youtube.com/watch?v=JyWXmJAK07g">
-        <figure class="hover-img">
-          <img class="video-image" src="/static_content/img/videos/jessica_seedlots.png"/>
-          <figcaption>
-            <span class="glyphicon glyphicon-play"></span>
-          </figcaption>
-        </figure>
-      </a>
-    </div>
-    <div class="video-details">
-      <p class="video-title">Downloading seedlot information for a list of accessions</p>
-      <p class="video-description">
-        Learn how to find and download seedlots for a list of many accessions in Breedbase.
       </p>
     </div>
   </div>
