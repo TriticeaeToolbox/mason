@@ -120,7 +120,7 @@ Imputed protocols and projects
 <tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/246/UWM_2023_3K.vcf.gz>UWM_2023</a><td>181<td>
 <tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/246/WSU_2023_3K.vcf.gz>WSU_2023</a><td>364<td>
 <tr><td>Allegro UCD
-<td><a href=https://files.triticeaetoolbox.org/download/wheat/250/UCD2020_Allegro_CAD.vcf.gz>UCD2020_Allegro_CAD</a><td>179<td><td>
+<td><a href=https://files.triticeaetoolbox.org/download/wheat/250/UCD2020_Allegro_CAD_V2.vcf.gz>UCD2020_Allegro_CAD</a><td>179<td><td>
 </table>
 Notes:<br>
 1. Cluster analysis for Infinium calculated by merging unimputed data with PHG genotypes (common markers).<br>
