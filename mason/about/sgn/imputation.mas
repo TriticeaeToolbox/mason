@@ -113,10 +113,10 @@ Imputed protocols and projects
     <td>
 <tr><td rowspan=7>USDA 3K
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/246/MT_2022_3K.vcf.gz>MNA_2022</a><td>765<td><td rowspan=7>93% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-3K-imp-2019hapmap-filtered_mr0-byaccn.txt>details</a>
-<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/246/MT_2022_3K.vcf.gz>MT_2022</a><td>417<td>
+<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/246/MonSU_2022_3K.vcf.gz>MonSU_2022</a><td>417<td>
 <tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/246/NDS_2022_3K.vcf.gz>NDS_2022</a><td>124<td>
 <tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/246/UCD_2022_3K.vcf.gz>UCD_2022</a><td>176<td>
-<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/246/MSU_2023_3K.vcf.gz>MSU_2023</a><td>432<td>
+<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/246/MonSU_2023_3K.vcf.gz>MonSU_2023</a><td>432<td>
 <tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/246/UWM_2023_3K.vcf.gz>UWM_2023</a><td>181<td>
 <tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/246/WSU_2023_3K.vcf.gz>WSU_2023</a><td>364<td>
 </table>
