@@ -25,7 +25,5 @@ User's guides: <a href="https://plantreactome.gramene.org/download/current/Plant
  and Plant <a href="https://plantreactome.gramene.org/download/current/Plant_Reactome_User_Guide_10-23-2018.pdf">Reactome User Guide</a> for further information.<br>
 Pathway Browsers
 <ul>
-<li><a href="https://plantreactome.gramene.org/PathwayBrowser/#/SPECIES=2408547" target="_new">Triticum aestivum</a>
-<li><a href="https://plantreactome.gramene.org/PathwayBrowser/#/SPECIES=9617283" target="_new">Triticum dicoccoides</a>
-<li><a href="https://plantreactome.gramene.org/PathwayBrowser/#/SPECIES=9030261" target="_new">Triticum turgidum</a>
+<li><a href="https://plantreactome.gramene.org/PathwayBrowser" target="_new">Triticum aestivum, Triticum dicoccoides, Triticum turgidum</a>
 </ul>
