@@ -6,7 +6,7 @@
 
 <& /page/page_title.mas, title => "Genotyping Protocol Search" &>
 
-For GoldenGate and DArT genotyping projects see <a href=https://triticeaetoolbox.org/oat?old=old target=_blank>T3/Oat Classic</a><br><br>
+For GoldenGate and DArT genotyping projects see <a href=https://triticeaetoolbox.org/wheat?old=old target=_blank>T3/Wheat Classic</a><br><br>
 
 <div class="well well-sm">
     <div class="panel panel-default">
@@ -15,7 +15,6 @@ For GoldenGate and DArT genotyping projects see <a href=https://triticeaetoolbox
             <thead>
               <tr>
                   <th>Protocol</th>
-                  <th>Marker Type</th>
                   <th>Number of Markers</th>
                   <th>Protocol Description</th>
                   <th>Reference Genome</th>
@@ -26,7 +25,7 @@ For GoldenGate and DArT genotyping projects see <a href=https://triticeaetoolbox
             </table>
         </div>
     </div>
-
+<!--
     <div class="panel panel-default">
         <div class="panel-body">
             <br><br>
@@ -37,6 +36,7 @@ For GoldenGate and DArT genotyping projects see <a href=https://triticeaetoolbox
             </&>
         </div>
     </div>
+-->
 </div>
 
 
@@ -46,7 +46,8 @@ jQuery(document).ready(function () {
 
    var trial_table = jQuery('#genotyping_protocol_search_results').DataTable( {
        'ajax': '/ajax/genotyping_protocol/search',
-       "scrollX": true
+       "scrollX": true,
+	order: [[5, 'desc']]
    });
 
    jQuery('#genotyping_protocol_search_results').on( 'draw.dt', function () {
