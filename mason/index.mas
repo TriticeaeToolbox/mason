@@ -110,6 +110,13 @@
 
 
             <br /><br /><br />
+
+
+            <!-- ANNUAL SUMMARY -->
+            <& /homepage/annual_summary.mas &>
+
+
+            <br /><br /><br />
             
             
             <!-- SUBMISSIONS -->
