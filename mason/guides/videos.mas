@@ -4,6 +4,32 @@
 
   <h2>Tutorial Videos</h2>
 
+  <div class="video">
+    <div class="video-thumbnail">
+      <a href="https://cornell.app.box.com/s/7wj5trg5hx4a4j8xoz4fp8o0xu9uny55">
+        <figure class="hover-img">
+          <img class="video-image" src="/static_content/img/videos/genotype_download.png" />
+          <figcaption>
+            <span class="glyphicon glyphicon-play"></span>
+          </figcaption>
+        </figure>
+      </a>
+    </div>
+    <div class="video-details">
+      <p class="video-title">Downloading Genotype Data from T3</p>
+      <p class="video-description">
+        This video shows how you can use the Search Wizard to download genotype data 
+        from the database.  For more information on downloading genotype data, you can 
+        read the <a href="https://notes.triticeaetoolbox.org/s/UM9T-sCub" target="_blank">
+        Genotype Download Documentation</a>.
+      </p>
+    </div>
+  </div>
+
+  <br />
+  <hr />
+  <br />
+
   <p>
     These videos by Ismaila Olaniyi demonstrate some of the primary features of T3 and 
     how to use data downloaded from the database.
