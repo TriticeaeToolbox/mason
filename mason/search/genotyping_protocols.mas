@@ -15,7 +15,6 @@ For GoldenGate and DArT genotyping projects see <a href=https://triticeaetoolbox
             <thead>
               <tr>
                   <th>Protocol</th>
-                  <th>Marker Type</th>
                   <th>Number of Markers</th>
                   <th>Protocol Description</th>
                   <th>Reference Genome</th>
