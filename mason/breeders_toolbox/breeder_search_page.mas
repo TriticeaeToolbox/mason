@@ -424,7 +424,7 @@ $preferred_species => undef
               <td colspan="2">
                 <div class="checkbox">
                   <label>
-                    <input class="wizard-download-phenotypes-entry-numbers" type="checkbox">
+                    <input class="wizard-download-phenotypes-entry-numbers" type="checkbox" checked>
                     Include accession entry numbers
                   </label>
                 </div>
