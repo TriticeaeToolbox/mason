@@ -66,7 +66,7 @@ Imputed protocols and projects
     <td>
 <tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/243/TCAP90K_SNBWW_V2.vcf.gz>TCAP90K_SNBWWW</a><td>266
     <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandTCAP90K_SNBWW.png>PCA</a>
-<tr><td rowspan=2>Infinium 9K v2.1
+<tr><td rowspan=4>Infinium 9K v2.1
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/NSGCwheat9K_4X_V2.vcf.gz>NSGCwheat9K_4X</a><td>542
     <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandTCAP90K_NSGwheat9K_4X>PCA</a>
     <td rowspan=2>94% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-WorldwideDiversity-imp-2019hapmap-filtered_mr0-byaccn.txt >details</a>
