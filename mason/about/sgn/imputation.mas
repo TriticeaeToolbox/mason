@@ -73,6 +73,10 @@ Imputed protocols and projects
 <tr>
     <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/WorldwideDiversityPanel_9K_V2.vcf.gz>WorldwideDiversityPanel_9K</a><td>2255
     <td>
+<tr>
+    <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/NSGCwheat9K_spring-strand.vcf.gz>NSGCwheat9K_spring</a><td>2197<td>
+<tr>
+    <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/NSGCwheat9K_winter_fac-strand.vcf.gz>NSGCwheat9K_winter_fac</a><td>1676<td>
 <tr><td rowspan=2>GMS
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/227/GMS_Utah_2021.vcf.gz>USU_2021</a><td>288<td>
 <td>82% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-GMS-imp-2019hapmap-filtered_mr0-byaccn.txt>details</a>
