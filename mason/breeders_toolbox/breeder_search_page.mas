@@ -304,7 +304,6 @@ $preferred_species => undef
                         <option value="no">No</option>
                         <option value="yes">Yes</option>
                     </select>
-                    <br/>
                   </td>
               </tr>
             </table>
@@ -699,7 +698,7 @@ $preferred_species => undef
         $(".wizard-download-genotypes-info2").hide();
       }
     } else if ( selected_genotyping_projects.length >= 1 ) {
-      var selected_genotyping_project = selected_genotyping_projects[0].id;
+      var selected_genotyping_project = selected_genotyping_projects.length === 1 ? selected_genotyping_projects[0].id : "";
       if ( selected_genotyping_project !== SELECTED_GENOTYPING_PROJECT ) {
         console.log("project new " + selected_genotyping_project);
         SELECTED_GENOTYPING_PROJECT = selected_genotyping_project;
@@ -819,16 +818,54 @@ $preferred_species => undef
             $(".wizard-download-genotypes-info4").val(download_units.toString());
       }
     }
-    if ( selected_genotyping_projects.length <= 1 ) {
+    if ( selected_genotyping_projects.length == 1 ) {
       var selected_genotyping_project = selected_genotyping_projects.length === 1 ? selected_genotyping_projects[0].id : "";
       if ( selected_genotyping_project !== SELECTED_GENOTYPING_PROJECT ) {
         SELECTED_GENOTYPING_PROJECT = selected_genotyping_project;
+        PROJECT_NAME = selected_genotyping_projects[0].name;
+        jQuery.ajax({
+          url: '/ajax/breeder/search/genotyping_project_imputed',
+          method: "GET",
+          data: { 'genotyping_project': SELECTED_GENOTYPING_PROJECT,
+                  'name': PROJECT_NAME },
+          error: function(response) {
+            console.log("ERROR: Could not get chromosome names for genotyping project #" + SELECTED_GENOTYPING_PROJECT);
+            console.log("error " + response);
+            updateImputed();
+          },
+          success: function(response) {
+            if (response.error) {
+              console.log("ERROR: Server returned an error trying to get the chromosome names for genotyping protocol #" + SELECTED_GENOTYPING_PROTOCOL);
+              console.log("error " + repsonse.error);
+              updateImputed();
+            } else {
+              if (response.imputed == 1) {
+                  updateImputed("found");
+              } else {
+                  updateImputed("not found");
+              }
+              console.log("imputed " + response.imputed);
+              console.log("protocol " + response.protocol_id);
+              if (!SELECTED_GENOTYPING_PROTOCOL) {
+                  SELECTED_GENOTYPING_PROTOCOL = response.protocol_id;
+		  console.log("setting protocol");
+		  console.log("response.protocol_id");
+              }
+              if (response.imputed == 0) {
+                console.log("setting disable");
+                d3.selectAll("#wiz-down-4-c")
+                  .style("display", null)
+                  .style("display", "none");
+              } else {
+                d3.selectAll("#wiz-down-4-c")
+                  .style("display", null)
+              }
+            }
+          }
+        });
       }
     } else {
       SELECTED_GENOTYPING_PROJECT = "";
-      d3.selectAll("#wiz-down-4-c")
-        .style("display", null)
-        .style("display", "none");
     }
   });
   updateChromosomeNames();
