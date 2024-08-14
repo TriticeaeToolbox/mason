@@ -328,6 +328,7 @@ $preferred_species => undef
                <span class="glyphicon glyphicon-info-sign" title="Retieve Imputed Genotypes"></span>
                <span>Retrieve Genotypes</span><br>
                <button class="wizard-download-imputed-file btn btn-sm btn-primary">Download file</button> all accessions in project
+               <input class="wizard-download-genotypes-info5 form-control btn-warning" type="text"></input>  <!-- show default protocol -->
         </table>
         </div>
       </div>
@@ -498,6 +499,7 @@ $preferred_species => undef
    $(".wizard-download-genotypes-info2").hide();
    $(".wizard-download-genotypes-info3").hide();
    $(".wizard-download-genotypes-info4").hide();
+   $(".wizard-download-genotypes-info5").hide();
   });
 
   d3.select('#update_wizard_show').on('click', function () {
@@ -724,6 +726,8 @@ $preferred_species => undef
               if ( selected_genotyping_protocols.length < 1 ) {
                 $(".wizard-download-genotypes-info3").show();
                 $(".wizard-download-genotypes-info3").val("genotype protocol \"" + genotyping_protocol[0]["protocol_name"] + "\""); 
+                $(".wizard-download-genotypes-info5").show();
+                $(".wizard-download-genotypes-info5").val("genotype protocol \"" + genotyping_protocol[0]["protocol_name"] + "\"");
               }
             }
             jQuery.ajax({
@@ -770,6 +774,8 @@ $preferred_species => undef
       var protocol_name = '<% $c->config->{default_genotyping_protocol} %>';
       $(".wizard-download-genotypes-info3").show();
       $(".wizard-download-genotypes-info3").val("genotype protocol \"" + protocol_name + "\""); 
+      $(".wizard-download-genotypes-info5").show();
+      $(".wizard-download-genotypes-info5").val("genotype protocol \"" + protocol_name + "\""); 
       jQuery.ajax({
           url: '/get/genotyping/protocols/',
           method: "POST",
