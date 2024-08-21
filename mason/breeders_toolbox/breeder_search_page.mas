@@ -216,7 +216,7 @@ $preferred_species => undef
                 </tr>
                 <tr>
                     <td colspan="6">
-                        <span>Major Loci Filter</span>
+                        <span>Major Loci / Marker Filter</span>
                         <select class="wizard-download-genotypes-marker-set-list-id form-control input-sm" id="wizard-download-genotypes-marker-set-list-id"></select>
                     </td>
                     <td colspan="6">
