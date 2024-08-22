@@ -12,5 +12,8 @@
   gtag('config', 'G-GQCJLW8G60');
 </script>
 
+<!-- Plausible Analytics -->
+<script defer data-domain="oat.triticeaetoolbox.org" src="https://a.triticeaetoolbox.org/js/script.js"></script>
+
 % }
 
