@@ -12,5 +12,8 @@
   gtag('config', 'G-CL3SWL6DS0');
 </script>
 
+<!-- Plausible Analytics -->
+<script defer data-domain="wheat.triticeaetoolbox.org" src="https://a.triticeaetoolbox.org/js/script.js"></script>
+
 % }
 
