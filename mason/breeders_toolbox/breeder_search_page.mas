@@ -197,7 +197,7 @@ $preferred_species => undef
                 <tr>
                     <td colspan="12">
                         <span class="glyphicon glyphicon-info-sign" title="You can use either chromosome or markers (markerset) to filter genotyping data. You cannot use both criteria at the same time."></span>
-                        <span>Filter by Chromosome or Markerset</span>
+                        <span>Filter by Chromosome or Major Loci</span>
                     </td>
                 </tr>
                 <tr>
@@ -216,12 +216,12 @@ $preferred_species => undef
                 </tr>
                 <tr>
                     <td colspan="6">
-                        <span>Markerset Filter</span>
+                        <span>Major Loci / Marker Filter</span>
                         <select class="wizard-download-genotypes-marker-set-list-id form-control input-sm" id="wizard-download-genotypes-marker-set-list-id"></select>
                     </td>
                     <td colspan="6">
                         <br/>
-                        <button class="btn btn-sm btn-default" onClick="window.open('/breeders/markers', '_blank');">Manage Markersets</button>
+                        <button class="btn btn-sm btn-default" onClick="window.open('/breeders/markers', '_blank');">Manage Major Loci</button>
                     </td>
                 </tr>
                 <tr>
@@ -237,7 +237,7 @@ $preferred_species => undef
                 </tr>
                 <tr>
                     <td colspan="8">
-                        <span class="glyphicon glyphicon-info-sign" title="Select accessions, and optionally a genotyping protocol. If no genotyping protocol is selected, the default genotyping protocol is used in your system. If you want to filter genotypes, use the chromosome, start position, end position, or markerset. Can compute genotypes from parents if the parents of the accessions you selected have genotypes by checking the checkbox. Genotypes can be downloaded in VCF and Dosage Matrix Formats."></span>
+                        <span class="glyphicon glyphicon-info-sign" title="Select accessions, and optionally a genotyping protocol. If no genotyping protocol is selected, the default genotyping protocol is used in your system. If you want to filter genotypes, use the chromosome, start position, end position, or major loci. Can compute genotypes from parents if the parents of the accessions you selected have genotypes by checking the checkbox. Genotypes can be downloaded in VCF and Dosage Matrix Formats."></span>
                         <span>Download Genotypes</span><br/>
                         <button class="wizard-download-genotypes btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
@@ -304,13 +304,6 @@ $preferred_species => undef
                         <option value="no">No</option>
                         <option value="yes">Yes</option>
                     </select>
-                    <br/>
-                        <span class="glyphicon glyphicon-info-sign" title="Select accessions, traits, and optionally a genotyping protocol. If no genotyping protocol is selected, the default genotyping protocol is used in your system. When many traits are selected and these traits are not treated as repeated measurements, the traits are treated separately and distinct results are returned e.g. several Manhattan plots are returned. If the selected traits are in fact repeated measurements, then select 'yes'; a single GWAS will be run against all of the phenotypes e.g. a single Manhattan plot is returned. Specify minor allele frequency (MAF), marker filter, and individuals filter. Can compute genotypes from parents if the parents of the accessions you selected have genotypes by checking the checkbox. GWAS uses a fixed effect for different field trials and a fixed effect for replicate. GWAS uses Kinship matrix calculated from the genotype data. MAF and missing data used to filter prior to GWAS and Kinship matrix calculation. Can select whether to return results in Manhattan and QQ Plot (.pdf) form or as the tabular results (.tsv)."></span>
-                        <span>Run GWAS</span><br/>
-                      <button class="wizard-download-gwas btn btn-sm btn-primary">
-                          <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
-                          Download GWAS
-                      </button>
                   </td>
               </tr>
             </table>
@@ -335,6 +328,7 @@ $preferred_species => undef
                <span class="glyphicon glyphicon-info-sign" title="Retieve Imputed Genotypes"></span>
                <span>Retrieve Genotypes</span><br>
                <button class="wizard-download-imputed-file btn btn-sm btn-primary">Download file</button> all accessions in project
+               <input class="wizard-download-genotypes-info5 form-control btn-warning" type="text"></input>  <!-- show default protocol -->
         </table>
         </div>
       </div>
@@ -505,6 +499,7 @@ $preferred_species => undef
    $(".wizard-download-genotypes-info2").hide();
    $(".wizard-download-genotypes-info3").hide();
    $(".wizard-download-genotypes-info4").hide();
+   $(".wizard-download-genotypes-info5").hide();
   });
 
   d3.select('#update_wizard_show').on('click', function () {
@@ -675,8 +670,7 @@ $preferred_species => undef
               console.log("ERROR: Server returned an error trying to get the chromosome names for genotyping protocol #" + SELECTED_GENOTYPING_PROTOCOL);
               console.log(repsonse.error);
               updateChromosomeNames();
-            }
-            else {
+            } else {
               updateChromosomeNames(response.chromosome_names);
             }
           }
@@ -706,7 +700,7 @@ $preferred_species => undef
         $(".wizard-download-genotypes-info2").hide();
       }
     } else if ( selected_genotyping_projects.length >= 1 ) {
-      var selected_genotyping_project = selected_genotyping_projects[0].id;
+      var selected_genotyping_project = selected_genotyping_projects.length === 1 ? selected_genotyping_projects[0].id : "";
       if ( selected_genotyping_project !== SELECTED_GENOTYPING_PROJECT ) {
         console.log("project new " + selected_genotyping_project);
         SELECTED_GENOTYPING_PROJECT = selected_genotyping_project;
@@ -732,6 +726,8 @@ $preferred_species => undef
               if ( selected_genotyping_protocols.length < 1 ) {
                 $(".wizard-download-genotypes-info3").show();
                 $(".wizard-download-genotypes-info3").val("genotype protocol \"" + genotyping_protocol[0]["protocol_name"] + "\""); 
+                $(".wizard-download-genotypes-info5").show();
+                $(".wizard-download-genotypes-info5").val("genotype protocol \"" + genotyping_protocol[0]["protocol_name"] + "\"");
               }
             }
             jQuery.ajax({
@@ -778,6 +774,8 @@ $preferred_species => undef
       var protocol_name = '<% $c->config->{default_genotyping_protocol} %>';
       $(".wizard-download-genotypes-info3").show();
       $(".wizard-download-genotypes-info3").val("genotype protocol \"" + protocol_name + "\""); 
+      $(".wizard-download-genotypes-info5").show();
+      $(".wizard-download-genotypes-info5").val("genotype protocol \"" + protocol_name + "\""); 
       jQuery.ajax({
           url: '/get/genotyping/protocols/',
           method: "POST",
@@ -826,16 +824,54 @@ $preferred_species => undef
             $(".wizard-download-genotypes-info4").val(download_units.toString());
       }
     }
-    if ( selected_genotyping_projects.length <= 1 ) {
+    if ( selected_genotyping_projects.length == 1 ) {
       var selected_genotyping_project = selected_genotyping_projects.length === 1 ? selected_genotyping_projects[0].id : "";
       if ( selected_genotyping_project !== SELECTED_GENOTYPING_PROJECT ) {
         SELECTED_GENOTYPING_PROJECT = selected_genotyping_project;
+        PROJECT_NAME = selected_genotyping_projects[0].name;
+        jQuery.ajax({
+          url: '/ajax/breeder/search/genotyping_project_imputed',
+          method: "GET",
+          data: { 'genotyping_project': SELECTED_GENOTYPING_PROJECT,
+                  'name': PROJECT_NAME },
+          error: function(response) {
+            console.log("ERROR: Could not get chromosome names for genotyping project #" + SELECTED_GENOTYPING_PROJECT);
+            console.log("error " + response);
+            updateImputed();
+          },
+          success: function(response) {
+            if (response.error) {
+              console.log("ERROR: Server returned an error trying to get the chromosome names for genotyping protocol #" + SELECTED_GENOTYPING_PROTOCOL);
+              console.log("error " + repsonse.error);
+              updateImputed();
+            } else {
+              if (response.imputed == 1) {
+                  updateImputed("found");
+              } else {
+                  updateImputed("not found");
+              }
+              console.log("imputed " + response.imputed);
+              console.log("protocol " + response.protocol_id);
+              if (!SELECTED_GENOTYPING_PROTOCOL) {
+                  SELECTED_GENOTYPING_PROTOCOL = response.protocol_id;
+		  console.log("setting protocol");
+		  console.log("response.protocol_id");
+              }
+              if (response.imputed == 0) {
+                console.log("setting disable");
+                d3.selectAll("#wiz-down-4-c")
+                  .style("display", null)
+                  .style("display", "none");
+              } else {
+                d3.selectAll("#wiz-down-4-c")
+                  .style("display", null)
+              }
+            }
+          }
+        });
       }
     } else {
       SELECTED_GENOTYPING_PROJECT = "";
-      d3.selectAll("#wiz-down-4-c")
-        .style("display", null)
-        .style("display", "none");
     }
   });
   updateChromosomeNames();
