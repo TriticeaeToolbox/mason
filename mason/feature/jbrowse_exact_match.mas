@@ -18,7 +18,7 @@ if ( $feature && $src_feature ) {
 
     # Set Data Source, tracks, and fix feature name (based on src_feature input)
     my $tracks = "";
-    if ( $data_source eq 'PepsiCo v2' ) {
+    if ( $data_source eq 'OT3098 v2' ) {
         $data_source = "?data=/ggds/oat-pepsico-v2";
         $tracks = "refseq,markers";
 
