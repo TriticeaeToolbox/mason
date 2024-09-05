@@ -21,11 +21,6 @@ if ( $feature && $src_feature ) {
     if ( $data_source eq 'OT3098 v2' ) {
         $data_source = "?data=/ggds/oat-pepsico-v2";
         $tracks = "refseq,markers";
-
-        # Prepend 'chr' to location, if it's a position
-        if ( $feature_name =~ /^.*:[0-9]+$/ && $feature_name !~ /^chr/ ) {
-            $feature_name = 'chr' . $feature_name;
-        }
     } elsif ( $data_source eq 'Sang v1' ) {
         $data_source = "?data=/ggds/oat-sang";
         # Prepend 'chr' to location, if it's a position
