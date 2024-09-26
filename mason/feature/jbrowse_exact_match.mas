@@ -18,17 +18,17 @@ if ( $feature && $src_feature ) {
 
     # Set Data Source, tracks, and fix feature name (based on src_feature input)
     my $tracks = "";
-    if ( $data_source eq 'PepsiCo v2' ) {
-        $data_source = "?data=/ggds/oat-ot3098v2-pepsico";
+    if ( $data_source eq 'OT3098 v2' ) {
+        $data_source = "?data=/ggds/oat-pepsico-v2";
         $tracks = "refseq,markers";
-
+    } elsif ( $data_source eq 'Sang v1' ) {
+        $data_source = "?data=/ggds/oat-sang";
         # Prepend 'chr' to location, if it's a position
         if ( $feature_name =~ /^.*:[0-9]+$/ && $feature_name !~ /^chr/ ) {
             $feature_name = 'chr' . $feature_name;
         }
-    }
-    else {
-        $data_source = "?data=/ggds/oat-ot3098-pepsico";
+    } else {
+        $data_source = "?data=/ggds/oat-ot3098-pepsico-v1";
         $tracks = "DNA,t3m";
 
         # Remove 'chr' from location, if it's a position
