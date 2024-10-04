@@ -54,6 +54,8 @@
   # Get the phenotyping trial details
   my $q_pheno = "SELECT project.project_id, project.name,
                   COUNT(DISTINCT(materialized_phenoview.trait_id)) AS trait_count,
+                  COUNT(DISTINCT(cvterm.cvterm_id)) FILTER (WHERE cvterm.name LIKE '%UAS%') AS trait_count_drone,
+                  COUNT(DISTINCT(cvterm.cvterm_id)) FILTER (WHERE cvterm.name NOT LIKE '%UAS%') AS trait_count_agro,
                   STRING_AGG(DISTINCT(cvterm.name), ', ') AS trait_names,
                   COUNT(DISTINCT(materialized_phenoview.stock_id)) AS plot_count
                 FROM public.project
@@ -70,11 +72,13 @@
   my $sth_pheno = $dbh->prepare($q_pheno);
   $sth_pheno->execute($year, $program);
   my %pheno_data;
-  while ( my ($project_id, $project_name, $trait_count, $trait_names, $plot_count ) = $sth_pheno->fetchrow_array() ) {
+  while ( my ($project_id, $project_name, $trait_count, $trait_count_drone, $trait_count_agro, $trait_names, $plot_count ) = $sth_pheno->fetchrow_array() ) {
     $pheno_data{$project_name} = {
       project_id => $project_id,
       project_name => $project_name,
       trait_count => $trait_count,
+      trait_count_drone => $trait_count_drone,
+      trait_count_agro => $trait_count_agro,
       trait_names => $trait_names,
       plot_count => $plot_count
     };
@@ -167,6 +171,8 @@
   <tr>
     <th>Phenotyping Trial</th>
     <th>Has Plot Layout?</th>
+    <th>Has Agro Traits?</th>
+    <th>Has Drone Traits?</th>
     <th>Trait Count</th>
     <th>Trait Names</th>
     <th>Plot Count</th>
@@ -180,6 +186,20 @@
       </a>
     </td>
     <td id="pheno-layout-<% $pheno_data{$key}->{'project_id'} %>" class="pheno-layout" data-id="<% $pheno_data{$key}->{'project_id'} %>">...</td>
+    <td>
+% if ( $pheno_data{$key}->{'trait_count_agro'} eq 0 ) {
+      <span class="glyphicon glyphicon-remove-sign" style="color: #A94442; font-size: 150%"></span>
+% } else {
+      <span class="glyphicon glyphicon-ok-sign" style="color: #3c7d3d; font-size: 150%"></span>
+% }
+    </td>
+    <td>
+% if ( $pheno_data{$key}->{'trait_count_drone'} eq 0 ) {
+      <span class="glyphicon glyphicon-remove-sign" style="color: #A94442; font-size: 150%"></span>
+% } else {
+      <span class="glyphicon glyphicon-ok-sign" style="color: #3c7d3d; font-size: 150%"></span>
+% }
+    </td>
     <td><% $pheno_data{$key}->{'trait_count'} %></td>
     <td><% $pheno_data{$key}->{'trait_names'} %></td>
     <td><% $pheno_data{$key}->{'plot_count'} %></td>
