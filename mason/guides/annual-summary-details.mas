@@ -56,7 +56,7 @@
                   COUNT(DISTINCT(materialized_phenoview.trait_id)) AS trait_count,
                   COUNT(DISTINCT(cvterm.cvterm_id)) FILTER (WHERE cvterm.name LIKE '%UAS%') AS trait_count_drone,
                   COUNT(DISTINCT(cvterm.cvterm_id)) FILTER (WHERE cvterm.name NOT LIKE '%UAS%') AS trait_count_agro,
-                  STRING_AGG(DISTINCT(regexp_replace(cvterm.name, '\|day [0-9]+', '')), ', ') AS trait_names,
+                  STRING_AGG(DISTINCT(regexp_replace(cvterm.name, '\\|day [0-9]+', '')), ', ') AS trait_names,
                   COUNT(DISTINCT(materialized_phenoview.stock_id)) AS plot_count
                 FROM public.project
                 LEFT JOIN public.projectprop AS py ON (project.project_id = py.project_id)
