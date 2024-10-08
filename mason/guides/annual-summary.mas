@@ -9,29 +9,47 @@
   my @available_years = ($current_year-5..$current_year+1);
 
   # Get number of genotyping protocols for selected year
-  my $q_geno = "SELECT bp.project_id AS breeding_program_id, bp.name AS breeding_program_name, COUNT(*) AS genotyping_project_count
+  my $q_geno = "SELECT bp.project_id AS breeding_program_id, bp.name AS breeding_program_name,
+                  COUNT(DISTINCT(gp.project_id)) AS genotyping_project_count,
+                  COUNT(DISTINCT(agp.accession_id)) AS accession_count
                 FROM breeding_programsxgenotyping_projects AS mv
                 LEFT JOIN project AS gp ON (gp.project_id = mv.genotyping_project_id)
                 LEFT JOIN project AS bp ON (bp.project_id = mv.breeding_program_id)
+                LEFT JOIN accessionsxgenotyping_projects AS agp ON (gp.project_id = agp.genotyping_project_id)
                 LEFT JOIN public.projectprop AS py ON (gp.project_id = py.project_id)
                   AND py.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project year')
-                WHERE py.value = ?
+                WHERE py.value = ? AND agp.accession_id IS NOT NULL
                 GROUP BY bp.project_id, bp.name
                 ORDER BY bp.name;";
   my $sth_geno = $dbh->prepare($q_geno);
   $sth_geno->execute($year);
   my %geno_data;
   $geno_data{'_total'} = {};
-  while ( my ($bp_id, $bp_name, $count) = $sth_geno->fetchrow_array() ) {
+  while ( my ($bp_id, $bp_name, $count, $accession_count) = $sth_geno->fetchrow_array() ) {
     $geno_data{$bp_name} = {
       id => $bp_id,
       name => $bp_name,
-      count => $count
+      count => $count,
+      accession_count => $accession_count
     };
     $geno_data{'_total'} = {
       count => $geno_data{'_total'}->{'count'} + $count
     };
   }
+
+  # Get total number of accessions genotyped for the year
+  my $t_geno = "SELECT COUNT(DISTINCT(agp.accession_id)) AS accession_count
+                FROM breeding_programsxgenotyping_projects AS mv
+                LEFT JOIN project AS gp ON (gp.project_id = mv.genotyping_project_id)
+                LEFT JOIN project AS bp ON (bp.project_id = mv.breeding_program_id)
+                LEFT JOIN accessionsxgenotyping_projects AS agp ON (gp.project_id = agp.genotyping_project_id)
+                LEFT JOIN public.projectprop AS py ON (gp.project_id = py.project_id)
+                  AND py.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project year')
+                WHERE py.value = ? AND agp.accession_id IS NOT NULL;";
+  my $sth_total = $dbh->prepare($t_geno);
+  $sth_total->execute($year);
+  my ( $accession_count_total ) = $sth_total->fetchrow_array();
+  $geno_data{'_total'}->{'accession_count'} = $accession_count_total;
 
   # Get phenotyping details for selected year
   my $q_pheno = "SELECT
@@ -133,6 +151,7 @@
   <tr>
     <th>Breeding Program</th>
     <th>Genotyping Project Count</th>
+    <th>Accession Count</th>
   </tr>
 % foreach my $key (sort keys %geno_data) {
   <tr>
@@ -146,6 +165,7 @@
     </td>
 % }
     <td><% $geno_data{$key}->{'count'} %></td>
+    <td><% $geno_data{$key}->{'accession_count'} %></td>
   </tr>
 % }
 </table>
