@@ -3,6 +3,7 @@
     <li><a href="/breeders/manage_programs/">Breeding Programs</a></li>
     <li><a href="/breeders/locations">Locations</a></li>
     <li><a href="/breeders/accessions/">Accessions</a></li>
+    <li><a href="/breeders/seedlots/">Seedlots</a></li>
     <!-- <li><a href="/breeders/crosses/">Crosses</a></li> -->
 
     <li role="separator" class="divider"></li>
