@@ -9,78 +9,121 @@
   my @available_years = ($current_year-5..$current_year+1);
 
   # Get number of genotyping protocols for selected year
-  my $q_geno = "SELECT bp.project_id AS breeding_program_id, bp.name AS breeding_program_name, COUNT(*) AS genotyping_project_count
+  my $q_geno = "SELECT bp.project_id AS breeding_program_id, bp.name AS breeding_program_name,
+                  COUNT(DISTINCT(gp.project_id)) AS genotyping_project_count,
+                  COUNT(DISTINCT(agp.accession_id)) AS accession_count
                 FROM breeding_programsxgenotyping_projects AS mv
                 LEFT JOIN project AS gp ON (gp.project_id = mv.genotyping_project_id)
                 LEFT JOIN project AS bp ON (bp.project_id = mv.breeding_program_id)
+                LEFT JOIN accessionsxgenotyping_projects AS agp ON (gp.project_id = agp.genotyping_project_id)
                 LEFT JOIN public.projectprop AS py ON (gp.project_id = py.project_id)
                   AND py.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project year')
-                WHERE py.value = ?
+                WHERE py.value = ? AND agp.accession_id IS NOT NULL
                 GROUP BY bp.project_id, bp.name
                 ORDER BY bp.name;";
   my $sth_geno = $dbh->prepare($q_geno);
   $sth_geno->execute($year);
   my %geno_data;
   $geno_data{'_total'} = {};
-  while ( my ($bp_id, $bp_name, $count) = $sth_geno->fetchrow_array() ) {
+  while ( my ($bp_id, $bp_name, $count, $accession_count) = $sth_geno->fetchrow_array() ) {
     $geno_data{$bp_name} = {
       id => $bp_id,
       name => $bp_name,
-      count => $count
+      count => $count,
+      accession_count => $accession_count
     };
     $geno_data{'_total'} = {
       count => $geno_data{'_total'}->{'count'} + $count
     };
   }
 
+  # Get total number of accessions genotyped for the year
+  my $t_geno = "SELECT COUNT(DISTINCT(agp.accession_id)) AS accession_count
+                FROM breeding_programsxgenotyping_projects AS mv
+                LEFT JOIN project AS gp ON (gp.project_id = mv.genotyping_project_id)
+                LEFT JOIN project AS bp ON (bp.project_id = mv.breeding_program_id)
+                LEFT JOIN accessionsxgenotyping_projects AS agp ON (gp.project_id = agp.genotyping_project_id)
+                LEFT JOIN public.projectprop AS py ON (gp.project_id = py.project_id)
+                  AND py.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project year')
+                WHERE py.value = ? AND agp.accession_id IS NOT NULL;";
+  my $sth_total = $dbh->prepare($t_geno);
+  $sth_total->execute($year);
+  my ( $accession_count_total ) = $sth_total->fetchrow_array();
+  $geno_data{'_total'}->{'accession_count'} = $accession_count_total;
+
   # Get phenotyping details for selected year
   my $q_pheno = "SELECT
-                    q.breeding_program_id,
-                    q.breeding_program,
-                    COUNT(*) AS trials_total,
-                    SUM(plot_count) AS plots_total,
-                    COUNT(*) FILTER (WHERE q.observed_traits > 0) AS trials_with_pheno,
-                    COALESCE(SUM(plot_count) FILTER (WHERE q.observed_traits > 0), 0) AS plots_with_pheno,
-                    COUNT(*) FILTER (WHERE q.observed_traits = 0) AS trials_no_pheno,
-                    COALESCE(SUM(plot_count) FILTER (WHERE q.observed_traits = 0), 0) AS plots_no_pheno
-                  FROM (
-                    SELECT project.project_id, project.name, project.create_date, py.value AS year, 
-                      bp.project_id AS breeding_program_id, bp.name AS breeding_program,
-                      COUNT(DISTINCT(materialized_phenoview.trait_id)) AS observed_traits,
-                      COUNT(DISTINCT(materialized_phenoview.stock_id)) AS plot_count
-                    FROM public.project
-                    LEFT JOIN public.projectprop AS py ON (project.project_id = py.project_id)
-                      AND py.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project year')
-                    LEFT JOIN public.project_relationship AS pr ON (project.project_id = pr.subject_project_id)
-                      AND pr.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'breeding_program_trial_relationship')
-                    LEFT JOIN public.project AS bp ON (pr.object_project_id = bp.project_id)
-                    LEFT JOIN public.materialized_phenoview ON (project.project_id = materialized_phenoview.trial_id)
-                    WHERE py.value = ?
-                      AND project.project_id IN (SELECT DISTINCT(trial_id) FROM public.materialized_phenoview)
-                    GROUP BY project.project_id, project.name, project.create_date, py.value, bp.project_id, bp.name
-                  ) AS q
-                  GROUP BY q.breeding_program_id, q.breeding_program
-                  ORDER BY q.breeding_program;";
+                  q.breeding_program_id,
+                  q.breeding_program,
+                  COUNT(*) AS trials_total,
+                  SUM(plot_count) AS plots_total,
+                  COUNT(*) FILTER (WHERE q.planting_date IS NULL) AS trials_missing_planting_date,
+                  COUNT(*) FILTER (WHERE q.harvest_date IS NULL) AS trials_missing_harvest_date,
+                  COUNT(*) FILTER (WHERE q.observed_traits > 0) AS trials_with_pheno,
+                  COUNT(*) FILTER (WHERE q.observed_agronomic_traits > 0) AS trials_with_agro,
+                  COUNT(*) FILTER (WHERE q.observed_drone_traits > 0) AS trials_with_drone,
+                  COALESCE(SUM(plot_count) FILTER (WHERE q.observed_traits > 0), 0) AS plots_with_pheno,
+                  COALESCE(SUM(plot_count) FILTER (WHERE q.observed_agronomic_traits > 0), 0) AS plots_with_agro,
+                  COALESCE(SUM(plot_count) FILTER (WHERE q.observed_drone_traits > 0), 0) AS plots_with_drone,
+                  COUNT(*) FILTER (WHERE q.observed_traits = 0) AS trials_no_pheno,
+                  COALESCE(SUM(plot_count) FILTER (WHERE q.observed_traits = 0), 0) AS plots_no_pheno
+                FROM (
+                  SELECT project.project_id, project.name, project.create_date, py.value AS year, ppd.value AS planting_date, phd.value AS harvest_date,
+                    bp.project_id AS breeding_program_id, bp.name AS breeding_program,
+                    COUNT(DISTINCT(materialized_phenoview.trait_id)) AS observed_traits,
+                    COUNT(DISTINCT(materialized_phenoview.trait_id)) FILTER (WHERE cvterm.name LIKE '%UAS%') AS observed_drone_traits,
+                    COUNT(DISTINCT(materialized_phenoview.trait_id)) FILTER (WHERE cvterm.name NOT LIKE '%UAS%') AS observed_agronomic_traits,
+                    COUNT(DISTINCT(materialized_phenoview.stock_id)) AS plot_count
+                  FROM public.project
+                  LEFT JOIN public.projectprop AS py ON (project.project_id = py.project_id)
+                    AND py.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project year')
+                  LEFT JOIN public.projectprop AS phd ON (project.project_id = phd.project_id)
+                    AND phd.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project_harvest_date')
+                  LEFT JOIN public.projectprop AS ppd ON (project.project_id = ppd.project_id)
+                    AND ppd.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project_planting_date')
+                  LEFT JOIN public.project_relationship AS pr ON (project.project_id = pr.subject_project_id)
+                    AND pr.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'breeding_program_trial_relationship')
+                  LEFT JOIN public.project AS bp ON (pr.object_project_id = bp.project_id)
+                  LEFT JOIN public.materialized_phenoview ON (project.project_id = materialized_phenoview.trial_id)
+                  LEFT JOIN public.cvterm ON (materialized_phenoview.trait_id = cvterm.cvterm_id)
+                  WHERE py.value = ?
+                    AND project.project_id IN (SELECT DISTINCT(trial_id) FROM public.materialized_phenoview)
+                  GROUP BY project.project_id, project.name, project.create_date, py.value, ppd.value, phd.value, bp.project_id, bp.name
+                ) AS q
+                GROUP BY q.breeding_program_id, q.breeding_program
+                ORDER BY q.breeding_program;";
   my $sth_pheno = $dbh->prepare($q_pheno);
   $sth_pheno->execute($year);
   my %pheno_data;
   $pheno_data{'_total'} = {};
-  while ( my ($bp_id, $bp_name, $trials_total, $plots_total, $trials_pheno, $plots_pheno, $trials_no_pheno, $plots_no_pheno) = $sth_pheno->fetchrow_array() ) {
+  while ( my ($bp_id, $bp_name, $trials_total, $plots_total, $trials_missing_planting, $trials_missing_harvest, $trials_pheno, $trials_agro, $trials_drone, $plots_pheno, $plots_agro, $plots_drone, $trials_no_pheno, $plots_no_pheno) = $sth_pheno->fetchrow_array() ) {
     $pheno_data{$bp_name} = {
       id => $bp_id,
       name => $bp_name,
       trials_total => $trials_total,
       plots_total => $plots_total,
+      trials_missing_planting => $trials_missing_planting,
+      trials_missing_harvest => $trials_missing_harvest,
       trials_pheno => $trials_pheno,
+      trials_agro => $trials_agro,
+      trials_drone => $trials_drone,
       plots_pheno => $plots_pheno,
+      plots_agro => $plots_agro,
+      plots_drone => $plots_drone,
       trials_no_pheno => $trials_no_pheno,
       plots_no_pheno => $plots_no_pheno,
     };
     $pheno_data{'_total'} = {
       trials_total => $pheno_data{'_total'}->{'trials_total'} + $trials_total,
       plots_total => $pheno_data{'_total'}->{'plots_total'} + $plots_total,
+      trials_missing_planting => $pheno_data{'_total'}->{'trials_missing_planting'} + $trials_missing_planting,
+      trials_missing_harvest => $pheno_data{'_total'}->{'trials_missing_harvest'} + $trials_missing_harvest,
       trials_pheno => $pheno_data{'_total'}->{'trials_pheno'} + $trials_pheno,
+      trials_agro => $pheno_data{'_total'}->{'trials_agro'} + $trials_agro,
+      trials_drone => $pheno_data{'_total'}->{'trials_drone'} + $trials_drone,
       plots_pheno => $pheno_data{'_total'}->{'plots_pheno'} + $plots_pheno,
+      plots_agro => $pheno_data{'_total'}->{'plots_agro'} + $plots_agro,
+      plots_drone => $pheno_data{'_total'}->{'plots_drone'} + $plots_drone,
       trials_no_pheno => $pheno_data{'_total'}->{'trials_no_pheno'} + $trials_no_pheno,
       plots_no_pheno => $pheno_data{'_total'}->{'plots_no_pheno'} + $plots_no_pheno,
     };
@@ -118,6 +161,7 @@
   <tr>
     <th>Breeding Program</th>
     <th>Genotyping Project Count</th>
+    <th>Accession Count</th>
   </tr>
 % foreach my $key (sort keys %geno_data) {
   <tr>
@@ -131,6 +175,7 @@
     </td>
 % }
     <td><% $geno_data{$key}->{'count'} %></td>
+    <td><% $geno_data{$key}->{'accession_count'} %></td>
   </tr>
 % }
 </table>
@@ -167,10 +212,38 @@
       </a>
     </td>
 % }
-    <td><% $pheno_data{$key}->{'trials_total'} %></td>
+    <td>
+% if ( $pheno_data{$key}->{'trials_total'} eq 0 ) {
+      0
+% } else {
+      <strong>TOTAL:</strong> <% $pheno_data{$key}->{'trials_total'} %><br />
+%   if ( $pheno_data{$key}->{'trials_missing_planting'} gt 0 ) {
+      <strong>Missing Planting Date:</strong> <% $pheno_data{$key}->{'trials_missing_planting'} %><br />
+%   }
+%   if ( $pheno_data{$key}->{'trials_missing_harvest'} gt 0 ) {
+      <strong>Missing Harvest Date:</strong> <% $pheno_data{$key}->{'trials_missing_harvest'} %><br />
+%   }
+% }
+    </td>
     <td><% $pheno_data{$key}->{'plots_total'} %></td>
-    <td><% $pheno_data{$key}->{'trials_pheno'} %></td>
-    <td><% $pheno_data{$key}->{'plots_pheno'} %></td>
+    <td>
+% if ( $pheno_data{$key}->{'trials_pheno'} eq 0 ) {
+      0
+% } else {
+      <strong>TOTAL:</strong> <% $pheno_data{$key}->{'trials_pheno'} %><br />
+      <strong>w/ Agro Traits:</strong> <% $pheno_data{$key}->{'trials_agro'} %><br />
+      <strong>w/ Drone Traits:</strong> <% $pheno_data{$key}->{'trials_drone'} %>
+% }
+    </td>
+    <td>
+% if ( $pheno_data{$key}->{'plots_pheno'} eq 0 ) {
+      0
+% } else {
+      <strong>TOTAL:</strong> <% $pheno_data{$key}->{'plots_pheno'} %><br />
+      <strong>w/ Agro Traits:</strong> <% $pheno_data{$key}->{'plots_agro'} %><br />
+      <strong>w/ Drone Traits:</strong> <% $pheno_data{$key}->{'plots_drone'} %>
+% }
+    </td>
     <td><% $pheno_data{$key}->{'trials_no_pheno'} %></td>
     <td><% $pheno_data{$key}->{'plots_no_pheno'} %></td>
   </tr>
