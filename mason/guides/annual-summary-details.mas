@@ -52,13 +52,19 @@
   }
 
   # Get the phenotyping trial details
-  my $q_pheno = "SELECT project.project_id, project.name,
+  my $q_pheno = "SELECT project.project_id, project.name, ppd.value AS planting_date, phd.value AS harvest_date,
                   COUNT(DISTINCT(materialized_phenoview.trait_id)) AS trait_count,
-                  STRING_AGG(DISTINCT(cvterm.name), ', ') AS trait_names,
+                  COUNT(DISTINCT(cvterm.cvterm_id)) FILTER (WHERE cvterm.name LIKE '%UAS%') AS trait_count_drone,
+                  COUNT(DISTINCT(cvterm.cvterm_id)) FILTER (WHERE cvterm.name NOT LIKE '%UAS%') AS trait_count_agro,
+                  STRING_AGG(DISTINCT(regexp_replace(cvterm.name, '\\|day [0-9]+', '')), ', ') AS trait_names,
                   COUNT(DISTINCT(materialized_phenoview.stock_id)) AS plot_count
                 FROM public.project
                 LEFT JOIN public.projectprop AS py ON (project.project_id = py.project_id)
                   AND py.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project year')
+                LEFT JOIN public.projectprop AS phd ON (project.project_id = phd.project_id)
+                  AND phd.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project_harvest_date')
+                LEFT JOIN public.projectprop AS ppd ON (project.project_id = ppd.project_id)
+                  AND ppd.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'project_planting_date')
                 LEFT JOIN public.project_relationship AS pr ON (project.project_id = pr.subject_project_id)
                   AND pr.type_id = (SELECT cvterm_id FROM public.cvterm WHERE name = 'breeding_program_trial_relationship')
                 LEFT JOIN public.project AS bp ON (pr.object_project_id = bp.project_id)
@@ -66,15 +72,19 @@
                 LEFT JOIN public.cvterm ON (materialized_phenoview.trait_id = cvterm.cvterm_id)
                 WHERE py.value = ? AND bp.project_id = ?
                   AND project.project_id IN (SELECT DISTINCT(trial_id) FROM public.materialized_phenoview)
-                GROUP BY project.project_id, project.name, project.create_date, py.value, bp.project_id, bp.name;";
+                GROUP BY project.project_id, project.name, project.create_date, ppd.value, phd.value, py.value, bp.project_id, bp.name;";
   my $sth_pheno = $dbh->prepare($q_pheno);
   $sth_pheno->execute($year, $program);
   my %pheno_data;
-  while ( my ($project_id, $project_name, $trait_count, $trait_names, $plot_count ) = $sth_pheno->fetchrow_array() ) {
+  while ( my ($project_id, $project_name, $planting_date, $harvest_date, $trait_count, $trait_count_drone, $trait_count_agro, $trait_names, $plot_count ) = $sth_pheno->fetchrow_array() ) {
     $pheno_data{$project_name} = {
       project_id => $project_id,
       project_name => $project_name,
+      planting_date => $planting_date,
+      harvest_date => $harvest_date,
       trait_count => $trait_count,
+      trait_count_drone => $trait_count_drone,
+      trait_count_agro => $trait_count_agro,
       trait_names => $trait_names,
       plot_count => $plot_count
     };
@@ -130,7 +140,8 @@
   <tr>
     <th>Genotyping Project</th>
     <th>Genotyping Protocol</th>
-    <th>Accession Count</th>
+    <th>Project Accession Count</th>
+    <th>Protocol Marker Count</th>
     <th>Download</th>
   </tr>
 % foreach my $key (sort keys %geno_data) {
@@ -146,6 +157,7 @@
       </a>
     </td>
     <td><% $geno_data{$key}->{'accession_count'} %></td>
+    <td class="marker-count" data-id="<% $geno_data{$key}->{'protocol_id'} %>">...</td>
     <td id="geno-download-<% $geno_data{$key}->{'project_id'} %>" class="geno-download" data-id="<% $geno_data{$key}->{'project_id'} %>">...</td>
   </tr>
 % }
@@ -166,7 +178,11 @@
 <table class="summary-table">
   <tr>
     <th>Phenotyping Trial</th>
-    <th>Has Plot Layout?</th>
+    <th>Plot Layout?</th>
+    <th>Planting Date?</th>
+    <th>Harvest Date?</th>
+    <th>Agro Traits?</th>
+    <th>Drone Traits?</th>
     <th>Trait Count</th>
     <th>Trait Names</th>
     <th>Plot Count</th>
@@ -180,6 +196,34 @@
       </a>
     </td>
     <td id="pheno-layout-<% $pheno_data{$key}->{'project_id'} %>" class="pheno-layout" data-id="<% $pheno_data{$key}->{'project_id'} %>">...</td>
+    <td>
+% if ( !$pheno_data{$key}->{'planting_date'} ) {
+      <span class="glyphicon glyphicon-remove-sign" style="color: #A94442; font-size: 150%"></span>
+% } else {
+      <span class="glyphicon glyphicon-ok-sign" style="color: #3c7d3d; font-size: 150%"></span>
+% }
+    </td>
+    <td>
+% if ( !$pheno_data{$key}->{'harvest_date'} ) {
+      <span class="glyphicon glyphicon-remove-sign" style="color: #A94442; font-size: 150%"></span>
+% } else {
+      <span class="glyphicon glyphicon-ok-sign" style="color: #3c7d3d; font-size: 150%"></span>
+% }
+    </td>
+    <td>
+% if ( $pheno_data{$key}->{'trait_count_agro'} eq 0 ) {
+      <span class="glyphicon glyphicon-remove-sign" style="color: #A94442; font-size: 150%"></span>
+% } else {
+      <span class="glyphicon glyphicon-ok-sign" style="color: #3c7d3d; font-size: 150%"></span>
+% }
+    </td>
+    <td>
+% if ( $pheno_data{$key}->{'trait_count_drone'} eq 0 ) {
+      <span class="glyphicon glyphicon-remove-sign" style="color: #A94442; font-size: 150%"></span>
+% } else {
+      <span class="glyphicon glyphicon-ok-sign" style="color: #3c7d3d; font-size: 150%"></span>
+% }
+    </td>
     <td><% $pheno_data{$key}->{'trait_count'} %></td>
     <td><% $pheno_data{$key}->{'trait_names'} %></td>
     <td><% $pheno_data{$key}->{'plot_count'} %></td>
@@ -200,6 +244,28 @@
     // Refresh the page when the year or breeding program is changed
     jQuery("#year, #breeding_program").on("change", () => {
       window.location = "/guides/annual-summary-details?year=" + jQuery("#year").val() + "&program=" + jQuery("#breeding_program").val();
+    });
+
+    // Add Geno Marker Counts
+    jQuery(".marker-count").each((i, obj) => {
+      const protocol_id = jQuery(obj).data("id");
+      jQuery.ajax({
+        url: "/ajax/genotyping_protocol/marker_count",
+        method: 'GET',
+        data: {
+          'genotyping_protocol_id': protocol_id
+        },
+        success: function(response) {
+          let html = "";
+          if ( response && response.marker_count ) {
+            html = response.marker_count;
+          }
+          jQuery(obj).html(html);
+        },
+        error: function(response) {
+          console.log("ERROR: Could not get marker count for protocol: " + protocol_id);
+        }
+      });
     });
 
     // Add Geno Download Links
