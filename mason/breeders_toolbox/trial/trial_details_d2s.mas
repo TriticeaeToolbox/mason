@@ -1,0 +1,27 @@
+<%args>
+  $trial_id => undef
+</%args>
+
+<div id="d2s_container" style="background-color: #3D5A80; padding: 5px; display: none; text-align: center">
+  <img src="/static_content/img/d2s.png" style="width: 90%; padding: 15px" />
+
+  <a id="d2s_link" class="btn btn-default" style="margin: 10px; color: #3D5A80;">
+    <span class="glyphicon glyphicon-share" style="margin-right: 5px"></span>
+    View Data2Science Project
+  </a>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(() => {
+    jQuery.ajax({
+      url: "/brapi/v2/studies/<% $trial_id %>",
+      success: (resp) => {
+        if ( resp && resp.result && resp.result.additionalInfo && resp.result.additionalInfo.d2s_project_id ) {
+          const proj = resp.result.additionalInfo.d2s_project_id;
+          jQuery("#d2s_container").show();
+          jQuery("#d2s_link").attr("href", `https://ps2.d2s.org/projects/${proj}`);
+        }
+      }
+    })
+  });
+</script>
