@@ -2,10 +2,10 @@
   $trial_id => undef
 </%args>
 
-<div id="d2s_container" style="background-color: #3D5A80; padding: 5px; display: none; text-align: center">
-  <img src="/static_content/img/d2s.png" style="width: 90%; padding: 15px" />
+<div id="d2s_container" style="display: none; background-color: #3D5A80; padding: 5px; border-radius: 3px; box-shadow: inset 0 2px 2px rgba(0,0,0,.2); text-align: center">
+  <img src="/static_content/img/d2s.png" style="height: 70px; max-width: 100%; padding: 15px" />
 
-  <a id="d2s_link" class="btn btn-default" style="margin: 10px; color: #3D5A80;">
+  <a id="d2s_link" class="btn btn-default" style="margin: 10px; color: #3D5A80; white-space: normal !important" target="_blank">
     <span class="glyphicon glyphicon-share" style="margin-right: 5px"></span>
     View Data2Science Project
   </a>
