@@ -1,4 +1,4 @@
-<&| /page/info_section.mas, title=>'<h2 style="display: inline-block">Upload Data</h2>', collapsible=>1, collapsed=>1, subtitle=>'' &>
+<&| /page/info_section.mas, title=>'<h2 style="display: inline-block">Upload Data</h2>', collapsible=>1, collapsed=>0, subtitle=>'' &>
 
 <br />
 
