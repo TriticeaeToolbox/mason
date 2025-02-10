@@ -26,12 +26,12 @@
         <!-- BLANK TEMPLATES -->
         <div class="col-md-4">
           <p><strong>Blank Upload Templates</strong></p>
-          <p>Below are blank upload templates for each data type.</p>
+          <p>Below are blank upload templates for each data type.  The 2nd tab of each template includes more instructions.</p>
           
           <ul class="templates-panel-list">
             <li><a href="/static_content/files/templates/locations.xls">Locations (.xls)</a></li>
             <li><a href="/static_content/files/templates/accessions.xls">Accessions (.xls)</a></li>
-            <li><a href="/static_content/files/templates/pedigrees.txt">Pedigrees (.txt)</a></li>
+            <li><a href="/static_content/files/templates/pedigrees.xls">Pedigrees (.xls)</a></li>
             <li><a href="/static_content/files/templates/trials.xls">Trials (.xls)</a></li>
             <li><a href="/static_content/files/templates/phenotypes.xls">Phenotype Observations (.xls)</a></li>
           </ul>
