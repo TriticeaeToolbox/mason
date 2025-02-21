@@ -1,7 +1,7 @@
 <%init>
-  my $tag = `cat /home/production/cxgn/sgn/.git_tag`;
-  my $commit = `cat /home/production/cxgn/sgn/.git_commit`;
-  my $updated = `cat /home/production/cxgn/sgn/.git_updated`;
+  my $tag = `cat /home/production/tmp/git_tag`;
+  my $commit = `cat /home/production/tmp/git_commit`;
+  my $updated = `cat /home/production/tmp/git_updated`;
 </%init>
 
 <style>
