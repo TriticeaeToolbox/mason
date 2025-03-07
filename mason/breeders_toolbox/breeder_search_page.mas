@@ -425,11 +425,19 @@ $preferred_species => undef
               </td>
             </tr>
             <tr>
-              <td colspan="3" style="border-top: none; padding-top: 0">
+              <td style="border-top: none; padding-top: 0">
                 <div class="checkbox">
                   <label>
                     <input class="wizard-download-phenotypes-outliers" type="checkbox">
                     Supress user defined phenotype outliers
+                  </label>
+                </div>
+              </td>
+              <td colspan="2" style="border-top: none; padding-top: 0">
+                <div class="checkbox">
+                  <label>
+                    <input class="wizard-download-phenotypes-intercrop" type="checkbox" checked>
+                    Include intercrop accessions
                   </label>
                 </div>
               </td>
