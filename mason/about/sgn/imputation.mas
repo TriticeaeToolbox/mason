@@ -77,10 +77,11 @@ Imputed protocols and projects
     <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/NSGCwheat9K_spring_V2.vcf.gz>NSGCwheat9K_spring</a><td>2197<td>
 <tr>
     <td><a href=https://files.triticeaetoolbox.org/download/wheat/244/NSGCwheat9K_winter_fac_V2.vcf.gz>NSGCwheat9K_winter_fac</a><td>1676<td>
-<tr><td rowspan=2>GMS
+<tr><td rowspan=3>GMS
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/227/GMS_Utah_2021.vcf.gz>USU_2021</a><td>288<td>
 <td>82% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-GMS-imp-2019hapmap-filtered_mr0-byaccn.txt>details</a>
 <tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/245/GMS_Utah_2022.vcf.gz>USU_2022</td><td>471<td><td>
+<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/249/Springwheat_Gp503_Idaho.vcf.gz>Springwheat_Gp503_Idaho</td><td>579<td><td>
 <tr><td rowspan=8>MRASeq RPN
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/238/RPN_2020.vcf.gz>RPN_2020</a><td>86<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-RPN2020.png>PCA</a>
 <td rowspan=8>84% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-RPN2020-imp-2019hapmap-filtered_mr0-byaccn.txt>details</a>
