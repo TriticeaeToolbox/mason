@@ -103,8 +103,10 @@ Imputed protocols and projects
 <tr><td rowspan=3>SDSU GBS
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/240/SDSU_2022.vcf.gz>SDSU_2022</a>
 <td>157<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2022GBS.png>PCA</a><td>96% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-SDSU_2022-2019hapmap-filtered_mr0-byaccn.txt>details</a>
-<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/241/SDSU_2023.vcf.gz>SDSU_2023</a><td>155<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2023GBS.png>PCA</a><td>96% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-SDSU_2023-2019hapmap-filtered_mr0-byaccn.txt>details</a>
-<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/264/SDSU2024.vcf.gz>SDSU_2024</a><td>157<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2024GBS.png>PCA</a><td>96% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-SDSU_2024-2019hapmap-filtered_mr0-byaccn.txt>details</a><td>96% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-SDSU_2024-2019hapmap-filtered_mr0-byaccn.txt>details</a>
+<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/241/SDSU_2023.vcf.gz>SDSU_2023</a>
+<td>155<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2023GBS.png>PCA</a><td>96% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-SDSU_2023-2019hapmap-filtered_mr0-byaccn.txt>details</a>
+<tr><td><a href=https://files.triticeaetoolbox.org/download/wheat/264/SDSU2024.vcf.gz>SDSU_2024</a>
+<td>157<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2024GBS.png>PCA</a><td>96% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-SDSU_2024-2019hapmap-filtered_mr0-byaccn.txt>details</a><td>96% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-SDSU_2024-2019hapmap-filtered_mr0-byaccn.txt>details</a>
 <tr><td>MSU GBS
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/242/MSU_2023.vcf.gz>MSU_2023</a><td>3115
 <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-MSU2023.png>PCA</a><td>na
