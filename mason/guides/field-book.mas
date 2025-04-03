@@ -1,0 +1,88 @@
+<& "/page/page_title.mas", title => "Field Book Android App" &>
+
+<div id="fieldbook" style="max-width: 1000px; margin: 25px auto; display: flex; flex-wrap: wrap-reverse; gap: 25px">
+
+  <div style="flex-grow: 4; width: min-content">
+
+    <p><strong>Field Book</strong> is a simple Android app for taking phenotypic notes. Collecting data in the field has traditionally been a laborious process requiring writing notes by hand followed by transcription. Field Book was created to replace paper field books and to enable increased collection speed with greater data integrity.</p>
+
+    <br /><br />
+
+    <p><strong>Field Book Links:</strong></p>
+
+    <ul>
+      <li><a href="https://play.google.com/store/apps/details?id=com.fieldbook.tracker" target="_blank">Download the Android App from Google Play</a></li>
+      <li><a href="https://github.com/PhenoApps/Field-Book/releases" target="_blank">Download the Android App from GitHub</a> - download the .apk file to install on an Android device.  The GitHub releases are generally more recent, but may have more bugs.</li>
+      <li><a href="https://fieldbook.phenoapps.org/" target="_blank">Official Field Book Documentation</a></li>
+      <li><a href="https://solgenomics.github.io/sgn/using-fieldbook-app.html" target="_blank">Breedbase / Field Book Documentation</a> - instructions on how to transfer data between breedbase and Field Book using files</a>
+      <li><a href="/static_content/files/FieldBookAppT3.pdf" target="_blank">T3 / Field Book Documentation</a> - instructions on connecting T3 to Field Book using BrAPI</li>
+    </ul>
+
+    <br /><br />
+
+    <p><strong>Using Field Book with T3:</strong></p>
+
+    <p>In order to submit data to T3 via Field Book, <strong>your account will need to have submitter privileges on the T3 database</strong>.  That means if you're planning on submitting data to the production T3 Wheat, Oat, and/or Barley databases (which generally have read-only access), you should <strong>connect the Field Book app to the <u>sandbox</u> version of the T3 database</strong> and then submit the trials to us for curation and addition to the production database.</p>
+
+    <p>In general, there are <strong>two ways to transfer data between T3 and the Field Book app</strong>:</p>
+
+    <ol>
+      <li><strong>Using files</strong> - the trial layouts and trait definitions are generated on T3 and the files copied over to the Android device to be used in the Field Book app.  Then, data is recorded in Field Book.  When complete, a trait observations file is generated in Field Book and then copied over to a computer to be loaded into T3.  For more information on this process, see the <a href="https://solgenomics.github.io/sgn/using-fieldbook-app.html" target="_blank">Using Field Book chapter of the breedbase manual</a>.</li>
+      <li><strong>Using BrAPI</strong> - BrAPI forms a direct internet connection between the T3 database and the Field Book app.  This can be used to directly transfer the trial layouts, traits definitions, and recorded observations between the database and the Field Book app.  You will need to tell Field Book which database to connect to and login with your T3 username and password.</li>
+    </ol>
+
+  </div>
+
+  <div style="flex-grow: 1; width: min-content">
+
+    <div class="well">
+      <p><strong>Connecting Field Book to T3 via BrAPI:</strong></p>
+      <div style="text-align: center">
+        <p><strong>BrAPI Connection Settings:</strong></p>
+        <img id="field-book-brapi-settings" style="margin: 10px" />
+        <p id="field-book-database-url">...</p>
+      </div>
+      <br />
+      <p>To connect Field Book to this database via BrAPI:</p>
+      <ol>
+        <li>Go to the Field Book <strong>Settings</strong></li>
+        <li>Open the <strong>BrAPI</strong> settings</li>
+        <li>Make sure <strong>Enable BrAPI</strong> is checked</li>
+        <li>Tap the <strong>scan barcode <img style="width: 30px" src="data:image/png;base64,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" /></strong> option in the toolbar</li>
+        <li>Choose the <strong>Import new settings</strong> action</li>
+        <li>Scan the above QR code</li>
+        <li>This should then direct you to login to the database with your username and password</li>
+        <li>Select <strong>Authorize Access</strong> to allow Field Book to use your account</li>
+        <li>Check to use this database as the default <strong>Import Source</strong> and <strong>Export Source</strong></li>
+      </ol>
+    </div>
+  
+  </div>
+</div>
+
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+    var host = window.location.origin;
+    var title = document.title;
+
+    if ( host === 'https://wheat.triticeaetoolbox.org' ) host = "https://wheat-sandbox.triticeaetoolbox.org";
+    if ( host === 'https://oat.triticeaetoolbox.org' ) host = "https://oat-sandbox.triticeaetoolbox.org";
+    if ( host === 'https://barley.triticeaetoolbox.org' ) host = "https://barley-sandbox.triticeaetoolbox.org";
+
+    const params = {
+      "url": host,
+      "name": title,
+      "v": "2",
+      "ps": "1000",
+      "cs": "500",
+      "st": "120",
+      "flow": "implicit",
+      "oidc": `${host}/.well-known/openid-configuration`,
+      "cat": "value"
+    }
+
+    jQuery("#field-book-database-url").html(host);
+    jQuery("#field-book-brapi-settings").attr("src", `/barcode/qrcode?margin=0&contents=${encodeURIComponent(JSON.stringify(params))}`);
+
+  });
+</script>
