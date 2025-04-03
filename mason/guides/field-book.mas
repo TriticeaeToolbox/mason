@@ -2,7 +2,7 @@
 
 <div id="fieldbook" style="max-width: 1000px; margin: 25px auto; display: flex; flex-wrap: wrap-reverse; gap: 25px">
 
-  <div style="flex-grow: 4; width: min-content">
+  <div style="flex-grow: 4; width: min-content; min-width: 400px">
 
     <p><strong>Field Book</strong> is a simple Android app for taking phenotypic notes. Collecting data in the field has traditionally been a laborious process requiring writing notes by hand followed by transcription. Field Book was created to replace paper field books and to enable increased collection speed with greater data integrity.</p>
 
@@ -13,7 +13,7 @@
     <ul>
       <li><a href="https://play.google.com/store/apps/details?id=com.fieldbook.tracker" target="_blank">Download the Android App from Google Play</a></li>
       <li><a href="https://github.com/PhenoApps/Field-Book/releases" target="_blank">Download the Android App from GitHub</a> - download the .apk file to install on an Android device.  The GitHub releases are generally more recent, but may have more bugs.</li>
-      <li><a href="https://fieldbook.phenoapps.org/" target="_blank">Official Field Book Documentation</a></li>
+      <li><a href="https://fieldbook.phenoapps.org/" target="_blank">Official Field Book Documentation</a> - instructions on how to use Field Book</li>
       <li><a href="https://solgenomics.github.io/sgn/using-fieldbook-app.html" target="_blank">Breedbase / Field Book Documentation</a> - instructions on how to transfer data between breedbase and Field Book using files</a>
       <li><a href="/static_content/files/FieldBookAppT3.pdf" target="_blank">T3 / Field Book Documentation</a> - instructions on connecting T3 to Field Book using BrAPI</li>
     </ul>
