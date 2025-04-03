@@ -109,7 +109,7 @@ Imputed protocols and projects
 <td>157<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-PHGandUCD2024GBS.png>PCA</a><td>96% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-SDSU_2024-2019hapmap-filtered_mr0-byaccn.txt>details</a><td>96% - <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-SDSU_2024-2019hapmap-filtered_mr0-byaccn.txt>details</a>
 <tr><td>MSU GBS
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/242/MSU_2023.vcf.gz>MSU_2023</a><td>3115
-<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-MSU2023.png>PCA</a><td>na
+<td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-MSU2023.png>PCA</a><td>86% <a href=https://files.triticeaetoolbox.org/phg/accuracy/results-MSU_2023-2019hapmap-filtered_mr0-byaccn.txt>details</a>
 <tr><td rowspan=2>ThermoFisher AgriSeq
 <td><a href=https://files.triticeaetoolbox.org/download/wheat/258/UCD_2023_AgriSeq.vcf.gz>UCD_2023_AgriSeq</a><td>192
 <td><a href=https://files.triticeaetoolbox.org/phg/cluster/snprelate-pca-WSU2023.png>PCA</a><td rowspan=2>na
