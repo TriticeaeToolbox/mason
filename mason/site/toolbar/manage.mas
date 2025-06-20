@@ -17,7 +17,7 @@
     <li><a href="/breeders/genotyping_projects">Genotyping Projects</a></li>
     <li><a href="/breeders/sequence_metadata">Sequence Metadata</a></li>
     <li><a href="/breeders/genetic_characters">Genetic Characters</a></li>
-    <li><a href="/breeders/markers">Major Loci Alleles</a></li>
+    <li><a href="/breeders/markers">Marker Alleles</a></li>
     
     <li role="separator" class="divider"></li>
     
