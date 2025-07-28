@@ -51,6 +51,7 @@ Naama Menda <nm249@cornell.edu>
 <%once>
   use CXGN::Sunshine::Browser;
   use CXGN::Page::FormattingHelpers qw / html_optional_show info_table_html /;
+  use URI::Encode qw( uri_encode );
 </%once>
 
 <%perl>
@@ -125,6 +126,17 @@ my $new_unigene_link =  $curator || $submitter || $sequencer  ?
     '<span class= "ghosted">[Associate new unigene]</span> ';
 my $new_genbank_link = qq | <a href="/chado/add_feature.pl?type=locus;type_id=$locus_id;refering_page=$this_page;action=new">[Associate new genbank sequence]</a> | ;
 my %dbxrefs = $locus->get_all_dbxrefs();
+
+my $external_links;
+foreach ( @{ $dbxrefs{'GrainGenes Gene Report'} } ) {
+  if ( $_->[1] eq '0' ) {
+    my $url       = $_->[0]->get_urlprefix() . $_->[0]->get_url();
+    my $accession = $_->[0]->get_accession();
+    my $link      = $url . uri_encode($accession);
+    $external_links .=
+      qq|<br>GrainGenes Gene Report for <a href="$link" target="blank">$accession</a><br />|;
+  }
+}
 
 my $tgrc;
 foreach ( @{ $dbxrefs{'tgrc'} } ) {
@@ -239,6 +251,19 @@ my $ontology_subtitle = $curator || $submitter || $sequencer  ?
 <&| /page/info_section.mas, title=>"UniProt link" &>
   <& /locus/uniprot_browser_links.mas, locus => $locus_name &>
 </&>
+
+<&| /page/info_section.mas,
+    title     => "Links to external databases",
+    subtitle  => "",
+    id        => "locus_dbxrefs",
+    collapsible => 1,
+    is_subsection => 1,
+&>
+
+<% $external_links %>
+
+</&>
+
 <&| /page/info_section.mas, title=>"Alleles (" .  scalar(@alleles)  . ")", subtitle => "$allele_subtitle", collapsible=>1, collapsed=>1 &>
    <& /phenome/allele.mas, alleles=>\@alleles, user_id=>$person_id, curator=>$curator &>
 </&>

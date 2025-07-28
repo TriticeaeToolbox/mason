@@ -3,6 +3,7 @@
     <li><a href="/about">About</a></li>
     <li><a href="/about#citation">How to Cite <% our $T3_INSTANCE_NAME %></a>
     <li><a href="/status">Content Status</a></li>
+    <li><a href="/guides/annual-summary">Annual Summary Report</a></li>
     <li><a href="/about/genotype-trial.pl">Genotype Protocol description</a></li>
     <li><a href="/about/publications.pl">Publications</a></li>
     <li><a href="https://files.triticeaetoolbox.org">FTP data</a></li>
