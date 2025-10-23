@@ -18,7 +18,7 @@
             <li>Go to the <a href="/breeders/manage_programs">Manage &gt; Breeding Programs</a> page</li>
             <li>Click the <strong>Add New Program</strong> button at the bottom of the page</li>
             <li>Fill out the Breeding Program name and description</li>
-            <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_01.html">Managing 
+            <li class="manual">View the <a href="https://solgenomics.github.io/sgn/managing-breeding-programs.html">Managing 
             Breeding Programs</a> manual page for more information.</li>
         </ul>
     </li>
