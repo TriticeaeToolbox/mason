@@ -25,7 +25,7 @@
             <li>Additional files, such as images or raw data files can be uploaded in the <strong>Upload Additional Files</strong> section</li>
         </ol>
     </li>
-    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_09.html">Using Field Book App</a> 
+    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/using-fieldbook-app.html">Using Field Book App</a> 
     section in the manual for more information on collecting field data using the Android tablet app.</li>
     <br />
     <li><strong>Uploading Existing Data:</strong>
@@ -57,9 +57,9 @@
             <li>Additional files, such as images or raw data files can be uploaded in the <strong>Upload Additional Files</strong> section</li>
         </ol>
     </li>
-    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_10.html#3102-uploading-spreadsheet-phenotypes">Uploading 
+    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/managing-phenotypic-data.html#uploading-spreadsheet-phenotypes">Uploading 
     Spreadsheet Phenotypes</a> manual page for more information on uploading phenotype data as a spreadsheet.</li>
-    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/01_basic_website_usage.html#working-with-lists">Working with Lists</a> 
+    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/basic-website-usage.html#working-with-lists">Working with Lists</a> 
     manual page for more information on creating and managing lists</li>
 </ul>
 
