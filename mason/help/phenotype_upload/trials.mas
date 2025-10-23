@@ -51,9 +51,9 @@ for Trials and Plots:</p>
             <li>Save the Trial and its plot layout to the database</li>
         </ol>
     </li>
-    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_07.html#371-adding-a-trial-by-using-add-trial-form">Trial 
+    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/managing-field-trials.html#adding-a-trial-by-using-design-new-trial-form">Trial 
     Design</a> manual page for more information on adding a trial using the trial design wizard.</li>
-    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/01_basic_website_usage.html#working-with-lists">Working with Lists</a> 
+    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/basic-website-usage.html#working-with-lists">Working with Lists</a> 
     manual page for more information on creating and managing lists</li>
     
     <br />
@@ -84,7 +84,7 @@ for Trials and Plots:</p>
             <li>Save the Trial and its plot layout to the database</li>
         </ol>
     </li>
-    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_07.html#372-adding-a-trial-from-an-uploaded-file">Trial 
+    <li class="manual">View the <a href="https://solgenomics.github.io/sgn/managing-field-trials.html#adding-a-trial-from-an-uploaded-file">Trial 
     Upload</a> manual page for more information on uploading a trial design file.</li>
 
     <br />

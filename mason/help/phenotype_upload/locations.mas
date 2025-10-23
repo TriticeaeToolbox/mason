@@ -77,7 +77,7 @@ for each farm and/or field).</p>
                     <li>Click the <strong>Store Location Details</strong> button to save the Location</li>
                 </ul>
             </li>
-            <li class="manual">View the <a href="https://solgenomics.github.io/sgn/03_managing_breeding_data/03_02.html">Managing Locations</a> manual page for more information.</li>
+            <li class="manual">View the <a href="https://solgenomics.github.io/sgn/managing-locations.html">Managing Locations</a> manual page for more information.</li>
         </ul>
     </li>
     <li>Make sure your Breeding Program is associated with the location.
