@@ -15,7 +15,7 @@
 
     <p>Contestants will be asked to submit a folder containing R Code that includes a function able to take a T3/Wheat trial ID and return predictions for genotyped entries in those trials for "CV0" and "CV00" cases (Jarquin et al. 2017).  For CV0, the function should exclude the focal trial itself from the training data but may use all data in any other trial present in the database, including data on the entries in the focal trial, for the purpose of making predictions.  For CV00, the function should exclude the focal trial and any observations on entries in the focal trial occurring in other trials from the training data prior to making predictions.  The winning algorithm will be judged on the basis of the highest average accuracy (correlation between prediction and observed phenotypes) across all 20 prediction tasks (10 separate test trials; CV0 and CV00 accuracy for each trial).</p>
 
-    <p>The final official rules for the competition will be posted on Friday, <strong>December 12th, 2025</strong>.  Internally, the 10 test trials will be chosen on that date.  Thus, no trials uploaded to T3 after that date will be among the test trials.</p>
+    <p>The final official rules for the competition will be posted here on Friday, <strong>December 12th, 2025</strong>.  Internally, the 10 test trials will be chosen on that date.  Thus, no trials uploaded to T3 after that date will be among the test trials.</p>
 
     <p>A presentation about the competition and its goals will be given at PAG in <strong>January 2026</strong>.</p>
 
