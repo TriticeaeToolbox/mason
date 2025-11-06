@@ -1,0 +1,24 @@
+<& "/page/page_title.mas", title => "Triticeae Toolbox / WheatCAP Prediction Competition" &>
+
+<div style="max-width: 800px; margin: 25px auto">
+
+    <p>The objective will be to use data available on The Triticeae Toolbox (T3/Wheat) to predict yield performance of wheat accessions in <strong>10 separate test trials</strong> across the USA.  The trials will be chosen from among all of those existing on T3/Wheat that fulfill these criteria:</p>
+
+    <ol>
+        <li>Trial was conducted between 2020 and 2025 (harvest year), inclusive</li>
+        <li>Observed yield data present</li>
+        <li>Planting and harvest dates present in the trial metadata</li>
+        <li>&gt;50 entries in the trial were genotyped</li>
+    </ol>
+
+    <p>The exact identity of the 10 test trials will not be given until the close of the competition.  This fact means that prediction algorithms should strive to maximize accuracy generally and not be specifically tailored toward any particular trial(s).</p>
+
+    <p>Contestants will be asked to submit a folder containing R Code that includes a function able to take a T3/Wheat trial ID and return predictions for genotyped entries in those trials for "CV0" and "CV00" cases (Jarquin et al. 2017).  For CV0, the function should exclude the focal trial itself from the training data but may use all data in any other trial present in the database, including data on the entries in the focal trial, for the purpose of making predictions.  For CV00, the function should exclude the focal trial and any observations on entries in the focal trial occurring in other trials from the training data prior to making predictions.  The winning algorithm will be judged on the basis of the highest average accuracy (correlation between prediction and observed phenotypes) across all 20 prediction tasks (10 separate test trials; CV0 and CV00 accuracy for each trial).</p>
+
+    <p>The final official rules for the competition will be posted on Friday, <strong>December 12th, 2025</strong>.  Internally, the 10 test trials will be chosen on that date.  Thus, no trials uploaded to T3 after that date will be among the test trials.</p>
+
+    <p>A presentation about the competition and its goals will be given at PAG in <strong>January 2026</strong>.</p>
+
+    <p>The competition will close on Friday, <strong>March 13th, 2026</strong>.</p>
+
+</div>
