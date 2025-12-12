@@ -2,9 +2,22 @@
 
 <div style="max-width: 800px; margin: 25px auto">
 
-    <p>The objective will be to use data available on The Triticeae Toolbox (<a href="https://wheat.triticeaetoolbox.org">T3/Wheat</a>) to predict yield performance of wheat accessions in <strong>10 separate test trials</strong> across the USA. Important metadata for these trials is on T3/Wheat, but the phenotypes measured in them are not.  For all of these trials, genotypic data is available, though it is somewhat messy: 1. Not all accessions in the trial are genotyped; 2. Different genotyping protocols have been used in different trials.</p>
+    <p>The objective will be to use data available on The Triticeae Toolbox (<a href="https://wheat.triticeaetoolbox.org">T3/Wheat</a>) to predict yield performance of wheat accessions in <strong>9 separate test trials</strong> across the USA. Important metadata for these trials is on T3/Wheat, but the phenotypes measured in them are not.  For all of these trials, genotypic data is available, though it is somewhat messy: 1. Not all accessions in the trial are genotyped; 2. Different genotyping protocols have been used in different trials.</p>
 
-    <p>The names of the 10 trials will be posted on this page on <strong>Friday, December 12th, 2025</strong>.</p>
+    <p>The names of the 9 trials are:
+        <ol>
+            <li>AWY1_DVPWA_2024</li>
+            <li>TCAP_2025_MANKS</li>
+            <li>25_Big6_SVREC_SVREC</li>
+            <li>OHRWW_2025_SPO</li>
+            <li>CornellMaster_2025_McGowan</li>
+            <li>24Crk_AY2-3</li>
+            <li>2025_AYT_Aurora</li>
+            <li>YT_Urb_25</li>
+            <li>STP1_2025_MCG</li>
+        </ol>
+        These trials are also available as the public list named <strong>T3 Prediction Challenge Trials</strong> on T3.
+    </p>
 
     <p>Contestants will submit a folder containing predictions for <strong>genotyped</strong> entries in the trials for "CV0" and "CV00" cases (Jarquin et al. 2017; see below). The winning algorithm will be judged on the basis of the highest average prediction accuracy across trials and cross validation cases.</p>
 
@@ -22,7 +35,7 @@
 
     <p><em>Jarquín, D., C. Lemes da Silva, R.C. Gaynor, J. Poland, A. Fritz, et al. 2017. Increasing genomic-enabled prediction accuracy by modeling genotype × environment interactions in Kansas wheat. Plant Genome 10(2): plantgenome2016.12.0130. doi: 10.3835/plantgenome2016.12.0130.</em></p>
 
-    <p>For CV0, for the purpose of making predictions, the function should exclude the focal trial itself from the training data but may use all data in any other trial present in the database, including data on the entries in the focal trial. For CV00, the function should exclude the focal trial and any observations on entries in the focal trial occurring in other trials from the training data prior to making predictions. For each prediction task, accuracy will be calculated as the correlation between prediction and observed phenotypes over all genotyped accessions in the trial. Average accuracy will be calculated across 20 prediction tasks (10 separate test trials; CV0 and CV00 accuracy for each trial).</p>
+    <p>For CV0, for the purpose of making predictions, the function should exclude the focal trial itself from the training data but may use all data in any other trial present in the database, including data on the entries in the focal trial. For CV00, the function should exclude the focal trial and any observations on entries in the focal trial occurring in other trials from the training data prior to making predictions. For each prediction task, accuracy will be calculated as the correlation between prediction and observed phenotypes over all genotyped accessions in the trial. Average accuracy will be calculated across 18 prediction tasks (9 separate test trials; CV0 and CV00 accuracy for each trial).</p>
 
     <h3>Submission Requirements</h3>
 
@@ -85,5 +98,9 @@
     <h3>Follow up</h3>
 
     <p>Following the competition, a manuscript describing the competition process and the algorithms used will be submitted to G3.  All contestants are welcome to be co-authors on that manuscript.  Writing assignments and author order will be decided following the March 13th, 2026 deadline.</p>
+
+    <h3>Questions?</h3>
+
+    <p>Use the <a href="https://wheat.triticeaetoolbox.org/contact/form">T3/Wheat Contact Us Form</a>.  Include the word "Predictathon" in the Subject line.
 
 </div>
