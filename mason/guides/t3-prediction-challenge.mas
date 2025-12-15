@@ -21,8 +21,6 @@
 
     <p>Contestants will submit a folder containing predictions for <strong>genotyped</strong> entries in the trials for "CV0" and "CV00" cases (Jarquin et al. 2017; see below). The winning algorithm will be judged on the basis of the highest average prediction accuracy across trials and cross validation cases.</p>
 
-    <p>Any rule updates will be posted on this page on <strong>Friday, December 12th, 2025</strong>.</p>
-
     <p><strong>NOTE</strong>: New data (in particular genotypic data) will be posted to T3/Wheat during the contest period. It will be valuable to recheck before the competition closes to assemble final training data.</p>
  
     <p>A presentation describing useful methods of programmatic access to T3 to facilitate algorithm development will be given at PAG in the Breedbase Workshop <strong>Sunday, January 11, 2026</strong>: <a href="https://pag.confex.com/pag/33/meetingapp.cgi/Session/14070">https://pag.confex.com/pag/33/meetingapp.cgi/Session/14070</a></p>
