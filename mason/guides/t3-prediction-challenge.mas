@@ -1,0 +1,106 @@
+<& "/page/page_title.mas", title => "Triticeae Toolbox / WheatCAP Prediction Competition" &>
+
+<div style="max-width: 800px; margin: 25px auto">
+
+    <p>The objective will be to use data available on The Triticeae Toolbox (<a href="https://wheat.triticeaetoolbox.org">T3/Wheat</a>) to predict yield performance of wheat accessions in <strong>9 separate test trials</strong> across the USA. Important metadata for these trials is on T3/Wheat, but the phenotypes measured in them are not.  For all of these trials, genotypic data is available, though it is somewhat messy: 1. Not all accessions in the trial are genotyped; 2. Different genotyping protocols have been used in different trials.</p>
+
+    <p>The names of the 9 trials are:
+        <ol>
+            <li>AWY1_DVPWA_2024</li>
+            <li>TCAP_2025_MANKS</li>
+            <li>25_Big6_SVREC_SVREC</li>
+            <li>OHRWW_2025_SPO</li>
+            <li>CornellMaster_2025_McGowan</li>
+            <li>24Crk_AY2-3</li>
+            <li>2025_AYT_Aurora</li>
+            <li>YT_Urb_25</li>
+            <li>STP1_2025_MCG</li>
+        </ol>
+        These trials are also available as the public list named <strong>T3 Prediction Challenge Trials</strong> on T3/Wheat.
+    </p>
+
+    <p>Contestants will submit a folder containing predictions for <strong>genotyped</strong> entries in the trials for "CV0" and "CV00" cases (Jarquin et al. 2017; see below). The winning algorithm will be judged on the basis of the highest average prediction accuracy across trials and cross validation cases.</p>
+
+    <p><strong>NOTE</strong>: New data (in particular genotypic data) will be posted to T3/Wheat during the contest period. It will be valuable to recheck before the competition closes to assemble final training data.</p>
+ 
+    <p>A presentation describing useful methods of programmatic access to T3 to facilitate algorithm development will be given at PAG in the Breedbase Workshop <strong>Sunday, January 11, 2026</strong>: <a href="https://pag.confex.com/pag/33/meetingapp.cgi/Session/14070">https://pag.confex.com/pag/33/meetingapp.cgi/Session/14070</a></p>
+
+    <p>The competition will close on <strong>Friday, March 13th, 2026</strong>.</p>
+  
+    <p>An upload link to submit a zipped folder containing the predictions will be posted here prior to that date.</p>
+
+    <h3>Details</h3>
+
+    <p>Descriptions of CV0 and CV00 cross validation scenarios (Jarquin et al. 2017).</p>
+
+    <p><em>Jarquín, D., C. Lemes da Silva, R.C. Gaynor, J. Poland, A. Fritz, et al. 2017. Increasing genomic-enabled prediction accuracy by modeling genotype × environment interactions in Kansas wheat. Plant Genome 10(2): plantgenome2016.12.0130. doi: 10.3835/plantgenome2016.12.0130.</em></p>
+
+    <p>For CV0, for the purpose of making predictions, the function should exclude the focal trial itself from the training data but may use all data in any other trial present in the database, including data on the entries in the focal trial. For CV00, the function should exclude the focal trial and any observations on entries in the focal trial occurring in other trials from the training data prior to making predictions. For each prediction task, accuracy will be calculated as the correlation between prediction and observed phenotypes over all genotyped accessions in the trial. Average accuracy will be calculated across 18 prediction tasks (9 separate test trials; CV0 and CV00 accuracy for each trial).</p>
+
+    <h3>Submission Requirements</h3>
+
+    <p><strong>Folder Structure</strong>:</p>
+
+    <p>The zipped folder submitted should contain one methods description text file and 10 sub-directories, each named with the trial name for which the sub-directory contains predictions. For example, if the sub-directory contains predictions for the trial "AYT_Timbuktu24", then the sub-directory should be named "AYT_Timbuktu24".  Each sub-directory should contain six csv files.  Continuing the example, the sub-directory should contain:</p>
+
+    <ul>
+        <li>CV0_Predictions.csv</li>
+        <li>CV0_Trials.csv</li>
+        <li>CV0_Accessions.csv</li>
+        <li>CV00_Predictions.csv</li>
+        <li>CV00_Trials.csv</li>
+        <li>CV00_Accessions.csv</li>
+    </ul>
+
+    <p>These files should be formatted as follows.</p>
+
+    <p><strong>CSV file formats:</strong></p>
+
+    <ol>
+        <li><strong>CV0_Predictions.csv and CV00_Predictions.csv</strong>: csv file with two columns, "germplasmName" and "prediction".  All accessions in the focal trial that are genotyped should have a prediction.</li>
+        <li><strong>CV0_Trials.csv and CV00_Trials.csv</strong>: a csv file with a single column, "studyName", containing the trial names of the trials used for training the prediction model.</li>
+        <li><strong>CV0_Accessions.csv and CV00_Accessions.csv</strong>: a csv file with a single column, "germplasmName", containing the accession names used for training the prediction model.</li>
+    </ol>
+
+    <p><strong>Methods description</strong>: Common sections (these sections can be brief)</p>
+
+    <p>This should be a text, rtf, gdoc, docx, or pdf file.</p>
+
+    <ol>
+        <li>URL to a publicly accessible code repository (e.g., github.com or bitbucket.org) that contains the prediction algorithm.</li>
+        <li>
+            Data retrieval method: programmatic access or GUI download
+            <ul>
+                <li>If the former, a list of the BrAPI calls used</li>
+                <li>If the latter, the date when data were downloaded</li>
+            </ul>
+        </li>
+        <li>Genomic relationship matrix construction (if applicable)</li>
+        <li>
+            One-step or two-step model
+            <ul>
+                <li>If the latter, preliminary individual trial analysis methods</li>
+            </ul>
+        </li>
+        <li>Prediction model training</li>
+    </ol>
+
+    <p><strong>Developing prediction algorithms</strong></p>
+
+    <ol>
+        <li>There will be no attempt to determine if AI has been used for coding.  In fact, we will probably (no promise) set up a chatBot to answer questions about functions for programmatic access to T3.</li>
+        <li>Prediction algorithms need not limit themselves to data on T3/Wheat, though <strong>only publicly available data should be used</strong>. Weather data available online could, for example, be useful.</li>
+        <li>These trials come from public-sector wheat breeding programs in the United States.  If you (as a contestant) happen to work at a program that contributed a test trial, you probably have access to the phenotypes for that trial. On the honor system, you should not use your access to that data while developing your prediction algorithm.</li>
+        <li>We will use the CV0_Trials.csv, CV00_Trials.csv, CV0_Accessions.csv, and CV00_Accessions.csv files to verify that appropriate training data is being used.  On the honor system, we will assume you are correctly populating those files.</li>
+        <li>We welcome submissions from Teams.  For such submissions, the roles of each team member should be briefly described in the methods document.</li>
+    </ol>
+
+    <h3>Follow up</h3>
+
+    <p>Following the competition, a manuscript describing the competition process and the algorithms used will be submitted to G3.  All contestants are welcome to be co-authors on that manuscript.  Writing assignments and author order will be decided following the March 13th, 2026 deadline.</p>
+
+    <h3>Questions?</h3>
+
+    <p>Use the <a href="https://wheat.triticeaetoolbox.org/contact/form">T3/Wheat Contact Us Form</a>.  Include the word "Predictathon" in the Subject line.
+
+</div>
