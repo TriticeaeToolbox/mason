@@ -12,7 +12,8 @@
     <li><a href="/breeders/trials/">Field Trials</a></li>
     <li><a href="/breeders/phenotyping/">Phenotyping Results</a></li>
     <li><a href="/fieldbook">Field Book Tools</a></li>
-    <li><a href="/breeders/transcriptomics">High-Dim Phenotypes</a></li>
+    <li><a href="/breeders/nirs">NIRS</a></li>
+    <li><a href="/breeders/transcriptomics">Transcriptomics</a></li>
 
     <li role="separator" class="divider"></li>
     
