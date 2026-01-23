@@ -84,7 +84,9 @@
         <div class="col-md-4">
 
             <!-- RECENT UPDATES -->
+% if ( $m->comp_exists("/homepage/updates.mas") ) {
             <& /homepage/updates.mas &>
+% }
             <br /><br />
 
             <!-- NEWS -->
