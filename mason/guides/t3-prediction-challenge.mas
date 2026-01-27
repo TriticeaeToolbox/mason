@@ -5,7 +5,7 @@
     <div class="panel panel-info">
         <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Mailing List</div>
         <div class="panel-body news-panel-body">
-            <p>We have set up a mailing list for those participating in the Prediction Challenge.  We will use this list to send occasional updates about new data added to the database or tools that may be revelant for the challenge.</p>
+            <p>We have set up a mailing list for those participating in the Prediction Challenge.  We will use this list to send occasional updates about new data added to the database or tools that may be relevant for the challenge.</p>
             <p>To sign up, go to the <a href="https://lists.triticeaetoolbox.org/subscription/form" target="_blank">T3 Mailing List Subscription Form</a>, enter your name and email address, and make sure the <strong>T3 Prediction Challenge</strong> list is selected.</p>
         </div>
     </div>
