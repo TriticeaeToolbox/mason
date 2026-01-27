@@ -2,6 +2,14 @@
 
 <div style="max-width: 800px; margin: 25px auto">
 
+    <div class="panel panel-info">
+        <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Mailing List</div>
+        <div class="panel-body news-panel-body">
+            <p>We have set up a mailing list for those participating in the Prediction Challenge.  We will use this list to send occasional updates about new data added to the database or tools that may be revelant for the challenge.</p>
+            <p>To sign up, go to the <a href="https://lists.triticeaetoolbox.org/subscription/form" target="_blank">T3 Mailing List Subscription Form</a>, enter your name and email address, and make sure the <strong>T3 Prediction Challenge</strong> list is selected.</p>
+        </div>
+    </div>
+
     <p>The objective will be to use data available on The Triticeae Toolbox (<a href="https://wheat.triticeaetoolbox.org">T3/Wheat</a>) to predict yield performance of wheat accessions in <strong>9 separate test trials</strong> across the USA. Important metadata for these trials is on T3/Wheat, but the phenotypes measured in them are not.  For all of these trials, genotypic data is available, though it is somewhat messy: 1. Not all accessions in the trial are genotyped; 2. Different genotyping protocols have been used in different trials.</p>
 
     <p>The names of the 9 trials are:
@@ -18,6 +26,10 @@
         </ol>
         These trials are also available as the public list named <strong>T3 Prediction Challenge Trials</strong> on T3/Wheat.
     </p>
+
+    <img src="/static_content/img/t3-prediction-challenge-map.png" width="100%" />
+
+    <br /><br />
 
     <p>Contestants will submit a folder containing predictions for <strong>genotyped</strong> entries in the trials for "CV0" and "CV00" cases (Jarquin et al. 2017; see below). The winning algorithm will be judged on the basis of the highest average prediction accuracy across trials and cross validation cases.</p>
 
