@@ -53,7 +53,7 @@
 
     <p><strong>Folder Structure</strong>:</p>
 
-    <p>The zipped folder submitted should contain one methods description text file and 10 sub-directories, each named with the trial name for which the sub-directory contains predictions. For example, if the sub-directory contains predictions for the trial "AYT_Timbuktu24", then the sub-directory should be named "AYT_Timbuktu24".  Each sub-directory should contain six csv files.  Continuing the example, the sub-directory should contain:</p>
+    <p>The zipped folder submitted should contain one methods description text file and 9 sub-directories, each named with the trial name for which the sub-directory contains predictions. For example, if the sub-directory contains predictions for the trial "AYT_Timbuktu24", then the sub-directory should be named "AYT_Timbuktu24".  Each sub-directory should contain six csv files.  Continuing the example, the sub-directory should contain:</p>
 
     <ul>
         <li>CV0_Predictions.csv</li>
