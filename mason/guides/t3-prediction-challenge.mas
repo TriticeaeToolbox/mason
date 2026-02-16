@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <p>The objective will be to use data available on The Triticeae Toolbox (<a href="https://wheat.triticeaetoolbox.org">T3/Wheat</a>) to predict yield performance of wheat accessions in <strong>9 separate test trials</strong> across the USA. Important metadata for these trials is on T3/Wheat, but the phenotypes measured in them are not.  For all of these trials, genotypic data is available, though it is somewhat messy: 1. Not all accessions in the trial are genotyped; 2. Different genotyping protocols have been used in different trials.</p>
+    <p>The objective will be to use data available on The Triticeae Toolbox (<a href="https://wheat.triticeaetoolbox.org">T3/Wheat</a>) to predict yield (Grain yield - kg/ha|CO_321:0001218) performance of wheat accessions in <strong>9 separate test trials</strong> across the USA. Important metadata for these trials is on T3/Wheat, but the phenotypes measured in them are not.  For all of these trials, genotypic data is available, though it is somewhat messy: 1. Not all accessions in the trial are genotyped; 2. Different genotyping protocols have been used in different trials.</p>
 
     <p>The names of the 9 trials are:
         <ol>
