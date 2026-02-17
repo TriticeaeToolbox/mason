@@ -35,79 +35,96 @@
 
     <br />
     <p>Below is a table listing the best genotype projects and protocols (in this case, having the highest number of genotyped accessions from the trial) on T3 for each prediction trial.</p>
-    <table class="tg"><thead>
-        <tr>
-            <th class="tg-cly1">study_name</th>
-            <th class="tg-cly1">project_name</th>
-            <th class="tg-cly1">project_id</th>
-            <th class="tg-cly1">protocol_name</th>
-            <th class="tg-cly1">protocol_id</th>
-        </tr></thead>
+    <table class="tg">
+        <thead>
+            <tr style="text-align: right;">
+            <th>study_name</th>
+            <th>project_name</th>
+            <th>project_id</th>
+            <th>protocol_name</th>
+            <th>protocol_id</th>
+            <th>download</th>
+            </tr>
+        </thead>
         <tbody>
-        <tr>
-            <td class="tg-cly1">2025_AYT_Aurora</td>
-            <td class="tg-cly1">SDSU_2025_GBS</td>
-            <td class="tg-cly1">11050</td>
-            <td class="tg-cly1">GBS SDSU 2025</td>
-            <td class="tg-cly1">301</td>
-        </tr>
-        <tr>
-            <td class="tg-cly1">24Crk_AY2-3</td>
-            <td class="tg-cly1">UMN_2022_GBS</td>
-            <td class="tg-cly1">10671</td>
-            <td class="tg-cly1">GBS UMN 2022</td>
-            <td class="tg-cly1">294</td>
-        </tr>
-        <tr>
-            <td class="tg-cly1">25_Big6_SVREC_SVREC</td>
-            <td class="tg-cly1">BIGSIX_2024_AgriSeq_4K</td>
-            <td class="tg-cly1">10684</td>
-            <td class="tg-cly1">ThermoFisher AgriSeq 4K</td>
-            <td class="tg-cly1">296</td>
-        </tr>
-        <tr>
-            <td class="tg-cly1">CornellMaster_2025_McGowan</td>
-            <td class="tg-cly1">Cornell_WWMasterScreening_2024</td>
-            <td class="tg-cly1">11049</td>
-            <td class="tg-cly1">GBS Cornell 2024</td>
-            <td class="tg-cly1">300</td>
-        </tr>
-        <tr>
-            <td class="tg-cly1">YT_Urb_25</td>
-            <td class="tg-cly1">UIUC_2024_GBS_V2</td>
-            <td class="tg-cly1">11054</td>
-            <td class="tg-cly1">GBS UIUC 2024</td>
-            <td class="tg-cly1">302</td>
-        </tr>
-        <tr>
-            <td class="tg-cly1">AWY1_DVPWA_2024</td>
-            <td class="tg-cly1">WSU_2023_AgriSeq</td>
-            <td class="tg-cly1">10657</td>
-            <td class="tg-cly1">ThermoFisher AgriSeq 5K</td>
-            <td class="tg-cly1">291</td>
-        </tr>
-        <tr>
-            <td class="tg-cly1">OHRWW_2025_SPO</td>
-            <td class="tg-cly1">UWM_2023_3K</td>
-            <td class="tg-cly1">11009</td>
-            <td class="tg-cly1">Wheat 3K</td>
-            <td class="tg-cly1">299</td>
-        </tr>
-        <tr>
-            <td class="tg-cly1">TCAP_2025_MANKS</td>
-            <td class="tg-cly1">KSU_2024_Allegro_V2</td>
-            <td class="tg-cly1">10830</td>
-            <td class="tg-cly1">Allegro V2</td>
-            <td class="tg-cly1">297</td>
-        </tr>
-        <tr>
-            <td class="tg-cly1">STP1_2025_MCG</td>
-            <td class="tg-cly1">TAMU_2025_MCG25</td>
-            <td class="tg-cly1">11052</td>
-            <td class="tg-cly1">GBS TAMU MCG25</td>
-            <td class="tg-cly1">303</td>
-        </tr>
-    </tbody></table>
+            <tr>
+                <td>2025_AYT_Aurora</td>
+                <td>SDSU_2025_GBS</td>
+                <td>11050</td>
+                <td>GBS SDSU 2025</td>
+                <td>301</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=11050&amp;basename=2025-12-16_15:59:59_fileP7Mi">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>24Crk_AY2-3</td>
+                <td>UMN_2022_GBS</td>
+                <td>10671</td>
+                <td>GBS UMN 2022</td>
+                <td>294</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=10671&amp;basename=2025-12-11_18:36:07_fileY6KQ">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>25_Big6_SVREC_SVREC</td>
+                <td>BIGSIX_2024_AgriSeq_4K</td>
+                <td>10684</td>
+                <td>ThermoFisher AgriSeq 4K</td>
+                <td>296</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=10684&amp;basename=2025-12-12_19:42:54_file8tAQ">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>CornellMaster_2025_McGowan</td>
+                <td>Cornell_WWMasterScreening_2024</td>
+                <td>11049</td>
+                <td>GBS Cornell 2024</td>
+                <td>300</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=11049&amp;basename=2025-12-16_15:37:13_filegz0x">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>YT_Urb_25</td>
+                <td>UIUC_2024_GBS_V2</td>
+                <td>11054</td>
+                <td>GBS UIUC 2024</td>
+                <td>302</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=11054&amp;basename=2026-01-12_15:02:24_file7kBP">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>AWY1_DVPWA_2024</td>
+                <td>WSU_2023_AgriSeq</td>
+                <td>10657</td>
+                <td>ThermoFisher AgriSeq 5K</td>
+                <td>291</td>
+                <td>
+                    <a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=10657&amp;basename=2025-12-10_17:57:39_fileRm9S">Download Archived VCF File</a><br>
+                    <a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=10657&amp;basename=2025-12-10_17:56:29_filevCTU">Download Archived VCF File</a>
+                </td>
+            </tr>
+            <tr>
+                <td>OHRWW_2025_SPO</td>
+                <td>UWM_2023_3K</td>
+                <td>11009</td>
+                <td>Wheat 3K</td>
+                <td>299</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=11009&amp;basename=2025-12-16_14:44:02_fileoUdn">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>TCAP_2025_MANKS</td>
+                <td>KSU_2024_Allegro_V2</td>
+                <td>10830</td>
+                <td>Allegro V2</td>
+                <td>297</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=10830&amp;basename=2025-12-15_16:43:21_fileY4ZA">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>STP1_2025_MCG</td>
+                <td>TAMU_2025_MCG25</td>
+                <td>11052</td>
+                <td>GBS TAMU MCG25</td>
+                <td>303</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=11052&amp;basename=2025-12-16_19:25:20_filek_yE">Download Archived VCF File</a></td>
+            </tr>
+        </tbody>
+    </table>
+
     <br /><br />
 
     <p><strong>NOTE</strong>: New data (in particular genotypic data) will be posted to T3/Wheat during the contest period. It will be valuable to recheck before the competition closes to assemble final training data.</p>
