@@ -33,6 +33,83 @@
 
     <p>Contestants will submit a folder containing predictions for <strong>genotyped</strong> entries in the trials for "CV0" and "CV00" cases (Jarquin et al. 2017; see below). The winning algorithm will be judged on the basis of the highest average prediction accuracy across trials and cross validation cases.</p>
 
+    <br />
+    <p>Below is a table listing the best genotype projects and protocols (in this case, having the highest number of genotyped accessions from the trial) on T3 for each prediction trial.</p>
+    <table class="tg"><thead>
+        <tr>
+            <th class="tg-cly1">study_name</th>
+            <th class="tg-cly1">project_name</th>
+            <th class="tg-cly1">project_id</th>
+            <th class="tg-cly1">protocol_name</th>
+            <th class="tg-cly1">protocol_id</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+            <td class="tg-cly1">2025_AYT_Aurora</td>
+            <td class="tg-cly1">SDSU_2025_GBS</td>
+            <td class="tg-cly1">11050</td>
+            <td class="tg-cly1">GBS SDSU 2025</td>
+            <td class="tg-cly1">301</td>
+        </tr>
+        <tr>
+            <td class="tg-cly1">24Crk_AY2-3</td>
+            <td class="tg-cly1">UMN_2022_GBS</td>
+            <td class="tg-cly1">10671</td>
+            <td class="tg-cly1">GBS UMN 2022</td>
+            <td class="tg-cly1">294</td>
+        </tr>
+        <tr>
+            <td class="tg-cly1">25_Big6_SVREC_SVREC</td>
+            <td class="tg-cly1">BIGSIX_2024_AgriSeq_4K</td>
+            <td class="tg-cly1">10684</td>
+            <td class="tg-cly1">ThermoFisher AgriSeq 4K</td>
+            <td class="tg-cly1">296</td>
+        </tr>
+        <tr>
+            <td class="tg-cly1">CornellMaster_2025_McGowan</td>
+            <td class="tg-cly1">Cornell_WWMasterScreening_2024</td>
+            <td class="tg-cly1">11049</td>
+            <td class="tg-cly1">GBS Cornell 2024</td>
+            <td class="tg-cly1">300</td>
+        </tr>
+        <tr>
+            <td class="tg-cly1">YT_Urb_25</td>
+            <td class="tg-cly1">UIUC_2024_GBS_V2</td>
+            <td class="tg-cly1">11054</td>
+            <td class="tg-cly1">GBS UIUC 2024</td>
+            <td class="tg-cly1">302</td>
+        </tr>
+        <tr>
+            <td class="tg-cly1">AWY1_DVPWA_2024</td>
+            <td class="tg-cly1">WSU_2023_AgriSeq</td>
+            <td class="tg-cly1">10657</td>
+            <td class="tg-cly1">ThermoFisher AgriSeq 5K</td>
+            <td class="tg-cly1">291</td>
+        </tr>
+        <tr>
+            <td class="tg-cly1">OHRWW_2025_SPO</td>
+            <td class="tg-cly1">UWM_2023_3K</td>
+            <td class="tg-cly1">11009</td>
+            <td class="tg-cly1">Wheat 3K</td>
+            <td class="tg-cly1">299</td>
+        </tr>
+        <tr>
+            <td class="tg-cly1">TCAP_2025_MANKS</td>
+            <td class="tg-cly1">KSU_2024_Allegro_V2</td>
+            <td class="tg-cly1">10830</td>
+            <td class="tg-cly1">Allegro V2</td>
+            <td class="tg-cly1">297</td>
+        </tr>
+        <tr>
+            <td class="tg-cly1">STP1_2025_MCG</td>
+            <td class="tg-cly1">TAMU_2025_MCG25</td>
+            <td class="tg-cly1">11052</td>
+            <td class="tg-cly1">GBS TAMU MCG25</td>
+            <td class="tg-cly1">303</td>
+        </tr>
+    </tbody></table>
+    <br /><br />
+
     <p><strong>NOTE</strong>: New data (in particular genotypic data) will be posted to T3/Wheat during the contest period. It will be valuable to recheck before the competition closes to assemble final training data.</p>
  
     <p>A presentation describing useful methods of programmatic access to T3 to facilitate algorithm development will be given at PAG in the Breedbase Workshop <strong>Sunday, January 11, 2026</strong>: <a href="https://pag.confex.com/pag/33/meetingapp.cgi/Session/14070">https://pag.confex.com/pag/33/meetingapp.cgi/Session/14070</a></p>
@@ -116,3 +193,13 @@
     <p>Use the <a href="https://wheat.triticeaetoolbox.org/contact/form">T3/Wheat Contact Us Form</a>.  Include the word "Predictathon" in the Subject line.
 
 </div>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:bold;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-cly1{text-align:left;vertical-align:middle}
+.tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
+</style>
