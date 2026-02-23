@@ -94,8 +94,7 @@
                 <td>ThermoFisher AgriSeq 5K</td>
                 <td>291</td>
                 <td>
-                    <a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=10657&amp;basename=2025-12-10_17:57:39_fileRm9S">Download Archived VCF File</a><br>
-                    <a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=10657&amp;basename=2025-12-10_17:56:29_filevCTU">Download Archived VCF File</a>
+                    <em>We've identified some issues with the genotype data for this trial, stay tuned for updates.</em>
                 </td>
             </tr>
             <tr>
