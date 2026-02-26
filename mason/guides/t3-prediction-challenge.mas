@@ -33,17 +33,95 @@
 
     <p>Contestants will submit a folder containing predictions for <strong>genotyped</strong> entries in the trials for "CV0" and "CV00" cases (Jarquin et al. 2017; see below). The winning algorithm will be judged on the basis of the highest average prediction accuracy across trials and cross validation cases.</p>
 
+    <h3>Training Data</h3>
+
+    <p>We have identified T3 data that could be reasonably applied to predicting the Predictathon trials using simple heuristics:
+        <ul>
+            <li>We identified phenotyping trials that evaluated some of the same accessions as each Predictathon trial.  The assumption is that the overall germplasm in those trials will be related to the Predictathon accessions.</li>
+            <li>We identified archived VCFs with genotype data from a minimum number of each of the accessions in the putative training trials.</li>
+        </ul>
+    </p>
+
+    <p>Below are links to the data and metadata that could be used as training sets for each of the prediction trials:</p>
+
+    <table class="tg">
+        <thead>
+            <tr>
+                <th>Study Name</th>
+                <th>Study ID</th>
+                <th>Training Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>AWY1_DVPWA_2024</td>
+                <td>10678</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10678.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>TCAP_2025_MANKS</td>
+                <td>10680</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10680.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>25_Big6_SVREC_SVREC</td>
+                <td>10675</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10675.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>OHRWW_2025_SPO</td>
+                <td>10679</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10679.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>CornellMaster_2025_McGowan</td>
+                <td>10676</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10676.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>24Crk_AY2-3</td>
+                <td>10674</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10674.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>2025_AYT_Aurora</td>
+                <td>10673</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10673.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>YT_Urb_25</td>
+                <td>10677</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10677.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>STP1_2025_MCG</td>
+                <td>10681</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10681.zip">Download</a></td>
+            </tr>
+        </tbody>
+    </table>
+
     <br />
+
+    <p>
+        This data was generated from scripts found in this GitHub repository:<br />
+        <a href="https://github.com/jeanlucj/T3_predictathon_find_training_trials">https://github.com/jeanlucj/T3_predictathon_find_training_trials</a>
+    </p>
+
+    <br />
+
+    <h3>Genotype Data for Prediction Trials</h3>
+
     <p>Below is a table listing the best genotype projects and protocols (in this case, having the highest number of genotyped accessions from the trial) on T3 for each prediction trial.</p>
     <table class="tg">
         <thead>
             <tr style="text-align: right;">
-            <th>study_name</th>
-            <th>project_name</th>
-            <th>project_id</th>
-            <th>protocol_name</th>
-            <th>protocol_id</th>
-            <th>download</th>
+                <th>study_name</th>
+                <th>project_name</th>
+                <th>project_id</th>
+                <th>protocol_name</th>
+                <th>protocol_id</th>
+                <th>download</th>
             </tr>
         </thead>
         <tbody>
@@ -89,13 +167,11 @@
             </tr>
             <tr>
                 <td>AWY1_DVPWA_2024</td>
-                <td>WSU_2023_AgriSeq</td>
-                <td>10657</td>
-                <td>ThermoFisher AgriSeq 5K</td>
-                <td>291</td>
-                <td>
-                    <em>We've identified some issues with the genotype data for this trial, stay tuned for updates.</em>
-                </td>
+                <td>WSU_2023_GBS</td>
+                <td>14512</td>
+                <td>GBS WSU 2023</td>
+                <td>311</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=14512&amp;basename=2026-02-25_15:45:12_fileGxN4">Download Archived VCF File</td>
             </tr>
             <tr>
                 <td>OHRWW_2025_SPO</td>
@@ -130,7 +206,10 @@
  
     <p>A presentation describing useful methods of programmatic access to T3 to facilitate algorithm development will be given at PAG in the Breedbase Workshop <strong>Sunday, January 11, 2026</strong>: <a href="https://pag.confex.com/pag/33/meetingapp.cgi/Session/14070">https://pag.confex.com/pag/33/meetingapp.cgi/Session/14070</a></p>
 
-    <p>The competition will close on <strong>Friday, March 13th, 2026</strong>.</p>
+    <p><s>The competition will close on <strong>Friday, March 13th, 2026</strong></s></p>
+    <div class="alert">
+        <p>The deadline to submit predictions has been extended to <strong>Friday, March 27th</strong>.</p>
+    </div>
   
     <p>An upload link to submit a zipped folder containing the predictions will be posted here prior to that date.</p>
 
