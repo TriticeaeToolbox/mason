@@ -2,7 +2,15 @@
 
 <div style="max-width: 800px; margin: 25px auto">
 
-    <p>The objective will be to use data available on The Triticeae Toolbox (<a href="https://wheat.triticeaetoolbox.org">T3/Wheat</a>) to predict yield performance of wheat accessions in <strong>9 separate test trials</strong> across the USA. Important metadata for these trials is on T3/Wheat, but the phenotypes measured in them are not.  For all of these trials, genotypic data is available, though it is somewhat messy: 1. Not all accessions in the trial are genotyped; 2. Different genotyping protocols have been used in different trials.</p>
+    <div class="panel panel-info">
+        <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Mailing List</div>
+        <div class="panel-body news-panel-body">
+            <p>We have set up a mailing list for those participating in the Prediction Challenge.  We will use this list to send occasional updates about new data added to the database or tools that may be relevant for the challenge.</p>
+            <p>To sign up, go to the <a href="https://lists.triticeaetoolbox.org/subscription/form" target="_blank">T3 Mailing List Subscription Form</a>, enter your name and email address, and make sure the <strong>T3 Prediction Challenge</strong> list is selected.</p>
+        </div>
+    </div>
+
+    <p>The objective will be to use data available on The Triticeae Toolbox (<a href="https://wheat.triticeaetoolbox.org">T3/Wheat</a>) to predict yield (Grain yield - kg/ha|CO_321:0001218) performance of wheat accessions in <strong>9 separate test trials</strong> across the USA. Important metadata for these trials is on T3/Wheat, but the phenotypes measured in them are not.  For all of these trials, genotypic data is available, though it is somewhat messy: 1. Not all accessions in the trial are genotyped; 2. Different genotyping protocols have been used in different trials.</p>
 
     <p>The names of the 9 trials are:
         <ol>
@@ -19,13 +27,189 @@
         These trials are also available as the public list named <strong>T3 Prediction Challenge Trials</strong> on T3/Wheat.
     </p>
 
+    <img src="/static_content/img/t3-prediction-challenge-map.png" width="100%" />
+
+    <br /><br />
+
     <p>Contestants will submit a folder containing predictions for <strong>genotyped</strong> entries in the trials for "CV0" and "CV00" cases (Jarquin et al. 2017; see below). The winning algorithm will be judged on the basis of the highest average prediction accuracy across trials and cross validation cases.</p>
+
+    <h3>Training Data</h3>
+
+    <p>We have identified T3 data that could be reasonably applied to predicting the Predictathon trials using simple heuristics:
+        <ul>
+            <li>We identified phenotyping trials that evaluated some of the same accessions as each Predictathon trial.  The assumption is that the overall germplasm in those trials will be related to the Predictathon accessions.</li>
+            <li>We identified archived VCFs with genotype data from a minimum number of each of the accessions in the putative training trials.</li>
+        </ul>
+    </p>
+
+    <p>Below are links to the data and metadata that could be used as training sets for each of the prediction trials:</p>
+
+    <table class="tg">
+        <thead>
+            <tr>
+                <th>Study Name</th>
+                <th>Study ID</th>
+                <th>Training Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>AWY1_DVPWA_2024</td>
+                <td>10678</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10678.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>TCAP_2025_MANKS</td>
+                <td>10680</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10680.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>25_Big6_SVREC_SVREC</td>
+                <td>10675</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10675.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>OHRWW_2025_SPO</td>
+                <td>10679</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10679.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>CornellMaster_2025_McGowan</td>
+                <td>10676</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10676.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>24Crk_AY2-3</td>
+                <td>10674</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10674.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>2025_AYT_Aurora</td>
+                <td>10673</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10673.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>YT_Urb_25</td>
+                <td>10677</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10677.zip">Download</a></td>
+            </tr>
+            <tr>
+                <td>STP1_2025_MCG</td>
+                <td>10681</td>
+                <td><a href="/static_content/files/predictathon_training_sets/study10681.zip">Download</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br />
+
+    <p>
+        This data was generated from scripts found in this GitHub repository:<br />
+        <a href="https://github.com/jeanlucj/T3_predictathon_find_training_trials">https://github.com/jeanlucj/T3_predictathon_find_training_trials</a>
+    </p>
+
+    <br />
+
+    <h3>Genotype Data for Prediction Trials</h3>
+
+    <p>Below is a table listing the best genotype projects and protocols (in this case, having the highest number of genotyped accessions from the trial) on T3 for each prediction trial.</p>
+    <table class="tg">
+        <thead>
+            <tr style="text-align: right;">
+                <th>study_name</th>
+                <th>project_name</th>
+                <th>project_id</th>
+                <th>protocol_name</th>
+                <th>protocol_id</th>
+                <th>download</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2025_AYT_Aurora</td>
+                <td>SDSU_2025_GBS</td>
+                <td>11050</td>
+                <td>GBS SDSU 2025</td>
+                <td>301</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=11050&amp;basename=2025-12-16_15:59:59_fileP7Mi">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>24Crk_AY2-3</td>
+                <td>UMN_2022_GBS</td>
+                <td>10671</td>
+                <td>GBS UMN 2022</td>
+                <td>294</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=10671&amp;basename=2025-12-11_18:36:07_fileY6KQ">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>25_Big6_SVREC_SVREC</td>
+                <td>BIGSIX_2024_AgriSeq_4K</td>
+                <td>10684</td>
+                <td>ThermoFisher AgriSeq 4K</td>
+                <td>296</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=10684&amp;basename=2025-12-12_19:42:54_file8tAQ">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>CornellMaster_2025_McGowan</td>
+                <td>Cornell_WWMasterScreening_2024</td>
+                <td>11049</td>
+                <td>GBS Cornell 2024</td>
+                <td>300</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=11049&amp;basename=2025-12-16_15:37:13_filegz0x">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>YT_Urb_25</td>
+                <td>UIUC_2024_GBS_V2</td>
+                <td>11054</td>
+                <td>GBS UIUC 2024</td>
+                <td>302</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=11054&amp;basename=2026-01-12_15:02:24_file7kBP">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>AWY1_DVPWA_2024</td>
+                <td>WSU_2023_GBS</td>
+                <td>14512</td>
+                <td>GBS WSU 2023</td>
+                <td>311</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=14512&amp;basename=2026-02-25_15:45:12_fileGxN4">Download Archived VCF File</td>
+            </tr>
+            <tr>
+                <td>OHRWW_2025_SPO</td>
+                <td>UWM_2023_3K</td>
+                <td>11009</td>
+                <td>Wheat 3K</td>
+                <td>299</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=11009&amp;basename=2025-12-16_14:44:02_fileoUdn">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>TCAP_2025_MANKS</td>
+                <td>KSU_2024_Allegro_V2</td>
+                <td>10830</td>
+                <td>Allegro V2</td>
+                <td>297</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=10830&amp;basename=2025-12-15_16:43:21_fileY4ZA">Download Archived VCF File</a></td>
+            </tr>
+            <tr>
+                <td>STP1_2025_MCG</td>
+                <td>TAMU_2025_MCG25</td>
+                <td>11052</td>
+                <td>GBS TAMU MCG25</td>
+                <td>303</td>
+                <td><a href="https://wheat.triticeaetoolbox.org/ajax/genotyping_project/download_archived_vcf?genotyping_project_id=11052&amp;basename=2025-12-16_19:25:20_filek_yE">Download Archived VCF File</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br /><br />
 
     <p><strong>NOTE</strong>: New data (in particular genotypic data) will be posted to T3/Wheat during the contest period. It will be valuable to recheck before the competition closes to assemble final training data.</p>
  
     <p>A presentation describing useful methods of programmatic access to T3 to facilitate algorithm development will be given at PAG in the Breedbase Workshop <strong>Sunday, January 11, 2026</strong>: <a href="https://pag.confex.com/pag/33/meetingapp.cgi/Session/14070">https://pag.confex.com/pag/33/meetingapp.cgi/Session/14070</a></p>
 
-    <p>The competition will close on <strong>Friday, March 13th, 2026</strong>.</p>
+    <p><s>The competition will close on <strong>Friday, March 13th, 2026</strong></s></p>
+    <div class="alert">
+        <p>The deadline to submit predictions has been extended to <strong>Friday, March 27th</strong>.</p>
+    </div>
   
     <p>An upload link to submit a zipped folder containing the predictions will be posted here prior to that date.</p>
 
@@ -41,7 +225,7 @@
 
     <p><strong>Folder Structure</strong>:</p>
 
-    <p>The zipped folder submitted should contain one methods description text file and 10 sub-directories, each named with the trial name for which the sub-directory contains predictions. For example, if the sub-directory contains predictions for the trial "AYT_Timbuktu24", then the sub-directory should be named "AYT_Timbuktu24".  Each sub-directory should contain six csv files.  Continuing the example, the sub-directory should contain:</p>
+    <p>The zipped folder submitted should contain one methods description text file and 9 sub-directories, each named with the trial name for which the sub-directory contains predictions. For example, if the sub-directory contains predictions for the trial "AYT_Timbuktu24", then the sub-directory should be named "AYT_Timbuktu24".  Each sub-directory should contain six csv files.  Continuing the example, the sub-directory should contain:</p>
 
     <ul>
         <li>CV0_Predictions.csv</li>
@@ -104,3 +288,13 @@
     <p>Use the <a href="https://wheat.triticeaetoolbox.org/contact/form">T3/Wheat Contact Us Form</a>.  Include the word "Predictathon" in the Subject line.
 
 </div>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:bold;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-cly1{text-align:left;vertical-align:middle}
+.tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
+</style>
