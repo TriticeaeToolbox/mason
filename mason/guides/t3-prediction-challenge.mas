@@ -2,6 +2,20 @@
 
 <div style="max-width: 800px; margin: 25px auto">
 
+    <div class="panel panel-success">
+        <div class="panel-heading"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;&nbsp;File Submission</div>
+        <div class="panel-body news-panel-body">
+            <p>The file submission form for uploading your predictions is now available.  The link to submit files will automatically 
+            close at 12:00 AM (EDT) on March 28th.</p>
+            <div style="display: flex; justify-content: space-around">
+                <span class="btn btn-primary">
+                    <a style="color: white" target="_blank" href="https://cornell.app.box.com/f/3e10ae98a3894df5b5ae2dbb7a45137a">Submit Your Predictions</a>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
     <div class="panel panel-info">
         <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;Mailing List</div>
         <div class="panel-body news-panel-body">
@@ -211,7 +225,7 @@
         <p>The deadline to submit predictions has been extended to <strong>Friday, March 27th</strong>.</p>
     </div>
   
-    <p>An upload link to submit a zipped folder containing the predictions will be posted here prior to that date.</p>
+    <p>You can submit your predictions using this file submission form: <a href="https://cornell.app.box.com/f/3e10ae98a3894df5b5ae2dbb7a45137a" target="_blank">https://cornell.app.box.com/f/3e10ae98a3894df5b5ae2dbb7a45137a</a></p>
 
     <h3>Details</h3>
 
