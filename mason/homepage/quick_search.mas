@@ -1,18 +1,22 @@
 
-<form id="homepage_search_form" role="search" action="/search/quick_search.pl" style="">
-    <div class="input-group">
-        <span class="input-group-addon">Quick Search</span>
-        <input id="homepage_quick_search_input" type="text" name="term" class="form-control" placeholder="">
-        <div class="input-group-btn">
-            <button id="homepage_quick_search_icon" class="btn btn-default" type="button">
-                &nbsp;
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                &nbsp;
-            </button>
-        </div>
-    </div>
-</form>
+<&| /util/user.mas:logged_in &>
 
+    <p>Use the <strong>Quick Search</strong> to find an Accession, Trial, Trait, etc by name:</p>
+    <form id="homepage_search_form" role="search" action="/search/quick_search.pl" style="">
+        <div class="input-group">
+            <span class="input-group-addon">Quick Search</span>
+            <input id="homepage_quick_search_input" type="text" name="term" class="form-control" placeholder="">
+            <div class="input-group-btn">
+                <button id="homepage_quick_search_icon" class="btn btn-default" type="button">
+                    &nbsp;
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    &nbsp;
+                </button>
+            </div>
+        </div>
+    </form>
+
+</&>
 
 <script defer="defer">
   jQuery(document).ready(function() {
