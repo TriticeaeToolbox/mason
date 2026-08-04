@@ -128,13 +128,22 @@ my $new_genbank_link = qq | <a href="/chado/add_feature.pl?type=locus;type_id=$l
 my %dbxrefs = $locus->get_all_dbxrefs();
 
 my $external_links;
-foreach ( @{ $dbxrefs{'GrainGenes Gene Report'} } ) {
+foreach ( @{ $dbxrefs{'GrainGenes gene'} } ) {
   if ( $_->[1] eq '0' ) {
     my $url       = $_->[0]->get_urlprefix() . $_->[0]->get_url();
     my $accession = $_->[0]->get_accession();
     my $link      = $url . uri_encode($accession);
     $external_links .=
-      qq|<br>GrainGenes Gene Report for <a href="$link" target="blank">$accession</a><br />|;
+      qq|<br>GrainGenes Gene Report for <a href="$link" target="_blank">$accession</a><br />|;
+  }
+}
+foreach ( @{ $dbxrefs{'GrainGenes qtl'} } ) {
+  if ( $_->[1] eq '0' ) {
+    my $url       = $_->[0]->get_urlprefix() . $_->[0]->get_url();
+    my $accession = $_->[0]->get_accession();
+    my $link      = $url . uri_encode($accession);
+    $external_links .=
+      qq|<br>GrainGenes QTL Report for <a href="$link" target="_blank">$accession</a><br />|;
   }
 }
 

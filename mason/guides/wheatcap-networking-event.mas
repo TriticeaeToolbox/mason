@@ -1,0 +1,18 @@
+<& "/page/page_title.mas", title => "WheatCAP Networking Event" &>
+
+<div style="max-width: 800px; margin: 25px auto">
+    <p>
+        The Wheat Coordinated Agricultural Project (WheatCAP) represents 22 United States institutions working on wheat genetic improvement and genomics.  It is a $15 million, 5-year USDA-NIFA grant supporting UAS-based high-throughput phenotyping, a genomics research hub, and developing a comprehensive <a href="https://wheat.triticeaetoolbox.org/" target="_blank">public breeding database</a>.  The grant funds the training of 20 PhD students in the use of these tools to be the next generation of breeding researchers in industry and academia. In addition to technical skills, we hold soft skills trainings. As WheatCAP is entering its final year, we are focusing students on their career preparation.
+    </p>
+
+    <p style="font-size: 150%; text-align: center; line-height: normal">
+        We are holding a networking social at PAG:<br />
+        January 10th, 6:30-8:30 pm. Town and Country Sunset 1 (<a href="https://share.google/images/vMEiamSh2n0A63YrH" target="_blank">map</a>)<br />
+        Questions?  Contact <a href="mailto:shannon.baker@ag.tamu.edu">Shannon Baker</a>
+    <p>
+
+    <img src="/static_content/img/D2S_group_photo.jpg" style="width: 100%" />
+    <p style="font-size: 90%">
+        <em>Students and Faculty from a training on the use of the <a href="https://d2s.org/" target="_blank">D2S</a> UAS HTP data management and analysis site at the CANVAS meeting 2025</em>
+    </p>
+</div>
