@@ -18,7 +18,7 @@
     <li><a href="/breeders/genotyping_projects">Genotyping Projects</a></li>
     <li><a href="/breeders/sequence_metadata">Sequence Metadata</a></li>
     <li><a href="/breeders/markers">Lists of Marker Alleles</a></li>
-    <li><a href="/breeders/markers?defaultProtocol=328&defaultDataType=SNP">Lists of Major Locus Alleles</a></li>
+    <li><a href="/breeders/markers?defaultProtocol=327&defaultDataType=SNP">Lists of Major Locus Alleles</a></li>
     
     <li role="separator" class="divider"></li>
     

@@ -7,7 +7,7 @@
 	  <li><a href="https://synonyms.triticeaetoolbox.org/?db=<% our $T3_INSTANCE_NAME %>">Bulk Accession Search</a></li>
     <!-- <li><a href="/search/cross">Progenies and Crosses</a></li> -->
     <li><a href="/search/stocks_using_genotypes">Accessions using Marker Alleles</a></li>
-    <li><a href="/search/stocks_using_genotypes?defaultProtocol=328&defaultDataType=SNP">Accessions using Major Locus Alleles</a></li>
+    <li><a href="/search/stocks_using_genotypes?defaultProtocol=327&defaultDataType=SNP">Accessions using Major Locus Alleles</a></li>
     
     <li role="separator" class="divider"></li>
     
