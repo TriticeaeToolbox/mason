@@ -83,8 +83,10 @@
         <!-- LEFT COLUMN -->
         <div class="col-md-4">
 
-            <!-- WORKSHOP INFO -->
-            <& /homepage/workshops.mas &>
+            <!-- RECENT UPDATES -->
+% if ( $m->comp_exists("/homepage/updates.mas") ) {
+            <& /homepage/updates.mas &>
+% }
             <br /><br />
 
             <!-- NEWS -->
@@ -109,6 +111,13 @@
 % if ( $m->comp_exists("/homepage/experiments.mas") ) {
             <& /homepage/experiments.mas &>
 % }
+
+
+            <br /><br /><br />
+
+
+            <!-- TRIAL SUMMARY TOOL -->
+            <& /homepage/summarize_trials.mas &>
 
 
             <br /><br /><br />

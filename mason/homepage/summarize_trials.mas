@@ -1,0 +1,77 @@
+<h2>Trial Summary</h2>
+
+<p>
+  View <strong>trait and location summaries</strong> from an Experiment:
+</p>
+
+<select class="form-control" id="summarize-experiments-select" disabled>
+  <option value=''>Loading...</option>
+</select>
+<br />
+<p>or go to the <a href="/tools/trial/summary/list">Summarize Trials tool</a> to see all available breeding programs and experiments.</p>
+
+
+<script>
+  jQuery(window).on('pageshow', function() {
+    getSummaryExperiments(function(experiments) {
+      displaySummaryExperiments(experiments);
+    });
+  });
+
+  /**
+   * Get the list of "experiments" = projects/folders used to hold trials
+   * @param callback Callback function(experiments)
+   */
+  function getSummaryExperiments(callback) {
+    jQuery.ajax({
+      method: 'GET',
+      url: '/ajax/breeders/trial_folders?tagged=true',
+      error: function(response) {
+        console.log("ERROR: Could not get experiments");
+        console.log(response);
+        return callback([]);
+      },
+      success: function(response) {
+        if ( response && response.folders ) {
+          return callback(response.folders);
+        }
+        else {
+          return callback([]);
+        }
+      }
+    });
+  }
+
+  /**
+   * Display the "experiments" in as options in the select box
+   * @param {Object[]} List of BrAPI trials to parse as experiments
+   */
+  function displaySummaryExperiments(experiments) {
+    let options = ["<option value=''>---- Select an Experiment to Summarize ----</option>"];
+    
+    experiments.sort(function(a, b) {
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
+    
+    for ( let i = 0; i < experiments.length; i++ ) {
+      let id = experiments[i].id;
+      let name = experiments[i].name;
+
+      let html = "<option value='" + id + "'>" + name + "</option>";
+      options.push(html);
+    }
+    jQuery("#summarize-experiments-select").html(options.join(''));
+    jQuery("#summarize-experiments-select").prop('disabled', false);
+
+    jQuery("#summarize-experiments-select").change(function() {
+      let experimentId = jQuery(this).find('option:selected').val();
+      if ( experimentId && experimentId !== "" ) {
+        jQuery(this).find('option:selected').html("Loading...");
+        jQuery("#summarize-experiments-select").prop('disabled', true);
+        window.location = "/tools/trial/summary/list?breeding_program_id=" + experimentId;
+      }
+    });
+  }
+</script>

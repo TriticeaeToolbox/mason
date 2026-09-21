@@ -18,7 +18,6 @@
     </div>
 </&>
 
-<p>Use the <strong>Quick Search</strong> to find an Accession, Trial, Trait, etc by name:</p>
 <& /homepage/quick_search.mas &>
 
 
