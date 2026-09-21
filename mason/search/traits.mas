@@ -30,6 +30,18 @@
                 </div>
             </div>
             <div class="form-group form-group-sm">
+                <label class="col-sm-3 control-label">Search Trait ID: </label>
+                <div class="col-sm-9" >
+                    <input type="text" class="form-control" id="trait_search_id" placeholder="Search any trait ID or part of an ID"/>
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class="col-sm-3 control-label">Search Trait Synonym: </label>
+                <div class="col-sm-9" >
+                    <input type="text" class="form-control" id="trait_search_synonym" placeholder="Search any trait synonym or part of a synonym"/>
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
                 <label class="col-sm-3 control-label">Search Definition: </label>
                 <div class="col-sm-9" >
                     <input type="text" class="form-control" id="trait_search_definition" placeholder="Search any word or piece of definition"/>
@@ -63,6 +75,7 @@
                         <th>Copy Name|ID</th>
                         <th>Trait ID</th>
                         <th>Trait Name</th>
+                        <th>Synonym</th>
                         <th>Definition</th>
                         <th>Trait&nbsp;Usage</th>
                       </tr>
@@ -132,9 +145,9 @@ jQuery(document).ready(function () {
         _draw_trait_search_result_table();
     });
 
-    jQuery('#submit_trait_search').click(function(){
+    jQuery('#submit_trait_search').click(function() {
         jQuery("#submit_trait_search").attr('disabled', true);
-        jQuery("#submit_trait_search").html("Searching...");
+        jQuery("#submit_trait_search").html("Searching...")
         _draw_trait_search_result_table();
     });
 
@@ -177,6 +190,8 @@ jQuery(document).ready(function () {
                 'data': function(d) {
                     d.trait_search_list_id  = jQuery('#trait_search_list_select_list_select').val();
                     d.trait_any_name  = jQuery('#trait_search_name').val();
+                    d.trait_id = jQuery('#trait_search_id').val();
+                    d.trait_synonym = jQuery('#trait_search_synonym').val();
                     d.trait_definition  = jQuery('#trait_search_definition').val();
                     d.ontology_db_id = selectedontologies;
                 },
@@ -219,6 +234,7 @@ jQuery(document).ready(function () {
    };
    trait_table.on( 'deselect', selection_changed);
    trait_table.on( 'select', selection_changed);
+
 });
 
 
@@ -256,6 +272,7 @@ async function copy(name, accession, id) {
 }
 
 </script>
+
 
 <style type="text/css">
     #trait_search_results td:nth-child(2) {
