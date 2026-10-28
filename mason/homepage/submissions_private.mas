@@ -1,58 +1,13 @@
-<&| /page/info_section.mas, title=>'<h2 style="display: inline-block">Upload Data</h2>', collapsible=>1, collapsed=>0, subtitle=>'' &>
-
-<br />
-
-<& /homepage/submitter.mas &>
-
-<p>Contributing data to <% our $T3_INSTANCE_NAME %></p>
-
-<a href="/help/phenotype_quick_start" class="btn btn-primary btn-large btn-home">
-    <span class="glyphicon glyphicon-tasks"></span>&nbsp;
-    Guided Workflow
-</a>
-
-<p><strong>Guided Phenotype Upload Workflow:</strong> Step-by-step instructions on how to upload phenotype data to <% $T3_INSTANCE_NAME %>.</p>
-
-<a href="/help/phenotype_upload_workflow" class="btn btn-primary btn-large btn-home">
-    <span class="glyphicon glyphicon-info-sign"></span>&nbsp;
-    Upload Instructions
-</a>
-
-<p><strong>Detailed Phenotype Upload Instructions:</strong> Instructions and general steps for adding phenotype trial data to <% $T3_INSTANCE_NAME %>.</p>
-
-<a href="/breeders/phenotyping" class="btn btn-primary btn-large btn-home">
-    <span class="glyphicon glyphicon-leaf"></span>&nbsp;
-    Manage Phenotypic Data
-</a>
-
-<p><strong>Manage your Phenotypic Data</strong> to create spreadsheets for new uploads, add new data, and/or manage your existing uploads.</p>
-
-
-<a href="/breeders/genotyping_projects" class="btn btn-primary btn-large btn-home">
-    <span class="glyphicon glyphicon-align-left"></span>&nbsp;
-    Manage Genotyping Projects
-</a>
-
-<p><strong>Manage your Genotyping Projects</strong> to add a new genotyping project, a new genotyping plate, or upload a VCF file.</p>
-
-<a href="/breeders/upload" class="btn btn-primary btn-large btn-home">
-    <span class="glyphicon glyphicon-open-file"></span>&nbsp;
-    Upload Files
-</a>
-
-<p>Or <strong>Upload Files</strong> for various other types of data.</p>
-
 % if ( $c->config->{allow_trial_submissions} ) {
-
-<br /><br /><br />
-
-<h2>Submit Phenotype Data</h2>
 
 <p>If you have trials on this database that you want to submit to the production database, you can do so 
 by clicking the <strong>Submit Trial</strong> button on the trial detail page of each trial you want to 
 submit OR you can create a list of multiple trials to submit and submit them all at once from the 
 <a href="/submit/trials">Submit Multiple Trials</a> page.</p>
 
-% }
+% } else {
 
-</&>
+<p>If you have trials on this database that you want to submit to the production database, please go to 
+<a href="<% our $T3_PRODUCTION_URL %>"><% $T3_PRODUCTION_URL %></a> and submit your trials there.</p>
+
+% }

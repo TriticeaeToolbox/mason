@@ -1,55 +1,19 @@
-<&| /page/info_section.mas, title=>'<h2 style="display: inline-block">Submit Phenotype Data</h2>', collapsible=>1, collapsed=>0, subtitle=>'' &>
+<p><strong>Have data you want to submit to <% our $T3_INSTANCE_NAME %>?</strong></p>
+<p>Use the data submission form below to send us your data.  You can send us data in any format and we will format it into upload templates, check for common errors, and upload it to the database for you.</p>
+
+<a href="<% our $T3_SANDBOX_URL %>/guides/data-submission" class="btn btn-primary btn-block">Submit Data</a>
+
+<br /><hr /><br />
+
+<p>If you would like to try submitting data yourself to this sandbox instance, follow the instructions in the links below.  In order for the data to be included in the primary production database, please submit your data to us using the form above once it is ready.</p>
+
 
 <br />
-
-<p>To submit phenotype data to <% our $T3_INSTANCE_NAME %> follow these three general steps:</p>
-
-<h3>Step 1: Create Upload Templates</h3>
-
-<p>
-    Data submitted to <% $T3_INSTANCE_NAME %> should be in the format of the upload 
-    template for the data type you are submitting.  
-    <a href='/help/phenotype_upload_workflow'>
-        View the detailed upload instructions 
-    </a> 
-    for specific information on each data type.
-</p>
-
-
-<h3>Step 2: Add Data to Sandbox</h3>
-
-<p>
-    Once you have your upload templates, you can test-load them on this Sandbox site  
-    to check for any errors.
-</p>
-
-% if ( $c->config->{allow_trial_submissions} ) {
-
-<h3>Step 3: Submit Trial Data</h3>
-
-<p>
-    If your trial data has been successfully added to the Sandbox you can submit your trials 
-    directly to the production site by clicking the <strong>Submit Trial</strong> button on 
-    the trial detail page of each trial you want to submit OR you can create a list of multiple 
-    trials to submit and submit them all at once from the <a href="/submit/trials">Submit Multiple 
-    Trials</a> page.
-</p>
-<p>
-    If your data has not been added to the Sandbox or if you would prefer to submit your files 
-    directly to the production site, you can submit your individual upload templates or data files to us 
-    using the <a href='<% our $T3_PRODUCTION_URL %>/submit/pheno'>Phenotype Submission Form</a>.
-</p>
-
-% }
-
-<br />
-<div class="btn-group btn-group-justified" role="group">
-    <a class="btn btn-primary" href="/help/phenotype_quick_start">
+<div class="btn-group btn-group-vertical btn-block" role="group">
+    <a class="btn btn-info" href="/help/phenotype_quick_start">
         <span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;Guided Workflow
     </a>
-    <a class="btn btn-primary" href="/help/phenotype_upload_workflow">
+    <a class="btn btn-info" href="/help/phenotype_upload_workflow">
         <span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;Detailed Upload Instructions
     </a>
 </div>
-
-</&>
