@@ -60,19 +60,7 @@
     <!-- SANDBOX BANNER -->
     <& /toggle_display.mas, sandbox => "/homepage/sandbox_banner.mas" &>
 
-
-    <!-- INTRO -->
-    <& /instance/intro.mas &>
-
-
-    <!-- DATA USAGE -->
-    <& /homepage/data_usage.mas &>
-
-
-    <!-- CITATION -->
-    <& /homepage/citation.mas &>
-
-    <br /><br /><br />
+    <br />
 
     <!-- MAIN CONTENT -->
     <div class="row">
@@ -168,10 +156,17 @@
 
     </div>
 
+    <!-- FUNDING -->
+    <& /homepage/funding.mas &>
+
+    <!-- DATA USAGE -->
+    <& /homepage/data_usage.mas &>
+
+    <!-- CITATION -->
+    <& /homepage/citation.mas &>
 
     <!-- SOURCE -->
     <& /homepage/source.mas &>
-
 
     <!-- USAGE AGREEMENT POPUP -->
     <& /homepage/usage_popup.mas &>
