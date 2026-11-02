@@ -7,7 +7,11 @@ submit OR you can create a list of multiple trials to submit and submit them all
 
 % } else {
 
-<p>If you have trials on this database that you want to submit to the production database, please go to 
-<a href="<% our $T3_PRODUCTION_URL %>"><% $T3_PRODUCTION_URL %></a> and submit your trials there.</p>
+<p>If you have trials on this database that you want to submit to the production database, you can:
+    <ol>
+        <li>Export your data from the Manage > Download Using Lists page for each data type</li>
+        <li>Go to the production database at <a href="<% our $T3_PRODUCTION_URL %>"><% $T3_PRODUCTION_URL %></a> and submit your trials there.</li>
+    </ol>
+</p>
 
 % }

@@ -1,4 +1,13 @@
 <p><strong>Have data you want to submit to <% our $T3_INSTANCE_NAME %>?</strong></p>
-<p>Use the data submission form below to send us your data.  You can send us data in any format and we will format it into upload templates, check for common errors, and upload it to the database for you.</p>
+
+% if ( $c->config->{allow_file_submissions} ) {
+
+<p>Use the data submission forms to upload your data.  You can send us data in any format and we will format it into upload templates, check for common errors, and upload it to the database for you.</p>
 
 <a href="/guides/data-submission" class="btn btn-primary btn-block">Submit Data</a>
+
+% } else {
+
+<p>Use the <a href="/contact/form">contact form</a> to get in touch with us about submitting your data.</p>
+
+% }

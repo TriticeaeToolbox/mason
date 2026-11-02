@@ -1,11 +1,16 @@
 <p><strong>Have data you want to submit to <% our $T3_INSTANCE_NAME %>?</strong></p>
-<p>Use the data submission form below to send us your data.  You can send us data in any format and we will format it into upload templates, check for common errors, and upload it to the database for you.</p>
+<p>Use the data submission forms to send us your data.  You can send us data in any format and we will format it into upload templates, check for common errors, and upload it to the database for you.</p>
 
-<a href="<% our $T3_SANDBOX_URL %>/guides/data-submission" class="btn btn-primary btn-block">Submit Data</a>
+<a href="<% our $T3_PRODUCTION_URL %>/guides/data-submission" class="btn btn-primary btn-block">Submit Data</a>
 
 <br /><hr /><br />
 
-<p>If you would like to try submitting data yourself to this sandbox instance, follow the instructions in the links below.  In order for the data to be included in the primary production database, please submit your data to us using the form above once it is ready.</p>
+<p>If you would like to try submitting data yourself to this sandbox instance, follow the instructions in the links below.</p>
+% if ( $c->config->{allow_trial_submissions} ) {
+    <p>If your trial data has been successfully added to the Sandbox you can submit your trials directly to the production site by clicking the <strong>Submit Trial</strong> button on the trial detail page of each trial you want to submit OR you can create a list of multiple trials to submit and submit them all at once from the <a href="/submit/trials">Submit Multiple Trials</a> page.</p>
+% } else {
+    <p>In order for the data to be included in the primary production database, please submit your data to us using the data submission form above once it is ready.</p>
+% }
 
 
 <br />
