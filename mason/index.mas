@@ -70,6 +70,21 @@
 
         <!-- LEFT COLUMN -->
         <div class="col-md-4">
+            <br />
+
+            <!-- SUBMISSIONS -->
+            <div class="panel panel-primary">
+                <div class="panel-heading">Submit Data</div>
+                <div class="panel-body">
+                    <& /toggle_display.mas, 
+                        production => "/homepage/submissions_production.mas", 
+                        sandbox => "/homepage/submissions_sandbox.mas",
+                        private => "/homepage/submissions_private.mas"
+                    &>
+                </div>
+            </div>
+
+            <br /><br />
 
             <!-- RECENT UPDATES -->
 % if ( $m->comp_exists("/homepage/updates.mas") ) {
@@ -116,28 +131,6 @@
 
 
             <br /><br /><br />
-            
-            
-            <!-- SUBMISSIONS -->
-            <& /toggle_display.mas, 
-                production => "/homepage/submissions_production.mas", 
-                sandbox => "/homepage/submissions_sandbox.mas",
-                private => "/homepage/submissions_private.mas"
-            &>
-            
-
-            <br /><br /><br />
-
-
-            <!-- GENOTYPE SUBMISSIONS -->
-            <& /toggle_display.mas, 
-                production => "/homepage/submissions_genotype.mas", 
-                sandbox => "/homepage/submissions_genotype.mas",
-                private => "/homepage/submissions_genotype_private.mas"
-            &>
-
-
-            <br /><br /><br />
 
 
             <!-- DOCUMENTATION -->
@@ -156,21 +149,21 @@
         <!-- TEMPLATES -->
         <& /homepage/templates.mas &>
 
+        <!-- FUNDING -->
+        <& /homepage/funding.mas &>
+
+        <!-- DATA USAGE -->
+        <& /homepage/data_usage.mas &>
+
+        <!-- CITATION -->
+        <& /homepage/citation.mas &>
+
+        <!-- SOURCE -->
+        <& /homepage/source.mas &>
+
+        <!-- USAGE AGREEMENT POPUP -->
+        <& /homepage/usage_popup.mas &>
+
     </div>
-
-    <!-- FUNDING -->
-    <& /homepage/funding.mas &>
-
-    <!-- DATA USAGE -->
-    <& /homepage/data_usage.mas &>
-
-    <!-- CITATION -->
-    <& /homepage/citation.mas &>
-
-    <!-- SOURCE -->
-    <& /homepage/source.mas &>
-
-    <!-- USAGE AGREEMENT POPUP -->
-    <& /homepage/usage_popup.mas &>
 
 </div>

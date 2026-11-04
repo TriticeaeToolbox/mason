@@ -1,34 +1,13 @@
-<&| /page/info_section.mas, title=>'<h2 style="display: inline-block">Submit Phenotype Data</h2>', collapsible=>1, collapsed=>0, subtitle=>'' &>
+<p><strong>Have data you want to submit to <% our $T3_INSTANCE_NAME %>?</strong></p>
 
-<br />
+% if ( $c->config->{allow_file_submissions} ) {
 
-<p>Phenotype data can be submitted to <% our $T3_INSTANCE_NAME %> in two ways:</p>
+<p>Use the data submission forms to upload your data.  You can send us data in any format and we will format it into upload templates, check for common errors, and upload it to the database for you.</p>
 
-<h3>Submitting files directly to us</h3>
-<p>
-    If you have upload templates that you think are properly formatted or data files that 
-    are not formatted as upload templates, you can submit the files directly to use for 
-    inclusion in the production site by submitting them to us through the 
-    <strong>Phenotype Submission Form</strong>.
-</p>
-<a class="btn btn-primary btn-block" href="/submit/pheno">
-    <span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;&nbsp;
-    Phenotype Submission Form
-</a>
+<a href="/guides/data-submission" class="btn btn-primary btn-block">Submit Data</a>
 
-<br />
+% } else {
 
-<h3>Using the Sandbox</h3>
-<p>
-    When using the sandbox, you create upload templates that contain the trial information.  Then, 
-    you upload those templates to the Sandbox to check for any errors.  When the trial has been  
-    successfully added you can use the <em>Submit Trial</em> function to submit the trial directly 
-    to us for inclusion in the production site.  Visit the <strong><% $T3_INSTANCE_NAME %> Sandbox</strong>
-    for more information.
-</p>
-<a class="btn btn-primary btn-block" href="<% our $T3_SANDBOX_URL %>">
-    <span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;
-    Visit the <% $T3_INSTANCE_NAME %> Sandbox
-</a>
+<p>Use the <a href="/contact/form">contact form</a> to get in touch with us about submitting your data.</p>
 
-</&>
+% }
