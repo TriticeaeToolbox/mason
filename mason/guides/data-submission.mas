@@ -1,0 +1,55 @@
+<& "/page/page_title.mas", title => "Data Submission" &>
+
+<div class="row" style="margin-top: 20px; margin-bottom: 60px;">
+    <div class="col-md-6 col-md-offset-3">
+
+        <h2>Phenotype Data</h2>
+
+        <p>
+            If you have <strong>phenotype data</strong> you would like to submit to <% our $T3_INSTANCE_NAME %>, please 
+            use the <strong>Phenotype Submission Form</strong>.
+        </p>
+
+        <p>
+            We can accept data in any format and will attempt to convert it to the proper format to upload to the database.
+        </p>
+
+        <button id="phenotype-submission" class="btn btn-primary btn-block">
+            <span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;&nbsp;
+            Phenotype Submission Form
+        </button>
+
+
+        <br /><br />
+
+
+        <h2>Genotype Data</h2>
+
+        <p>
+            If you have <strong>genotype data</strong> you would like to submit to <% $T3_INSTANCE_NAME %>, please 
+            use the <strong>Genotype Submission Form</strong>.
+        </p>
+        <p>
+            This will ask you some questions about the data and then you can <strong>upload a VCF file</strong> of the data.  
+            We'll make sure the file is properly formatted, the correct genotype protocol is used for the data, 
+            and add the genotype data to the database. 
+        </p>
+
+        <button id="genotype-submission" class="btn btn-primary btn-block">
+            <span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;&nbsp;
+            Genotype Submission Form
+        </button>
+
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#phenotype-submission").click(function() {
+            window.location.href = "/submit/pheno";
+        });
+        $("#genotype-submission").click(function() {
+            window.location.href = "/submit/geno";
+        });
+    });
+</script>
