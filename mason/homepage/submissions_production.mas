@@ -1,13 +1,70 @@
-<p><strong>Have data you want to submit to <% our $T3_INSTANCE_NAME %>?</strong></p>
+<div id="submissions-production-panel" class="panel panel-primary">
+    <div class="panel-heading">Submit Data</div>
+    <div class="panel-body">
+
+        <p class="submissions-production-body"><strong>Have data you want to submit to <% our $T3_INSTANCE_NAME %>?</strong></p>
 
 % if ( $c->config->{allow_file_submissions} ) {
 
-<p>Use the data submission forms to upload your data.  You can send us data in any format and we will format it into upload templates, check for common errors, and upload it to the database for you.</p>
+        <p class="submissions-production-body">Send us your data in <strong><em>any format</em></strong> and we will wrangle it for you.</p>
 
-<a href="/guides/data-submission" class="btn btn-primary btn-block">Submit Data</a>
+        <div style="display: flex; justify-content: center;">
+            <img id="data-submission-img" src="/static_content/img/data-submission.png" />
+        </div>
+
+        <a href="/guides/data-submission" class="btn btn-primary btn-block"><strong>Submit Data</strong></a>
 
 % } else {
 
-<p>Use the <a href="/contact/form">contact form</a> to get in touch with us about submitting your data.</p>
+        <p>Use the <a href="/contact/form">contact form</a> to get in touch with us about submitting your data.</p>
 
 % }
+
+    </div>
+</div>
+
+<style>
+    #submissions-production-panel {
+        box-shadow: 0 0px 15px rgba(200, 76, 48, 0.6);
+        animation: submissions-production-pulse 3s ease-in-out 2;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+    #submissions-production-panel:hover {
+        box-shadow: 0 0px 15px rgba(200, 76, 48, 0.9);
+    }
+    @keyframes submissions-production-pulse {
+        0%, 100% {
+            opacity: 1;
+            box-shadow: 0 0px 15px rgba(200, 76, 48, 0.6);
+        }
+        50% {
+            opacity: 0.85;
+            box-shadow: 0 0px 5px rgba(200, 76, 48, 0.3);
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        #submissions-production-panel {
+            animation: none;
+            transition: none;
+        }
+    }
+
+    #submissions-production-panel .panel-heading {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 125%;
+        line-height: 1.5;
+    }
+
+    #submissions-production-panel .submissions-production-body {
+        font-size: 110%;
+        margin-bottom: 15px;
+    }
+
+    #data-submission-img {
+        width: 100%;
+        max-width: 120px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+</style>
