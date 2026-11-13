@@ -7,4 +7,5 @@
    our $T3_GITHUB_URL = "https://github.com/TriticeaeToolbox/sgn";
    our $T3_ALERT_TITLE = undef;
    our $T3_ALERT_DESCRIPTION = undef;
+   our $T3_CROP = undef;
 </%once>
