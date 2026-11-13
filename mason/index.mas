@@ -52,10 +52,7 @@
 
 <div class="page-container">
 
-    <h1 style="text-align: center;">
-        Welcome to <% our $T3_INSTANCE_NAME %>
-        <% defined(our $T3_INSTANCE_PRIVATE) ? ' [' . $T3_INSTANCE_PRIVATE . ']' : '' %> 
-    </h1>
+    <& /homepage/welcome.mas &>
 
     <br />
 
