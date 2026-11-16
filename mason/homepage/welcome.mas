@@ -1,5 +1,5 @@
 <%once>
-    my $display_photo = defined our $T3_CROP && $T3_CROP ne '' ? "/static_content/img/header_$T3_CROP.jpg" : undef;
+    my $display_photo = defined our $T3_WELCOME_PHOTO && $T3_WELCOME_PHOTO ne '' ? "/static_content/img/$T3_WELCOME_PHOTO" : undef;
 </%once>
 
 % if (defined $display_photo) {
