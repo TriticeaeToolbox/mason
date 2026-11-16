@@ -1,0 +1,51 @@
+<& "/page/page_title.mas", title => "How to Submit Data to T3" &>
+
+<p>Follow these easy instrutions to submit your data <strong><em>in any format</em></strong> to the T3 Curators.</p>
+
+<ol id="data-submission-steps">
+    <li>Go to the correct T3 Database:
+        <ul>
+            <li><strong>T3/Wheat:</strong> <a href="https://wheat.triticeaetoolbox.org" target="_blank">https://wheat.triticeaetoolbox.org</a></li>
+            <li><strong>T3/Oat:</strong> <a href="https://oat.triticeaetoolbox.org" target="_blank">https://oat.triticeaetoolbox.org</a></li>
+            <li><strong>T3/Barley:</strong> <a href="https://barley.triticeaetoolbox.org" target="_blank">https://barley.triticeaetoolbox.org</a></li>
+        </ul>
+    </li>
+    <li>
+        <p>Click the <strong>Submit Data</strong> button on the T3 homepage.</p>
+        <img src="/static_content/img/data-submission-1.png" style="width: 100%" />
+    </li>
+    <li>
+        <p>Choose the type of data you want to submit.</p>
+        <ol>
+            <li><strong>Phenotype Data:</strong> We can accept your data <strong><em>in any format</em></strong> and we'll convert it into the appropriate upload templates.</li>
+            <li><strong>Genotype Data:</strong> We accept genotype data <strong><em>as .vcf files</em></strong>.</li>
+        </ol>
+        <img src="/static_content/img/data-submission-2.png" style="width: 100%" />
+    </li>
+    <li>
+        <p>Fill out the submission form and upload your data files.</p>
+        <video width="100%" controls autoplay loop>
+            <source src="/static_content/img/data-submission-3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </li>
+    <li>
+        <p>Once we receive your submission, we'll work on processing your data and we'll get in touch if we have any questions.</p>
+    </li>
+</ol>
+
+
+<style>
+    #data-submission-steps > li {
+        margin: 30px 0;
+    }
+    #data-submission-steps img {
+        width: 100%;
+        max-width: 800px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin: 15px auto;
+        display: block;
+    }
+</style>
